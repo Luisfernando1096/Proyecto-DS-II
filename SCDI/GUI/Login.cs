@@ -16,5 +16,15 @@ namespace SCDI.GUI
         {
             InitializeComponent();
         }
+
+        private void btnIngresar_Click(object sender, EventArgs e)
+        {
+            DataManager.DBConexion o = new DataManager.DBConexion();
+            if (o.Conectar())
+            {
+                MessageBox.Show("Conectado");
+                o.Desconectar();
+            }
+        }
     }
 }

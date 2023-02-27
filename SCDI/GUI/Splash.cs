@@ -16,5 +16,16 @@ namespace SCDI.GUI
         {
             InitializeComponent();
         }
+
+        private void Splash_Load(object sender, EventArgs e)
+        {
+            cronometro.Start();
+        }
+
+        private void cronometro_Tick(object sender, EventArgs e)
+        {
+            Close();
+            cronometro.Stop();
+        }
     }
 }

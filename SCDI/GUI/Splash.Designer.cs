@@ -30,11 +30,29 @@ namespace SCDI.GUI
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            this.cronometro = new System.Windows.Forms.Timer(this.components);
+            this.SuspendLayout();
+            // 
+            // cronometro
+            // 
+            this.cronometro.Interval = 3000;
+            this.cronometro.Tick += new System.EventHandler(this.cronometro_Tick);
+            // 
+            // Splash
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(515, 341);
+            this.Name = "Splash";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Splash";
+            this.Load += new System.EventHandler(this.Splash_Load);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Timer cronometro;
     }
 }
