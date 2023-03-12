@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace DataManager
 {
-    internal class DBOperacion : DBConexion
+    public class DBOperacion : DBConexion
     {
 
-        private Int32 EjecutarSentencia(String sentencia)
+        public Int32 EjecutarSentencia(String sentencia)
         {
             Int32 filasAfectadas = 0;
             MySqlCommand Comando = new MySqlCommand();
@@ -33,7 +33,7 @@ namespace DataManager
             return filasAfectadas;
         }
 
-        private DataTable Consultar(String consulta)
+        public DataTable Consultar(String consulta)
         {
             MySqlDataAdapter adaptador = new MySqlDataAdapter();
             MySqlCommand comando = new MySqlCommand();
