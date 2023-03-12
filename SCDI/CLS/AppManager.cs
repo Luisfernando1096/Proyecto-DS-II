@@ -32,8 +32,8 @@ namespace SCDI.CLS
             {
                 if (Login())
                 {
-                    GUI.Main f = new GUI.Main();
-                    f.ShowDialog();
+                    //GUI.Main f = new GUI.Main();
+                    //f.ShowDialog();
                 }
             }
 

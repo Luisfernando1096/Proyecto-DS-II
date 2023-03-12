@@ -13,7 +13,6 @@ namespace DataManager
         String _CadenaConexion = "Server=localhost;Port=3306;Database=bd_inventario;Uid=userInventario;Pwd=Pa55word;";
         protected MySqlConnection conexion = new MySqlConnection();
 
-
         public Boolean Conectar()
         {
             Boolean result = false;

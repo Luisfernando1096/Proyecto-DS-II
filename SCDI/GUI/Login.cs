@@ -19,6 +19,20 @@ namespace SCDI.GUI
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
+            Close();
+            var Main = new Main();
+            Main.Show();
+        }
+
+        private void bntRegistrarse_Click(object sender, EventArgs e)
+        {
+            Close();
+            var registro = new Registro();
+            registro.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
             DataManager.DBConexion o = new DataManager.DBConexion();
             if (o.Conectar())
             {
