@@ -122,6 +122,7 @@ namespace SCDI.GUI
             this.fileMenu.Name = "fileMenu";
             this.fileMenu.Size = new System.Drawing.Size(60, 20);
             this.fileMenu.Text = "&Archivo";
+            //this.fileMenu.Click += new System.EventHandler(this.fileMenu_Click);
             // 
             // newToolStripMenuItem
             // 

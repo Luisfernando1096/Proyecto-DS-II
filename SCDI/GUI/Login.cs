@@ -12,7 +12,9 @@ namespace SCDI.GUI
 {
     public partial class Login : Form
     {
-        public static String usuario = "";
+        Boolean autorizado = false;
+
+        public bool Autorizado { get => autorizado;}//cntl + r + e
         public Login()
         {
             InitializeComponent();
@@ -21,8 +23,6 @@ namespace SCDI.GUI
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            usuario = txtUsuario.Text;
-            String clave = txtClave.Text;
             bool validacion = false;
             if (txtClave.Text.Length == 0)
             {
@@ -35,19 +35,30 @@ namespace SCDI.GUI
 
             if (!validacion)
             {
-                DataManager.DBOperacion operacion = new DataManager.DBOperacion();
-                DataTable u = operacion.Consultar("select usuario from usuarios where usuario = '" 
-                    + usuario + "' and clave = '" + clave + "';");
-                if (u.Rows.Count != 0)
+                try
                 {
-                    Close();
-                    var Main = new Main();
-                    Main.Show();
+                    DataTable datosUsuario = new DataTable();
+                    datosUsuario = DataManager.DBConsultas.IniciarSesion(txtUsuario.Text, txtClave.Text);
+                    if (datosUsuario.Rows.Count == 1)
+                    {
+                        autorizado = true;
+                        Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Datos incorrectos");
+                        autorizado = false;
+                        txtClave.Focus();
+                        txtClave.SelectAll();
+                    }
                 }
-                else
+                catch (Exception)
                 {
-                    MessageBox.Show("Usuario o contraseña incorrectos");
+                    MessageBox.Show("Error contactese con el programador!!");
+                    autorizado = false;
+                    throw;
                 }
+                
             }
             else
             {
