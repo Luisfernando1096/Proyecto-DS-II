@@ -17,8 +17,6 @@ namespace SCDI.GUI
         public Main()
         {
             InitializeComponent();
-            String usuario = Login.usuario;
-            this.Text = "Sesion de - " + usuario;
         }
 
         private void ShowNewForm(object sender, EventArgs e)
@@ -110,5 +108,6 @@ namespace SCDI.GUI
         {
             
         }
+
     }
 }
