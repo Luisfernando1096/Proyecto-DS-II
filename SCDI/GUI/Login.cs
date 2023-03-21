@@ -13,7 +13,7 @@ namespace SCDI.GUI
     public partial class Login : Form
     {
         Boolean autorizado = false;
-
+        SessionManager.Session oSesion = SessionManager.Session.Instancia;
         public bool Autorizado { get => autorizado;}//cntl + r + e
         public Login()
         {
@@ -35,28 +35,17 @@ namespace SCDI.GUI
 
             if (!validacion)
             {
-                try
+                if(oSesion.IniciarSesion(txtUsuario.Text, txtClave.Text))
                 {
-                    DataTable datosUsuario = new DataTable();
-                    datosUsuario = DataManager.DBConsultas.IniciarSesion(txtUsuario.Text, txtClave.Text);
-                    if (datosUsuario.Rows.Count == 1)
-                    {
-                        autorizado = true;
-                        Close();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Datos incorrectos");
-                        autorizado = false;
-                        txtClave.Focus();
-                        txtClave.SelectAll();
-                    }
+                    autorizado = true;
+                    Close();
                 }
-                catch (Exception)
+                else
                 {
-                    MessageBox.Show("Error contactese con el programador!!");
                     autorizado = false;
-                    throw;
+                    MessageBox.Show("Datos incorrectos");
+                    txtClave.Focus();
+                    txtClave.SelectAll();
                 }
                 
             }

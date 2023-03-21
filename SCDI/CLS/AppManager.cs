@@ -23,6 +23,7 @@ namespace SCDI.CLS
             Boolean Resultado = true;
             GUI.Login f = new GUI.Login();
             f.ShowDialog();
+            Resultado = f.Autorizado;
 
             return Resultado;
         }
