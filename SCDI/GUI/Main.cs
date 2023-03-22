@@ -23,5 +23,16 @@ namespace SCDI.GUI
             lblUsuario.Text = oUsuario.Usuario;
             lblRol.Text = oUsuario.Rol;
         }
+
+        private void gestionDeEmpleadosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void verEmpleadosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Empleados empleados = new Empleados();
+            empleados.Visible = true;
+        }
     }
 }

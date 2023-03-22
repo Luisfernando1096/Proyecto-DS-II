@@ -30,6 +30,7 @@ namespace SCDI.GUI
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.lblUsuario = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblRol = new System.Windows.Forms.ToolStripStatusLabel();
@@ -37,6 +38,9 @@ namespace SCDI.GUI
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.generalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionDeUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestionDeEmpleadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verEmpleadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.agregarEmpleadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -55,15 +59,17 @@ namespace SCDI.GUI
             // lblUsuario
             // 
             this.lblUsuario.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsuario.Image = ((System.Drawing.Image)(resources.GetObject("lblUsuario.Image")));
             this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(64, 23);
+            this.lblUsuario.Size = new System.Drawing.Size(80, 23);
             this.lblUsuario.Text = "Usuario";
             // 
             // lblRol
             // 
             this.lblRol.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRol.Image = ((System.Drawing.Image)(resources.GetObject("lblRol.Image")));
             this.lblRol.Name = "lblRol";
-            this.lblRol.Size = new System.Drawing.Size(33, 23);
+            this.lblRol.Size = new System.Drawing.Size(49, 23);
             this.lblRol.Text = "Rol";
             // 
             // menuStrip1
@@ -79,7 +85,8 @@ namespace SCDI.GUI
             // generalToolStripMenuItem
             // 
             this.generalToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.gestionDeUsuariosToolStripMenuItem});
+            this.gestionDeUsuariosToolStripMenuItem,
+            this.gestionDeEmpleadosToolStripMenuItem});
             this.generalToolStripMenuItem.Name = "generalToolStripMenuItem";
             this.generalToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
             this.generalToolStripMenuItem.Text = "General";
@@ -87,8 +94,31 @@ namespace SCDI.GUI
             // gestionDeUsuariosToolStripMenuItem
             // 
             this.gestionDeUsuariosToolStripMenuItem.Name = "gestionDeUsuariosToolStripMenuItem";
-            this.gestionDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.gestionDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
             this.gestionDeUsuariosToolStripMenuItem.Text = "Gestion de usuarios";
+            // 
+            // gestionDeEmpleadosToolStripMenuItem
+            // 
+            this.gestionDeEmpleadosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.verEmpleadosToolStripMenuItem,
+            this.agregarEmpleadosToolStripMenuItem});
+            this.gestionDeEmpleadosToolStripMenuItem.Name = "gestionDeEmpleadosToolStripMenuItem";
+            this.gestionDeEmpleadosToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.gestionDeEmpleadosToolStripMenuItem.Text = "Gestion de empleados";
+            this.gestionDeEmpleadosToolStripMenuItem.Click += new System.EventHandler(this.gestionDeEmpleadosToolStripMenuItem_Click);
+            // 
+            // verEmpleadosToolStripMenuItem
+            // 
+            this.verEmpleadosToolStripMenuItem.Name = "verEmpleadosToolStripMenuItem";
+            this.verEmpleadosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.verEmpleadosToolStripMenuItem.Text = "Ver empleados";
+            this.verEmpleadosToolStripMenuItem.Click += new System.EventHandler(this.verEmpleadosToolStripMenuItem_Click);
+            // 
+            // agregarEmpleadosToolStripMenuItem
+            // 
+            this.agregarEmpleadosToolStripMenuItem.Name = "agregarEmpleadosToolStripMenuItem";
+            this.agregarEmpleadosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.agregarEmpleadosToolStripMenuItem.Text = "Agregar empleados";
             // 
             // Main
             // 
@@ -119,6 +149,9 @@ namespace SCDI.GUI
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem generalToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionDeUsuariosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gestionDeEmpleadosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem verEmpleadosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem agregarEmpleadosToolStripMenuItem;
     }
 }
 

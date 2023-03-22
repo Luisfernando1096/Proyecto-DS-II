@@ -30,8 +30,41 @@ namespace DataManager
                 throw;
             }
             
+        }
+        public static DataTable VerEmpleados()
+        {
+            try
+            {
+                DataTable resultado = new DataTable();
+                String sentencia = @"SELECT idEmpleado, nombres, apellidos, nacimiento, genero 
+                FROM empleados;";
+                DataManager.DBOperacion operacion = new DataManager.DBOperacion();
 
-            
+                resultado = operacion.Consultar(sentencia);
+                return resultado;
+            }
+            catch (Exception)
+            {
+                return new DataTable();
+                throw;
+            }
+        }
+        public static DataTable VerEmpleadosPorNombre(String nombre)
+        {
+            try
+            {
+                DataTable resultado = new DataTable();
+                String sentencia = "SELECT idEmpleado, nombres, apellidos, nacimiento, genero FROM empleados where nombres like '%" + nombre + "%';";
+                DataManager.DBOperacion operacion = new DataManager.DBOperacion();
+
+                resultado = operacion.Consultar(sentencia);
+                return resultado;
+            }
+            catch (Exception)
+            {
+                return new DataTable();
+                throw;
+            }
         }
     }
 }
