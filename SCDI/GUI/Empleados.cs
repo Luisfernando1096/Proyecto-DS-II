@@ -56,24 +56,28 @@ namespace SCDI.GUI
 
         private void dgvEmpleados_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            List<String> valores = new List<string>();
 
-            for (int i = 0; i < dgvEmpleados.Columns.Count; i++)
+            if (e.RowIndex >= 0)
             {
-                valores.Add(dgvEmpleados.Rows[e.RowIndex].Cells[i].Value.ToString()); 
-            }
-            txtIdEmpleado.Text = valores[0];
-            txtNombres.Text = valores[1];
-            txtApellidos.Text = valores[2];
-            DateTime fecha = DateTime.Parse(valores[3]);
-            dtpNacimiento.Value = fecha;
-            if (valores[4].Equals("Masculino"))
-            {
-                cmbGenero.SelectedIndex = 0;
-            }
-            else
-            {
-                cmbGenero.SelectedIndex = 1;
+                List<String> valores = new List<string>();
+
+                for (int i = 0; i < dgvEmpleados.Columns.Count; i++)
+                {
+                    valores.Add(dgvEmpleados.Rows[e.RowIndex].Cells[i].Value.ToString());
+                }
+                txtIdEmpleado.Text = valores[0];
+                txtNombres.Text = valores[1];
+                txtApellidos.Text = valores[2];
+                DateTime fecha = DateTime.Parse(valores[3]);
+                dtpNacimiento.Value = fecha;
+                if (valores[4].Equals("Masculino"))
+                {
+                    cmbGenero.SelectedIndex = 0;
+                }
+                else
+                {
+                    cmbGenero.SelectedIndex = 1;
+                }
             }
 
         }
@@ -87,19 +91,27 @@ namespace SCDI.GUI
         {
             if (!CamposVacios())
             {
-                Boolean insertado = false;
-                insertado = DataManager.DBConsultas.InsertarEmpleado(txtNombres.Text.ToString(), txtApellidos.Text.ToString(), dtpNacimiento.Text.ToString(), cmbGenero.Text.ToString());
-                if (insertado)
+                if (txtIdEmpleado.Text.Equals(""))
                 {
-                    MessageBox.Show("Registro exitoso");
-                    MostrarListaCompletaEmpleados();
-                    LimpiarCampos();
+                    Boolean insertado = false;
+                    insertado = DataManager.DBConsultas.InsertarEmpleado(txtNombres.Text.ToString(), txtApellidos.Text.ToString(), dtpNacimiento.Text.ToString(), cmbGenero.Text.ToString());
+                    if (insertado)
+                    {
+                        MessageBox.Show("Registro exitoso");
+                        MostrarListaCompletaEmpleados();
+                        LimpiarCampos();
 
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se pudo completar el registro");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("No se pudo completar el registro");
+                    MessageBox.Show("El id ya esta en uso, limpie los campos e intente de nuevo");
                 }
+                
             }
             else
             {

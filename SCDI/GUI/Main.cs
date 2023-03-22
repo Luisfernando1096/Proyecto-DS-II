@@ -27,8 +27,33 @@ namespace SCDI.GUI
 
         private void gestionDeEmpleadosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Empleados empleados = new Empleados();
-            empleados.Visible = true;
+            MostrarFormularioEmpleados();
+        }
+        //Codigo para mostrar dentro del mdi otro formulario
+        private void MostrarFormularioEmpleados()
+        {
+            if (FormularioAbierto(new Empleados().GetType()))
+            {
+
+            }
+            else
+            {
+                Empleados emp = new Empleados();
+                emp.MdiParent = this;
+                emp.Show();
+            }
+            
+        }
+        private bool FormularioAbierto(Type formType)
+        {
+            foreach (Empleados form in this.MdiChildren)
+            {
+                if (form.GetType() == formType)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
 
     }
