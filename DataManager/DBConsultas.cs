@@ -66,5 +66,84 @@ namespace DataManager
                 throw;
             }
         }
+        public static Boolean InsertarEmpleado(string nombres, string apellidos, string nacimiento, string genero)
+        {
+            Boolean resultado = false;
+            try
+            {
+                
+                String sentencia = "INSERT INTO empleados (nombres, apellidos, nacimiento, genero) VALUES ('" + nombres + "','" + apellidos + "','" + nacimiento + "','" + genero + "');";
+                DataManager.DBOperacion operacion = new DataManager.DBOperacion();
+                if(operacion.EjecutarSentencia(sentencia) > 0)
+                {
+                    resultado = true;
+                }
+                else
+                {
+                    resultado = false;
+                }
+                
+                
+                return resultado;
+            }
+            catch (Exception)
+            {
+                return resultado;
+                throw;
+            }
+        }
+        public static Boolean ActualizarEmpleado(int id, string nombres, string apellidos, string nacimiento, string genero)
+        {
+            Boolean resultado = false;
+            try
+            {
+
+                String sentencia = "UPDATE empleados SET nombres = '" + nombres + "', apellidos = '" + apellidos + "', nacimiento = '" + nacimiento + "', genero = '" + genero + "' where idEmpleado = " + id + "; ";
+                DataManager.DBOperacion operacion = new DataManager.DBOperacion();
+                if (operacion.EjecutarSentencia(sentencia) > 0)
+                {
+                    resultado = true;
+                }
+                else
+                {
+                    resultado = false;
+                }
+
+
+                return resultado;
+            }
+            catch (Exception)
+            {
+                return resultado;
+                throw;
+            }
+        }
+
+        public static Boolean EliminarEmpleado(int id)
+        {
+            Boolean resultado = false;
+            try
+            {
+
+                String sentencia = "DELETE FROM empleados where idEmpleado = '" + id + "';";
+                DataManager.DBOperacion operacion = new DataManager.DBOperacion();
+                if (operacion.EjecutarSentencia(sentencia) > 0)
+                {
+                    resultado = true;
+                }
+                else
+                {
+                    resultado = false;
+                }
+
+
+                return resultado;
+            }
+            catch (Exception)
+            {
+                return resultado;
+                throw;
+            }
+        }
     }
 }

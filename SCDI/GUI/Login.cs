@@ -18,7 +18,7 @@ namespace SCDI.GUI
         public Login()
         {
             InitializeComponent();
-            
+
         }
 
         private void btnIngresar_Click(object sender, EventArgs e)
@@ -72,6 +72,5 @@ namespace SCDI.GUI
                 o.Desconectar();
             }
         }
-
     }
 }
