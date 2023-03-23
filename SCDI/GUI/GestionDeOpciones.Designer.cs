@@ -39,7 +39,7 @@ namespace SCDI.GUI
             this.label2 = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtBusquedaEmpleado = new System.Windows.Forms.TextBox();
+            this.txtBusqueda = new System.Windows.Forms.TextBox();
             this.dgvOpciones = new System.Windows.Forms.DataGridView();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
@@ -56,7 +56,7 @@ namespace SCDI.GUI
             this.cmbClasificacion.Items.AddRange(new object[] {
             "Masculino",
             "Femenino"});
-            this.cmbClasificacion.Location = new System.Drawing.Point(104, 139);
+            this.cmbClasificacion.Location = new System.Drawing.Point(104, 125);
             this.cmbClasificacion.Name = "cmbClasificacion";
             this.cmbClasificacion.Size = new System.Drawing.Size(166, 28);
             this.cmbClasificacion.TabIndex = 18;
@@ -65,7 +65,7 @@ namespace SCDI.GUI
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(11, 142);
+            this.label7.Location = new System.Drawing.Point(11, 128);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(87, 20);
             this.label7.TabIndex = 17;
@@ -75,7 +75,7 @@ namespace SCDI.GUI
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(12, 110);
+            this.label5.Location = new System.Drawing.Point(12, 96);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(56, 20);
             this.label5.TabIndex = 20;
@@ -84,7 +84,7 @@ namespace SCDI.GUI
             // txtOpcion
             // 
             this.txtOpcion.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOpcion.Location = new System.Drawing.Point(104, 107);
+            this.txtOpcion.Location = new System.Drawing.Point(104, 93);
             this.txtOpcion.Name = "txtOpcion";
             this.txtOpcion.Size = new System.Drawing.Size(166, 26);
             this.txtOpcion.TabIndex = 19;
@@ -93,7 +93,7 @@ namespace SCDI.GUI
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 79);
+            this.label3.Location = new System.Drawing.Point(12, 65);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(86, 20);
             this.label3.TabIndex = 22;
@@ -103,7 +103,7 @@ namespace SCDI.GUI
             // 
             this.txtIdEmpleado.Enabled = false;
             this.txtIdEmpleado.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIdEmpleado.Location = new System.Drawing.Point(104, 76);
+            this.txtIdEmpleado.Location = new System.Drawing.Point(104, 62);
             this.txtIdEmpleado.Name = "txtIdEmpleado";
             this.txtIdEmpleado.Size = new System.Drawing.Size(40, 26);
             this.txtIdEmpleado.TabIndex = 21;
@@ -140,14 +140,14 @@ namespace SCDI.GUI
             this.label1.TabIndex = 25;
             this.label1.Text = "Buscar opcion";
             // 
-            // txtBusquedaEmpleado
+            // txtBusqueda
             // 
-            this.txtBusquedaEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtBusquedaEmpleado.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBusquedaEmpleado.Location = new System.Drawing.Point(367, 11);
-            this.txtBusquedaEmpleado.Name = "txtBusquedaEmpleado";
-            this.txtBusquedaEmpleado.Size = new System.Drawing.Size(227, 26);
-            this.txtBusquedaEmpleado.TabIndex = 24;
+            this.txtBusqueda.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtBusqueda.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBusqueda.Location = new System.Drawing.Point(367, 11);
+            this.txtBusqueda.Name = "txtBusqueda";
+            this.txtBusqueda.Size = new System.Drawing.Size(227, 26);
+            this.txtBusqueda.TabIndex = 24;
             // 
             // dgvOpciones
             // 
@@ -213,7 +213,7 @@ namespace SCDI.GUI
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtBusquedaEmpleado);
+            this.Controls.Add(this.txtBusqueda);
             this.Controls.Add(this.dgvOpciones);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtIdEmpleado);
@@ -241,7 +241,7 @@ namespace SCDI.GUI
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox btnBuscar;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtBusquedaEmpleado;
+        private System.Windows.Forms.TextBox txtBusqueda;
         private System.Windows.Forms.DataGridView dgvOpciones;
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Button btnModificar;
