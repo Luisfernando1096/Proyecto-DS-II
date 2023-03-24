@@ -33,8 +33,7 @@ namespace SCDI.GUI
             this.labelBuscarRol = new System.Windows.Forms.Label();
             this.txtBusquedaRol = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.dgvRol = new System.Windows.Forms.DataGridView();
-            this.cmbRol = new System.Windows.Forms.ComboBox();
+            this.dgvRoles = new System.Windows.Forms.DataGridView();
             this.labelRol = new System.Windows.Forms.Label();
             this.labelidRol = new System.Windows.Forms.Label();
             this.txtIdRol = new System.Windows.Forms.TextBox();
@@ -42,16 +41,17 @@ namespace SCDI.GUI
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnInsertar = new System.Windows.Forms.Button();
-            this.Buscar_roles = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRol)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Buscar_roles)).BeginInit();
+            this.btnBuscar = new System.Windows.Forms.PictureBox();
+            this.txtRol = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRoles)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnBuscar)).BeginInit();
             this.SuspendLayout();
             // 
             // labelBuscarRol
             // 
             this.labelBuscarRol.AutoSize = true;
             this.labelBuscarRol.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelBuscarRol.Location = new System.Drawing.Point(330, 52);
+            this.labelBuscarRol.Location = new System.Drawing.Point(287, 34);
             this.labelBuscarRol.Name = "labelBuscarRol";
             this.labelBuscarRol.Size = new System.Drawing.Size(74, 20);
             this.labelBuscarRol.TabIndex = 35;
@@ -61,7 +61,7 @@ namespace SCDI.GUI
             // 
             this.txtBusquedaRol.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBusquedaRol.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBusquedaRol.Location = new System.Drawing.Point(420, 46);
+            this.txtBusquedaRol.Location = new System.Drawing.Point(377, 28);
             this.txtBusquedaRol.Name = "txtBusquedaRol";
             this.txtBusquedaRol.Size = new System.Drawing.Size(227, 26);
             this.txtBusquedaRol.TabIndex = 34;
@@ -70,47 +70,35 @@ namespace SCDI.GUI
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(329, 95);
+            this.label2.Location = new System.Drawing.Point(286, 77);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(125, 25);
             this.label2.TabIndex = 33;
             this.label2.Text = "Lista de Roles";
             // 
-            // dgvRol
+            // dgvRoles
             // 
-            this.dgvRol.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvRol.Location = new System.Drawing.Point(334, 123);
-            this.dgvRol.Name = "dgvRol";
-            this.dgvRol.Size = new System.Drawing.Size(445, 218);
-            this.dgvRol.TabIndex = 32;
-            // 
-            // cmbRol
-            // 
-            this.cmbRol.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbRol.FormattingEnabled = true;
-            this.cmbRol.Items.AddRange(new object[] {
-            "Masculino",
-            "Femenino"});
-            this.cmbRol.Location = new System.Drawing.Point(66, 95);
-            this.cmbRol.Name = "cmbRol";
-            this.cmbRol.Size = new System.Drawing.Size(166, 28);
-            this.cmbRol.TabIndex = 31;
+            this.dgvRoles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRoles.Location = new System.Drawing.Point(291, 105);
+            this.dgvRoles.Name = "dgvRoles";
+            this.dgvRoles.Size = new System.Drawing.Size(344, 133);
+            this.dgvRoles.TabIndex = 32;
             // 
             // labelRol
             // 
             this.labelRol.AutoSize = true;
             this.labelRol.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelRol.Location = new System.Drawing.Point(12, 103);
+            this.labelRol.Location = new System.Drawing.Point(12, 86);
             this.labelRol.Name = "labelRol";
-            this.labelRol.Size = new System.Drawing.Size(29, 20);
+            this.labelRol.Size = new System.Drawing.Size(33, 20);
             this.labelRol.TabIndex = 30;
-            this.labelRol.Text = "Rol";
+            this.labelRol.Text = "Rol:";
             // 
             // labelidRol
             // 
             this.labelidRol.AutoSize = true;
             this.labelidRol.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelidRol.Location = new System.Drawing.Point(12, 46);
+            this.labelidRol.Location = new System.Drawing.Point(12, 34);
             this.labelidRol.Name = "labelidRol";
             this.labelidRol.Size = new System.Drawing.Size(44, 20);
             this.labelidRol.TabIndex = 29;
@@ -120,7 +108,7 @@ namespace SCDI.GUI
             // 
             this.txtIdRol.Enabled = false;
             this.txtIdRol.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIdRol.Location = new System.Drawing.Point(66, 40);
+            this.txtIdRol.Location = new System.Drawing.Point(66, 28);
             this.txtIdRol.Name = "txtIdRol";
             this.txtIdRol.Size = new System.Drawing.Size(40, 26);
             this.txtIdRol.TabIndex = 28;
@@ -131,7 +119,7 @@ namespace SCDI.GUI
             this.btnLimpiar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLimpiar.BackgroundImage")));
             this.btnLimpiar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLimpiar.Location = new System.Drawing.Point(198, 255);
+            this.btnLimpiar.Location = new System.Drawing.Point(219, 193);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(48, 46);
             this.btnLimpiar.TabIndex = 40;
@@ -142,7 +130,7 @@ namespace SCDI.GUI
             this.btnModificar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnModificar.BackgroundImage")));
             this.btnModificar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnModificar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnModificar.Location = new System.Drawing.Point(70, 255);
+            this.btnModificar.Location = new System.Drawing.Point(70, 193);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(48, 46);
             this.btnModificar.TabIndex = 39;
@@ -153,7 +141,7 @@ namespace SCDI.GUI
             this.btnEliminar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEliminar.BackgroundImage")));
             this.btnEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEliminar.Location = new System.Drawing.Point(133, 255);
+            this.btnEliminar.Location = new System.Drawing.Point(124, 193);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(48, 46);
             this.btnEliminar.TabIndex = 38;
@@ -164,45 +152,53 @@ namespace SCDI.GUI
             this.btnInsertar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnInsertar.BackgroundImage")));
             this.btnInsertar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnInsertar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnInsertar.Location = new System.Drawing.Point(16, 255);
+            this.btnInsertar.Location = new System.Drawing.Point(16, 193);
             this.btnInsertar.Name = "btnInsertar";
             this.btnInsertar.Size = new System.Drawing.Size(48, 46);
             this.btnInsertar.TabIndex = 37;
             this.btnInsertar.UseVisualStyleBackColor = true;
             // 
-            // Buscar_roles
+            // btnBuscar
             // 
-            this.Buscar_roles.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Buscar_roles.Image = ((System.Drawing.Image)(resources.GetObject("Buscar_roles.Image")));
-            this.Buscar_roles.Location = new System.Drawing.Point(653, 46);
-            this.Buscar_roles.Name = "Buscar_roles";
-            this.Buscar_roles.Size = new System.Drawing.Size(25, 25);
-            this.Buscar_roles.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Buscar_roles.TabIndex = 36;
-            this.Buscar_roles.TabStop = false;
+            this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
+            this.btnBuscar.Location = new System.Drawing.Point(610, 28);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(25, 25);
+            this.btnBuscar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnBuscar.TabIndex = 36;
+            this.btnBuscar.TabStop = false;
+            // 
+            // txtRol
+            // 
+            this.txtRol.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRol.Location = new System.Drawing.Point(66, 83);
+            this.txtRol.Name = "txtRol";
+            this.txtRol.Size = new System.Drawing.Size(166, 26);
+            this.txtRol.TabIndex = 41;
             // 
             // Roles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(788, 348);
+            this.ClientSize = new System.Drawing.Size(651, 256);
+            this.Controls.Add(this.txtRol);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnInsertar);
-            this.Controls.Add(this.Buscar_roles);
+            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.labelBuscarRol);
             this.Controls.Add(this.txtBusquedaRol);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.dgvRol);
-            this.Controls.Add(this.cmbRol);
+            this.Controls.Add(this.dgvRoles);
             this.Controls.Add(this.labelRol);
             this.Controls.Add(this.labelidRol);
             this.Controls.Add(this.txtIdRol);
             this.Name = "Roles";
             this.Text = "Roles";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRol)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Buscar_roles)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRoles)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnBuscar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -214,14 +210,14 @@ namespace SCDI.GUI
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnInsertar;
-        private System.Windows.Forms.PictureBox Buscar_roles;
+        private System.Windows.Forms.PictureBox btnBuscar;
         private System.Windows.Forms.Label labelBuscarRol;
         private System.Windows.Forms.TextBox txtBusquedaRol;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dgvRol;
-        private System.Windows.Forms.ComboBox cmbRol;
+        private System.Windows.Forms.DataGridView dgvRoles;
         private System.Windows.Forms.Label labelRol;
         private System.Windows.Forms.Label labelidRol;
         private System.Windows.Forms.TextBox txtIdRol;
+        private System.Windows.Forms.TextBox txtRol;
     }
 }
