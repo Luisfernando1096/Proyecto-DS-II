@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SCDI.GUI
 {
-    public partial class Clasificaciones : Form
+    public partial class GestionDeClasificaciones : Form
     {
-        public Clasificaciones()
+        public GestionDeClasificaciones()
         {
             InitializeComponent();
         }

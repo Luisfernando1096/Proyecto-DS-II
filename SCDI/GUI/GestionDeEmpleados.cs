@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SCDI.GUI
 {
-    public partial class Empleados : Form
+    public partial class GestionDeEmpleados : Form
     {
-        public Empleados()
+        public GestionDeEmpleados()
         {
             InitializeComponent();
             dtpNacimiento.Format = DateTimePickerFormat.Custom;

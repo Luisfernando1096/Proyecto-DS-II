@@ -32,13 +32,13 @@ namespace SCDI.GUI
         //Codigo para mostrar dentro del mdi otro formulario
         private void MostrarFormularioEmpleados()
         {
-            if (FormularioAbierto(new Empleados().GetType()))
+            if (FormularioAbierto(new GestionDeEmpleados().GetType()))
             {
 
             }
             else
             {
-                Empleados emp = new Empleados();
+                GestionDeEmpleados emp = new GestionDeEmpleados();
                 emp.MdiParent = this;
                 emp.Show();
             }
@@ -46,7 +46,7 @@ namespace SCDI.GUI
         }
         private bool FormularioAbierto(Type formType)
         {
-            foreach (Empleados form in this.MdiChildren)
+            foreach (GestionDeEmpleados form in this.MdiChildren)
             {
                 if (form.GetType() == formType)
                 {

@@ -1,7 +1,7 @@
 ﻿
 namespace SCDI.GUI
 {
-    partial class Clasificaciones
+    partial class GestionDeClasificaciones
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace SCDI.GUI
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Clasificaciones));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestionDeClasificaciones));
             this.labelIdClasificacion = new System.Windows.Forms.Label();
             this.txtIdClasificacion = new System.Windows.Forms.TextBox();
             this.labelClasificacion = new System.Windows.Forms.Label();

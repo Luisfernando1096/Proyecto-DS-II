@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SCDI.GUI
 {
-    public partial class Roles : Form
+    public partial class GestionDeRoles : Form
     {
-        public Roles()
+        public GestionDeRoles()
         {
             InitializeComponent();
         }

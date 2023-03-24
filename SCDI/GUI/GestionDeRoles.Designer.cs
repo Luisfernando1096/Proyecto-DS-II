@@ -1,7 +1,7 @@
 ﻿
 namespace SCDI.GUI
 {
-    partial class Roles
+    partial class GestionDeRoles
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace SCDI.GUI
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Roles));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestionDeRoles));
             this.labelBuscarRol = new System.Windows.Forms.Label();
             this.txtBusquedaRol = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();

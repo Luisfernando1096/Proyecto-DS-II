@@ -1,7 +1,7 @@
 ﻿
 namespace SCDI.GUI
 {
-    partial class Empleados
+    partial class GestionDeEmpleados
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace SCDI.GUI
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Empleados));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestionDeEmpleados));
             this.dgvEmpleados = new System.Windows.Forms.DataGridView();
             this.txtBusquedaEmpleado = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
