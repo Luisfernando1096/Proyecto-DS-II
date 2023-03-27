@@ -15,7 +15,7 @@ namespace DataManager
             {
                 DataTable resultado = new DataTable();
                 String sentencia = @"select 
-                a.idUsuario, a.usuario, a.clave, c.idEmpleado, c.nombres, a.idRol, b.rol 
+                a.idUsuario, a.usuario, a.clave, c.idEmpleado, c.nombres_empleado, a.idRol, b.rol 
                 from usuarios a, roles b, empleados c where a.idRol = b.idRol 
                 and c.idEmpleado = a.idEmpleado and usuario = '" + pUsuario + @"' 
                 and clave = sha1(md5('" + pClave + @"')); ";
@@ -36,8 +36,8 @@ namespace DataManager
             try
             {
                 DataTable resultado = new DataTable();
-                String sentencia = @"SELECT idEmpleado, nombres, apellidos, nacimiento, genero 
-                FROM empleados;";
+                String sentencia = @"SELECT idEmpleado, nombres_empleado, apellidos_empleado, nacimiento, genero, d.nombre, dui FROM empleados a, direcciones b, municipios c,
+                                    departamentos d where a.idDireccion = b.idDireccion and b.idMunicipio = c.idMunicipio and d.idDepartamento = c.idDepartamento;";
                 DataManager.DBOperacion operacion = new DataManager.DBOperacion();
 
                 resultado = operacion.Consultar(sentencia);

@@ -78,6 +78,8 @@ namespace SCDI.GUI
                 {
                     cmbGenero.SelectedIndex = 1;
                 }
+                txtDepartamento.Text = valores[5];
+                txtDui.Text = valores[6];
             }
 
         }
