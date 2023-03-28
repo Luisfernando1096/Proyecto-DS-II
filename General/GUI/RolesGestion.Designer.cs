@@ -55,21 +55,23 @@ namespace General.GUI
             this.statusStrip1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lblRegistros});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 282);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 283);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(447, 24);
+            this.statusStrip1.Size = new System.Drawing.Size(447, 23);
             this.statusStrip1.TabIndex = 0;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // lblRegistros
             // 
             this.lblRegistros.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblRegistros.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRegistros.Name = "lblRegistros";
-            this.lblRegistros.Size = new System.Drawing.Size(199, 19);
+            this.lblRegistros.Size = new System.Drawing.Size(180, 18);
             this.lblRegistros.Text = "0 Registros Encontrados";
             // 
             // toolStrip1
             // 
+            this.toolStrip1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -96,7 +98,7 @@ namespace General.GUI
             this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
             this.btnEliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(78, 28);
+            this.btnEliminar.Size = new System.Drawing.Size(84, 28);
             this.btnEliminar.Text = "Eliminar";
             // 
             // toolStripSeparator1
@@ -109,7 +111,7 @@ namespace General.GUI
             this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
             this.btnEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(65, 28);
+            this.btnEditar.Size = new System.Drawing.Size(71, 28);
             this.btnEditar.Text = "Editar";
             // 
             // toolStripSeparator3
@@ -122,7 +124,7 @@ namespace General.GUI
             this.btnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.Image")));
             this.btnAgregar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(77, 28);
+            this.btnAgregar.Size = new System.Drawing.Size(85, 28);
             this.btnAgregar.Text = "Agregar";
             // 
             // toolStripSeparator4
@@ -159,7 +161,7 @@ namespace General.GUI
             this.dgvDatos.ReadOnly = true;
             this.dgvDatos.RowHeadersVisible = false;
             this.dgvDatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDatos.Size = new System.Drawing.Size(447, 251);
+            this.dgvDatos.Size = new System.Drawing.Size(447, 252);
             this.dgvDatos.TabIndex = 2;
             // 
             // idRol
