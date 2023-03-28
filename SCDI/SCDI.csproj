@@ -53,30 +53,6 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\GestionDeClasificaciones.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\GestionDeClasificaciones.Designer.cs">
-      <DependentUpon>GestionDeClasificaciones.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\GestionDeEmpleados.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\GestionDeEmpleados.Designer.cs">
-      <DependentUpon>GestionDeEmpleados.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\GestionDeOpciones.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\GestionDeOpciones.Designer.cs">
-      <DependentUpon>GestionDeOpciones.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Usuarios.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\Usuarios.Designer.cs">
-      <DependentUpon>Usuarios.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,18 +75,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\GestionDeClasificaciones.resx">
-      <DependentUpon>GestionDeClasificaciones.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\GestionDeEmpleados.resx">
-      <DependentUpon>GestionDeEmpleados.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\GestionDeOpciones.resx">
-      <DependentUpon>GestionDeOpciones.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Usuarios.resx">
-      <DependentUpon>Usuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -151,6 +115,10 @@
     <ProjectReference Include="..\DataManager\DataManager.csproj">
       <Project>{f8c314f7-9aea-4527-9983-6a90fa92f1c6}</Project>
       <Name>DataManager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\General\General.csproj">
+      <Project>{26f01be9-34ff-4e31-8cc0-29014ddc2a27}</Project>
+      <Name>General</Name>
     </ProjectReference>
     <ProjectReference Include="..\SessionManager\SessionManager.csproj">
       <Project>{de3373b4-20c5-4fb5-a2df-4beb2e4dcaa0}</Project>

@@ -145,5 +145,22 @@ namespace DataManager
                 throw;
             }
         }
+        public static DataTable Roles()
+        {
+            try
+            {
+                DataTable resultado = new DataTable();
+                String sentencia = @"select idRol, rol from roles;";
+                DBOperacion operacion = new DBOperacion();
+
+                resultado = operacion.Consultar(sentencia);
+                return resultado;
+            }
+            catch (Exception)
+            {
+                return new DataTable();
+                throw;
+            }
+        }
     }
 }

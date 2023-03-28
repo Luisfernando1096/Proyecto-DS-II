@@ -40,6 +40,7 @@ namespace SCDI.GUI
             this.generalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionDeUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionDeEmpleadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestionDeRolesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bgwConexion = new System.ComponentModel.BackgroundWorker();
             this.statusStrip.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -94,7 +95,8 @@ namespace SCDI.GUI
             // 
             this.generalToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.gestionDeUsuariosToolStripMenuItem,
-            this.gestionDeEmpleadosToolStripMenuItem});
+            this.gestionDeEmpleadosToolStripMenuItem,
+            this.gestionDeRolesToolStripMenuItem});
             this.generalToolStripMenuItem.Name = "generalToolStripMenuItem";
             this.generalToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
             this.generalToolStripMenuItem.Text = "General";
@@ -109,8 +111,15 @@ namespace SCDI.GUI
             // 
             this.gestionDeEmpleadosToolStripMenuItem.Name = "gestionDeEmpleadosToolStripMenuItem";
             this.gestionDeEmpleadosToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
-            this.gestionDeEmpleadosToolStripMenuItem.Text = "Gestion de empleados";
+            this.gestionDeEmpleadosToolStripMenuItem.Text = "Gestion de Empleados";
             this.gestionDeEmpleadosToolStripMenuItem.Click += new System.EventHandler(this.gestionDeEmpleadosToolStripMenuItem_Click);
+            // 
+            // gestionDeRolesToolStripMenuItem
+            // 
+            this.gestionDeRolesToolStripMenuItem.Name = "gestionDeRolesToolStripMenuItem";
+            this.gestionDeRolesToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.gestionDeRolesToolStripMenuItem.Text = "Gestion de Roles";
+            this.gestionDeRolesToolStripMenuItem.Click += new System.EventHandler(this.gestionDeRolesToolStripMenuItem_Click);
             // 
             // bgwConexion
             // 
@@ -149,6 +158,7 @@ namespace SCDI.GUI
         private System.Windows.Forms.ToolStripStatusLabel lblRol;
         private System.Windows.Forms.ToolStripStatusLabel lblConexion;
         private System.ComponentModel.BackgroundWorker bgwConexion;
+        private System.Windows.Forms.ToolStripMenuItem gestionDeRolesToolStripMenuItem;
     }
 }
 
