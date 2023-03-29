@@ -1,0 +1,269 @@
+﻿
+namespace General.GUI
+{
+    partial class ClientesGestion
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClientesGestion));
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.dgvDatos = new System.Windows.Forms.DataGridView();
+            this.lblRegistros = new System.Windows.Forms.ToolStripStatusLabel();
+            this.btnEliminar = new System.Windows.Forms.ToolStripButton();
+            this.btnEditar = new System.Windows.Forms.ToolStripButton();
+            this.btnAgregar = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.idCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombres_cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellidos_cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nacimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.genero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idDireccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dui = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusStrip1.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lblRegistros});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 354);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(803, 23);
+            this.statusStrip1.TabIndex = 0;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripSeparator4,
+            this.btnEliminar,
+            this.toolStripSeparator1,
+            this.btnEditar,
+            this.toolStripSeparator3,
+            this.btnAgregar});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(803, 27);
+            this.toolStrip1.TabIndex = 1;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // dgvDatos
+            // 
+            this.dgvDatos.AllowUserToAddRows = false;
+            this.dgvDatos.AllowUserToDeleteRows = false;
+            this.dgvDatos.AllowUserToResizeRows = false;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Snow;
+            this.dgvDatos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvDatos.BackgroundColor = System.Drawing.SystemColors.Menu;
+            this.dgvDatos.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvDatos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
+            this.dgvDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDatos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idCliente,
+            this.nombres_cliente,
+            this.apellidos_cliente,
+            this.nacimiento,
+            this.genero,
+            this.idDireccion,
+            this.dui,
+            this.nit});
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDatos.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvDatos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvDatos.Location = new System.Drawing.Point(0, 27);
+            this.dgvDatos.MultiSelect = false;
+            this.dgvDatos.Name = "dgvDatos";
+            this.dgvDatos.ReadOnly = true;
+            this.dgvDatos.RowHeadersVisible = false;
+            this.dgvDatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvDatos.Size = new System.Drawing.Size(803, 327);
+            this.dgvDatos.TabIndex = 2;
+            // 
+            // lblRegistros
+            // 
+            this.lblRegistros.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblRegistros.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRegistros.Name = "lblRegistros";
+            this.lblRegistros.Size = new System.Drawing.Size(180, 18);
+            this.lblRegistros.Text = "0 Registros Encontrados";
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
+            this.btnEliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(76, 24);
+            this.btnEliminar.Text = "Eliminar";
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
+            this.btnEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(63, 24);
+            this.btnEditar.Text = "Editar";
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.Image")));
+            this.btnAgregar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(77, 24);
+            this.btnAgregar.Text = "Agregar";
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 27);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 27);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 27);
+            // 
+            // idCliente
+            // 
+            this.idCliente.DataPropertyName = "idCliente";
+            this.idCliente.HeaderText = "ID";
+            this.idCliente.Name = "idCliente";
+            this.idCliente.ReadOnly = true;
+            // 
+            // nombres_cliente
+            // 
+            this.nombres_cliente.DataPropertyName = "nombres_cliente";
+            this.nombres_cliente.HeaderText = "Nombres";
+            this.nombres_cliente.Name = "nombres_cliente";
+            this.nombres_cliente.ReadOnly = true;
+            // 
+            // apellidos_cliente
+            // 
+            this.apellidos_cliente.DataPropertyName = "apellidos_cliente";
+            this.apellidos_cliente.HeaderText = "Apellidos";
+            this.apellidos_cliente.Name = "apellidos_cliente";
+            this.apellidos_cliente.ReadOnly = true;
+            // 
+            // nacimiento
+            // 
+            this.nacimiento.DataPropertyName = "nacimiento";
+            this.nacimiento.HeaderText = "Nacimiento";
+            this.nacimiento.Name = "nacimiento";
+            this.nacimiento.ReadOnly = true;
+            // 
+            // genero
+            // 
+            this.genero.DataPropertyName = "genero";
+            this.genero.HeaderText = "Genero";
+            this.genero.Name = "genero";
+            this.genero.ReadOnly = true;
+            // 
+            // idDireccion
+            // 
+            this.idDireccion.DataPropertyName = "idDireccion";
+            this.idDireccion.HeaderText = "ID_Direccion";
+            this.idDireccion.Name = "idDireccion";
+            this.idDireccion.ReadOnly = true;
+            // 
+            // dui
+            // 
+            this.dui.DataPropertyName = "dui";
+            this.dui.HeaderText = "Dui";
+            this.dui.Name = "dui";
+            this.dui.ReadOnly = true;
+            // 
+            // nit
+            // 
+            this.nit.DataPropertyName = "nit";
+            this.nit.HeaderText = "Nit";
+            this.nit.Name = "nit";
+            this.nit.ReadOnly = true;
+            // 
+            // ClientesGestion
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(803, 377);
+            this.Controls.Add(this.dgvDatos);
+            this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.toolStrip1);
+            this.Name = "ClientesGestion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "ClientesGestion";
+            this.Load += new System.EventHandler(this.ClientesGestion_Load);
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.DataGridView dgvDatos;
+        private System.Windows.Forms.ToolStripStatusLabel lblRegistros;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripButton btnEliminar;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripButton btnEditar;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripButton btnAgregar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idCliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombres_cliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn apellidos_cliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nacimiento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn genero;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDireccion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dui;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nit;
+    }
+}

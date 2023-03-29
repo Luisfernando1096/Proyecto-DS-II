@@ -43,6 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GUI\ClientesGestion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ClientesGestion.Designer.cs">
+      <DependentUpon>ClientesGestion.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\RolesGestion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +66,9 @@
     <Folder Include="CLS\" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="GUI\ClientesGestion.resx">
+      <DependentUpon>ClientesGestion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\RolesGestion.resx">
       <DependentUpon>RolesGestion.cs</DependentUpon>
     </EmbeddedResource>

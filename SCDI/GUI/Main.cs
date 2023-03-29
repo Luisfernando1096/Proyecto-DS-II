@@ -45,5 +45,21 @@ namespace SCDI.GUI
                 throw;
             }
         }
+
+        private void gestionDeClientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                General.GUI.ClientesGestion f = new General.GUI.ClientesGestion();
+                f.MdiParent = this;//No permite que salgan los formularios del form MDI
+                f.Show();
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }

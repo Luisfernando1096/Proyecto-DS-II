@@ -29,19 +29,19 @@ namespace SCDI.GUI
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.lblUsuario = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblRol = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblConexion = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip = new System.Windows.Forms.ToolTip();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.generalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionDeUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionDeEmpleadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionDeRolesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bgwConexion = new System.ComponentModel.BackgroundWorker();
+            this.gestionDeClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -96,7 +96,8 @@ namespace SCDI.GUI
             this.generalToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.gestionDeUsuariosToolStripMenuItem,
             this.gestionDeEmpleadosToolStripMenuItem,
-            this.gestionDeRolesToolStripMenuItem});
+            this.gestionDeRolesToolStripMenuItem,
+            this.gestionDeClientesToolStripMenuItem});
             this.generalToolStripMenuItem.Name = "generalToolStripMenuItem";
             this.generalToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
             this.generalToolStripMenuItem.Text = "General";
@@ -125,6 +126,13 @@ namespace SCDI.GUI
             // 
             this.bgwConexion.WorkerReportsProgress = true;
             this.bgwConexion.WorkerSupportsCancellation = true;
+            // 
+            // gestionDeClientesToolStripMenuItem
+            // 
+            this.gestionDeClientesToolStripMenuItem.Name = "gestionDeClientesToolStripMenuItem";
+            this.gestionDeClientesToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.gestionDeClientesToolStripMenuItem.Text = "Gestion de Clientes";
+            this.gestionDeClientesToolStripMenuItem.Click += new System.EventHandler(this.gestionDeClientesToolStripMenuItem_Click);
             // 
             // Main
             // 
@@ -159,6 +167,7 @@ namespace SCDI.GUI
         private System.Windows.Forms.ToolStripStatusLabel lblConexion;
         private System.ComponentModel.BackgroundWorker bgwConexion;
         private System.Windows.Forms.ToolStripMenuItem gestionDeRolesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gestionDeClientesToolStripMenuItem;
     }
 }
 

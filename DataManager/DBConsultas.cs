@@ -162,5 +162,22 @@ namespace DataManager
                 throw;
             }
         }
+        public static DataTable Clientes()
+        {
+            try
+            {
+                DataTable resultado = new DataTable();
+                String sentencia = @"SELECT idCliente, nombres_cliente, apellidos_cliente, nacimiento, genero, idDireccion, dui, nit FROM clientes;";
+                DBOperacion operacion = new DBOperacion();
+
+                resultado = operacion.Consultar(sentencia);
+                return resultado;
+            }
+            catch (Exception)
+            {
+                return new DataTable();
+                throw;
+            }
+        }
     }
 }
