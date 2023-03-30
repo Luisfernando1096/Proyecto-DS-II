@@ -41,6 +41,9 @@ namespace SCDI.GUI
             this.gestionDeUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionDeEmpleadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionDeRolesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestionDeProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestionDeExistenciasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestionDeClasificacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bgwConexion = new System.ComponentModel.BackgroundWorker();
             this.statusStrip.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -96,7 +99,10 @@ namespace SCDI.GUI
             this.generalToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.gestionDeUsuariosToolStripMenuItem,
             this.gestionDeEmpleadosToolStripMenuItem,
-            this.gestionDeRolesToolStripMenuItem});
+            this.gestionDeRolesToolStripMenuItem,
+            this.gestionDeProductosToolStripMenuItem,
+            this.gestionDeExistenciasToolStripMenuItem,
+            this.gestionDeClasificacionesToolStripMenuItem});
             this.generalToolStripMenuItem.Name = "generalToolStripMenuItem";
             this.generalToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
             this.generalToolStripMenuItem.Text = "General";
@@ -104,22 +110,43 @@ namespace SCDI.GUI
             // gestionDeUsuariosToolStripMenuItem
             // 
             this.gestionDeUsuariosToolStripMenuItem.Name = "gestionDeUsuariosToolStripMenuItem";
-            this.gestionDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.gestionDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
             this.gestionDeUsuariosToolStripMenuItem.Text = "Gestion de usuarios";
             // 
             // gestionDeEmpleadosToolStripMenuItem
             // 
             this.gestionDeEmpleadosToolStripMenuItem.Name = "gestionDeEmpleadosToolStripMenuItem";
-            this.gestionDeEmpleadosToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.gestionDeEmpleadosToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
             this.gestionDeEmpleadosToolStripMenuItem.Text = "Gestion de Empleados";
             this.gestionDeEmpleadosToolStripMenuItem.Click += new System.EventHandler(this.gestionDeEmpleadosToolStripMenuItem_Click);
             // 
             // gestionDeRolesToolStripMenuItem
             // 
             this.gestionDeRolesToolStripMenuItem.Name = "gestionDeRolesToolStripMenuItem";
-            this.gestionDeRolesToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.gestionDeRolesToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
             this.gestionDeRolesToolStripMenuItem.Text = "Gestion de Roles";
             this.gestionDeRolesToolStripMenuItem.Click += new System.EventHandler(this.gestionDeRolesToolStripMenuItem_Click);
+            // 
+            // gestionDeProductosToolStripMenuItem
+            // 
+            this.gestionDeProductosToolStripMenuItem.Name = "gestionDeProductosToolStripMenuItem";
+            this.gestionDeProductosToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
+            this.gestionDeProductosToolStripMenuItem.Text = "Gestion de Productos";
+            this.gestionDeProductosToolStripMenuItem.Click += new System.EventHandler(this.gestionDeProductosToolStripMenuItem_Click);
+            // 
+            // gestionDeExistenciasToolStripMenuItem
+            // 
+            this.gestionDeExistenciasToolStripMenuItem.Name = "gestionDeExistenciasToolStripMenuItem";
+            this.gestionDeExistenciasToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
+            this.gestionDeExistenciasToolStripMenuItem.Text = "Gestion de Existencias";
+            this.gestionDeExistenciasToolStripMenuItem.Click += new System.EventHandler(this.gestionDeExistenciasToolStripMenuItem_Click);
+            // 
+            // gestionDeClasificacionesToolStripMenuItem
+            // 
+            this.gestionDeClasificacionesToolStripMenuItem.Name = "gestionDeClasificacionesToolStripMenuItem";
+            this.gestionDeClasificacionesToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
+            this.gestionDeClasificacionesToolStripMenuItem.Text = "Gestion de Clasificaciones";
+            this.gestionDeClasificacionesToolStripMenuItem.Click += new System.EventHandler(this.gestionDeClasificacionesToolStripMenuItem_Click);
             // 
             // bgwConexion
             // 
@@ -159,6 +186,9 @@ namespace SCDI.GUI
         private System.Windows.Forms.ToolStripStatusLabel lblConexion;
         private System.ComponentModel.BackgroundWorker bgwConexion;
         private System.Windows.Forms.ToolStripMenuItem gestionDeRolesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gestionDeProductosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gestionDeExistenciasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gestionDeClasificacionesToolStripMenuItem;
     }
 }
 
