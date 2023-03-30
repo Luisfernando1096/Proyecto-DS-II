@@ -106,7 +106,7 @@ namespace SCDI.GUI
             this.gestionDeRolesToolStripMenuItem,
             this.gestionDeProductosToolStripMenuItem,
             this.gestionDeExistenciasToolStripMenuItem,
-            this.gestionDeClasificacionesToolStripMenuItem});
+            this.gestionDeClasificacionesToolStripMenuItem,
             this.gestionDeRolesToolStripMenuItem,
             this.gestionDeClientesToolStripMenuItem,
             this.gestionDeDireccionesToolStripMenuItem,
