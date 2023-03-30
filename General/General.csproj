@@ -49,6 +49,12 @@
     <Compile Include="GUI\ClientesGestion.Designer.cs">
       <DependentUpon>ClientesGestion.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\EmpleadosGestion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\EmpleadosGestion.Designer.cs">
+      <DependentUpon>EmpleadosGestion.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\RolesGestion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,6 +74,9 @@
   <ItemGroup>
     <EmbeddedResource Include="GUI\ClientesGestion.resx">
       <DependentUpon>ClientesGestion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\EmpleadosGestion.resx">
+      <DependentUpon>EmpleadosGestion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\RolesGestion.resx">
       <DependentUpon>RolesGestion.cs</DependentUpon>

@@ -27,7 +27,18 @@ namespace SCDI.GUI
 
         private void gestionDeEmpleadosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            try
+            {
+                General.GUI.EmpleadosGestion f = new General.GUI.EmpleadosGestion();
+                f.MdiParent = this;//No permite que salgan los formularios del form MDI
+                f.Show();
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         private void gestionDeRolesToolStripMenuItem_Click(object sender, EventArgs e)
