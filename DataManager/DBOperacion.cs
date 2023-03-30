@@ -56,6 +56,5 @@ namespace DataManager
             }
             return Resultado;
         }
-
     }
 }
