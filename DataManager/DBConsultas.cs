@@ -145,6 +145,62 @@ namespace DataManager
                 throw;
             }
         }
+
+        public static DataTable Productos()
+        {
+            try
+            {
+                DataTable resultado = new DataTable();
+                String sentencia = @"select idProducto,nombre,descripcion,precio_compra,precio_venta,idCategoria from productos;";
+                DBOperacion operacion = new DBOperacion();
+
+                resultado = operacion.Consultar(sentencia);
+                return resultado;
+            }
+            catch (Exception)
+            {
+                return new DataTable();
+                throw;
+            }
+        }
+
+        public static DataTable Existencias()
+        {
+            try
+            {
+                DataTable resultado = new DataTable();
+                String sentencia = @"select idExistencia,existencia,idProducto from existencias;";
+                DBOperacion operacion = new DBOperacion();
+
+                resultado = operacion.Consultar(sentencia);
+                return resultado;
+            }
+            catch (Exception)
+            {
+                return new DataTable();
+                throw;
+            }
+        }
+
+
+        public static DataTable Clasificaciones()
+        {
+            try
+            {
+                DataTable resultado = new DataTable();
+                String sentencia = @"select  idClasificacion,clasificacion from clasificaciones;";
+                DBOperacion operacion = new DBOperacion();
+
+                resultado = operacion.Consultar(sentencia);
+                return resultado;
+            }
+            catch (Exception)
+            {
+                return new DataTable();
+                throw;
+            }
+        }
+
         public static DataTable Clientes()
         {
             try

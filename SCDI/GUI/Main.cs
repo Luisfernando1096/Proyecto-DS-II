@@ -57,6 +57,56 @@ namespace SCDI.GUI
             }
         }
 
+        private void gestionDeProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                General.GUI.ProductosGestion f = new General.GUI.ProductosGestion();
+                f.MdiParent = this;//No permite que salgan los formularios del form MDI
+                f.Show();
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        private void gestionDeExistenciasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                General.GUI.ExistenciasGestion f = new General.GUI.ExistenciasGestion();
+                f.MdiParent = this;//No permite que salgan los formularios del form MDI
+                f.Show();
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        private void gestionDeClasificacionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                General.GUI.ClasificacionesGestion f = new General.GUI.ClasificacionesGestion();
+                f.MdiParent = this;//No permite que salgan los formularios del form MDI
+                f.Show();
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+        }
+
         private void gestionDeClientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
