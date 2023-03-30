@@ -72,5 +72,37 @@ namespace SCDI.GUI
                 throw;
             }
         }
+
+        private void gestionDeDireccionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                General.GUI.DireccionesGestion f = new General.GUI.DireccionesGestion();
+                f.MdiParent = this;//No permite que salgan los formularios del form MDI
+                f.Show();
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        private void gestionDeSalidasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                General.GUI.SalidasGestion f = new General.GUI.SalidasGestion();
+                f.MdiParent = this;//No permite que salgan los formularios del form MDI
+                f.Show();
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }

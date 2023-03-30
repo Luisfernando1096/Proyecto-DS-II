@@ -31,24 +31,7 @@ namespace DataManager
             }
             
         }
-        public static DataTable VerEmpleados()
-        {
-            try
-            {
-                DataTable resultado = new DataTable();
-                String sentencia = @"SELECT idEmpleado, nombres_empleado, apellidos_empleado, nacimiento, genero, d.nombre, dui FROM empleados a, direcciones b, municipios c,
-                                    departamentos d where a.idDireccion = b.idDireccion and b.idMunicipio = c.idMunicipio and d.idDepartamento = c.idDepartamento;";
-                DataManager.DBOperacion operacion = new DataManager.DBOperacion();
-
-                resultado = operacion.Consultar(sentencia);
-                return resultado;
-            }
-            catch (Exception)
-            {
-                return new DataTable();
-                throw;
-            }
-        }
+        
         public static DataTable VerEmpleadosPorNombre(String nombre)
         {
             try
@@ -186,6 +169,41 @@ namespace DataManager
                 DataTable resultado = new DataTable();
                 String sentencia = @"SELECT idEmpleado, nombres_empleado, apellidos_empleado, nacimiento, genero, idDireccion, dui FROM empleados;";
                 DBOperacion operacion = new DBOperacion();
+
+                resultado = operacion.Consultar(sentencia);
+                return resultado;
+            }
+            catch (Exception)
+            {
+                return new DataTable();
+                throw;
+            }
+        }
+        public static DataTable Direcciones()
+        {
+            try
+            {
+                DataTable resultado = new DataTable();
+                String sentencia = @"SELECT idDireccion, idMunicipio, no_casa, no_calle FROM direcciones;";
+                DataManager.DBOperacion operacion = new DataManager.DBOperacion();
+
+                resultado = operacion.Consultar(sentencia);
+                return resultado;
+            }
+            catch (Exception)
+            {
+                return new DataTable();
+                throw;
+            }
+        }
+        public static DataTable Salidas()
+        {
+            try
+            {
+                DataTable resultado = new DataTable();
+                String sentencia = @"SELECT idSalida, fecha_salida, cantidad, b.nombres_cliente, usuario_atendio " +
+                    "FROM salidas a, clientes b where a.idCliente=b.idCliente;";
+                DataManager.DBOperacion operacion = new DataManager.DBOperacion();
 
                 resultado = operacion.Consultar(sentencia);
                 return resultado;
