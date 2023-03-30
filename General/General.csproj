@@ -43,11 +43,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GUI\CategoriasGestion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\CategoriasGestion.Designer.cs">
+      <DependentUpon>CategoriasGestion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\DepartamentosGestion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\DepartamentosGestion.Designer.cs">
+      <DependentUpon>DepartamentosGestion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\EntradasGestion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\EntradasGestion.Designer.cs">
+      <DependentUpon>EntradasGestion.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\RolesGestion.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\RolesGestion.Designer.cs">
       <DependentUpon>RolesGestion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UsuariosGestion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\UsuariosGestion.Designer.cs">
+      <DependentUpon>UsuariosGestion.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -60,8 +84,20 @@
     <Folder Include="CLS\" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="GUI\CategoriasGestion.resx">
+      <DependentUpon>CategoriasGestion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\DepartamentosGestion.resx">
+      <DependentUpon>DepartamentosGestion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\EntradasGestion.resx">
+      <DependentUpon>EntradasGestion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\RolesGestion.resx">
       <DependentUpon>RolesGestion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UsuariosGestion.resx">
+      <DependentUpon>UsuariosGestion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

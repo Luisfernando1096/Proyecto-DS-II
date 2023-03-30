@@ -57,5 +57,19 @@ namespace DataManager
             return Resultado;
         }
 
+        public void Cmb(int n) 
+        {
+            try
+            {
+                MySqlConnection conexion = new MySqlConnection(_CadenaConexion);
+                string consulta = "SELECT COUNT(*) FROM tabla";
+                MySqlCommand command = new MySqlCommand(consulta,conexion );
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }
