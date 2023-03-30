@@ -43,8 +43,9 @@ namespace SCDI.GUI
             this.gestionDeRolesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionDeClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionDeDireccionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bgwConexion = new System.ComponentModel.BackgroundWorker();
             this.gestionDeSalidasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bgwConexion = new System.ComponentModel.BackgroundWorker();
+            this.gestionDeSalidasDeProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -102,7 +103,8 @@ namespace SCDI.GUI
             this.gestionDeRolesToolStripMenuItem,
             this.gestionDeClientesToolStripMenuItem,
             this.gestionDeDireccionesToolStripMenuItem,
-            this.gestionDeSalidasToolStripMenuItem});
+            this.gestionDeSalidasToolStripMenuItem,
+            this.gestionDeSalidasDeProductosToolStripMenuItem});
             this.generalToolStripMenuItem.Name = "generalToolStripMenuItem";
             this.generalToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
             this.generalToolStripMenuItem.Text = "General";
@@ -110,48 +112,55 @@ namespace SCDI.GUI
             // gestionDeUsuariosToolStripMenuItem
             // 
             this.gestionDeUsuariosToolStripMenuItem.Name = "gestionDeUsuariosToolStripMenuItem";
-            this.gestionDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.gestionDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(242, 22);
             this.gestionDeUsuariosToolStripMenuItem.Text = "Gestion de usuarios";
             // 
             // gestionDeEmpleadosToolStripMenuItem
             // 
             this.gestionDeEmpleadosToolStripMenuItem.Name = "gestionDeEmpleadosToolStripMenuItem";
-            this.gestionDeEmpleadosToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.gestionDeEmpleadosToolStripMenuItem.Size = new System.Drawing.Size(242, 22);
             this.gestionDeEmpleadosToolStripMenuItem.Text = "Gestion de Empleados";
             this.gestionDeEmpleadosToolStripMenuItem.Click += new System.EventHandler(this.gestionDeEmpleadosToolStripMenuItem_Click);
             // 
             // gestionDeRolesToolStripMenuItem
             // 
             this.gestionDeRolesToolStripMenuItem.Name = "gestionDeRolesToolStripMenuItem";
-            this.gestionDeRolesToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.gestionDeRolesToolStripMenuItem.Size = new System.Drawing.Size(242, 22);
             this.gestionDeRolesToolStripMenuItem.Text = "Gestion de Roles";
             this.gestionDeRolesToolStripMenuItem.Click += new System.EventHandler(this.gestionDeRolesToolStripMenuItem_Click);
             // 
             // gestionDeClientesToolStripMenuItem
             // 
             this.gestionDeClientesToolStripMenuItem.Name = "gestionDeClientesToolStripMenuItem";
-            this.gestionDeClientesToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.gestionDeClientesToolStripMenuItem.Size = new System.Drawing.Size(242, 22);
             this.gestionDeClientesToolStripMenuItem.Text = "Gestion de Clientes";
             this.gestionDeClientesToolStripMenuItem.Click += new System.EventHandler(this.gestionDeClientesToolStripMenuItem_Click);
             // 
             // gestionDeDireccionesToolStripMenuItem
             // 
             this.gestionDeDireccionesToolStripMenuItem.Name = "gestionDeDireccionesToolStripMenuItem";
-            this.gestionDeDireccionesToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.gestionDeDireccionesToolStripMenuItem.Size = new System.Drawing.Size(242, 22);
             this.gestionDeDireccionesToolStripMenuItem.Text = "Gestion de Direcciones";
             this.gestionDeDireccionesToolStripMenuItem.Click += new System.EventHandler(this.gestionDeDireccionesToolStripMenuItem_Click);
+            // 
+            // gestionDeSalidasToolStripMenuItem
+            // 
+            this.gestionDeSalidasToolStripMenuItem.Name = "gestionDeSalidasToolStripMenuItem";
+            this.gestionDeSalidasToolStripMenuItem.Size = new System.Drawing.Size(242, 22);
+            this.gestionDeSalidasToolStripMenuItem.Text = "Gestion de Salidas";
+            this.gestionDeSalidasToolStripMenuItem.Click += new System.EventHandler(this.gestionDeSalidasToolStripMenuItem_Click);
             // 
             // bgwConexion
             // 
             this.bgwConexion.WorkerReportsProgress = true;
             this.bgwConexion.WorkerSupportsCancellation = true;
             // 
-            // gestionDeSalidasToolStripMenuItem
+            // gestionDeSalidasDeProductosToolStripMenuItem
             // 
-            this.gestionDeSalidasToolStripMenuItem.Name = "gestionDeSalidasToolStripMenuItem";
-            this.gestionDeSalidasToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
-            this.gestionDeSalidasToolStripMenuItem.Text = "Gestion de Salidas";
-            this.gestionDeSalidasToolStripMenuItem.Click += new System.EventHandler(this.gestionDeSalidasToolStripMenuItem_Click);
+            this.gestionDeSalidasDeProductosToolStripMenuItem.Name = "gestionDeSalidasDeProductosToolStripMenuItem";
+            this.gestionDeSalidasDeProductosToolStripMenuItem.Size = new System.Drawing.Size(242, 22);
+            this.gestionDeSalidasDeProductosToolStripMenuItem.Text = "Gestion de Salidas de Productos";
+            this.gestionDeSalidasDeProductosToolStripMenuItem.Click += new System.EventHandler(this.gestionDeSalidasDeProductosToolStripMenuItem_Click);
             // 
             // Main
             // 
@@ -189,6 +198,7 @@ namespace SCDI.GUI
         private System.Windows.Forms.ToolStripMenuItem gestionDeClientesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionDeDireccionesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionDeSalidasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gestionDeSalidasDeProductosToolStripMenuItem;
     }
 }
 

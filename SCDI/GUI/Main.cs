@@ -104,5 +104,21 @@ namespace SCDI.GUI
                 throw;
             }
         }
+
+        private void gestionDeSalidasDeProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                General.GUI.SalidasProductosGestion f = new General.GUI.SalidasProductosGestion();
+                f.MdiParent = this;//No permite que salgan los formularios del form MDI
+                f.Show();
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }
