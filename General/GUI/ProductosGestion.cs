@@ -39,6 +39,8 @@ namespace General.GUI
         private void ProductosGestion_Load(object sender, EventArgs e)
         {
             CargarDatos();
+            //Codigo para mostrar cuantas filas se 
+            lblRegistros.Text = datos.List.Count.ToString() + " Registros Encontrados";
         }
     }
 }

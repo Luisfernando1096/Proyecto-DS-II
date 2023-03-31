@@ -40,6 +40,8 @@ namespace General.GUI
         private void ExistenciasGestion_Load(object sender, EventArgs e)
         {
             CargarDatos();
+            //Codigo para mostrar cuantas filas se 
+            lblRegistros.Text = datos.List.Count.ToString() + " Registros Encontrados";
         }
     }
 }

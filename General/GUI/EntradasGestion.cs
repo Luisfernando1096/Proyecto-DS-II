@@ -28,9 +28,9 @@ namespace General.GUI
 
         private void EntradasGestion_Load(object sender, EventArgs e)
         {
-            int var = DataManager.DBConsultas.NumeroRegistrosEntradas();
             CargarDatos();
-            lblEntradas.Text = var + " Registros encontrados ";
+            //Codigo para mostrar cuantas filas se 
+            lblRegistros.Text = datos.List.Count.ToString() + " Registros Encontrados";
         }
     }
 }

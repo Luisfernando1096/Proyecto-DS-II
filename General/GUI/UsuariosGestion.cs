@@ -14,7 +14,7 @@ namespace General.GUI
     {
         BindingSource datos = new BindingSource();
 
-        private void CargarUsuarios()
+        private void CargarDatos()
         {
             try
             {
@@ -36,10 +36,9 @@ namespace General.GUI
 
         private void UsuariosGestion_Load(object sender, EventArgs e)
         {
-            CargarUsuarios();
-            int var = DataManager.DBConsultas.NumeroRegistrosUsuarios();
-
-            lblRegistrosUsuarios.Text = var + " Registros encontrados ";
+            CargarDatos();
+            //Codigo para mostrar cuantas filas se 
+            lblRegistros.Text = datos.List.Count.ToString() + " Registros Encontrados";
         }
     }
 }

@@ -39,14 +39,9 @@ namespace General.GUI
 
         private void RolesGestion_Load(object sender, EventArgs e)
         {
-            int filas = 0;
             CargarDatos();
-            //Codigo para mostrar cuantas filas se encontraron
-            foreach (DataRowView item in datos)
-            {
-                filas++;
-            }
-            lblRegistros.Text = filas.ToString() + " Registros Encontrados";
+            //Codigo para mostrar cuantas filas se 
+            lblRegistros.Text = datos.List.Count.ToString() + " Registros Encontrados";
 
         }
     }

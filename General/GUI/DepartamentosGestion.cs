@@ -12,9 +12,10 @@ namespace General.GUI
 {
     public partial class DepartamentosGestion : Form
     {
+        BindingSource datos = new BindingSource();
         private void CargarDatos() 
         {
-            BindingSource datos = new BindingSource();
+            
             try
             {
                 datos.DataSource = DataManager.DBConsultas.VerDepartamentos();
@@ -36,8 +37,8 @@ namespace General.GUI
         private void DepartamentosGestion_Load(object sender, EventArgs e)
         {
             CargarDatos();
-            int var = DataManager.DBConsultas.NumeroRegistrosDepartamentos();
-            lblDepartamentos.Text = var + " Registros encontrados ";
+            //Codigo para mostrar cuantas filas se 
+            lblRegistros.Text = datos.List.Count.ToString() + " Registros Encontrados";
         }
     }
 }

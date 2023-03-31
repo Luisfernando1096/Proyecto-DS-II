@@ -41,6 +41,8 @@ namespace General.GUI
         private void ClasificacionesGestion_Load(object sender, EventArgs e)
         {
             CargarDatos();
+            //Codigo para mostrar cuantas filas se 
+            lblRegistros.Text = datos.List.Count.ToString() + " Registros Encontrados";
         }
     }
 }
