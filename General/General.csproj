@@ -67,6 +67,12 @@
     <Compile Include="GUI\ClasificacionesGestion.Designer.cs">
       <DependentUpon>ClasificacionesGestion.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\EntradasProductosGestion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\EntradasProductosGestion.Designer.cs">
+      <DependentUpon>EntradasProductosGestion.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\ExistenciasGestion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,6 +149,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\ClasificacionesGestion.resx">
       <DependentUpon>ClasificacionesGestion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\EntradasProductosGestion.resx">
+      <DependentUpon>EntradasProductosGestion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\ExistenciasGestion.resx">
       <DependentUpon>ExistenciasGestion.cs</DependentUpon>

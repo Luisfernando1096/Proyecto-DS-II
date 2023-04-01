@@ -274,6 +274,37 @@ namespace DataManager
                 throw;
             }
         }
+
+        public static ResultadoConsulta VerEntradasProductos() 
+        {
+            try
+            {
+                DataTable resultado = new DataTable();
+                String sentencia = @"SELECT a.idEntradasProductos,b.cantidad ,c.nombre, b.fecha_entrada FROM entradas_productos a, entradas b, productos c
+                                      where a.idEntrada = b.idEntrada and a.idProducto = c.idProducto;";
+                DBOperacion operacion = new DBOperacion();
+                resultado = operacion.Consultar(sentencia);
+
+                int Count = resultado.Rows.Count;
+
+                ResultadoConsulta resultadoconsulta = new ResultadoConsulta();
+                resultadoconsulta.Tabla = resultado;
+                resultadoconsulta.NumeroFilas = Count;
+
+                return resultadoconsulta;
+            }
+            catch (Exception)
+            {
+                return new ResultadoConsulta();
+                throw;
+            }
+        }
+        public class ResultadoConsulta
+        {
+            public DataTable Tabla { get; set; }
+            public int NumeroFilas { get; set; }
+        }
+
         public static int NumeroRegistrosUsuarios() 
         {
             try
