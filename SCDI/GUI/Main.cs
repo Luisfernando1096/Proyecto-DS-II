@@ -182,5 +182,12 @@ namespace SCDI.GUI
                 throw;
             }
         }
+
+        private void gestionDeEntradasDeProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            General.GUI.EntradasProductosGestion f = new General.GUI.EntradasProductosGestion();
+            f.MdiParent = this;
+            f.Show();
+        }
     }
 }
