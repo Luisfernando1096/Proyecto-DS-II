@@ -189,5 +189,19 @@ namespace SCDI.GUI
             f.MdiParent = this;
             f.Show();
         }
+
+        private void gestionDePermisosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            General.GUI.PermisosGestion f = new General.GUI.PermisosGestion();
+            f.MdiParent = this;
+            f.Show();
+        }
+
+        private void gestionDeOpcionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            General.GUI.OpcionesGestion f = new General.GUI.OpcionesGestion();
+            f.MdiParent = this;
+            f.Show();
+        }
     }
 }

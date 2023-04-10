@@ -473,5 +473,41 @@ namespace DataManager
                 throw;
             }
         }
+        public static DataTable VerPermisos() 
+        {
+            DataManager.DBOperacion operacion = new DataManager.DBOperacion();
+            try
+            {
+                DataTable tabla = new DataTable();
+                String sentencia = @"select a.idPermiso, r.rol, op.opcion from permisos a, roles r, opciones op
+                                     where a.idRol =r.idRol and a.idOpcion = op.idOpcion order by a.idPermiso;";
+                tabla = operacion.Consultar(sentencia);
+
+                return tabla;
+            }
+            catch (Exception)
+            {
+                return new DataTable();
+                throw;
+            }
+        }
+        public static DataTable VerOpciones()
+        {
+            DataManager.DBOperacion operacion = new DataManager.DBOperacion();
+            try
+            {
+                DataTable tabla = new DataTable();
+                String sentencia = @"select op.idOpcion, op.opcion, cla.clasificacion from opciones op, clasificaciones cla 
+                                    where op.idClasificacion = cla.idClasificacion;";
+                tabla = operacion.Consultar(sentencia);
+
+                return tabla;
+            }
+            catch (Exception)
+            {
+                return new DataTable();
+                throw;
+            }
+        }
     }
 }
