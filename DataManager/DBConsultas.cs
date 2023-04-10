@@ -473,5 +473,42 @@ namespace DataManager
                 throw;
             }
         }
+
+        public static (Boolean existe, Boolean insertar) InsertarDatosExcel(String nombre, String descripcion, double precio_compra, double precio_venta, int idCategoria) 
+        {
+            var n = (existe: true, insertar: true);
+
+            try
+            {
+                DBOperacion operacion = new DBOperacion();
+
+                DataTable tabla = new DataTable();
+                String consulta = @"SELECT nombre FROM productos where nombre = '"+ nombre +"';";
+                tabla = operacion.Consultar(consulta);
+
+                if (tabla.Rows.Count > 0)
+                {
+                    n = (existe:true, insertar:false);
+                }
+                else
+                {
+                    String sentencia = @"insert into productos(nombre, descripcion, precio_compra, precio_venta, idCategoria) Values ('" + nombre + "','" + descripcion + "','" + precio_compra + "','" + precio_venta + "','" + idCategoria + "');";
+
+                    if (operacion.EjecutarSentencia(sentencia) > 0)
+                    {
+                         n =  (existe: false, insertar: true);
+                    }
+                    else
+                    {
+                        n = (existe: false, insertar: false);
+                    }
+                }
+                return n;
+            }
+            catch (Exception)
+            {
+                return n;
+            }
+        }
     }
 }
