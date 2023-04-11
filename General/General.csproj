@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CLS\Roles.cs" />
     <Compile Include="GUI\CategoriasGestion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,9 +141,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="CLS\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <EmbeddedResource Include="GUI\CategoriasGestion.resx">
       <DependentUpon>CategoriasGestion.cs</DependentUpon>

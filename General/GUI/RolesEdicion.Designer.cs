@@ -29,10 +29,13 @@ namespace General.GUI
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RolesEdicion));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtIdRol = new System.Windows.Forms.TextBox();
             this.txtRol = new System.Windows.Forms.TextBox();
+            this.lblGuardar = new System.Windows.Forms.Label();
+            this.lblCancelar = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -60,6 +63,7 @@ namespace General.GUI
             // txtIdRol
             // 
             this.txtIdRol.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtIdRol.Enabled = false;
             this.txtIdRol.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIdRol.Location = new System.Drawing.Point(31, 44);
             this.txtIdRol.Name = "txtIdRol";
@@ -75,26 +79,45 @@ namespace General.GUI
             this.txtRol.Size = new System.Drawing.Size(303, 26);
             this.txtRol.TabIndex = 3;
             // 
+            // lblGuardar
+            // 
+            this.lblGuardar.AutoSize = true;
+            this.lblGuardar.Location = new System.Drawing.Point(213, 195);
+            this.lblGuardar.Name = "lblGuardar";
+            this.lblGuardar.Size = new System.Drawing.Size(45, 13);
+            this.lblGuardar.TabIndex = 8;
+            this.lblGuardar.Text = "Guardar";
+            // 
+            // lblCancelar
+            // 
+            this.lblCancelar.AutoSize = true;
+            this.lblCancelar.Location = new System.Drawing.Point(283, 195);
+            this.lblCancelar.Name = "lblCancelar";
+            this.lblCancelar.Size = new System.Drawing.Size(49, 13);
+            this.lblCancelar.TabIndex = 9;
+            this.lblCancelar.Text = "Cancelar";
+            // 
             // button1
             // 
-            this.button1.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(147, 154);
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.Location = new System.Drawing.Point(210, 136);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(83, 29);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Guardar";
+            this.button1.Size = new System.Drawing.Size(52, 56);
+            this.button1.TabIndex = 10;
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
-            this.button2.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(249, 154);
+            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button2.Location = new System.Drawing.Point(282, 136);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(85, 29);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Cancelar";
+            this.button2.Size = new System.Drawing.Size(52, 56);
+            this.button2.TabIndex = 11;
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // RolesEdicion
             // 
@@ -103,6 +126,8 @@ namespace General.GUI
             this.ClientSize = new System.Drawing.Size(370, 213);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
+            this.Controls.Add(this.lblCancelar);
+            this.Controls.Add(this.lblGuardar);
             this.Controls.Add(this.txtRol);
             this.Controls.Add(this.txtIdRol);
             this.Controls.Add(this.label2);
@@ -111,6 +136,7 @@ namespace General.GUI
             this.Name = "RolesEdicion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Edicion de Roles";
+            this.Load += new System.EventHandler(this.RolesEdicion_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -122,6 +148,8 @@ namespace General.GUI
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtIdRol;
         private System.Windows.Forms.TextBox txtRol;
+        private System.Windows.Forms.Label lblGuardar;
+        private System.Windows.Forms.Label lblCancelar;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
     }
