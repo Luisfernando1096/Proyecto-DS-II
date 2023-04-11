@@ -80,6 +80,18 @@
     <Compile Include="GUI\ExistenciasGestion.Designer.cs">
       <DependentUpon>ExistenciasGestion.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\OpcionesGestion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\OpcionesGestion.Designer.cs">
+      <DependentUpon>OpcionesGestion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\PermisosGestion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\PermisosGestion.Designer.cs">
+      <DependentUpon>PermisosGestion.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\ProductosGestion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -160,6 +172,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\ExistenciasGestion.resx">
       <DependentUpon>ExistenciasGestion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\OpcionesGestion.resx">
+      <DependentUpon>OpcionesGestion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\PermisosGestion.resx">
+      <DependentUpon>PermisosGestion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\ProductosGestion.resx">
       <DependentUpon>ProductosGestion.cs</DependentUpon>
