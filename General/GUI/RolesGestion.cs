@@ -44,5 +44,11 @@ namespace General.GUI
             lblRegistros.Text = datos.List.Count.ToString() + " Registros Encontrados";
 
         }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            RolesEdicion f = new RolesEdicion();
+            f.ShowDialog();
+        }
     }
 }
