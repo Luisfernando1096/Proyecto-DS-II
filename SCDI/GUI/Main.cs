@@ -21,8 +21,10 @@ namespace SCDI.GUI
 
         private void Main_Load(object sender, EventArgs e)
         {
+            lblConexionGreen.Visible = true;
             lblUsuario.Text = oUsuario.Usuario.ToUpper();
             lblRol.Text = oUsuario.Rol.ToUpper();
+            timer1.Start();
         }
 
         private void gestionDeEmpleadosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -216,6 +218,55 @@ namespace SCDI.GUI
             General.GUI.CategoriasGestion f = new General.GUI.CategoriasGestion();
             f.MdiParent = this;
             f.Show();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (!bgwConexion.IsBusy)
+            {
+                // Inicia el BackgroundWorker si no está ocupado
+                bgwConexion.RunWorkerAsync();
+            }
+        }
+
+        private void bgwConexion_DoWork(object sender, DoWorkEventArgs e)
+        {
+            try
+            {
+                DataManager.DBConexion cn = new DataManager.DBConexion();
+                if (cn.Conectar())
+                {
+                    e.Result = true;
+                    cn.Desconectar();
+                }
+                else
+                {
+                    e.Result = false;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        private void bgwConexion_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            if ((bool)e.Result)
+            {
+                lblConexionRed.Visible = false;
+                lblConexionGreen.Visible = true;
+            }
+            else
+            {
+                lblConexionGreen.Visible = false;
+                lblConexionRed.Visible = true;
+            }
+        }
+
+        private void Main_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            timer1.Stop();
         }
     }
 }

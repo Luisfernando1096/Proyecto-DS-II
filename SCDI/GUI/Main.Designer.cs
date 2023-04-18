@@ -34,7 +34,8 @@ namespace SCDI.GUI
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.lblUsuario = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblRol = new System.Windows.Forms.ToolStripStatusLabel();
-            this.lblConexion = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblConexionRed = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblConexionGreen = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.generalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,9 +53,10 @@ namespace SCDI.GUI
             this.gestionDeEntradasDeProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionDePermisosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionDeOpcionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bgwConexion = new System.ComponentModel.BackgroundWorker();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionDeCategoriasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bgwConexion = new System.ComponentModel.BackgroundWorker();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.statusStrip.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -66,8 +68,9 @@ namespace SCDI.GUI
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lblUsuario,
             this.lblRol,
-            this.lblConexion});
-            this.statusStrip.Location = new System.Drawing.Point(0, 718);
+            this.lblConexionRed,
+            this.lblConexionGreen});
+            this.statusStrip.Location = new System.Drawing.Point(0, 530);
             this.statusStrip.Name = "statusStrip";
             this.statusStrip.Size = new System.Drawing.Size(884, 31);
             this.statusStrip.TabIndex = 2;
@@ -90,11 +93,19 @@ namespace SCDI.GUI
             this.lblRol.Size = new System.Drawing.Size(52, 26);
             this.lblRol.Text = "Rol";
             // 
-            // lblConexion
+            // lblConexionRed
             // 
-            this.lblConexion.Image = global::SCDI.Properties.Resources.icons8_filled_circle_green_60;
-            this.lblConexion.Name = "lblConexion";
-            this.lblConexion.Size = new System.Drawing.Size(20, 26);
+            this.lblConexionRed.Image = ((System.Drawing.Image)(resources.GetObject("lblConexionRed.Image")));
+            this.lblConexionRed.Name = "lblConexionRed";
+            this.lblConexionRed.Size = new System.Drawing.Size(20, 26);
+            this.lblConexionRed.Visible = false;
+            // 
+            // lblConexionGreen
+            // 
+            this.lblConexionGreen.Image = ((System.Drawing.Image)(resources.GetObject("lblConexionGreen.Image")));
+            this.lblConexionGreen.Name = "lblConexionGreen";
+            this.lblConexionGreen.Size = new System.Drawing.Size(20, 26);
+            this.lblConexionGreen.Visible = false;
             // 
             // menuStrip1
             // 
@@ -230,11 +241,6 @@ namespace SCDI.GUI
             this.gestionDeOpcionesToolStripMenuItem.Text = "Gestion de Opciones";
             this.gestionDeOpcionesToolStripMenuItem.Click += new System.EventHandler(this.gestionDeOpcionesToolStripMenuItem_Click);
             // 
-            // bgwConexion
-            // 
-            this.bgwConexion.WorkerReportsProgress = true;
-            this.bgwConexion.WorkerSupportsCancellation = true;
-            // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
@@ -249,11 +255,23 @@ namespace SCDI.GUI
             this.gestionDeCategoriasToolStripMenuItem.Text = "Gestion de Categorias";
             this.gestionDeCategoriasToolStripMenuItem.Click += new System.EventHandler(this.gestionDeCategoriasToolStripMenuItem_Click);
             // 
+            // bgwConexion
+            // 
+            this.bgwConexion.WorkerReportsProgress = true;
+            this.bgwConexion.WorkerSupportsCancellation = true;
+            this.bgwConexion.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgwConexion_DoWork);
+            this.bgwConexion.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgwConexion_RunWorkerCompleted);
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 5000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(884, 749);
+            this.ClientSize = new System.Drawing.Size(884, 561);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
@@ -261,6 +279,7 @@ namespace SCDI.GUI
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu principal";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Main_FormClosed);
             this.Load += new System.EventHandler(this.Main_Load);
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
@@ -279,7 +298,7 @@ namespace SCDI.GUI
         private System.Windows.Forms.ToolStripMenuItem gestionDeEmpleadosToolStripMenuItem;
         private System.Windows.Forms.ToolStripStatusLabel lblUsuario;
         private System.Windows.Forms.ToolStripStatusLabel lblRol;
-        private System.Windows.Forms.ToolStripStatusLabel lblConexion;
+        private System.Windows.Forms.ToolStripStatusLabel lblConexionRed;
         private System.ComponentModel.BackgroundWorker bgwConexion;
         private System.Windows.Forms.ToolStripMenuItem gestionDeRolesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestioDeDepartamentosToolStripMenuItem;
@@ -297,6 +316,8 @@ namespace SCDI.GUI
         private System.Windows.Forms.ToolStripMenuItem gestionDeOpcionesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem gestionDeCategoriasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripStatusLabel lblConexionGreen;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 
