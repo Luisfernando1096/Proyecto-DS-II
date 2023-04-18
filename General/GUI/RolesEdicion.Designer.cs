@@ -63,10 +63,10 @@ namespace General.GUI
             // txtIdRol
             // 
             this.txtIdRol.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtIdRol.Enabled = false;
             this.txtIdRol.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIdRol.Location = new System.Drawing.Point(31, 44);
             this.txtIdRol.Name = "txtIdRol";
+            this.txtIdRol.ReadOnly = true;
             this.txtIdRol.Size = new System.Drawing.Size(95, 26);
             this.txtIdRol.TabIndex = 2;
             // 
@@ -146,11 +146,11 @@ namespace General.GUI
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtIdRol;
-        private System.Windows.Forms.TextBox txtRol;
         private System.Windows.Forms.Label lblGuardar;
         private System.Windows.Forms.Label lblCancelar;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        public System.Windows.Forms.TextBox txtIdRol;
+        public System.Windows.Forms.TextBox txtRol;
     }
 }

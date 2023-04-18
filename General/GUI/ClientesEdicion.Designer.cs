@@ -55,10 +55,10 @@ namespace General.GUI
             // txtIdCliente
             // 
             this.txtIdCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtIdCliente.Enabled = false;
             this.txtIdCliente.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIdCliente.Location = new System.Drawing.Point(46, 71);
             this.txtIdCliente.Name = "txtIdCliente";
+            this.txtIdCliente.ReadOnly = true;
             this.txtIdCliente.Size = new System.Drawing.Size(95, 26);
             this.txtIdCliente.TabIndex = 4;
             // 

@@ -24,8 +24,9 @@ namespace DataManager
                 {
                     filasAfectadas = Comando.ExecuteNonQuery();
                 }
-                catch (Exception)
+                catch (Exception e)
                 {
+                    String Mensaje = e.Message;
                     filasAfectadas = -1;
                 }
                 base.Desconectar();

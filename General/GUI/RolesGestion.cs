@@ -52,25 +52,30 @@ namespace General.GUI
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            RolesEdicion f = new RolesEdicion();
-            f.idRol = Int32.Parse(dgvDatos.Rows[dgvDatos.CurrentRow.Index].Cells["idRol"].Value.ToString());
-            f.rol = dgvDatos.Rows[dgvDatos.CurrentRow.Index].Cells["rol"].Value.ToString();
-            f.ShowDialog();
+            if (MessageBox.Show("¿Esta seguro que desea editar?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question)== DialogResult.Yes)
+            {
+                RolesEdicion f = new RolesEdicion();
+                f.txtIdRol.Text = dgvDatos.CurrentRow.Cells["idRol"].Value.ToString();
+                f.txtRol.Text = dgvDatos.CurrentRow.Cells["rol"].Value.ToString();
+                f.ShowDialog();
+            }
             CargarDatos();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            CLS.Roles r = new CLS.Roles();
-            r.IdRol = Int32.Parse(dgvDatos.Rows[dgvDatos.CurrentRow.Index].Cells["idRol"].Value.ToString());
-            r.Rol = dgvDatos.Rows[dgvDatos.CurrentRow.Index].Cells["rol"].Value.ToString();
-            if (r.Eliminar())
+            if (MessageBox.Show("¿Esta seguro que desea eliminar?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                MessageBox.Show("Registro eliminado");
-            }
-            else
-            {
-                MessageBox.Show("No se pudo completar");
+                CLS.Roles r = new CLS.Roles();
+                r.IdRol = Int32.Parse(dgvDatos.CurrentRow.Cells["idRol"].Value.ToString());
+                if (r.Eliminar())
+                {
+                    MessageBox.Show("¡Registro eliminado correctamente!", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("¡El registro no fue eliminado correctamente!", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
             CargarDatos();
         }

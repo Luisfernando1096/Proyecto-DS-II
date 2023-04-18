@@ -12,8 +12,6 @@ namespace General.GUI
 {
     public partial class RolesEdicion : Form
     {
-        public int idRol;
-        public String rol = "";
         public RolesEdicion()
         {
             InitializeComponent();
@@ -26,40 +24,42 @@ namespace General.GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //Crear el objeto entidad
             CLS.Roles r = new CLS.Roles();
-            r.Rol = txtRol.Text.ToString();
+            //Sincronizar la entidad con la interfaz
+            r.Rol = txtRol.Text;
+            //Realizar la operacion necesaria
 
-            if (txtIdRol.Text.ToString().Equals("0"))
+            if (txtIdRol.TextLength > 0)
             {
-                if (r.Insertar())
+                r.IdRol = Int32.Parse(txtIdRol.Text);
+                if (r.Actualizar())
                 {
-                    MessageBox.Show("Registro insertado");
+                    MessageBox.Show("¡Registro actualizado correctamente!", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Close();
                 }
                 else
                 {
-                    MessageBox.Show("No se pudo insertar");
+                    MessageBox.Show("¡El registro no se actualizo correctamente!", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             else
             {
-                r.IdRol = Int32.Parse(txtIdRol.Text.ToString());
-                if (r.Actualizar())
+                if (r.Insertar())
                 {
-                    MessageBox.Show("Registro actualizado");
+                    MessageBox.Show("¡Registro insertado correctamente!", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Close();
                 }
                 else
                 {
-                    MessageBox.Show("No se pudo actualizar");
+                    MessageBox.Show("¡El registro no fue insertado correctamente!", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
+
         }
 
         private void RolesEdicion_Load(object sender, EventArgs e)
         {
-            txtIdRol.Text = idRol.ToString();
-            txtRol.Text = rol.ToString();
         }
     }
 }

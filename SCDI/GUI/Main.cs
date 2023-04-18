@@ -203,5 +203,19 @@ namespace SCDI.GUI
             f.MdiParent = this;
             f.Show();
         }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            General.GUI.ProductosGestion f = new General.GUI.ProductosGestion();
+            f.MdiParent = this;
+            f.Show();
+        }
+
+        private void gestionDeCategoriasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            General.GUI.CategoriasGestion f = new General.GUI.CategoriasGestion();
+            f.MdiParent = this;
+            f.Show();
+        }
     }
 }
