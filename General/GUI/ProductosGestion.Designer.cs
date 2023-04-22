@@ -33,12 +33,6 @@ namespace General.GUI
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductosGestion));
             this.dgvDatos = new System.Windows.Forms.DataGridView();
-            this.idProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precio_compra = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precio_venta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblRegistros = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
@@ -48,6 +42,13 @@ namespace General.GUI
             this.btnEditar = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.btnAgregar = new System.Windows.Forms.ToolStripButton();
+            this.idProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precio_compra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precio_venta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -66,6 +67,7 @@ namespace General.GUI
             this.dgvDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDatos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idProducto,
+            this.codigo,
             this.nombre,
             this.descripcion,
             this.precio_compra,
@@ -88,49 +90,6 @@ namespace General.GUI
             this.dgvDatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDatos.Size = new System.Drawing.Size(608, 275);
             this.dgvDatos.TabIndex = 5;
-            // 
-            // idProducto
-            // 
-            this.idProducto.DataPropertyName = "idProducto";
-            this.idProducto.HeaderText = "idProducto";
-            this.idProducto.Name = "idProducto";
-            this.idProducto.ReadOnly = true;
-            // 
-            // nombre
-            // 
-            this.nombre.DataPropertyName = "nombre";
-            this.nombre.HeaderText = "nombre";
-            this.nombre.Name = "nombre";
-            this.nombre.ReadOnly = true;
-            // 
-            // descripcion
-            // 
-            this.descripcion.DataPropertyName = "descripcion";
-            this.descripcion.HeaderText = "descripcion";
-            this.descripcion.Name = "descripcion";
-            this.descripcion.ReadOnly = true;
-            // 
-            // precio_compra
-            // 
-            this.precio_compra.DataPropertyName = "precio_compra";
-            this.precio_compra.HeaderText = "precio_compra";
-            this.precio_compra.Name = "precio_compra";
-            this.precio_compra.ReadOnly = true;
-            // 
-            // precio_venta
-            // 
-            this.precio_venta.DataPropertyName = "precio_venta";
-            this.precio_venta.HeaderText = "precio_venta";
-            this.precio_venta.Name = "precio_venta";
-            this.precio_venta.ReadOnly = true;
-            // 
-            // idCategoria
-            // 
-            this.idCategoria.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.idCategoria.DataPropertyName = "idCategoria";
-            this.idCategoria.HeaderText = "idCategoria";
-            this.idCategoria.Name = "idCategoria";
-            this.idCategoria.ReadOnly = true;
             // 
             // statusStrip1
             // 
@@ -206,6 +165,56 @@ namespace General.GUI
             this.btnAgregar.Size = new System.Drawing.Size(95, 29);
             this.btnAgregar.Text = "Agregar";
             // 
+            // idProducto
+            // 
+            this.idProducto.DataPropertyName = "idProducto";
+            this.idProducto.HeaderText = "idProducto";
+            this.idProducto.Name = "idProducto";
+            this.idProducto.ReadOnly = true;
+            // 
+            // codigo
+            // 
+            this.codigo.DataPropertyName = "codigo";
+            this.codigo.HeaderText = "codigo";
+            this.codigo.Name = "codigo";
+            this.codigo.ReadOnly = true;
+            // 
+            // nombre
+            // 
+            this.nombre.DataPropertyName = "nombre";
+            this.nombre.HeaderText = "nombre";
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            // 
+            // descripcion
+            // 
+            this.descripcion.DataPropertyName = "descripcion";
+            this.descripcion.HeaderText = "descripcion";
+            this.descripcion.Name = "descripcion";
+            this.descripcion.ReadOnly = true;
+            // 
+            // precio_compra
+            // 
+            this.precio_compra.DataPropertyName = "precio_compra";
+            this.precio_compra.HeaderText = "precio_compra";
+            this.precio_compra.Name = "precio_compra";
+            this.precio_compra.ReadOnly = true;
+            // 
+            // precio_venta
+            // 
+            this.precio_venta.DataPropertyName = "precio_venta";
+            this.precio_venta.HeaderText = "precio_venta";
+            this.precio_venta.Name = "precio_venta";
+            this.precio_venta.ReadOnly = true;
+            // 
+            // idCategoria
+            // 
+            this.idCategoria.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.idCategoria.DataPropertyName = "idCategoria";
+            this.idCategoria.HeaderText = "idCategoria";
+            this.idCategoria.Name = "idCategoria";
+            this.idCategoria.ReadOnly = true;
+            // 
             // ProductosGestion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -233,12 +242,6 @@ namespace General.GUI
         private System.Windows.Forms.DataGridView dgvDatos;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel lblRegistros;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idProducto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn precio_compra;
-        private System.Windows.Forms.DataGridViewTextBoxColumn precio_venta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idCategoria;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripButton btnEliminar;
@@ -246,5 +249,12 @@ namespace General.GUI
         private System.Windows.Forms.ToolStripButton btnEditar;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripButton btnAgregar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idProducto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn precio_compra;
+        private System.Windows.Forms.DataGridViewTextBoxColumn precio_venta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idCategoria;
     }
 }

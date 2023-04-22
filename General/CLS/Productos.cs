@@ -10,6 +10,7 @@ namespace General.CLS
     {
 
         int idProducto;
+        String codigo;
         String nombre;
         String descripcion ;
         double precio_compra;
@@ -23,14 +24,14 @@ namespace General.CLS
         public double Precio_compra  { get => precio_compra; set => precio_compra = value; }
         public double Precio_venta { get => precio_venta; set => precio_venta = value; }
         public int Idcategoria { get => idCategoria; set => idCategoria = value; }
-       
+        public string Codigo { get => codigo; set => codigo = value; }
 
         public Boolean Insertar()
         {
             Boolean resultado = false;
             string sentencia;
-            sentencia = @"INSERT INTO productos(nombre, descripcion, precio_compra, precio_venta, idCategoria)" +
-                        " VALUES('" + nombre + "', '" +descripcion+ "', '" + precio_compra + "', '" + precio_venta + "', " + idCategoria +"');";
+            sentencia = @"INSERT INTO productos(nombre, codigo, descripcion, precio_compra, precio_venta, idCategoria)" +
+                        " VALUES('" + nombre + "', '" + codigo + "', '" + descripcion+ "', '" + precio_compra + "', '" + precio_venta + "', " + idCategoria +"');";
 
             try
             {
@@ -55,7 +56,7 @@ namespace General.CLS
         {
             Boolean resultado = false;
             string sentencia;
-            sentencia = @"UPDATE productos SET nombres= '" + nombre + "', descripcion = '" + descripcion +
+            sentencia = @"UPDATE productos SET nombres= '" + nombre + "', codigo= '" + codigo + "', descripcion = '" + descripcion +
                         "', precio_compra = '" + precio_compra + "', precio_venta = '" + precio_venta + "', idCategoria = " + idCategoria + "'" +
                 "WHERE idProducto = " + idProducto + ";";
 
