@@ -43,7 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CLS\Clasificaciones.cs" />
     <Compile Include="CLS\Clientes.cs" />
+    <Compile Include="CLS\Existencias.cs" />
+    <Compile Include="CLS\Productos.cs" />
     <Compile Include="CLS\Roles.cs" />
     <Compile Include="GUI\CategoriasGestion.cs">
       <SubType>Form</SubType>
@@ -63,6 +66,12 @@
     <Compile Include="GUI\DepartamentosGestion.Designer.cs">
       <DependentUpon>DepartamentosGestion.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\ClasificacionesEdicion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ClasificacionesEdicion.Designer.cs">
+      <DependentUpon>ClasificacionesEdicion.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\EntradasGestion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +90,12 @@
     <Compile Include="GUI\EntradasProductosGestion.Designer.cs">
       <DependentUpon>EntradasProductosGestion.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\ExistenciaEdicion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ExistenciaEdicion.Designer.cs">
+      <DependentUpon>ExistenciaEdicion.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\ExistenciasGestion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +113,12 @@
     </Compile>
     <Compile Include="GUI\PermisosGestion.Designer.cs">
       <DependentUpon>PermisosGestion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ProductosEdicion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ProductosEdicion.Designer.cs">
+      <DependentUpon>ProductosEdicion.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\ProductosGestion.cs">
       <SubType>Form</SubType>
@@ -171,6 +192,9 @@
     <EmbeddedResource Include="GUI\DepartamentosGestion.resx">
       <DependentUpon>DepartamentosGestion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ClasificacionesEdicion.resx">
+      <DependentUpon>ClasificacionesEdicion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\EntradasGestion.resx">
       <DependentUpon>EntradasGestion.cs</DependentUpon>
     </EmbeddedResource>
@@ -180,6 +204,9 @@
     <EmbeddedResource Include="GUI\EntradasProductosGestion.resx">
       <DependentUpon>EntradasProductosGestion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ExistenciaEdicion.resx">
+      <DependentUpon>ExistenciaEdicion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\ExistenciasGestion.resx">
       <DependentUpon>ExistenciasGestion.cs</DependentUpon>
     </EmbeddedResource>
@@ -188,6 +215,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\PermisosGestion.resx">
       <DependentUpon>PermisosGestion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ProductosEdicion.resx">
+      <DependentUpon>ProductosEdicion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\ProductosGestion.resx">
       <DependentUpon>ProductosGestion.cs</DependentUpon>
