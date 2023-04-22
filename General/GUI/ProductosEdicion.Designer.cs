@@ -225,6 +225,7 @@ namespace General.GUI
             this.Controls.Add(this.txtIdProducto);
             this.Controls.Add(this.label1);
             this.Name = "ProductosEdicion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Edicion de Productos";
             this.ResumeLayout(false);
             this.PerformLayout();

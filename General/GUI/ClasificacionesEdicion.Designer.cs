@@ -133,6 +133,7 @@ namespace General.GUI
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "ClasificacionesEdicion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Edicion de Clasificaciones";
             this.Load += new System.EventHandler(this.ClasificacionesEdicion_Load);
             this.ResumeLayout(false);
