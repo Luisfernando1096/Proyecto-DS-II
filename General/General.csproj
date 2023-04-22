@@ -48,6 +48,8 @@
     <Compile Include="CLS\Existencias.cs" />
     <Compile Include="CLS\Productos.cs" />
     <Compile Include="CLS\Roles.cs" />
+    <Compile Include="CLS\Salidas.cs" />
+    <Compile Include="CLS\SalidasProductos.cs" />
     <Compile Include="GUI\CategoriasGestion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,6 +67,18 @@
     </Compile>
     <Compile Include="GUI\DepartamentosGestion.Designer.cs">
       <DependentUpon>DepartamentosGestion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\DireccionesEdicion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\DireccionesEdicion.Designer.cs">
+      <DependentUpon>DireccionesEdicion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\EmpleadosEdicion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\EmpleadosEdicion.Designer.cs">
+      <DependentUpon>EmpleadosEdicion.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\ClasificacionesEdicion.cs">
       <SubType>Form</SubType>
@@ -150,6 +164,18 @@
     <Compile Include="GUI\RolesEdicion.Designer.cs">
       <DependentUpon>RolesEdicion.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\SalidasEdicion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\SalidasEdicion.Designer.cs">
+      <DependentUpon>SalidasEdicion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\SalidasProductosEdicion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\SalidasProductosEdicion.Designer.cs">
+      <DependentUpon>SalidasProductosEdicion.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\SalidasProductosGestion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -195,6 +221,12 @@
     <EmbeddedResource Include="GUI\ClasificacionesEdicion.resx">
       <DependentUpon>ClasificacionesEdicion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\DireccionesEdicion.resx">
+      <DependentUpon>DireccionesEdicion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\EmpleadosEdicion.resx">
+      <DependentUpon>EmpleadosEdicion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\EntradasGestion.resx">
       <DependentUpon>EntradasGestion.cs</DependentUpon>
     </EmbeddedResource>
@@ -233,6 +265,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\RolesEdicion.resx">
       <DependentUpon>RolesEdicion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\SalidasEdicion.resx">
+      <DependentUpon>SalidasEdicion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\SalidasProductosEdicion.resx">
+      <DependentUpon>SalidasProductosEdicion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\SalidasProductosGestion.resx">
       <DependentUpon>SalidasProductosGestion.cs</DependentUpon>
