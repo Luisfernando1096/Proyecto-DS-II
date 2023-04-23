@@ -33,6 +33,7 @@ namespace SCDI.GUI
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.lblUsuario = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblRol = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblConexionRed = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblConexionGreen = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
@@ -56,7 +57,8 @@ namespace SCDI.GUI
             this.gestionDeCategoriasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bgwConexion = new System.ComponentModel.BackgroundWorker();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.lblRol = new System.Windows.Forms.ToolStripStatusLabel();
+            this.gestionDeMunicipiosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestionDeProveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -84,6 +86,14 @@ namespace SCDI.GUI
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(84, 26);
             this.lblUsuario.Text = "Usuario";
+            // 
+            // lblRol
+            // 
+            this.lblRol.Font = new System.Drawing.Font("Arial Narrow", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRol.Image = ((System.Drawing.Image)(resources.GetObject("lblRol.Image")));
+            this.lblRol.Name = "lblRol";
+            this.lblRol.Size = new System.Drawing.Size(52, 26);
+            this.lblRol.Text = "Rol";
             // 
             // lblConexionRed
             // 
@@ -132,7 +142,9 @@ namespace SCDI.GUI
             this.gestionDePermisosToolStripMenuItem,
             this.gestionDeOpcionesToolStripMenuItem,
             this.toolStripMenuItem2,
-            this.gestionDeCategoriasToolStripMenuItem});
+            this.gestionDeCategoriasToolStripMenuItem,
+            this.gestionDeMunicipiosToolStripMenuItem,
+            this.gestionDeProveedoresToolStripMenuItem});
             this.generalToolStripMenuItem.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.generalToolStripMenuItem.Name = "generalToolStripMenuItem";
             this.generalToolStripMenuItem.Size = new System.Drawing.Size(69, 24);
@@ -262,13 +274,19 @@ namespace SCDI.GUI
             this.timer1.Interval = 5000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // lblRol
+            // gestionDeMunicipiosToolStripMenuItem
             // 
-            this.lblRol.Font = new System.Drawing.Font("Arial Narrow", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRol.Image = ((System.Drawing.Image)(resources.GetObject("lblRol.Image")));
-            this.lblRol.Name = "lblRol";
-            this.lblRol.Size = new System.Drawing.Size(52, 26);
-            this.lblRol.Text = "Rol";
+            this.gestionDeMunicipiosToolStripMenuItem.Name = "gestionDeMunicipiosToolStripMenuItem";
+            this.gestionDeMunicipiosToolStripMenuItem.Size = new System.Drawing.Size(291, 24);
+            this.gestionDeMunicipiosToolStripMenuItem.Text = "Gestion de municipios";
+            this.gestionDeMunicipiosToolStripMenuItem.Click += new System.EventHandler(this.gestionDeMunicipiosToolStripMenuItem_Click);
+            // 
+            // gestionDeProveedoresToolStripMenuItem
+            // 
+            this.gestionDeProveedoresToolStripMenuItem.Name = "gestionDeProveedoresToolStripMenuItem";
+            this.gestionDeProveedoresToolStripMenuItem.Size = new System.Drawing.Size(291, 24);
+            this.gestionDeProveedoresToolStripMenuItem.Text = "Gestion de proveedores";
+            this.gestionDeProveedoresToolStripMenuItem.Click += new System.EventHandler(this.gestionDeProveedoresToolStripMenuItem_Click);
             // 
             // Main
             // 
@@ -321,6 +339,8 @@ namespace SCDI.GUI
         private System.Windows.Forms.ToolStripStatusLabel lblConexionGreen;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.ToolStripStatusLabel lblRol;
+        private System.Windows.Forms.ToolStripMenuItem gestionDeMunicipiosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gestionDeProveedoresToolStripMenuItem;
     }
 }
 

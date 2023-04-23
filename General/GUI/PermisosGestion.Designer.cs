@@ -108,6 +108,7 @@ namespace General.GUI
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(103, 29);
             this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // toolStripSeparator4
             // 
@@ -204,7 +205,7 @@ namespace General.GUI
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.dgvDatosPermisos);
             this.Controls.Add(this.toolStrip1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "PermisosGestion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestion de Permisos";

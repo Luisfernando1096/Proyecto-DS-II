@@ -268,5 +268,19 @@ namespace SCDI.GUI
         {
             timer1.Stop();
         }
+
+        private void gestionDeMunicipiosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            General.GUI.MunicipiosGestion f = new General.GUI.MunicipiosGestion();
+            f.MdiParent = this;
+            f.Show();
+        }
+
+        private void gestionDeProveedoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            General.GUI.ProveedoresGestion f = new General.GUI.ProveedoresGestion();
+            f.MdiParent = this;
+            f.Show();
+        }
     }
 }

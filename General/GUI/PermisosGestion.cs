@@ -33,5 +33,10 @@ namespace General.GUI
         {
             lblRegistros.Text = CargarDatos().ToString() + " Registros encontrados"; 
         }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

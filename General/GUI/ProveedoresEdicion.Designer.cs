@@ -31,10 +31,6 @@ namespace General.GUI
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProveedoresEdicion));
             this.textIdDepartamento = new System.Windows.Forms.TextBox();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnGuardar = new System.Windows.Forms.Button();
-            this.lblCancelar = new System.Windows.Forms.Label();
-            this.lblGuardar = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtPais = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -42,6 +38,10 @@ namespace General.GUI
             this.label2 = new System.Windows.Forms.Label();
             this.txtIdProveedor = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.lblCancelar = new System.Windows.Forms.Label();
+            this.lblGuardar = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // textIdDepartamento
@@ -49,54 +49,16 @@ namespace General.GUI
             this.textIdDepartamento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textIdDepartamento.Enabled = false;
             this.textIdDepartamento.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textIdDepartamento.Location = new System.Drawing.Point(33, 252);
+            this.textIdDepartamento.Location = new System.Drawing.Point(33, 240);
             this.textIdDepartamento.Name = "textIdDepartamento";
-            this.textIdDepartamento.Size = new System.Drawing.Size(160, 26);
+            this.textIdDepartamento.Size = new System.Drawing.Size(107, 26);
             this.textIdDepartamento.TabIndex = 58;
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCancelar.BackgroundImage")));
-            this.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCancelar.Location = new System.Drawing.Point(277, 332);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(52, 56);
-            this.btnCancelar.TabIndex = 57;
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnGuardar.BackgroundImage")));
-            this.btnGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnGuardar.Location = new System.Drawing.Point(51, 332);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(52, 56);
-            this.btnGuardar.TabIndex = 56;
-            this.btnGuardar.UseVisualStyleBackColor = true;
-            // 
-            // lblCancelar
-            // 
-            this.lblCancelar.AutoSize = true;
-            this.lblCancelar.Location = new System.Drawing.Point(280, 400);
-            this.lblCancelar.Name = "lblCancelar";
-            this.lblCancelar.Size = new System.Drawing.Size(49, 13);
-            this.lblCancelar.TabIndex = 55;
-            this.lblCancelar.Text = "Cancelar";
-            // 
-            // lblGuardar
-            // 
-            this.lblGuardar.AutoSize = true;
-            this.lblGuardar.Location = new System.Drawing.Point(48, 400);
-            this.lblGuardar.Name = "lblGuardar";
-            this.lblGuardar.Size = new System.Drawing.Size(45, 13);
-            this.lblGuardar.TabIndex = 54;
-            this.lblGuardar.Text = "Guardar";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(29, 222);
+            this.label5.Location = new System.Drawing.Point(29, 214);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(111, 20);
             this.label5.TabIndex = 49;
@@ -161,16 +123,54 @@ namespace General.GUI
             this.label1.Text = "Id Proveedor: ";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
+            // button2
+            // 
+            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button2.Location = new System.Drawing.Point(239, 262);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(52, 56);
+            this.button2.TabIndex = 62;
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.Location = new System.Drawing.Point(167, 262);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(52, 56);
+            this.button1.TabIndex = 61;
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // lblCancelar
+            // 
+            this.lblCancelar.AutoSize = true;
+            this.lblCancelar.Location = new System.Drawing.Point(240, 321);
+            this.lblCancelar.Name = "lblCancelar";
+            this.lblCancelar.Size = new System.Drawing.Size(49, 13);
+            this.lblCancelar.TabIndex = 60;
+            this.lblCancelar.Text = "Cancelar";
+            // 
+            // lblGuardar
+            // 
+            this.lblGuardar.AutoSize = true;
+            this.lblGuardar.Location = new System.Drawing.Point(170, 321);
+            this.lblGuardar.Name = "lblGuardar";
+            this.lblGuardar.Size = new System.Drawing.Size(45, 13);
+            this.lblGuardar.TabIndex = 59;
+            this.lblGuardar.Text = "Guardar";
+            // 
             // ProveedoresEdicion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(409, 450);
-            this.Controls.Add(this.textIdDepartamento);
-            this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.btnGuardar);
+            this.ClientSize = new System.Drawing.Size(312, 342);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.lblCancelar);
             this.Controls.Add(this.lblGuardar);
+            this.Controls.Add(this.textIdDepartamento);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtPais);
             this.Controls.Add(this.label3);
@@ -178,6 +178,7 @@ namespace General.GUI
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtIdProveedor);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "ProveedoresEdicion";
             this.Text = "Edicion de proveedores";
             this.ResumeLayout(false);
@@ -188,10 +189,6 @@ namespace General.GUI
         #endregion
 
         private System.Windows.Forms.TextBox textIdDepartamento;
-        private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.Label lblCancelar;
-        private System.Windows.Forms.Label lblGuardar;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtPais;
         private System.Windows.Forms.Label label3;
@@ -199,5 +196,9 @@ namespace General.GUI
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtIdProveedor;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lblCancelar;
+        private System.Windows.Forms.Label lblGuardar;
     }
 }
