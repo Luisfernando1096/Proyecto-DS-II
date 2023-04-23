@@ -40,5 +40,42 @@ namespace General.GUI
             //Codigo para mostrar cuantas filas se 
             lblRegistros.Text = datos.List.Count.ToString() + " Registros Encontrados";
         }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            DepartamentosEdicion departamento = new DepartamentosEdicion();
+            departamento.ShowDialog();
+            CargarDatos();
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Esta seguro que desea editar?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                DepartamentosEdicion departamento = new DepartamentosEdicion();
+                departamento.txtIdDepartamento.Text = dgvDepartamentos.CurrentRow.Cells["idDepartamento"].Value.ToString();
+                departamento.txtDepartamento.Text = dgvDepartamentos.CurrentRow.Cells["nombre"].Value.ToString();
+                departamento.ShowDialog();
+            }
+            CargarDatos();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Esta seguro que desea eliminar?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                General.CLS.Departamentos departamento= new General.CLS.Departamentos();
+                departamento.IdDepartamento = Int32.Parse(dgvDepartamentos.CurrentRow.Cells["idDepartamento"].Value.ToString());
+                if (departamento.Eliminar())
+                {
+                    MessageBox.Show("¡Registro eliminado correctamente!", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("¡El registro no fue eliminado correctamente!", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            CargarDatos();
+        }
     }
 }

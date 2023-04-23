@@ -43,11 +43,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CLS\Categorias.cs" />
     <Compile Include="CLS\Clasificaciones.cs" />
     <Compile Include="CLS\Clientes.cs" />
     <Compile Include="CLS\Existencias.cs" />
     <Compile Include="CLS\Productos.cs" />
+    <Compile Include="CLS\Departamentos.cs" />
     <Compile Include="CLS\Roles.cs" />
+    <Compile Include="GUI\CategoriasEdicion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\CategoriasEdicion.Designer.cs">
+      <DependentUpon>CategoriasEdicion.cs</DependentUpon>
+    </Compile>
     <Compile Include="CLS\Salidas.cs" />
     <Compile Include="CLS\SalidasProductos.cs" />
     <Compile Include="GUI\CategoriasGestion.cs">
@@ -61,6 +69,12 @@
     </Compile>
     <Compile Include="GUI\ClientesEdicion.Designer.cs">
       <DependentUpon>ClientesEdicion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\DepartamentosEdicion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\DepartamentosEdicion.Designer.cs">
+      <DependentUpon>DepartamentosEdicion.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\DepartamentosGestion.cs">
       <SubType>Form</SubType>
@@ -209,11 +223,17 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <EmbeddedResource Include="GUI\CategoriasEdicion.resx">
+      <DependentUpon>CategoriasEdicion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\CategoriasGestion.resx">
       <DependentUpon>CategoriasGestion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\ClientesEdicion.resx">
       <DependentUpon>ClientesEdicion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\DepartamentosEdicion.resx">
+      <DependentUpon>DepartamentosEdicion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\DepartamentosGestion.resx">
       <DependentUpon>DepartamentosGestion.cs</DependentUpon>
