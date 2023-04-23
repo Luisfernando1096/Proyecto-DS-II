@@ -86,7 +86,7 @@ namespace General.GUI
             this.dgvUsuarios.RowHeadersWidth = 51;
             this.dgvUsuarios.RowTemplate.Height = 24;
             this.dgvUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvUsuarios.Size = new System.Drawing.Size(595, 352);
+            this.dgvUsuarios.Size = new System.Drawing.Size(794, 329);
             this.dgvUsuarios.TabIndex = 4;
             // 
             // idUsuario
@@ -147,7 +147,7 @@ namespace General.GUI
             this.btnAgregar});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(595, 32);
+            this.toolStrip1.Size = new System.Drawing.Size(794, 32);
             this.toolStrip1.TabIndex = 5;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -197,7 +197,7 @@ namespace General.GUI
             this.lblRegistros});
             this.statusStrip1.Location = new System.Drawing.Point(0, 361);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(595, 23);
+            this.statusStrip1.Size = new System.Drawing.Size(794, 23);
             this.statusStrip1.TabIndex = 6;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -213,14 +213,14 @@ namespace General.GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(595, 384);
-            this.Controls.Add(this.statusStrip1);
+            this.ClientSize = new System.Drawing.Size(794, 384);
             this.Controls.Add(this.dgvUsuarios);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UsuariosGestion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Formulario de gestion de Usuarios";
+            this.Text = "Gestion de Usuarios";
             this.Load += new System.EventHandler(this.UsuariosGestion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
             this.toolStrip1.ResumeLayout(false);

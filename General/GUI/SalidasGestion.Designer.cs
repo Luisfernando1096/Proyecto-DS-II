@@ -216,7 +216,7 @@ namespace General.GUI
             this.Controls.Add(this.statusStrip1);
             this.Name = "SalidasGestion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "SalidasGestion";
+            this.Text = "Gestion de Salidas";
             this.Load += new System.EventHandler(this.SalidasGestion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).EndInit();
             this.toolStrip1.ResumeLayout(false);

@@ -217,7 +217,7 @@ namespace General.GUI
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "EntradasProductosGestion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Gestion de EntradasProductos";
+            this.Text = "Gestion para Entrada de Productos";
             this.Load += new System.EventHandler(this.EntradasProductosGestion_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();

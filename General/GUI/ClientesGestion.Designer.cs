@@ -235,7 +235,7 @@ namespace General.GUI
             this.Controls.Add(this.toolStrip1);
             this.Name = "ClientesGestion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ClientesGestion";
+            this.Text = "Gestion de Clientes";
             this.Load += new System.EventHandler(this.ClientesGestion_Load);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();

@@ -207,7 +207,7 @@ namespace General.GUI
             this.Controls.Add(this.statusStrip1);
             this.Name = "DireccionesGestion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "DireccionesGestion";
+            this.Text = "Gestion de Direcciones";
             this.Load += new System.EventHandler(this.DireccionesGestion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).EndInit();
             this.toolStrip1.ResumeLayout(false);
