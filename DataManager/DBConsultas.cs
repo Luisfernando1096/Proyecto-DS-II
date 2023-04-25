@@ -509,5 +509,26 @@ namespace DataManager
                 throw;
             }
         }
+        public static DataTable Permisos(string idRol)
+        {
+            try
+            {
+                DataTable resultado = new DataTable();
+                String sentencia = @"Select a.idOpcion, a.opcion, b.clasificacion, 
+                                    IFNULL((SELECT z.idPermiso FROM permisos z where z.idRol=" + idRol + @" and z.idOpcion=a.idOpcion),0) idPermiso, 
+                                    IF(IFNULL((SELECT z.idPermiso FROM permisos z where z.idRol=" + idRol + @" and z.idOpcion=a.idOpcion),0)>0,1,0) asignado
+                                    From opciones a, clasificaciones b 
+                                    where a.idClasificacion=b.idClasificacion;";
+                DBOperacion operacion = new DBOperacion();
+
+                resultado = operacion.Consultar(sentencia);
+                return resultado;
+            }
+            catch (Exception)
+            {
+                return new DataTable();
+                throw;
+            }
+        }
     }
 }

@@ -14,16 +14,40 @@ namespace General.GUI
     {
         BindingSource datos = new BindingSource();
 
-        private int CargarDatos() 
+        private void CargarRoles()
         {
-            int registros;
-            datos.DataSource = DataManager.DBConsultas.VerPermisos();
-            dgvDatosPermisos.DataSource = datos;
-            dgvDatosPermisos.AutoGenerateColumns = false;
-            registros = datos.List.Count;
+            DataTable roles = new DataTable();
+            try
+            {
+                roles = DataManager.DBConsultas.Roles();
+                cmbRoles.DataSource = roles;
+                cmbRoles.DisplayMember = "rol";
+                cmbRoles.ValueMember = "idRol";
+            }
+            catch (Exception)
+            {
 
-            return registros;
+                throw;
+            }
         }
+
+        private void CargarPermisos()
+        {
+            DataTable permisos = new DataTable();
+            String idRol = cmbRoles.SelectedValue.ToString();
+            try
+            {
+                permisos = DataManager.DBConsultas.Permisos(idRol);
+                dgvPermisos.AutoGenerateColumns = false;
+                dgvPermisos.DataSource = permisos;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
         public PermisosGestion()
         {
             InitializeComponent();
@@ -31,12 +55,55 @@ namespace General.GUI
 
         private void PermisosGestion_Load(object sender, EventArgs e)
         {
-            lblRegistros.Text = CargarDatos().ToString() + " Registros encontrados"; 
+            CargarRoles(); 
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void cmbRoles_SelectedValueChanged(object sender, EventArgs e)
+        {
+            CargarPermisos();
+        }
+
+        private void dgvPermisos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (e.ColumnIndex == 0)
+                {
+                    String valorActual;
+                    valorActual = dgvPermisos.CurrentRow.Cells["asignado"].Value.ToString();
+                    if (valorActual == "0")
+                    {
+                        CLS.Permisos oPermiso = new CLS.Permisos();
+                        oPermiso.IdOpcion = dgvPermisos.CurrentRow.Cells["id"].Value.ToString();
+                        oPermiso.IdRol = cmbRoles.SelectedValue.ToString();
+                        if (oPermiso.Insertar())
+                        {
+                            CargarPermisos();
+                        }
+
+                    }
+                    else
+                    {
+                        CLS.Permisos oPermiso = new CLS.Permisos();
+                        oPermiso.IdPermiso = dgvPermisos.CurrentRow.Cells["idPermiso"].Value.ToString();
+                        if (oPermiso.Eliminar())
+                        {
+                            CargarPermisos();
+                        }
+                    }
+                    dgvPermisos.Rows[e.RowIndex].Selected = true;
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 }

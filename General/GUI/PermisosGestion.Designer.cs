@@ -29,212 +29,138 @@ namespace General.GUI
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PermisosGestion));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnEliminar = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnEditar = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnAgregar = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.dgvDatosPermisos = new System.Windows.Forms.DataGridView();
-            this.idPermiso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.opcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.lblRegistros = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDatosPermisos)).BeginInit();
-            this.statusStrip1.SuspendLayout();
+            this.cmbRoles = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dgvPermisos = new System.Windows.Forms.DataGridView();
+            this.Asignado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Opcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdClasificacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Clasificacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdPermiso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPermisos)).BeginInit();
             this.SuspendLayout();
             // 
-            // toolStrip1
+            // cmbRoles
             // 
-            this.toolStrip1.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripSeparator2,
-            this.btnEliminar,
-            this.toolStripSeparator1,
-            this.btnEditar,
-            this.toolStripSeparator3,
-            this.btnAgregar,
-            this.toolStripSeparator4});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(510, 32);
-            this.toolStrip1.TabIndex = 2;
-            this.toolStrip1.Text = "toolStrip1";
+            this.cmbRoles.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbRoles.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbRoles.FormattingEnabled = true;
+            this.cmbRoles.Location = new System.Drawing.Point(13, 52);
+            this.cmbRoles.Name = "cmbRoles";
+            this.cmbRoles.Size = new System.Drawing.Size(224, 28);
+            this.cmbRoles.TabIndex = 5;
+            this.cmbRoles.SelectedValueChanged += new System.EventHandler(this.cmbRoles_SelectedValueChanged);
             // 
-            // toolStripSeparator2
+            // label1
             // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 32);
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(9, 29);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(116, 20);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Seleccione el Rol";
             // 
-            // btnEliminar
+            // dgvPermisos
             // 
-            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
-            this.btnEliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(103, 29);
-            this.btnEliminar.Text = "Eliminar";
+            this.dgvPermisos.AllowUserToAddRows = false;
+            this.dgvPermisos.AllowUserToDeleteRows = false;
+            this.dgvPermisos.BackgroundColor = System.Drawing.Color.LightGray;
+            this.dgvPermisos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPermisos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Asignado,
+            this.ID,
+            this.Opcion,
+            this.IdClasificacion,
+            this.Clasificacion,
+            this.IdPermiso});
+            this.dgvPermisos.Location = new System.Drawing.Point(13, 97);
+            this.dgvPermisos.MultiSelect = false;
+            this.dgvPermisos.Name = "dgvPermisos";
+            this.dgvPermisos.ReadOnly = true;
+            this.dgvPermisos.RowHeadersVisible = false;
+            this.dgvPermisos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvPermisos.Size = new System.Drawing.Size(562, 273);
+            this.dgvPermisos.TabIndex = 7;
+            this.dgvPermisos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPermisos_CellContentClick);
             // 
-            // toolStripSeparator1
+            // Asignado
             // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 32);
+            this.Asignado.DataPropertyName = "asignado";
+            this.Asignado.HeaderText = "Asignado";
+            this.Asignado.Name = "Asignado";
+            this.Asignado.ReadOnly = true;
+            this.Asignado.Width = 60;
             // 
-            // btnEditar
+            // ID
             // 
-            this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
-            this.btnEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(86, 29);
-            this.btnEditar.Text = "Editar";
+            this.ID.DataPropertyName = "idOpcion";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Width = 50;
             // 
-            // toolStripSeparator3
+            // Opcion
             // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 32);
+            this.Opcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Opcion.DataPropertyName = "opcion";
+            this.Opcion.HeaderText = "Opcion";
+            this.Opcion.Name = "Opcion";
+            this.Opcion.ReadOnly = true;
             // 
-            // btnAgregar
+            // IdClasificacion
             // 
-            this.btnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.Image")));
-            this.btnAgregar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(103, 29);
-            this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            this.IdClasificacion.DataPropertyName = "idClasificacion";
+            this.IdClasificacion.HeaderText = "IdClasificacion";
+            this.IdClasificacion.Name = "IdClasificacion";
+            this.IdClasificacion.ReadOnly = true;
+            this.IdClasificacion.Visible = false;
             // 
-            // toolStripSeparator4
+            // Clasificacion
             // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 32);
+            this.Clasificacion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Clasificacion.DataPropertyName = "clasificacion";
+            this.Clasificacion.HeaderText = "Clasificacion";
+            this.Clasificacion.Name = "Clasificacion";
+            this.Clasificacion.ReadOnly = true;
             // 
-            // dgvDatosPermisos
+            // IdPermiso
             // 
-            this.dgvDatosPermisos.AllowUserToAddRows = false;
-            this.dgvDatosPermisos.AllowUserToDeleteRows = false;
-            this.dgvDatosPermisos.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Snow;
-            this.dgvDatosPermisos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvDatosPermisos.BackgroundColor = System.Drawing.SystemColors.Menu;
-            this.dgvDatosPermisos.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvDatosPermisos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
-            this.dgvDatosPermisos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDatosPermisos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idPermiso,
-            this.rol,
-            this.opcion});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDatosPermisos.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvDatosPermisos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvDatosPermisos.Location = new System.Drawing.Point(0, 32);
-            this.dgvDatosPermisos.MultiSelect = false;
-            this.dgvDatosPermisos.Name = "dgvDatosPermisos";
-            this.dgvDatosPermisos.ReadOnly = true;
-            this.dgvDatosPermisos.RowHeadersVisible = false;
-            this.dgvDatosPermisos.RowHeadersWidth = 51;
-            this.dgvDatosPermisos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDatosPermisos.Size = new System.Drawing.Size(510, 334);
-            this.dgvDatosPermisos.TabIndex = 3;
-            // 
-            // idPermiso
-            // 
-            this.idPermiso.DataPropertyName = "idPermiso";
-            this.idPermiso.HeaderText = "ID";
-            this.idPermiso.MinimumWidth = 6;
-            this.idPermiso.Name = "idPermiso";
-            this.idPermiso.ReadOnly = true;
-            // 
-            // rol
-            // 
-            this.rol.DataPropertyName = "rol";
-            this.rol.FillWeight = 186.2069F;
-            this.rol.HeaderText = "Rol";
-            this.rol.MinimumWidth = 6;
-            this.rol.Name = "rol";
-            this.rol.ReadOnly = true;
-            this.rol.Width = 200;
-            // 
-            // opcion
-            // 
-            this.opcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.opcion.DataPropertyName = "opcion";
-            this.opcion.FillWeight = 13.79311F;
-            this.opcion.HeaderText = "Opciones";
-            this.opcion.MinimumWidth = 6;
-            this.opcion.Name = "opcion";
-            this.opcion.ReadOnly = true;
-            // 
-            // statusStrip1
-            // 
-            this.statusStrip1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.lblRegistros});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 343);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(510, 23);
-            this.statusStrip1.TabIndex = 4;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // lblRegistros
-            // 
-            this.lblRegistros.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblRegistros.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRegistros.Name = "lblRegistros";
-            this.lblRegistros.Size = new System.Drawing.Size(180, 18);
-            this.lblRegistros.Text = "0 Registros Encontrados";
+            this.IdPermiso.DataPropertyName = "idPermiso";
+            this.IdPermiso.HeaderText = "IdPermiso";
+            this.IdPermiso.Name = "IdPermiso";
+            this.IdPermiso.ReadOnly = true;
+            this.IdPermiso.Visible = false;
             // 
             // PermisosGestion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(510, 366);
-            this.Controls.Add(this.statusStrip1);
-            this.Controls.Add(this.dgvDatosPermisos);
-            this.Controls.Add(this.toolStrip1);
+            this.ClientSize = new System.Drawing.Size(587, 382);
+            this.Controls.Add(this.dgvPermisos);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.cmbRoles);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "PermisosGestion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestion de Permisos";
             this.Load += new System.EventHandler(this.PermisosGestion_Load);
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDatosPermisos)).EndInit();
-            this.statusStrip1.ResumeLayout(false);
-            this.statusStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPermisos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.ToolStripButton btnEliminar;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripButton btnEditar;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
-        private System.Windows.Forms.ToolStripButton btnAgregar;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
-        private System.Windows.Forms.DataGridView dgvDatosPermisos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idPermiso;
-        private System.Windows.Forms.DataGridViewTextBoxColumn rol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn opcion;
-        private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripStatusLabel lblRegistros;
+        private System.Windows.Forms.ComboBox cmbRoles;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView dgvPermisos;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Asignado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Opcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdClasificacion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Clasificacion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdPermiso;
     }
 }
