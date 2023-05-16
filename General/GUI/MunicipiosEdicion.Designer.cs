@@ -30,42 +30,42 @@ namespace General.GUI
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MunicipiosEdicion));
-            this.txtRol = new System.Windows.Forms.TextBox();
-            this.txtIdRol = new System.Windows.Forms.TextBox();
+            this.txtMunicipio = new System.Windows.Forms.TextBox();
+            this.txtIdMunicipio = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.lblCancelar = new System.Windows.Forms.Label();
             this.lblGuardar = new System.Windows.Forms.Label();
+            this.cmbDepartamento = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
-            // txtRol
+            // txtMunicipio
             // 
-            this.txtRol.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtRol.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRol.Location = new System.Drawing.Point(57, 117);
-            this.txtRol.Name = "txtRol";
-            this.txtRol.Size = new System.Drawing.Size(303, 26);
-            this.txtRol.TabIndex = 15;
+            this.txtMunicipio.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtMunicipio.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMunicipio.Location = new System.Drawing.Point(12, 98);
+            this.txtMunicipio.Name = "txtMunicipio";
+            this.txtMunicipio.Size = new System.Drawing.Size(303, 26);
+            this.txtMunicipio.TabIndex = 15;
             // 
-            // txtIdRol
+            // txtIdMunicipio
             // 
-            this.txtIdRol.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtIdRol.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIdRol.Location = new System.Drawing.Point(57, 57);
-            this.txtIdRol.Name = "txtIdRol";
-            this.txtIdRol.ReadOnly = true;
-            this.txtIdRol.Size = new System.Drawing.Size(95, 26);
-            this.txtIdRol.TabIndex = 14;
+            this.txtIdMunicipio.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtIdMunicipio.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIdMunicipio.Location = new System.Drawing.Point(12, 38);
+            this.txtIdMunicipio.Name = "txtIdMunicipio";
+            this.txtIdMunicipio.ReadOnly = true;
+            this.txtIdMunicipio.Size = new System.Drawing.Size(95, 26);
+            this.txtIdMunicipio.TabIndex = 14;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(53, 94);
+            this.label2.Location = new System.Drawing.Point(8, 75);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(70, 20);
             this.label2.TabIndex = 13;
@@ -75,7 +75,7 @@ namespace General.GUI
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(53, 34);
+            this.label1.Location = new System.Drawing.Point(8, 15);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(85, 20);
             this.label1.TabIndex = 12;
@@ -85,46 +85,38 @@ namespace General.GUI
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(53, 162);
+            this.label3.Location = new System.Drawing.Point(8, 143);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(111, 20);
+            this.label3.Size = new System.Drawing.Size(96, 20);
             this.label3.TabIndex = 20;
-            this.label3.Text = "Id Departamento:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(57, 185);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(95, 26);
-            this.textBox1.TabIndex = 21;
+            this.label3.Text = "Departamento:";
             // 
             // button2
             // 
             this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.Location = new System.Drawing.Point(308, 218);
+            this.button2.Location = new System.Drawing.Point(270, 206);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(52, 56);
             this.button2.TabIndex = 25;
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
             this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Location = new System.Drawing.Point(236, 218);
+            this.button1.Location = new System.Drawing.Point(198, 206);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(52, 56);
             this.button1.TabIndex = 24;
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // lblCancelar
             // 
             this.lblCancelar.AutoSize = true;
-            this.lblCancelar.Location = new System.Drawing.Point(309, 277);
+            this.lblCancelar.Location = new System.Drawing.Point(271, 265);
             this.lblCancelar.Name = "lblCancelar";
             this.lblCancelar.Size = new System.Drawing.Size(49, 13);
             this.lblCancelar.TabIndex = 23;
@@ -133,45 +125,57 @@ namespace General.GUI
             // lblGuardar
             // 
             this.lblGuardar.AutoSize = true;
-            this.lblGuardar.Location = new System.Drawing.Point(239, 277);
+            this.lblGuardar.Location = new System.Drawing.Point(201, 265);
             this.lblGuardar.Name = "lblGuardar";
             this.lblGuardar.Size = new System.Drawing.Size(45, 13);
             this.lblGuardar.TabIndex = 22;
             this.lblGuardar.Text = "Guardar";
             // 
+            // cmbDepartamento
+            // 
+            this.cmbDepartamento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbDepartamento.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbDepartamento.FormattingEnabled = true;
+            this.cmbDepartamento.Location = new System.Drawing.Point(12, 167);
+            this.cmbDepartamento.Name = "cmbDepartamento";
+            this.cmbDepartamento.Size = new System.Drawing.Size(303, 28);
+            this.cmbDepartamento.TabIndex = 26;
+            // 
             // MunicipiosEdicion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(389, 305);
+            this.ClientSize = new System.Drawing.Size(341, 299);
+            this.Controls.Add(this.cmbDepartamento);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lblCancelar);
             this.Controls.Add(this.lblGuardar);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtRol);
-            this.Controls.Add(this.txtIdRol);
+            this.Controls.Add(this.txtMunicipio);
+            this.Controls.Add(this.txtIdMunicipio);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "MunicipiosEdicion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MunicipiosEdicion";
+            this.Load += new System.EventHandler(this.MunicipiosEdicion_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        public System.Windows.Forms.TextBox txtRol;
-        public System.Windows.Forms.TextBox txtIdRol;
+        public System.Windows.Forms.TextBox txtMunicipio;
+        public System.Windows.Forms.TextBox txtIdMunicipio;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
-        public System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label lblCancelar;
         private System.Windows.Forms.Label lblGuardar;
+        public System.Windows.Forms.ComboBox cmbDepartamento;
     }
 }

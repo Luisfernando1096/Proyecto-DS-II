@@ -18,7 +18,7 @@ namespace General.GUI
             
             try
             {
-                datos.DataSource = DataManager.DBConsultas.VerDepartamentos();
+                datos.DataSource = DataManager.DBConsultas.Departamentos();
                 dgvDepartamentos.DataSource = datos;
                 dgvDepartamentos.AutoGenerateColumns = false;
             }

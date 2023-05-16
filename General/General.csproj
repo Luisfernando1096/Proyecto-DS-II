@@ -46,7 +46,9 @@
     <Compile Include="CLS\Categorias.cs" />
     <Compile Include="CLS\Clasificaciones.cs" />
     <Compile Include="CLS\Clientes.cs" />
+    <Compile Include="CLS\Direcciones.cs" />
     <Compile Include="CLS\Existencias.cs" />
+    <Compile Include="CLS\Municipios.cs" />
     <Compile Include="CLS\Permisos.cs" />
     <Compile Include="CLS\Productos.cs" />
     <Compile Include="CLS\Departamentos.cs" />

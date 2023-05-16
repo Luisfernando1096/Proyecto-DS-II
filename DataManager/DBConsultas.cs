@@ -50,7 +50,24 @@ namespace DataManager
                 throw;
             }
         }
-        
+
+        public static DataTable Municipios()
+        {
+            try
+            {
+                DataTable resultado = new DataTable();
+                String sentencia = @"select idMunicipio, municipio, b.nombre, a.idDepartamento from municipios a, departamentos b where a.idDepartamento=b.idDepartamento;";
+                DBOperacion operacion = new DBOperacion();
+
+                resultado = operacion.Consultar(sentencia);
+                return resultado;
+            }
+            catch (Exception)
+            {
+                return new DataTable();
+                throw;
+            }
+        }
 
         public static DataTable Roles()
         {
@@ -162,7 +179,7 @@ namespace DataManager
                 throw;
             }
         }
-        public static DataTable VerDepartamentos()
+        public static DataTable Departamentos()
         {
             try
             {
@@ -246,88 +263,7 @@ namespace DataManager
             public int NumeroFilas { get; set; }
         }
 
-        public static int NumeroRegistrosUsuarios() 
-        {
-            try
-            {
-                DataTable resultado = new DataTable();
-                String sentencia = @"SELECT * FROM usuarios;";
-                DBOperacion operacion = new DBOperacion();
-
-                resultado = operacion.Consultar(sentencia);
-
-                int count = resultado.Rows.Count;///Se asiga el resultado de contar las filas de la tabla "resultado"
-
-                return count;///Retorna un entero con el numero de filas encontradas
-            }
-            catch (Exception)
-            {
-                return 0;
-                throw;
-            }
-        }
-
-        public static int NumeroRegistrosDepartamentos()
-        {
-            try
-            {
-                DataTable resultado = new DataTable();
-                String sentencia = @"SELECT * FROM departamentos;";
-                DBOperacion operacion = new DBOperacion();
-
-                resultado = operacion.Consultar(sentencia);
-
-                int count = resultado.Rows.Count;///Se asiga el resultado de contar las filas de la tabla "resultado"
-
-                return count;///Retorna un entero con el numero de filas encontradas
-            }
-            catch (Exception)
-            {
-                return 0;
-                throw;
-            }
-        }
-        public static int NumeroRegistrosCategorias()
-        {
-            try
-            {
-                DataTable resultado = new DataTable();
-                String sentencia = @"SELECT * FROM categorias;";
-                DBOperacion operacion = new DBOperacion();
-
-                resultado = operacion.Consultar(sentencia);
-
-                int count = resultado.Rows.Count;///Se asiga el resultado de contar las filas de la tabla "resultado"
-
-                return count;///Retorna un entero con el numero de filas encontradas
-            }
-            catch (Exception)
-            {
-                return 0;
-                throw;
-            }
-        }
-        public static int NumeroRegistrosEntradas()
-        {
-            try
-            {
-                DataTable resultado = new DataTable();
-                String sentencia = @"SELECT * FROM entradas;";
-                DBOperacion operacion = new DBOperacion();
-
-                resultado = operacion.Consultar(sentencia);
-
-                int count = resultado.Rows.Count;///Se asiga el resultado de contar las filas de la tabla "resultado"
-
-                return count;///Retorna un entero con el numero de filas encontradas
-            }
-            catch (Exception)
-            {
-                return 0;
-                throw;
-            }
-        }
-
+       
         public static DataTable Clientes()
         {
             try

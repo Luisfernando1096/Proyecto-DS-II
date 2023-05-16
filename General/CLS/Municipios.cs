@@ -6,23 +6,20 @@ using System.Threading.Tasks;
 
 namespace General.CLS
 {
-    class Direcciones
+    class Municipios
     {
-        int idDireccion;
         int idMunicipio;
-        String noCasa;
-        String noCalle;
-
-        public int IdDireccion { get => idDireccion; set => idDireccion = value; }
+        String municipio;
+        int idDepartamento;
         public int IdMunicipio { get => idMunicipio; set => idMunicipio = value; }
-        public string NoCasa { get => noCasa; set => noCasa = value; }
-        public string NoCalle { get => noCalle; set => noCalle = value; }
+        public string Municipio { get => municipio; set => municipio = value; }
+        public int IdDepartamento { get => idDepartamento; set => idDepartamento = value; }
 
         public Boolean Insertar()
         {
             Boolean resultado = false;
             string sentencia;
-            sentencia = @"INSERT INTO direcciones(idMunicipio, no_casa, no_calle) VALUES(" + idMunicipio + ", '" + noCasa + "', '" + noCalle + "');";
+            sentencia = @"INSERT INTO municipios(municipio, idDepartamento) VALUES('" + municipio + "', " + idDepartamento + ");";
 
             try
             {
@@ -47,8 +44,8 @@ namespace General.CLS
         {
             Boolean resultado = false;
             string sentencia;
-            sentencia = @"UPDATE direcciones SET idMunicipio = " + idMunicipio + ", no_casa = '" + noCasa + "', no_calle = '" + noCalle + "' " +
-                "WHERE idDireccion = " + idDireccion + ";";
+            sentencia = @"UPDATE municipios SET municipio = '" + municipio + "', idDepartamento = " + idDepartamento + " " +
+                "WHERE idMunicipio = " + idMunicipio + ";";
 
             try
             {
@@ -73,8 +70,8 @@ namespace General.CLS
         {
             Boolean resultado = false;
             string sentencia;
-            sentencia = @"DELETE FROM direcciones " +
-                "WHERE idDireccion = " + idDireccion + ";";
+            sentencia = @"DELETE FROM municipios " +
+                "WHERE idMunicipio = " + idMunicipio + ";";
 
             try
             {
@@ -96,4 +93,3 @@ namespace General.CLS
         }
     }
 }
-
