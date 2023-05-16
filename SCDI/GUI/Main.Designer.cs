@@ -57,10 +57,14 @@ namespace SCDI.GUI
             this.gestionDeCategoriasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionDeMunicipiosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionDeProveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bgwConexion = new System.ComponentModel.BackgroundWorker();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salidasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nuevaSalidaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.buscarSalidaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listarSalidaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bgwConexion = new System.ComponentModel.BackgroundWorker();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.statusStrip.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -119,7 +123,8 @@ namespace SCDI.GUI
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.generalToolStripMenuItem,
-            this.reportesToolStripMenuItem});
+            this.reportesToolStripMenuItem,
+            this.salidasToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
@@ -279,18 +284,6 @@ namespace SCDI.GUI
             this.gestionDeProveedoresToolStripMenuItem.Text = "Gestion de proveedores";
             this.gestionDeProveedoresToolStripMenuItem.Click += new System.EventHandler(this.gestionDeProveedoresToolStripMenuItem_Click);
             // 
-            // bgwConexion
-            // 
-            this.bgwConexion.WorkerReportsProgress = true;
-            this.bgwConexion.WorkerSupportsCancellation = true;
-            this.bgwConexion.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgwConexion_DoWork);
-            this.bgwConexion.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgwConexion_RunWorkerCompleted);
-            // 
-            // timer1
-            // 
-            this.timer1.Interval = 5000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // reportesToolStripMenuItem
             // 
             this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -303,9 +296,51 @@ namespace SCDI.GUI
             // clientesToolStripMenuItem
             // 
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(128, 24);
             this.clientesToolStripMenuItem.Text = "Clientes";
             this.clientesToolStripMenuItem.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
+            // 
+            // salidasToolStripMenuItem
+            // 
+            this.salidasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.nuevaSalidaToolStripMenuItem,
+            this.buscarSalidaToolStripMenuItem,
+            this.listarSalidaToolStripMenuItem});
+            this.salidasToolStripMenuItem.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.salidasToolStripMenuItem.Name = "salidasToolStripMenuItem";
+            this.salidasToolStripMenuItem.Size = new System.Drawing.Size(67, 24);
+            this.salidasToolStripMenuItem.Text = "Salidas";
+            // 
+            // nuevaSalidaToolStripMenuItem
+            // 
+            this.nuevaSalidaToolStripMenuItem.Name = "nuevaSalidaToolStripMenuItem";
+            this.nuevaSalidaToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.nuevaSalidaToolStripMenuItem.Text = "Nueva Salida";
+            this.nuevaSalidaToolStripMenuItem.Click += new System.EventHandler(this.nuevaSalidaToolStripMenuItem_Click);
+            // 
+            // buscarSalidaToolStripMenuItem
+            // 
+            this.buscarSalidaToolStripMenuItem.Name = "buscarSalidaToolStripMenuItem";
+            this.buscarSalidaToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.buscarSalidaToolStripMenuItem.Text = "Buscar Salida";
+            // 
+            // listarSalidaToolStripMenuItem
+            // 
+            this.listarSalidaToolStripMenuItem.Name = "listarSalidaToolStripMenuItem";
+            this.listarSalidaToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.listarSalidaToolStripMenuItem.Text = "Listar Salida";
+            // 
+            // bgwConexion
+            // 
+            this.bgwConexion.WorkerReportsProgress = true;
+            this.bgwConexion.WorkerSupportsCancellation = true;
+            this.bgwConexion.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgwConexion_DoWork);
+            this.bgwConexion.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgwConexion_RunWorkerCompleted);
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 5000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Main
             // 
@@ -319,6 +354,7 @@ namespace SCDI.GUI
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu principal";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Main_FormClosed);
             this.Load += new System.EventHandler(this.Main_Load);
             this.statusStrip.ResumeLayout(false);
@@ -362,6 +398,10 @@ namespace SCDI.GUI
         private System.Windows.Forms.ToolStripMenuItem gestionDeProveedoresToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem salidasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem nuevaSalidaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem buscarSalidaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listarSalidaToolStripMenuItem;
     }
 }
 
