@@ -120,6 +120,10 @@
       <Project>{26f01be9-34ff-4e31-8cc0-29014ddc2a27}</Project>
       <Name>General</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Reportes\Reportes.csproj">
+      <Project>{d762ed06-826e-45e7-8f71-5bb9ecbe085e}</Project>
+      <Name>Reportes</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SessionManager\SessionManager.csproj">
       <Project>{de3373b4-20c5-4fb5-a2df-4beb2e4dcaa0}</Project>
       <Name>SessionManager</Name>

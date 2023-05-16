@@ -282,5 +282,11 @@ namespace SCDI.GUI
             f.MdiParent = this;
             f.Show();
         }
+
+        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Reportes.GUI.VisorCliente f = new Reportes.GUI.VisorCliente();
+            f.ShowDialog();
+        }
     }
 }
