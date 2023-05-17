@@ -53,6 +53,7 @@
     <Compile Include="CLS\Productos.cs" />
     <Compile Include="CLS\Departamentos.cs" />
     <Compile Include="CLS\Roles.cs" />
+    <Compile Include="CLS\Usuarios.cs" />
     <Compile Include="GUI\CategoriasEdicion.cs">
       <SubType>Form</SubType>
     </Compile>
