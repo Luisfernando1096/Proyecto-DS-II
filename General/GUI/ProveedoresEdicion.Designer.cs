@@ -30,9 +30,8 @@ namespace General.GUI
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProveedoresEdicion));
-            this.textIdDepartamento = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtPais = new System.Windows.Forms.TextBox();
+            this.txtTelefono = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtnombre = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -42,52 +41,47 @@ namespace General.GUI
             this.button1 = new System.Windows.Forms.Button();
             this.lblCancelar = new System.Windows.Forms.Label();
             this.lblGuardar = new System.Windows.Forms.Label();
+            this.txtIdDireccion = new System.Windows.Forms.TextBox();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.txtDireccion = new System.Windows.Forms.RichTextBox();
+            this.txtDocumento = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // textIdDepartamento
-            // 
-            this.textIdDepartamento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textIdDepartamento.Enabled = false;
-            this.textIdDepartamento.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textIdDepartamento.Location = new System.Drawing.Point(33, 240);
-            this.textIdDepartamento.Name = "textIdDepartamento";
-            this.textIdDepartamento.Size = new System.Drawing.Size(107, 26);
-            this.textIdDepartamento.TabIndex = 58;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(29, 214);
+            this.label5.Location = new System.Drawing.Point(29, 130);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(111, 20);
+            this.label5.Size = new System.Drawing.Size(69, 20);
             this.label5.TabIndex = 49;
-            this.label5.Text = "id Departamento:";
+            this.label5.Text = "Direccion:";
             // 
-            // txtPais
+            // txtTelefono
             // 
-            this.txtPais.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPais.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPais.Location = new System.Drawing.Point(33, 173);
-            this.txtPais.Name = "txtPais";
-            this.txtPais.Size = new System.Drawing.Size(258, 26);
-            this.txtPais.TabIndex = 48;
+            this.txtTelefono.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtTelefono.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTelefono.Location = new System.Drawing.Point(282, 101);
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(258, 26);
+            this.txtTelefono.TabIndex = 48;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(29, 150);
+            this.label3.Location = new System.Drawing.Point(278, 78);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(39, 20);
+            this.label3.Size = new System.Drawing.Size(65, 20);
             this.label3.TabIndex = 47;
-            this.label3.Text = "Pais:";
+            this.label3.Text = "Telefono:";
             // 
             // txtnombre
             // 
             this.txtnombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtnombre.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtnombre.Location = new System.Drawing.Point(33, 112);
+            this.txtnombre.Location = new System.Drawing.Point(282, 50);
             this.txtnombre.Name = "txtnombre";
             this.txtnombre.Size = new System.Drawing.Size(258, 26);
             this.txtnombre.TabIndex = 46;
@@ -96,7 +90,7 @@ namespace General.GUI
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(29, 89);
+            this.label2.Location = new System.Drawing.Point(278, 27);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 20);
             this.label2.TabIndex = 45;
@@ -127,26 +121,28 @@ namespace General.GUI
             // 
             this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.Location = new System.Drawing.Point(239, 262);
+            this.button2.Location = new System.Drawing.Point(483, 248);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(52, 56);
             this.button2.TabIndex = 62;
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
             this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Location = new System.Drawing.Point(167, 262);
+            this.button1.Location = new System.Drawing.Point(411, 248);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(52, 56);
             this.button1.TabIndex = 61;
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // lblCancelar
             // 
             this.lblCancelar.AutoSize = true;
-            this.lblCancelar.Location = new System.Drawing.Point(240, 321);
+            this.lblCancelar.Location = new System.Drawing.Point(484, 307);
             this.lblCancelar.Name = "lblCancelar";
             this.lblCancelar.Size = new System.Drawing.Size(49, 13);
             this.lblCancelar.TabIndex = 60;
@@ -155,31 +151,87 @@ namespace General.GUI
             // lblGuardar
             // 
             this.lblGuardar.AutoSize = true;
-            this.lblGuardar.Location = new System.Drawing.Point(170, 321);
+            this.lblGuardar.Location = new System.Drawing.Point(414, 307);
             this.lblGuardar.Name = "lblGuardar";
             this.lblGuardar.Size = new System.Drawing.Size(45, 13);
             this.lblGuardar.TabIndex = 59;
             this.lblGuardar.Text = "Guardar";
             // 
+            // txtIdDireccion
+            // 
+            this.txtIdDireccion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtIdDireccion.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIdDireccion.Location = new System.Drawing.Point(104, 128);
+            this.txtIdDireccion.Name = "txtIdDireccion";
+            this.txtIdDireccion.ReadOnly = true;
+            this.txtIdDireccion.Size = new System.Drawing.Size(95, 26);
+            this.txtIdDireccion.TabIndex = 65;
+            this.txtIdDireccion.Visible = false;
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBuscar.BackgroundImage")));
+            this.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBuscar.Location = new System.Drawing.Point(293, 199);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(50, 50);
+            this.btnBuscar.TabIndex = 64;
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // txtDireccion
+            // 
+            this.txtDireccion.Enabled = false;
+            this.txtDireccion.Location = new System.Drawing.Point(33, 153);
+            this.txtDireccion.Name = "txtDireccion";
+            this.txtDireccion.Size = new System.Drawing.Size(245, 96);
+            this.txtDireccion.TabIndex = 63;
+            this.txtDireccion.Text = "";
+            // 
+            // txtDocumento
+            // 
+            this.txtDocumento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDocumento.Enabled = false;
+            this.txtDocumento.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDocumento.Location = new System.Drawing.Point(33, 101);
+            this.txtDocumento.Name = "txtDocumento";
+            this.txtDocumento.Size = new System.Drawing.Size(157, 26);
+            this.txtDocumento.TabIndex = 67;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(29, 78);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(152, 20);
+            this.label4.TabIndex = 66;
+            this.label4.Text = "Numero de Documento:";
+            // 
             // ProveedoresEdicion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(312, 342);
+            this.ClientSize = new System.Drawing.Size(552, 339);
+            this.Controls.Add(this.txtDocumento);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.btnBuscar);
+            this.Controls.Add(this.txtDireccion);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lblCancelar);
             this.Controls.Add(this.lblGuardar);
-            this.Controls.Add(this.textIdDepartamento);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.txtPais);
+            this.Controls.Add(this.txtTelefono);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtnombre);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtIdProveedor);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtIdDireccion);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "ProveedoresEdicion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Edicion de proveedores";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -187,18 +239,21 @@ namespace General.GUI
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox textIdDepartamento;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtPais;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtnombre;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtIdProveedor;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label lblCancelar;
         private System.Windows.Forms.Label lblGuardar;
+        public System.Windows.Forms.TextBox txtIdDireccion;
+        private System.Windows.Forms.Button btnBuscar;
+        public System.Windows.Forms.RichTextBox txtDireccion;
+        public System.Windows.Forms.TextBox txtIdProveedor;
+        public System.Windows.Forms.TextBox txtTelefono;
+        public System.Windows.Forms.TextBox txtnombre;
+        public System.Windows.Forms.TextBox txtDocumento;
+        private System.Windows.Forms.Label label4;
     }
 }

@@ -24,8 +24,8 @@ namespace General.GUI
             {
                 municipios = DataManager.DBConsultas.Municipios();
                 cmbMunicipio.DataSource = municipios;
-                cmbMunicipio.DisplayMember = "nombre";
-                cmbMunicipio.ValueMember = "idDepartamento";
+                cmbMunicipio.DisplayMember = "municipio";
+                cmbMunicipio.ValueMember = "idMunicipio";
             }
             catch (Exception)
             {
@@ -39,6 +39,31 @@ namespace General.GUI
             Close();
         }
 
+        private void DireccionesEdicion_Load(object sender, EventArgs e)
+        {
+            CargarMunicipios();
+            if (idReferenciaMun > 0)
+            {
+                cmbMunicipio.SelectedIndex = idReferenciaMun - 1;
+            }
+        }
+
+        private void txtNoCalle_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtNoCasa_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             //Crear el objeto entidad
@@ -46,7 +71,7 @@ namespace General.GUI
             //Sincronizar la entidad con la interfaz
             r.NoCasa = txtNoCasa.Text;
             r.NoCalle = txtNoCalle.Text;
-            r.IdMunicipio = Int32.Parse(cmbMunicipio.SelectedItem.ToString());
+            r.IdMunicipio = Int32.Parse(cmbMunicipio.SelectedValue.ToString());
             //Realizar la operacion necesaria
 
             if (txtIdDireccion.TextLength > 0)
@@ -73,31 +98,6 @@ namespace General.GUI
                 {
                     MessageBox.Show("¡El registro no fue insertado correctamente!", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-            }
-        }
-
-        private void DireccionesEdicion_Load(object sender, EventArgs e)
-        {
-            CargarMunicipios();
-            if (idReferenciaMun > 0)
-            {
-                cmbMunicipio.SelectedIndex = idReferenciaMun - 1;
-            }
-        }
-
-        private void txtNoCalle_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void txtNoCasa_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
             }
         }
     }

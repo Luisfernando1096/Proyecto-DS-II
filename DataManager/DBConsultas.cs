@@ -32,14 +32,14 @@ namespace DataManager
             }
             
         }
-        
-        public static DataTable VerEmpleadosPorNombre(String nombre)
+
+        public static DataTable Municipios()
         {
             try
             {
                 DataTable resultado = new DataTable();
-                String sentencia = "SELECT idEmpleado, nombres, apellidos, nacimiento, genero FROM empleados where nombres like '%" + nombre + "%';";
-                DataManager.DBOperacion operacion = new DataManager.DBOperacion();
+                String sentencia = @"select idMunicipio, municipio, b.nombre, a.idDepartamento from municipios a, departamentos b where a.idDepartamento=b.idDepartamento;";
+                DBOperacion operacion = new DBOperacion();
 
                 resultado = operacion.Consultar(sentencia);
                 return resultado;
@@ -51,12 +51,12 @@ namespace DataManager
             }
         }
 
-        public static DataTable Municipios()
+        public static DataTable DocumentoProveedor()
         {
             try
             {
                 DataTable resultado = new DataTable();
-                String sentencia = @"select idMunicipio, municipio, b.nombre, a.idDepartamento from municipios a, departamentos b where a.idDepartamento=b.idDepartamento;";
+                String sentencia = @"SELECT documento FROM proveedores order by documento desc limit 1;";
                 DBOperacion operacion = new DBOperacion();
 
                 resultado = operacion.Consultar(sentencia);
@@ -273,6 +273,27 @@ namespace DataManager
                                     concat(b.municipio, ', ', c.nombre, ', Casa N° ', 
                                     ifnull(no_casa, 'No establecida'), ', Calle N° ', ifnull(no_calle, 'No establecida')) direccion 
                                     FROM direcciones a, municipios b, departamentos c, clientes d
+                                    WHERE a.idMunicipio=b.idMunicipio and b.idDepartamento=c.idDepartamento and a.idDireccion=d.idDireccion;";
+                DBOperacion operacion = new DBOperacion();
+
+                resultado = operacion.Consultar(sentencia);
+                return resultado;
+            }
+            catch (Exception)
+            {
+                return new DataTable();
+                throw;
+            }
+        }
+        public static DataTable Proveedores()
+        {
+            try
+            {
+                DataTable resultado = new DataTable();
+                String sentencia = @"SELECT d.idProveedor, a.idDireccion, d.nombre, d.documento, d.telefono, 
+                                    concat(b.municipio, ', ', c.nombre, ', Casa N° ', 
+                                    ifnull(no_casa, 'No establecida'), ', Calle N° ', ifnull(no_calle, 'No establecida')) direccion 
+                                    FROM direcciones a, municipios b, departamentos c, proveedores d
                                     WHERE a.idMunicipio=b.idMunicipio and b.idDepartamento=c.idDepartamento and a.idDireccion=d.idDireccion;";
                 DBOperacion operacion = new DBOperacion();
 

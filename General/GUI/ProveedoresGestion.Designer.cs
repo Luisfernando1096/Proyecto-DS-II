@@ -42,8 +42,9 @@ namespace General.GUI
             this.dgvDatos = new System.Windows.Forms.DataGridView();
             this.idProveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pais = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idDepartamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idDireccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
@@ -58,6 +59,7 @@ namespace General.GUI
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(95, 29);
             this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnEditar
             // 
@@ -66,6 +68,7 @@ namespace General.GUI
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(78, 29);
             this.btnEditar.Text = "Editar";
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // toolStripSeparator1
             // 
@@ -79,6 +82,7 @@ namespace General.GUI
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(95, 29);
             this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // toolStripSeparator4
             // 
@@ -111,8 +115,9 @@ namespace General.GUI
             this.dgvDatos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idProveedor,
             this.nombre,
-            this.pais,
-            this.idDepartamento});
+            this.direccion,
+            this.telefono,
+            this.idDireccion});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -134,30 +139,42 @@ namespace General.GUI
             // idProveedor
             // 
             this.idProveedor.DataPropertyName = "idProveedor";
-            this.idProveedor.HeaderText = "idProveedor";
+            this.idProveedor.HeaderText = "ID";
             this.idProveedor.Name = "idProveedor";
             this.idProveedor.ReadOnly = true;
+            this.idProveedor.Width = 50;
             // 
             // nombre
             // 
+            this.nombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.nombre.DataPropertyName = "nombre";
             this.nombre.HeaderText = "nombre";
             this.nombre.Name = "nombre";
             this.nombre.ReadOnly = true;
             // 
-            // pais
+            // direccion
             // 
-            this.pais.DataPropertyName = "pais";
-            this.pais.HeaderText = "pais";
-            this.pais.Name = "pais";
-            this.pais.ReadOnly = true;
+            this.direccion.DataPropertyName = "direccion";
+            this.direccion.HeaderText = "Direccion";
+            this.direccion.Name = "direccion";
+            this.direccion.ReadOnly = true;
+            this.direccion.Visible = false;
             // 
-            // idDepartamento
+            // telefono
             // 
-            this.idDepartamento.DataPropertyName = "idDepartamento";
-            this.idDepartamento.HeaderText = "idDepartamento";
-            this.idDepartamento.Name = "idDepartamento";
-            this.idDepartamento.ReadOnly = true;
+            this.telefono.DataPropertyName = "telefono";
+            this.telefono.HeaderText = "Telefono";
+            this.telefono.Name = "telefono";
+            this.telefono.ReadOnly = true;
+            this.telefono.Width = 150;
+            // 
+            // idDireccion
+            // 
+            this.idDireccion.DataPropertyName = "idDireccion";
+            this.idDireccion.HeaderText = "idDireccion";
+            this.idDireccion.Name = "idDireccion";
+            this.idDireccion.ReadOnly = true;
+            this.idDireccion.Visible = false;
             // 
             // toolStrip1
             // 
@@ -198,6 +215,7 @@ namespace General.GUI
             this.Name = "ProveedoresGestion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestion de proveedores";
+            this.Load += new System.EventHandler(this.ProveedoresGestion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
@@ -222,7 +240,8 @@ namespace General.GUI
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.DataGridViewTextBoxColumn idProveedor;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pais;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDepartamento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn direccion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn telefono;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDireccion;
     }
 }
