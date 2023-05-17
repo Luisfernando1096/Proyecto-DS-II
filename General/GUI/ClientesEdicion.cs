@@ -15,11 +15,68 @@ namespace General.GUI
         public ClientesEdicion()
         {
             InitializeComponent();
+            // Establecer el formato personalizado
+            dtpNacimiento.Format = DateTimePickerFormat.Custom;
+            dtpNacimiento.CustomFormat = "yyyy/MM/dd";
+            cmbGenero.SelectedIndex = 0;
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            DireccionesGestion f = new DireccionesGestion();
+            f.btnSeleccionar.Visible = true;       
+            var result = f.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                txtDireccion.Text = f.direccionEnviar;
+                txtIdDireccion.Text = f.idEnviar;
+            }
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            //Crear el objeto entidad
+            CLS.Clientes c = new CLS.Clientes();
+            //Sincronizar la entidad con la interfaz
+            c.Nombres = txtNombres.Text;
+            c.Apellidos = txtApellidos.Text;
+            c.Nacimiento = dtpNacimiento.Text.ToString();
+            c.Genero = cmbGenero.SelectedItem.ToString();
+            c.IdDireccion = Int32.Parse(txtIdDireccion.Text);
+            c.Dui = txtDui.Text;
+            c.Nit = txtNit.Text;
+            //Realizar la operacion necesaria
+
+            if (txtIdCliente.TextLength > 0)
+            {
+                c.IdCliente = Int32.Parse(txtIdCliente.Text);
+                if (c.Actualizar())
+                {
+                    MessageBox.Show("¡Registro actualizado correctamente!", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Close();
+                }
+                else
+                {
+                    MessageBox.Show("¡El registro no se actualizo correctamente!", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            else
+            {
+                if (c.Insertar())
+                {
+                    MessageBox.Show("¡Registro insertado correctamente!", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Close();
+                }
+                else
+                {
+                    MessageBox.Show("¡El registro no fue insertado correctamente!", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
         }
     }
 }

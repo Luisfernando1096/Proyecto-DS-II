@@ -46,7 +46,7 @@ namespace General.GUI
             //Sincronizar la entidad con la interfaz
             r.NoCasa = txtNoCasa.Text;
             r.NoCalle = txtNoCalle.Text;
-            r.IdMunicipio = Int32.Parse(cmbMunicipio.SelectedValue.ToString());
+            r.IdMunicipio = Int32.Parse(cmbMunicipio.SelectedItem.ToString());
             //Realizar la operacion necesaria
 
             if (txtIdDireccion.TextLength > 0)

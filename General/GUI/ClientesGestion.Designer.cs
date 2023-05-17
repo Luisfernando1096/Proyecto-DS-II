@@ -43,6 +43,7 @@ namespace General.GUI
             this.btnAgregar = new System.Windows.Forms.ToolStripButton();
             this.dgvDatos = new System.Windows.Forms.DataGridView();
             this.idCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombres_cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellidos_cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nacimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -103,6 +104,7 @@ namespace General.GUI
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(95, 29);
             this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // toolStripSeparator1
             // 
@@ -116,6 +118,7 @@ namespace General.GUI
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(78, 29);
             this.btnEditar.Text = "Editar";
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // toolStripSeparator3
             // 
@@ -144,6 +147,7 @@ namespace General.GUI
             this.dgvDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDatos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idCliente,
+            this.direccion,
             this.nombres_cliente,
             this.apellidos_cliente,
             this.nacimiento,
@@ -175,9 +179,19 @@ namespace General.GUI
             this.idCliente.HeaderText = "ID";
             this.idCliente.Name = "idCliente";
             this.idCliente.ReadOnly = true;
+            this.idCliente.Width = 50;
+            // 
+            // direccion
+            // 
+            this.direccion.DataPropertyName = "direccion";
+            this.direccion.HeaderText = "Direccion";
+            this.direccion.Name = "direccion";
+            this.direccion.ReadOnly = true;
+            this.direccion.Visible = false;
             // 
             // nombres_cliente
             // 
+            this.nombres_cliente.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.nombres_cliente.DataPropertyName = "nombres_cliente";
             this.nombres_cliente.HeaderText = "Nombres";
             this.nombres_cliente.Name = "nombres_cliente";
@@ -185,6 +199,7 @@ namespace General.GUI
             // 
             // apellidos_cliente
             // 
+            this.apellidos_cliente.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.apellidos_cliente.DataPropertyName = "apellidos_cliente";
             this.apellidos_cliente.HeaderText = "Apellidos";
             this.apellidos_cliente.Name = "apellidos_cliente";
@@ -210,6 +225,7 @@ namespace General.GUI
             this.idDireccion.HeaderText = "ID_Direccion";
             this.idDireccion.Name = "idDireccion";
             this.idDireccion.ReadOnly = true;
+            this.idDireccion.Visible = false;
             // 
             // dui
             // 
@@ -260,6 +276,7 @@ namespace General.GUI
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripButton btnAgregar;
         private System.Windows.Forms.DataGridViewTextBoxColumn idCliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn direccion;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombres_cliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn apellidos_cliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn nacimiento;

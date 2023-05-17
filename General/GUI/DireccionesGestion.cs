@@ -13,6 +13,12 @@ namespace General.GUI
     public partial class DireccionesGestion : Form
     {
         BindingSource datos = new BindingSource();
+        public string direccionEnviar { get; set; }
+        public string idEnviar { get; set; }
+        public DireccionesGestion()
+        {
+            InitializeComponent();
+        }
         private void CargarDatos()
         {
             try
@@ -30,10 +36,6 @@ namespace General.GUI
 
                 throw;
             }
-        }
-        public DireccionesGestion()
-        {
-            InitializeComponent();
         }
 
         private void DireccionesGestion_Load(object sender, EventArgs e)
@@ -72,12 +74,24 @@ namespace General.GUI
             }
             CargarDatos();
         }
-
-        private void btnAgregar_Click(object sender, EventArgs e)
+        private void btnAgregar_Click_1(object sender, EventArgs e)
         {
             DireccionesEdicion f = new DireccionesEdicion();
             f.ShowDialog();
             CargarDatos();
+        }
+
+        private void dgvDatos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void btnSeleccionar_Click(object sender, EventArgs e)
+        {
+            direccionEnviar = dgvDatos.CurrentRow.Cells["direccion"].Value.ToString();
+            idEnviar = dgvDatos.CurrentRow.Cells["idDireccion"].Value.ToString();
+            this.DialogResult = DialogResult.OK;
+            this.Close();
         }
     }
 }

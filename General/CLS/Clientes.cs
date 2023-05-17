@@ -11,7 +11,7 @@ namespace General.CLS
         int idCliente;
         String nombres;
         String apellidos;
-        DateTime nacimiento;
+        String nacimiento;
         String genero;
         int idDireccion;
         String dui;
@@ -20,7 +20,7 @@ namespace General.CLS
         public int IdCliente { get => idCliente; set => idCliente = value; }
         public string Nombres { get => nombres; set => nombres = value; }
         public string Apellidos { get => apellidos; set => apellidos = value; }
-        public DateTime Nacimiento { get => nacimiento; set => nacimiento = value; }
+        public String Nacimiento { get => nacimiento; set => nacimiento = value; }
         public string Genero { get => genero; set => genero = value; }
         public int IdDireccion { get => idDireccion; set => idDireccion = value; }
         public string Dui { get => dui; set => dui = value; }
@@ -56,11 +56,10 @@ namespace General.CLS
         {
             Boolean resultado = false;
             string sentencia;
-            sentencia = @"UPDATE roles SET nombres_cliente = '" + nombres + "', apellidos_cliente = '" + apellidos +
+            sentencia = @"UPDATE clientes SET nombres_cliente = '" + nombres + "', apellidos_cliente = '" + apellidos +
                         "', nacimiento = '" + nacimiento + "', genero = '" + genero + "', idDireccion = " + idDireccion +
                         ", dui = '" + dui + "', nit = '" + nit + "'" +
-                "WHERE idCliente = " + idCliente + ";";
-
+                        " WHERE idCliente = " + idCliente + ";";
             try
             {
                 DataManager.DBOperacion op = new DataManager.DBOperacion();

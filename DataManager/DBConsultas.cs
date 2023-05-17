@@ -269,7 +269,11 @@ namespace DataManager
             try
             {
                 DataTable resultado = new DataTable();
-                String sentencia = @"SELECT idCliente, nombres_cliente, apellidos_cliente, nacimiento, genero, idDireccion, dui, nit FROM clientes;";
+                String sentencia = @"SELECT idCliente, nombres_cliente, apellidos_cliente, nacimiento, genero, a.idDireccion, dui, nit, 
+                                    concat(b.municipio, ', ', c.nombre, ', Casa N° ', 
+                                    ifnull(no_casa, 'No establecida'), ', Calle N° ', ifnull(no_calle, 'No establecida')) direccion 
+                                    FROM direcciones a, municipios b, departamentos c, clientes d
+                                    WHERE a.idMunicipio=b.idMunicipio and b.idDepartamento=c.idDepartamento and a.idDireccion=d.idDireccion;";
                 DBOperacion operacion = new DBOperacion();
 
                 resultado = operacion.Consultar(sentencia);
@@ -303,7 +307,10 @@ namespace DataManager
             try
             {
                 DataTable resultado = new DataTable();
-                String sentencia = @"SELECT idDireccion, idMunicipio, no_casa, no_calle FROM direcciones;";
+                String sentencia = @"SELECT idDireccion, a.idMunicipio, a.no_casa, a.no_calle, concat(b.municipio, ', ', c.nombre, ', Casa N° ', 
+                                    ifnull(no_casa, 'No establecida'), ', Calle N° ', ifnull(no_calle, 'No establecida')) direccion
+                                    FROM direcciones a, municipios b, departamentos c
+                                    WHERE a.idMunicipio=b.idMunicipio and b.idDepartamento=c.idDepartamento;";
                 DataManager.DBOperacion operacion = new DataManager.DBOperacion();
 
                 resultado = operacion.Consultar(sentencia);
