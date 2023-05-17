@@ -46,8 +46,36 @@ namespace General.GUI
             //Sincronizar la entidad con la interfaz
             c.Nombre = txtnombre.Text;
             DataTable doc = DataManager.DBConsultas.DocumentoProveedor();
-            int aux = Int32.Parse(doc.Rows[0][0].ToString())+1;
-            c.Documento = aux.ToString();
+            int aux = 0;
+            string aux2 = "";
+            if (doc.Rows.Count>0)
+            {
+                aux = Int32.Parse(doc.Rows[0][0].ToString()) + 1;
+            }
+            else
+            {
+                aux = 1;
+            }
+            if (aux<10)
+            {
+                aux2 = "0000" + aux.ToString();
+            }else if (aux>=10 && aux<100)
+            {
+                aux2 = "000" + aux.ToString();
+            }
+            else if (aux >= 100 && aux < 1000)
+            {
+                aux2 = "00" + aux.ToString();
+            }
+            else if (aux >= 1000 && aux < 10000)
+            {
+                aux2 = "0" + aux.ToString();
+            }
+            else if (aux >= 10000 && aux < 100000)
+            {
+                aux2 = aux.ToString();
+            }
+            c.Documento = aux2;
             c.Telefono = txtTelefono.Text;
             c.IdDireccion = Int32.Parse(txtIdDireccion.Text);
             //Realizar la operacion necesaria
@@ -70,7 +98,7 @@ namespace General.GUI
                 if (c.Insertar())
                 {
                     MessageBox.Show("¡Registro insertado correctamente!", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    MessageBox.Show("Se genero Numero de documento: " + aux, "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Se genero Numero de documento: " + aux2, "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Close();
                 }
                 else
