@@ -13,7 +13,6 @@ namespace General.CLS
         String codigo;
         String nombre;
         String descripcion ;
-        double precio_compra;
         double precio_venta;
         int idCategoria;
         
@@ -21,7 +20,6 @@ namespace General.CLS
         public int IdProducto { get => idProducto; set => idProducto = value; }
         public string Nombre { get => nombre; set => nombre = value; }
         public string Descripcion { get => descripcion; set => descripcion = value; }
-        public double Precio_compra  { get => precio_compra; set => precio_compra = value; }
         public double Precio_venta { get => precio_venta; set => precio_venta = value; }
         public int Idcategoria { get => idCategoria; set => idCategoria = value; }
         public string Codigo { get => codigo; set => codigo = value; }
@@ -29,10 +27,7 @@ namespace General.CLS
         public Boolean Insertar()
         {
             Boolean resultado = false;
-            string sentencia;
-            sentencia = @"INSERT INTO productos(nombre, codigo, descripcion, precio_compra, precio_venta, idCategoria)" +
-                        " VALUES('" + nombre + "', '" + codigo + "', '" + descripcion+ "', '" + precio_compra + "', '" + precio_venta + "', " + idCategoria +"');";
-
+            String sentencia = @"INSERT INTO Productos (nombre, codigo, descripcion, precio_venta, idCategoria) VALUES('" + nombre + "','" + codigo + "','" + descripcion + "','" + precio_venta + "','" + idCategoria + "');";
             try
             {
                 DataManager.DBOperacion op = new DataManager.DBOperacion();
@@ -45,10 +40,8 @@ namespace General.CLS
             }
             catch (Exception)
             {
-
                 throw;
             }
-
             return resultado;
         }
 
@@ -56,8 +49,7 @@ namespace General.CLS
         {
             Boolean resultado = false;
             string sentencia;
-            sentencia = @"UPDATE productos SET nombres= '" + nombre + "', codigo= '" + codigo + "', descripcion = '" + descripcion +
-                        "', precio_compra = '" + precio_compra + "', precio_venta = '" + precio_venta + "', idCategoria = " + idCategoria + "'" +
+            sentencia = @"UPDATE Productos SET nombre = '" + nombre + "', codigo = '" + codigo + "', descripcion  = '" + descripcion + "', precio_venta  = '" + precio_venta + "',  idCategoria  = '" + idCategoria + "' " +
                 "WHERE idProducto = " + idProducto + ";";
 
             try
@@ -101,13 +93,7 @@ namespace General.CLS
 
                 throw;
             }
-
             return resultado;
         }
-
-
-
-
-
     }
 }

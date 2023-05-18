@@ -69,6 +69,23 @@ namespace DataManager
                 throw;
             }
         }
+        public static DataTable Categorias()
+        {
+            try
+            {
+                DataTable resultado = new DataTable();
+                String sentencia = @"select idCategoria, categoria from categorias;";
+                DBOperacion operacion = new DBOperacion();
+
+                resultado = operacion.Consultar(sentencia);
+                return resultado;
+            }
+            catch (Exception)
+            {
+                return new DataTable();
+                throw;
+            }
+        }
 
         public static DataTable ReporteClientes()
         {
@@ -93,7 +110,8 @@ namespace DataManager
             try
             {
                 DataTable resultado = new DataTable();
-                String sentencia = @"select idProducto,nombre,descripcion,precio_compra,precio_venta,idCategoria from productos;";
+                String sentencia = @"select p.idProducto,p.nombre,p.codigo, p.descripcion,p.precio_venta, c.categoria from productos p, categorias c
+                                     where p.idCategoria = c.idCategoria order by p.idProducto;";
                 DBOperacion operacion = new DBOperacion();
 
                 resultado = operacion.Consultar(sentencia);
