@@ -186,7 +186,7 @@ namespace Salidas.GUI
             string aux2 = "";
             if (tSalidas.Rows.Count > 0)
             {
-                aux = Int32.Parse(tSalidas.Rows[0][0].ToString()) + 1;
+                aux = Int32.Parse(tSalidas.Rows[0][0].ToString());
             }
             else
             {
