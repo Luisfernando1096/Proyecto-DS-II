@@ -4,23 +4,30 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace General.CLS
+namespace Salidas.CLS
 {
-    class Existencias
+    class Salidas
     {
-        int idExistencia;
-        int existencia;
-        int idProducto;
-
-        public int IdExistencia { get => idExistencia; set => idExistencia = value; }
-        public int Existencia { get => existencia; set => existencia = value; }
-        public int IdProducto { get => idProducto; set => idProducto = value; }
+        int idSalida;
+        string documento;
+        String fechaSalida;
+        int cantidad;
+        int idCliente;
+        int usuarioAtendio;
+        double total;
+        public int IdSalida { get => idSalida; set => idSalida = value; }
+        public string FechaSalida { get => fechaSalida; set => fechaSalida = value; }
+        public int Cantidad { get => cantidad; set => cantidad = value; }
+        public int IdCliente { get => idCliente; set => idCliente = value; }
+        public int UsuarioAtendio { get => usuarioAtendio; set => usuarioAtendio = value; }
+        public double Total { get => total; set => total = value; }
+        public string Documento { get => documento; set => documento = value; }
 
         public Boolean Insertar()
         {
             Boolean resultado = false;
             string sentencia;
-            sentencia = @"INSERT INTO existencias(existencia, idProducto) VALUES(" + existencia + ", "+ idProducto +");";
+            sentencia = @"INSERT INTO salidas(documento_salida, fecha_salida, cantidad, idCliente, idUsuario, total) VALUES('" + documento + "', '" + fechaSalida + "', " + cantidad + ", " + idCliente + ", " + usuarioAtendio + ", " + total + ");";
 
             try
             {
@@ -45,8 +52,8 @@ namespace General.CLS
         {
             Boolean resultado = false;
             string sentencia;
-            sentencia = @"UPDATE existencias SET existencia = " + existencia + ", idProducto = " + idProducto + " " +
-                "WHERE idExistencia = " + idExistencia + ";";
+            sentencia = @"UPDATE sañidas SET documento_salida = '" + documento + "', fecha_salida = '" + fechaSalida + "', cantidad = '" + cantidad + "', idCliente = " + idCliente + ", idUsuario = " + usuarioAtendio + ", total = " + total + " " +
+                "WHERE idSalida = " + idSalida + ";";
 
             try
             {
@@ -71,8 +78,8 @@ namespace General.CLS
         {
             Boolean resultado = false;
             string sentencia;
-            sentencia = @"DELETE FROM existencias " +
-                "WHERE idExistencia = " + idExistencia + ";";
+            sentencia = @"DELETE FROM salidas " +
+                "WHERE idSalida = " + idSalida + ";";
 
             try
             {

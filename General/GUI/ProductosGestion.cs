@@ -13,7 +13,7 @@ namespace General.GUI
     public partial class ProductosGestion : Form
     {
         BindingSource datos = new BindingSource();
-
+        public DataGridViewRow datosProEnviar { get; set; }
         private void CargarDatos()
         {
             try
@@ -98,6 +98,13 @@ namespace General.GUI
                 }
             }
             CargarDatos();
+        }
+
+        private void btnSeleccionar_Click(object sender, EventArgs e)
+        {
+            datosProEnviar = dgvDatos.CurrentRow;
+            this.DialogResult = DialogResult.OK;
+            this.Close();
         }
     }
 }

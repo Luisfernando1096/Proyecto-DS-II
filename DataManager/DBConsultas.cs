@@ -127,8 +127,28 @@ namespace DataManager
             try
             {
                 DataTable resultado = new DataTable();
-                String sentencia = @"select p.idProducto,p.nombre,p.codigo, p.descripcion,p.precio_venta, c.categoria from productos p, categorias c
-                                     where p.idCategoria = c.idCategoria order by p.idProducto;";
+                String sentencia = @"SELECT a.idProducto, a.nombre, a.codigo, a.descripcion, a.precio_venta, b.categoria, c.idExistencia, c.existencia
+                                    FROM productos a, categorias b, existencias c
+                                    WHERE a.idCategoria=b.idCategoria and a.idProducto=c.idExistencia;";
+                DBOperacion operacion = new DBOperacion();
+
+                resultado = operacion.Consultar(sentencia);
+                return resultado;
+            }
+            catch (Exception)
+            {
+                return new DataTable();
+                throw;
+            }
+        }
+        public static DataTable ObtenerUltimoProducto()
+        {
+            try
+            {
+                DataTable resultado = new DataTable();
+                String sentencia = @"select p.idProducto 
+                                    from productos p
+                                    order by p.idProducto desc limit 1;";
                 DBOperacion operacion = new DBOperacion();
 
                 resultado = operacion.Consultar(sentencia);
@@ -146,7 +166,7 @@ namespace DataManager
             try
             {
                 DataTable resultado = new DataTable();
-                String sentencia = @"select idExistencia,existencia,idProducto from existencias;";
+                String sentencia = @"select idExistencia, existencia, idProducto from existencias;";
                 DBOperacion operacion = new DBOperacion();
 
                 resultado = operacion.Consultar(sentencia);
@@ -197,6 +217,26 @@ namespace DataManager
                 throw;
             }
         }
+
+        public static DataTable ObtenerUltimaSalida()
+        {
+            try
+            {
+                DataTable resultado = new DataTable();
+                String sentencia = @"SELECT (documento_salida + 1), idSalida FROM salidas
+                                    order by documento_salida desc limit 1;";
+                DBOperacion operacion = new DBOperacion();
+
+                resultado = operacion.Consultar(sentencia);
+                return resultado;
+            }
+            catch (Exception)
+            {
+                return new DataTable();
+                throw;
+            }
+        }
+
         public static DataTable Departamentos()
         {
             try
@@ -215,6 +255,26 @@ namespace DataManager
                 throw;
             }
         }
+
+        public static DataTable ExistenciasPorIdProducto(int idProducto)
+        {
+            try
+            {
+                DataTable resultado = new DataTable();
+                String sentencia = @"select idExistencia,existencia,idProducto from existencias " +
+                                    "WHERE idProducto = " + idProducto + ";";
+                DBOperacion operacion = new DBOperacion();
+
+                resultado = operacion.Consultar(sentencia);
+                return resultado;
+            }
+            catch (Exception)
+            {
+                return new DataTable();
+                throw;
+            }
+        }
+
         public static DataTable VerCategorias()
         {
             try
@@ -396,24 +456,7 @@ namespace DataManager
                 throw;
             }
         }
-        public static DataTable VerPermisos() 
-        {
-            DataManager.DBOperacion operacion = new DataManager.DBOperacion();
-            try
-            {
-                DataTable tabla = new DataTable();
-                String sentencia = @"select a.idPermiso, r.rol, op.opcion from permisos a, roles r, opciones op
-                                     where a.idRol =r.idRol and a.idOpcion = op.idOpcion order by a.idPermiso;";
-                tabla = operacion.Consultar(sentencia);
-
-                return tabla;
-            }
-            catch (Exception)
-            {
-                return new DataTable();
-                throw;
-            }
-        }
+        
         public static DataTable VerOpciones()
         {
             DataManager.DBOperacion operacion = new DataManager.DBOperacion();

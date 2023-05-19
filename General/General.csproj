@@ -61,8 +61,6 @@
     <Compile Include="GUI\CategoriasEdicion.Designer.cs">
       <DependentUpon>CategoriasEdicion.cs</DependentUpon>
     </Compile>
-    <Compile Include="CLS\Salidas.cs" />
-    <Compile Include="CLS\SalidasProductos.cs" />
     <Compile Include="GUI\CategoriasGestion.cs">
       <SubType>Form</SubType>
     </Compile>

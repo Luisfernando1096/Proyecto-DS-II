@@ -72,9 +72,18 @@ namespace General.GUI
                     General.CLS.Productos productos = new General.CLS.Productos();
                     productos.Nombre = txtNombre.Text;
                     productos.Codigo = txtCodigo.Text;
+                    if (CompararCodigo(txtCodigo.Text))
+                    {
+                        MessageBox.Show("El codigo ya está agregado a un producto", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        return;
+                    }
                     productos.Descripcion = txtDescripcion.Text;
                     productos.Precio_venta = double.Parse(txtPrecio_venta.Text);
                     productos.Idcategoria = Convert.ToInt32(cmbCategorias.SelectedValue);
+
+                    CLS.Existencias existencia = new CLS.Existencias();
+                    DataTable tProductos = new DataTable();
+                    tProductos = DataManager.DBConsultas.ObtenerUltimoProducto();
 
                     if (txtIdProducto.TextLength > 0)
                     {
@@ -93,6 +102,9 @@ namespace General.GUI
                     {
                         if (productos.Insertar())
                         {
+                            existencia.Existencia = 0;
+                            existencia.IdProducto = Int32.Parse(tProductos.Rows[0][0].ToString());
+                            existencia.Insertar();
                             MessageBox.Show("¡Registro insertado correctamente!", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             Close();
                         }
@@ -109,12 +121,31 @@ namespace General.GUI
             }
         }
 
+        private bool CompararCodigo(string codigo)
+        {
+            bool result = false;
+            DataTable p = DataManager.DBConsultas.Productos();
+            foreach (DataRow row in p.Rows)
+            {   // Comparar ambos datos
+                if (codigo.Equals(row[2].ToString()))
+                {
+                    result = true;
+                }
+            }
+            return result;
+        }
+
         private void txtCodigo_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
             }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
