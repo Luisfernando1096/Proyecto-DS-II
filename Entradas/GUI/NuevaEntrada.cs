@@ -105,6 +105,18 @@ namespace Entradas.GUI
                 txtNombreProducto.Focus();
                 return;
             }
+            if (txtPrecioCompra.Text.Trim() == "")
+            {
+                MessageBox.Show("Debe colocar el precio de la compra", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtPrecioCompra.Focus();
+                return;
+            }
+            if (txtPrecioVenta.Text.Trim() == "")
+            {
+                MessageBox.Show("Debe colocar el precio de venta", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtPrecioVenta.Focus();
+                return;
+            }
             if (txtCantidad.Text.Trim() == "")
             {
                 MessageBox.Show("Debe colocar la cantidad", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -146,11 +158,12 @@ namespace Entradas.GUI
                 datosProducto.Cells["codigo"].Value.ToString(),
                 datosProducto.Cells["nombre"].Value.ToString(),
                 datosProducto.Cells["descripcion"].Value.ToString(),
-                datosProducto.Cells["precio_compra"].Value.ToString(),
+                txtPrecioCompra.Text.ToString(),
                 datosProducto.Cells["precio_venta"].Value.ToString(),
-                Double.Parse(txtCantidad.Text) * Double.Parse(datosProducto.Cells["precio_compra"].Value.ToString()),
+                Double.Parse(txtCantidad.Text) * Double.Parse(txtPrecioCompra.Text.ToString()),
                 txtCantidad.Text,
-                datosProducto.Cells["idExistencia"].Value.ToString()
+                datosProducto.Cells["idExistencia"].Value.ToString(),
+                datosProducto.Cells["idCategoria"].Value.ToString(),
             });
             //Calculando el total
             CalcularTotal();
@@ -158,6 +171,8 @@ namespace Entradas.GUI
             txtCodigoProducto.Text = "";
             txtCantidad.Text = "";
             txtNombreProducto.Text = "";
+            txtPrecioCompra.Text = "";
+            txtPrecioVenta.Text = "";
             lblTexto.Visible = true;
             btnEliminar.Visible = true;
         }
@@ -179,64 +194,46 @@ namespace Entradas.GUI
         {
             if (txtDocumento.Text.Trim() == "")
             {
-                MessageBox.Show("Debe seleccionar el proveedor", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Debe colocar el numero de documento", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            DataTable tDoc = DataManager.DBConsultas.ObtenerListaDocumentos();
+            bool docIgual = false;
+            foreach (DataRow item in tDoc.Rows)
+            {
+                if (txtDocumentoEntrada.Text.Equals(item["documento_entrada"].ToString()))
+                {
+                    docIgual = true;
+                }
+            }
+            if (docIgual)
+            {
+                MessageBox.Show("Debe colocar un numero de documento distinto", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
             if (dgvDatos.Rows.Count < 1)
             {
-                MessageBox.Show("Debe agregar al menos una salida", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Debe agregar al menos una entrada", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
 
-            CLS.Salidas salida = new CLS.Salidas();
-            DataTable tSalidas = new DataTable();
-            tSalidas = DataManager.DBConsultas.ObtenerUltimaSalida();
-            int aux = 0;
-            string aux2 = "";
-            if (tSalidas.Rows.Count > 0)
-            {
-                aux = Int32.Parse(tSalidas.Rows[0][0].ToString());
-            }
-            else
-            {
-                aux = 1;
-            }
-            if (aux < 10)
-            {
-                aux2 = "0000" + aux.ToString();
-            }
-            else if (aux >= 10 && aux < 100)
-            {
-                aux2 = "000" + aux.ToString();
-            }
-            else if (aux >= 100 && aux < 1000)
-            {
-                aux2 = "00" + aux.ToString();
-            }
-            else if (aux >= 1000 && aux < 10000)
-            {
-                aux2 = "0" + aux.ToString();
-            }
-            else if (aux >= 10000 && aux < 100000)
-            {
-                aux2 = aux.ToString();
-            }
+            CLS.Entradas entrada = new CLS.Entradas();
 
-            salida.Documento = aux2;
-            salida.FechaSalida = dtpFecha.Text;
+            entrada.Documento_entrada = txtDocumentoEntrada.Text;
+            entrada.Fecha_entrada = dtpFecha.Text;
             //Calculos para la cantidad
             foreach (DataGridViewRow row in dgvDatos.Rows)
             {
                 cantidad_productos += Convert.ToInt32(row.Cells["cantidad"].Value.ToString());
             }
 
-            salida.Cantidad = cantidad_productos;
-            salida.IdCliente = Int32.Parse(datosProveedor.Cells["idProveedor"].Value.ToString());
-            salida.UsuarioAtendio = Int32.Parse(oUsuario.IdUsuario.ToString());
-            salida.Total = Double.Parse(lblTotal.Text);
-            if (salida.Insertar())
+            entrada.Cantidad = cantidad_productos;
+            entrada.IdProveedor = Int32.Parse(datosProveedor.Cells["idProveedor"].Value.ToString());
+            entrada.IdUsuario = Int32.Parse(oUsuario.IdUsuario.ToString());
+            entrada.Total = Double.Parse(lblTotal.Text);
+            if (entrada.Insertar())
             {
-                GenerarVenta(aux2);
+                GenerarCompra(txtDocumento.Text);
             }
             else
             {
@@ -245,6 +242,101 @@ namespace Entradas.GUI
             }
             lblTexto.Visible = false;
             btnEliminar.Visible = false;
+        }
+
+        private void GenerarCompra(string text)
+        {
+            int idEntrada = 0;
+            DataTable tEntrada = DataManager.DBConsultas.ObtenerUltimaEntrada();
+            List<CLS.Compras> oLista = new List<CLS.Compras>();
+            List<CLS.Existencias> lstExistencias = new List<CLS.Existencias>();
+            List<General.CLS.Productos> lstProductos = new List<General.CLS.Productos>();
+            idEntrada = Int32.Parse(tEntrada.Rows[0][0].ToString());
+
+            CLS.Existencias existencia = new CLS.Existencias();
+
+            foreach (DataGridViewRow row in dgvDatos.Rows)
+            {
+                oLista.Add(new CLS.Compras()
+                {
+                    IdProducto = Int32.Parse(row.Cells["idProducto"].Value.ToString()),
+                    IdEntrada = idEntrada,
+                    Precio_compra = Double.Parse(row.Cells["precio_compra"].Value.ToString()),
+                    Precio_venta = Double.Parse(row.Cells["precio_venta"].Value.ToString()),
+                    Sub_total = Double.Parse(row.Cells["sub_total"].Value.ToString())
+                });
+                lstExistencias.Add(new CLS.Existencias()
+                {
+                    IdExistencia = Int32.Parse(row.Cells["idExistencia"].Value.ToString()),
+                    IdProducto = Int32.Parse(row.Cells["idProducto"].Value.ToString()),
+                    Existencia = Int32.Parse(row.Cells["existencia"].Value.ToString()) + Convert.ToInt32(row.Cells["cantidad"].Value.ToString())
+                });
+                lstProductos.Add(new General.CLS.Productos()
+                {
+                    IdProducto = Int32.Parse(row.Cells["idProducto"].Value.ToString()),
+                    Nombre = row.Cells["nombre_producto"].Value.ToString(),
+                    Codigo = row.Cells["codigo"].Value.ToString(),
+                    Descripcion = row.Cells["descripcion"].Value.ToString(),
+                    Precio_venta = Double.Parse(row.Cells["precio_venta"].Value.ToString()),
+                    Idcategoria = Int32.Parse(row.Cells["idCategoria"].Value.ToString()),
+                });
+
+            }
+            //Actualizamos las existencias
+            bool controlE = false;
+            foreach (var existencias in lstExistencias)
+            {
+                if (!existencias.Actualizar())
+                {
+                    controlE = true;
+                }
+            }
+            if (controlE)
+            {
+                MessageBox.Show("Fallo en actualizar existencia", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            //Insertamos las ventas
+            bool controlV = false;
+            foreach (var ventas in oLista)
+            {
+                if (!ventas.Insertar())
+                {
+                    controlV = true;
+                }
+            }
+            if (controlV)
+            {
+                MessageBox.Show("Fallo in insertar venta", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            //Actualizamos las existencias
+            bool controlP = false;
+            foreach (var productos in lstProductos)
+            {
+                if (!productos.Actualizar())
+                {
+                    controlE = true;
+                }
+            }
+            if (controlP)
+            {
+                MessageBox.Show("Fallo en actualizar productos", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            dgvDatos.Rows.Clear();
+            txtNombreProveedor.Text = "";
+            txtDocumento.Text = "";
+            txtDocumento.Text = "";
+            txtCodigoProducto.Text = "";
+            txtPrecioCompra.Text = "";
+            txtPrecioVenta.Text = "";
+            txtCantidad.Text = "";
+            txtNombreProducto.Text = "";
+            lblTotal.Text = "0.00";
+            txtDocumento.Text = "";
+            MessageBox.Show("Se registro exitosamente...", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            
         }
     }
 }

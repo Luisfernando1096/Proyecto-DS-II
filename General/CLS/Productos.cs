@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace General.CLS
 {
-    class Productos
+    public class Productos
     {
 
         int idProducto;

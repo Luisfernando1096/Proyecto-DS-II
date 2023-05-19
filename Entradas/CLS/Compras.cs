@@ -25,7 +25,7 @@ namespace Entradas.CLS
         {
             Boolean resultado = false;
             string sentencia;
-            sentencia = @"INSERT INTO existencias(idProducto, idEntrada, precio_compra, precio_venta, sub_total) VALUES(" + idProducto + ", " + idEntrada + ", " + precio_compra + ", " + precio_venta + ", " + sub_total + ");";
+            sentencia = @"INSERT INTO compras(idProducto, idEntrada, precio_compra, precio_venta, sub_total) VALUES(" + idProducto + ", " + idEntrada + ", " + precio_compra + ", " + precio_venta + ", " + sub_total + ");";
 
             try
             {

@@ -148,7 +148,7 @@ namespace DataManager
             try
             {
                 DataTable resultado = new DataTable();
-                String sentencia = @"SELECT a.idProducto, a.nombre, a.codigo, a.descripcion, a.precio_venta, b.categoria, c.idExistencia, c.existencia
+                String sentencia = @"SELECT a.idProducto, a.nombre, a.codigo, a.descripcion, a.precio_venta, b.categoria, c.idExistencia, c.existencia, b.idCategoria
                                     FROM productos a, categorias b, existencias c
                                     WHERE a.idCategoria=b.idCategoria and a.idProducto=c.idExistencia;";
                 DBOperacion operacion = new DBOperacion();
@@ -258,6 +258,24 @@ namespace DataManager
             }
         }
 
+        public static DataTable ObtenerListaDocumentos()
+        {
+            DataManager.DBOperacion operacion = new DataManager.DBOperacion();
+            try
+            {
+                DataTable tabla = new DataTable();
+                String sentencia = @"SELECT documento_entrada FROM entradas;";
+                tabla = operacion.Consultar(sentencia);
+
+                return tabla;
+            }
+            catch (Exception)
+            {
+                return new DataTable();
+                throw;
+            }
+        }
+
         public static DataTable Departamentos()
         {
             try
@@ -268,6 +286,25 @@ namespace DataManager
                 DBOperacion operacion = new DBOperacion();
                 resultado = operacion.Consultar(sentencia);
 
+                return resultado;
+            }
+            catch (Exception)
+            {
+                return new DataTable();
+                throw;
+            }
+        }
+
+        public static DataTable ObtenerUltimaEntrada()
+        {
+            try
+            {
+                DataTable resultado = new DataTable();
+                String sentencia = @"SELECT idEntrada FROM entradas
+                                    order by documento_entrada desc limit 1;";
+                DBOperacion operacion = new DBOperacion();
+
+                resultado = operacion.Consultar(sentencia);
                 return resultado;
             }
             catch (Exception)
@@ -517,5 +554,6 @@ namespace DataManager
                 throw;
             }
         }
+
     }
 }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Salidas.CLS
+namespace Entradas.CLS
 {
     class Existencias
     {

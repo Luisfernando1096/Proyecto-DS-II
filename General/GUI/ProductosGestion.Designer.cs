@@ -51,6 +51,7 @@ namespace General.GUI
             this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.existencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idExistencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -75,7 +76,8 @@ namespace General.GUI
             this.precio_venta,
             this.Categoria,
             this.existencia,
-            this.idExistencia});
+            this.idExistencia,
+            this.idCategoria});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -257,6 +259,14 @@ namespace General.GUI
             this.idExistencia.ReadOnly = true;
             this.idExistencia.Visible = false;
             // 
+            // idCategoria
+            // 
+            this.idCategoria.DataPropertyName = "idCategoria";
+            this.idCategoria.HeaderText = "Id Categoria";
+            this.idCategoria.Name = "idCategoria";
+            this.idCategoria.ReadOnly = true;
+            this.idCategoria.Visible = false;
+            // 
             // ProductosGestion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -301,5 +311,6 @@ namespace General.GUI
         private System.Windows.Forms.DataGridViewTextBoxColumn Categoria;
         private System.Windows.Forms.DataGridViewTextBoxColumn existencia;
         private System.Windows.Forms.DataGridViewTextBoxColumn idExistencia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idCategoria;
     }
 }
