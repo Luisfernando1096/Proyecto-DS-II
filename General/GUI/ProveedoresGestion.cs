@@ -13,6 +13,8 @@ namespace General.GUI
     public partial class ProveedoresGestion : Form
     {
         BindingSource datos = new BindingSource();
+        public DataGridViewRow datosProvEnviar;
+
         public ProveedoresGestion()
         {
             InitializeComponent();
@@ -80,6 +82,13 @@ namespace General.GUI
         private void ProveedoresGestion_Load(object sender, EventArgs e)
         {
             CargarDatos();
+        }
+
+        private void btnSeleccionar_Click(object sender, EventArgs e)
+        {
+            datosProvEnviar = dgvDatos.CurrentRow;
+            this.DialogResult = DialogResult.OK;
+            this.Close();
         }
     }
 }
