@@ -30,8 +30,8 @@ namespace Salidas.GUI
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SalidaNueva));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtDui = new System.Windows.Forms.TextBox();
             this.txtNoDocumento = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -64,11 +64,11 @@ namespace Salidas.GUI
             this.idExistencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button4 = new System.Windows.Forms.Button();
             this.lblGuardar = new System.Windows.Forms.Label();
-            this.label = new System.Windows.Forms.Label();
-            this.lblTotal = new System.Windows.Forms.Label();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.lblTexto = new System.Windows.Forms.Label();
+            this.label = new System.Windows.Forms.Label();
+            this.lblTotal = new System.Windows.Forms.Label();
             this.gbCliente.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
@@ -298,8 +298,8 @@ namespace Salidas.GUI
             this.dgvDatos.AllowUserToAddRows = false;
             this.dgvDatos.AllowUserToDeleteRows = false;
             this.dgvDatos.AllowUserToResizeRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Snow;
-            this.dgvDatos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Snow;
+            this.dgvDatos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDatos.BackgroundColor = System.Drawing.SystemColors.Menu;
             this.dgvDatos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.dgvDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -313,14 +313,14 @@ namespace Salidas.GUI
             this.sub_total,
             this.cantidad,
             this.idExistencia});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDatos.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDatos.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvDatos.Location = new System.Drawing.Point(12, 160);
             this.dgvDatos.MultiSelect = false;
             this.dgvDatos.Name = "dgvDatos";
@@ -410,26 +410,6 @@ namespace Salidas.GUI
             this.lblGuardar.TabIndex = 13;
             this.lblGuardar.Text = "Guardar Salida";
             // 
-            // label
-            // 
-            this.label.AutoSize = true;
-            this.label.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label.Location = new System.Drawing.Point(9, 443);
-            this.label.Name = "label";
-            this.label.Size = new System.Drawing.Size(41, 20);
-            this.label.TabIndex = 15;
-            this.label.Text = "Total:";
-            // 
-            // lblTotal
-            // 
-            this.lblTotal.AutoSize = true;
-            this.lblTotal.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotal.Location = new System.Drawing.Point(46, 444);
-            this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(16, 20);
-            this.lblTotal.TabIndex = 16;
-            this.lblTotal.Text = "0";
-            // 
             // dtpFecha
             // 
             this.dtpFecha.CustomFormat = "yyyy/MM/dd";
@@ -464,15 +444,36 @@ namespace Salidas.GUI
             this.lblTexto.Text = "Si desea eliminar seleccione la fila que desee y presione el boton eliminar";
             this.lblTexto.Visible = false;
             // 
+            // label
+            // 
+            this.label.AutoSize = true;
+            this.label.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label.Location = new System.Drawing.Point(12, 443);
+            this.label.Name = "label";
+            this.label.Size = new System.Drawing.Size(60, 23);
+            this.label.TabIndex = 20;
+            this.label.Text = "Total:";
+            // 
+            // lblTotal
+            // 
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotal.Location = new System.Drawing.Point(70, 443);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(48, 23);
+            this.lblTotal.TabIndex = 21;
+            this.lblTotal.Text = "0.00";
+            // 
             // SalidaNueva
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(995, 530);
+            this.Controls.Add(this.label);
+            this.Controls.Add(this.lblTotal);
             this.Controls.Add(this.lblTexto);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.dtpFecha);
-            this.Controls.Add(this.label);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.lblGuardar);
             this.Controls.Add(this.groupBox1);
@@ -481,7 +482,6 @@ namespace Salidas.GUI
             this.Controls.Add(this.txtNoDocumento);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvDatos);
-            this.Controls.Add(this.lblTotal);
             this.Name = "SalidaNueva";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Generar Nueva Salida";
@@ -521,8 +521,6 @@ namespace Salidas.GUI
         private System.Windows.Forms.DataGridView dgvDatos;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label lblGuardar;
-        private System.Windows.Forms.Label label;
-        private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.DataGridViewTextBoxColumn idProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn existencia;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
@@ -535,5 +533,7 @@ namespace Salidas.GUI
         private System.Windows.Forms.DateTimePicker dtpFecha;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Label lblTexto;
+        private System.Windows.Forms.Label label;
+        private System.Windows.Forms.Label lblTotal;
     }
 }

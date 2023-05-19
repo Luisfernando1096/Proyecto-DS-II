@@ -33,6 +33,27 @@ namespace DataManager
             
         }
 
+        public static DataTable VerRegistroSalidas(string doc)
+        {
+            try
+            {
+                DataTable resultado = new DataTable();
+                String sentencia = @"SELECT a.codigo, a.nombre, a.descripcion, a.precio_venta, b.categoria, c.cantidad, e.dui, e.nombres_cliente, d.fecha_salida, d.total, f.usuario
+                                    FROM productos a, categorias b, ventas c, salidas d, clientes e, usuarios f
+                                    WHERE a.idCategoria=b.idCategoria AND c.idProducto=a.idProducto AND c.idSalida=d.idSalida
+                                    AND d.idCliente=e.idCliente AND f.idUsuario=d.idUsuario AND d.documento_salida='" + doc + "';";
+                DataManager.DBOperacion operacion = new DataManager.DBOperacion();
+
+                resultado = operacion.Consultar(sentencia);
+                return resultado;
+            }
+            catch (Exception)
+            {
+                return new DataTable();
+                throw;
+            }
+        }
+
         public static DataTable Municipios()
         {
             try

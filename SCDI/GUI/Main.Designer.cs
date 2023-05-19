@@ -46,6 +46,10 @@ namespace SCDI.GUI
             this.gestionDeClasificacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionDeRolesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionDeClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem8 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem7 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionDePermisosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionDeOpcionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
@@ -60,10 +64,6 @@ namespace SCDI.GUI
             this.listarSalidaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bgwConexion = new System.ComponentModel.BackgroundWorker();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem7 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem8 = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -215,6 +215,38 @@ namespace SCDI.GUI
             this.gestionDeClientesToolStripMenuItem.Text = "Gestion de Clientes";
             this.gestionDeClientesToolStripMenuItem.Click += new System.EventHandler(this.gestionDeClientesToolStripMenuItem_Click);
             // 
+            // toolStripMenuItem8
+            // 
+            this.toolStripMenuItem8.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripMenuItem8.Name = "toolStripMenuItem8";
+            this.toolStripMenuItem8.Size = new System.Drawing.Size(286, 28);
+            this.toolStripMenuItem8.Text = "Gestion de Direcciones";
+            this.toolStripMenuItem8.Click += new System.EventHandler(this.gestionDeDireccionesToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem7
+            // 
+            this.toolStripMenuItem7.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripMenuItem7.Name = "toolStripMenuItem7";
+            this.toolStripMenuItem7.Size = new System.Drawing.Size(286, 28);
+            this.toolStripMenuItem7.Text = "Gestion de Clientes";
+            this.toolStripMenuItem7.Click += new System.EventHandler(this.gestionDeClientesToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem6
+            // 
+            this.toolStripMenuItem6.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripMenuItem6.Name = "toolStripMenuItem6";
+            this.toolStripMenuItem6.Size = new System.Drawing.Size(286, 28);
+            this.toolStripMenuItem6.Text = "Gestion de Roles";
+            this.toolStripMenuItem6.Click += new System.EventHandler(this.gestionDeRolesToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem5
+            // 
+            this.toolStripMenuItem5.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripMenuItem5.Name = "toolStripMenuItem5";
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(286, 28);
+            this.toolStripMenuItem5.Text = "Gestion de Clasificaciones";
+            this.toolStripMenuItem5.Click += new System.EventHandler(this.gestionDeClasificacionesToolStripMenuItem_Click);
+            // 
             // gestionDePermisosToolStripMenuItem
             // 
             this.gestionDePermisosToolStripMenuItem.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -271,14 +303,14 @@ namespace SCDI.GUI
             this.reportesToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("reportesToolStripMenuItem.Image")));
             this.reportesToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
-            this.reportesToolStripMenuItem.Size = new System.Drawing.Size(186, 84);
+            this.reportesToolStripMenuItem.Size = new System.Drawing.Size(186, 68);
             this.reportesToolStripMenuItem.Text = "Reportes";
             // 
             // clientesToolStripMenuItem
             // 
             this.clientesToolStripMenuItem.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(180, 28);
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(145, 28);
             this.clientesToolStripMenuItem.Text = "Clientes";
             this.clientesToolStripMenuItem.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
             // 
@@ -292,7 +324,7 @@ namespace SCDI.GUI
             this.salidasToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("salidasToolStripMenuItem.Image")));
             this.salidasToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.salidasToolStripMenuItem.Name = "salidasToolStripMenuItem";
-            this.salidasToolStripMenuItem.Size = new System.Drawing.Size(151, 84);
+            this.salidasToolStripMenuItem.Size = new System.Drawing.Size(151, 68);
             this.salidasToolStripMenuItem.Text = "Salidas";
             // 
             // nuevaSalidaToolStripMenuItem
@@ -309,6 +341,7 @@ namespace SCDI.GUI
             this.buscarSalidaToolStripMenuItem.Name = "buscarSalidaToolStripMenuItem";
             this.buscarSalidaToolStripMenuItem.Size = new System.Drawing.Size(188, 28);
             this.buscarSalidaToolStripMenuItem.Text = "Buscar Salida";
+            this.buscarSalidaToolStripMenuItem.Click += new System.EventHandler(this.buscarSalidaToolStripMenuItem_Click);
             // 
             // listarSalidaToolStripMenuItem
             // 
@@ -328,38 +361,6 @@ namespace SCDI.GUI
             // 
             this.timer1.Interval = 5000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // toolStripMenuItem5
-            // 
-            this.toolStripMenuItem5.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-            this.toolStripMenuItem5.Size = new System.Drawing.Size(286, 28);
-            this.toolStripMenuItem5.Text = "Gestion de Clasificaciones";
-            this.toolStripMenuItem5.Click += new System.EventHandler(this.gestionDeClasificacionesToolStripMenuItem_Click);
-            // 
-            // toolStripMenuItem6
-            // 
-            this.toolStripMenuItem6.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripMenuItem6.Name = "toolStripMenuItem6";
-            this.toolStripMenuItem6.Size = new System.Drawing.Size(286, 28);
-            this.toolStripMenuItem6.Text = "Gestion de Roles";
-            this.toolStripMenuItem6.Click += new System.EventHandler(this.gestionDeRolesToolStripMenuItem_Click);
-            // 
-            // toolStripMenuItem7
-            // 
-            this.toolStripMenuItem7.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripMenuItem7.Name = "toolStripMenuItem7";
-            this.toolStripMenuItem7.Size = new System.Drawing.Size(286, 28);
-            this.toolStripMenuItem7.Text = "Gestion de Clientes";
-            this.toolStripMenuItem7.Click += new System.EventHandler(this.gestionDeClientesToolStripMenuItem_Click);
-            // 
-            // toolStripMenuItem8
-            // 
-            this.toolStripMenuItem8.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripMenuItem8.Name = "toolStripMenuItem8";
-            this.toolStripMenuItem8.Size = new System.Drawing.Size(286, 28);
-            this.toolStripMenuItem8.Text = "Gestion de Direcciones";
-            this.toolStripMenuItem8.Click += new System.EventHandler(this.gestionDeDireccionesToolStripMenuItem_Click);
             // 
             // Main
             // 
