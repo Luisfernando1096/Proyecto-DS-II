@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5129AACD-42A8-42B4-972A-1A769CC3C6C6}</ProjectGuid>
+    <ProjectGuid>{4583A341-0505-4801-983B-49325F497529}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>SCDI</RootNamespace>
-    <AssemblyName>SCDI</AssemblyName>
+    <RootNamespace>Entradas</RootNamespace>
+    <AssemblyName>Entradas</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -46,44 +46,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CLS\AppManager.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Login.cs">
+    <Compile Include="GUI\NuevaEntrada.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Login.Designer.cs">
-      <DependentUpon>Login.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Main.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\Main.Designer.cs">
-      <DependentUpon>Main.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Splash.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\Splash.Designer.cs">
-      <DependentUpon>Splash.cs</DependentUpon>
+    <Compile Include="GUI\NuevaEntrada.Designer.cs">
+      <DependentUpon>NuevaEntrada.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Login.resx">
-      <DependentUpon>Login.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Main.resx">
-      <DependentUpon>Main.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Splash.resx">
-      <DependentUpon>Splash.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\NuevaEntrada.resx">
+      <DependentUpon>NuevaEntrada.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -93,7 +71,6 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -109,36 +86,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\icons8-filled-circle-60.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\DataManager\DataManager.csproj">
-      <Project>{f8c314f7-9aea-4527-9983-6a90fa92f1c6}</Project>
-      <Name>DataManager</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Entradas\Entradas.csproj">
-      <Project>{4583a341-0505-4801-983b-49325f497529}</Project>
-      <Name>Entradas</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\General\General.csproj">
-      <Project>{26f01be9-34ff-4e31-8cc0-29014ddc2a27}</Project>
-      <Name>General</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Reportes\Reportes.csproj">
-      <Project>{d762ed06-826e-45e7-8f71-5bb9ecbe085e}</Project>
-      <Name>Reportes</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Salidas\Salidas.csproj">
-      <Project>{840b874b-f3a0-4960-8b31-a2efaa1a0a34}</Project>
-      <Name>Salidas</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SessionManager\SessionManager.csproj">
-      <Project>{de3373b4-20c5-4fb5-a2df-4beb2e4dcaa0}</Project>
-      <Name>SessionManager</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-filled-circle-green-60.png" />
+    <Folder Include="CLS\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -184,7 +184,7 @@ namespace DataManager
             try
             {
                 DataTable resultado = new DataTable();
-                String sentencia = @"select u.idusuario, u.usuario, u.clave, e.nombres_empleado, rol   from usuarios u, empleados e, roles r
+                String sentencia = @"select u.idusuario, u.usuario, u.clave,e.idEmpleado, e.nombres_empleado,r.idRol, r.rol   from usuarios u, empleados e, roles r
                                      where u.idEmpleado = e.idEmpleado and u.idRol = r.idRol;";
                 DBOperacion operacion = new DBOperacion();
 

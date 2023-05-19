@@ -32,6 +32,22 @@ namespace General.GUI
         public UsuariosGestion()
         {
             InitializeComponent();
+            ///Ajustar Tamaño
+            int totalWidth = 0;
+            int totalHeight = 0;
+
+            foreach (DataGridViewColumn column in dgvUsuarios.Columns)
+            {
+                totalWidth += column.Width;
+            }
+
+            foreach (DataGridViewRow row in dgvUsuarios.Rows)
+            {
+                totalHeight += row.Height;
+            }
+
+            // Ajustar el tamaño del formulario
+            this.ClientSize = new System.Drawing.Size(totalWidth + 50, totalHeight + 500);
         }
 
         private void UsuariosGestion_Load(object sender, EventArgs e)
@@ -39,6 +55,50 @@ namespace General.GUI
             CargarDatos();
             //Codigo para mostrar cuantas filas se 
             lblRegistros.Text = datos.List.Count.ToString() + " Registros Encontrados";
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            General.GUI.UsuarioEdicion f = new General.GUI.UsuarioEdicion();
+            f.ShowDialog();
+            CargarDatos();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Esta seguro que desea eliminar?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                General.CLS.Usuarios usuario = new General.CLS.Usuarios();
+                usuario.IdUsuario = Int32.Parse(dgvUsuarios.CurrentRow.Cells["idUsuario"].Value.ToString());
+                if (usuario.Eliminar())
+                {
+                    MessageBox.Show("¡Registro eliminado correctamente!", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("¡El registro no fue eliminado correctamente!", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            CargarDatos();
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Esta seguro que desea editar?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                UsuarioEdicion usuarioEdicion = new UsuarioEdicion();
+                usuarioEdicion.txtIdUsuario.Text = dgvUsuarios.CurrentRow.Cells["idUsuario"].Value.ToString();
+                usuarioEdicion.txtUsuario.Text = dgvUsuarios.CurrentRow.Cells["usuario"].Value.ToString();
+                usuarioEdicion.txtClave.Text = dgvUsuarios.CurrentRow.Cells["clave"].Value.ToString();
+                usuarioEdicion.txtIdEmpleado.Text = dgvUsuarios.CurrentRow.Cells["idEmpleado"].Value.ToString();
+                usuarioEdicion.txtEmpleado.Text = dgvUsuarios.CurrentRow.Cells["nombres_empleado"].Value.ToString();
+                usuarioEdicion.txtIdRol.Text = dgvUsuarios.CurrentRow.Cells["idRol"].Value.ToString();
+                usuarioEdicion.txtRol.Text = dgvUsuarios.CurrentRow.Cells["rol"].Value.ToString();
+                usuarioEdicion.btnBuscarEmpleado.Visible = false;
+
+                usuarioEdicion.ShowDialog();
+            }
+            CargarDatos();
         }
     }
 }

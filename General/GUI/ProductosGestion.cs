@@ -34,6 +34,7 @@ namespace General.GUI
         public ProductosGestion()
         {
             InitializeComponent();
+            ///Ajustar Tamaño
             int totalWidth = 0;
             int totalHeight = 0;
 

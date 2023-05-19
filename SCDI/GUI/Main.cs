@@ -295,5 +295,12 @@ namespace SCDI.GUI
             f.MdiParent = this;
             f.Show();
         }
+
+        private void nuevaEntradaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Entradas.GUI.NuevaEntrada f = new Entradas.GUI.NuevaEntrada();
+            f.MdiParent = this;
+            f.Show();
+        }
     }
 }
