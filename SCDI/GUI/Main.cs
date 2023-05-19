@@ -80,13 +80,6 @@ namespace SCDI.GUI
             f.Show();
         }
 
-        private void gestionDeEntradasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            General.GUI.EntradasGestion f = new General.GUI.EntradasGestion();
-            f.MdiParent = this;
-            f.Show();
-        }
-
         private void gestionDeExistenciasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
@@ -153,44 +146,6 @@ namespace SCDI.GUI
             }
         }
 
-        private void gestionDeSalidasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                General.GUI.SalidasGestion f = new General.GUI.SalidasGestion();
-                f.MdiParent = this;//No permite que salgan los formularios del form MDI
-                f.Show();
-
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-        }
-
-        private void gestionDeSalidasDeProductosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                General.GUI.SalidasProductosGestion f = new General.GUI.SalidasProductosGestion();
-                f.MdiParent = this;//No permite que salgan los formularios del form MDI
-                f.Show();
-
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-        }
-
-        private void gestionDeEntradasDeProductosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            General.GUI.EntradasProductosGestion f = new General.GUI.EntradasProductosGestion();
-            f.MdiParent = this;
-            f.Show();
-        }
 
         private void gestionDePermisosToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -289,23 +244,23 @@ namespace SCDI.GUI
             f.ShowDialog();
         }
 
-        private void nuevaSalidaToolStripMenuItem_Click(object sender, EventArgs e)
+        private void nuevaEntradaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Entradas.GUI.NuevaEntrada f = new Entradas.GUI.NuevaEntrada();
+            f.MdiParent = this;
+            f.Show();
+        }
+
+        private void toolStripMenuItem3_Click(object sender, EventArgs e)
         {
             Salidas.GUI.SalidaNueva f = new Salidas.GUI.SalidaNueva();
             f.MdiParent = this;
             f.Show();
         }
 
-        private void buscarSalidaToolStripMenuItem_Click(object sender, EventArgs e)
+        private void toolStripMenuItem4_Click(object sender, EventArgs e)
         {
             Salidas.GUI.BuscarSalida f = new Salidas.GUI.BuscarSalida();
-            f.MdiParent = this;
-            f.Show();
-        }
-
-        private void nuevaEntradaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Entradas.GUI.NuevaEntrada f = new Entradas.GUI.NuevaEntrada();
             f.MdiParent = this;
             f.Show();
         }
