@@ -299,7 +299,7 @@ namespace Salidas.GUI
             txtExistencia.Text = "";
             txtCantidad.Text = "";
             txtNombreProducto.Text = "";
-            lblTotal.Text = "0";
+            lblTotal.Text = "0.00";
             MessageBox.Show("Se registro exitosamente...", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
             MessageBox.Show("Se genero numero de documento: " + doc, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
