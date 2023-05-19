@@ -4,22 +4,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace General.CLS
+namespace Salidas.CLS
 {
-    class SalidasProductos
+    class Ventas
     {
-        int idSalidasProductos;
+        int idVenta;
         int idSalida;
         int idProducto;
+        int cantidad;
+        double subTotal;
 
-        public int IdSalidasProductos { get => idSalidasProductos; set => idSalidasProductos = value; }
+        public int IdVenta { get => idVenta; set => idVenta = value; }
         public int IdSalida { get => idSalida; set => idSalida = value; }
         public int IdProducto { get => idProducto; set => idProducto = value; }
+        public int Cantidad { get => cantidad; set => cantidad = value; }
+        public double SubTotal { get => subTotal; set => subTotal = value; }
+
         public Boolean Insertar()
         {
             Boolean resultado = false;
             string sentencia;
-            sentencia = @"INSERT INTO salidas_productos(idSalida, idProducto) VALUES('" + idSalida + "', '" + IdProducto + "');";
+            sentencia = @"INSERT INTO ventas(idSalida, idProducto, cantidad, sub_total) VALUES(" + idSalida + ", " + idProducto + ", " + cantidad + ", " + subTotal + ");";
 
             try
             {
@@ -44,8 +49,8 @@ namespace General.CLS
         {
             Boolean resultado = false;
             string sentencia;
-            sentencia = @"UPDATE salidas_productos SET idSalida = '" + idSalida + "', idProducto = '" + IdProducto + "' " +
-                "WHERE idSalidasProductos = " + IdSalidasProductos + ";";
+            sentencia = @"UPDATE ventas SET idSalida = " + idSalida + ", idProducto = " + idProducto + ", cantidad = '" + cantidad + "', sub_total = " + subTotal + " " +
+                "WHERE idVenta = " + idVenta + ";";
 
             try
             {
@@ -70,8 +75,8 @@ namespace General.CLS
         {
             Boolean resultado = false;
             string sentencia;
-            sentencia = @"DELETE FROM salidas_productos " +
-                "WHERE idSalidasProductos = " + IdSalidasProductos + ";";
+            sentencia = @"DELETE FROM ventas " +
+                "WHERE idVenta = " + idVenta + ";";
 
             try
             {

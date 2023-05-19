@@ -1,7 +1,7 @@
 ﻿
-namespace General.GUI
+namespace Salidas.GUI
 {
-    partial class SalidasProductosEdicion
+    partial class FiltrarSalida
     {
         /// <summary>
         /// Required designer variable.
@@ -29,19 +29,10 @@ namespace General.GUI
         /// </summary>
         private void InitializeComponent()
         {
-            this.SuspendLayout();
-            // 
-            // SalidasProductosEdicion
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "SalidasProductosEdicion";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Edicion de Salida de Productos";
-            this.ResumeLayout(false);
-
+            this.Text = "FiltrarSalida";
         }
 
         #endregion

@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace General.GUI
+namespace Salidas.GUI
 {
-    public partial class SalidasEdicion : Form
+    public partial class FiltrarSalida : Form
     {
-        public SalidasEdicion()
+        public FiltrarSalida()
         {
             InitializeComponent();
         }

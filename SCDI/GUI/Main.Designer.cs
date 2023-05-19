@@ -42,15 +42,14 @@ namespace SCDI.GUI
             this.gestionDeUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionDeEmpleadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestioDeDepartamentosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gestionDeEntradasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionDeExistenciasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionDeClasificacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionDeRolesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionDeClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gestionDeDireccionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gestionDeSalidasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gestionDeSalidasDeProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gestionDeEntradasDeProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem8 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem7 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionDePermisosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionDeOpcionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
@@ -131,39 +130,42 @@ namespace SCDI.GUI
             this.entradaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1179, 32);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(884, 72);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // generalToolStripMenuItem
             // 
+            this.generalToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.generalToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.gestionDeUsuariosToolStripMenuItem,
             this.gestionDeEmpleadosToolStripMenuItem,
             this.gestioDeDepartamentosToolStripMenuItem,
-            this.gestionDeEntradasToolStripMenuItem,
             this.gestionDeExistenciasToolStripMenuItem,
             this.gestionDeClasificacionesToolStripMenuItem,
             this.gestionDeRolesToolStripMenuItem,
             this.gestionDeClientesToolStripMenuItem,
-            this.gestionDeDireccionesToolStripMenuItem,
-            this.gestionDeSalidasToolStripMenuItem,
-            this.gestionDeSalidasDeProductosToolStripMenuItem,
-            this.gestionDeEntradasDeProductosToolStripMenuItem,
+            this.toolStripMenuItem8,
+            this.toolStripMenuItem7,
+            this.toolStripMenuItem6,
+            this.toolStripMenuItem5,
             this.gestionDePermisosToolStripMenuItem,
             this.gestionDeOpcionesToolStripMenuItem,
             this.toolStripMenuItem2,
             this.gestionDeCategoriasToolStripMenuItem,
             this.gestionDeMunicipiosToolStripMenuItem,
             this.gestionDeProveedoresToolStripMenuItem});
-            this.generalToolStripMenuItem.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.generalToolStripMenuItem.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.generalToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("generalToolStripMenuItem.Image")));
+            this.generalToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.generalToolStripMenuItem.Name = "generalToolStripMenuItem";
             this.generalToolStripMenuItem.Size = new System.Drawing.Size(84, 28);
             this.generalToolStripMenuItem.Text = "General";
             // 
             // gestionDeUsuariosToolStripMenuItem
             // 
+            this.gestionDeUsuariosToolStripMenuItem.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gestionDeUsuariosToolStripMenuItem.Name = "gestionDeUsuariosToolStripMenuItem";
             this.gestionDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(361, 28);
             this.gestionDeUsuariosToolStripMenuItem.Text = "Gestion de Usuarios";
@@ -171,6 +173,7 @@ namespace SCDI.GUI
             // 
             // gestionDeEmpleadosToolStripMenuItem
             // 
+            this.gestionDeEmpleadosToolStripMenuItem.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gestionDeEmpleadosToolStripMenuItem.Name = "gestionDeEmpleadosToolStripMenuItem";
             this.gestionDeEmpleadosToolStripMenuItem.Size = new System.Drawing.Size(361, 28);
             this.gestionDeEmpleadosToolStripMenuItem.Text = "Gestion de Empleados";
@@ -178,6 +181,7 @@ namespace SCDI.GUI
             // 
             // gestioDeDepartamentosToolStripMenuItem
             // 
+            this.gestioDeDepartamentosToolStripMenuItem.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gestioDeDepartamentosToolStripMenuItem.Name = "gestioDeDepartamentosToolStripMenuItem";
             this.gestioDeDepartamentosToolStripMenuItem.Size = new System.Drawing.Size(361, 28);
             this.gestioDeDepartamentosToolStripMenuItem.Text = "Gestion de Departamentos";
@@ -192,6 +196,7 @@ namespace SCDI.GUI
             // 
             // gestionDeExistenciasToolStripMenuItem
             // 
+            this.gestionDeExistenciasToolStripMenuItem.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gestionDeExistenciasToolStripMenuItem.Name = "gestionDeExistenciasToolStripMenuItem";
             this.gestionDeExistenciasToolStripMenuItem.Size = new System.Drawing.Size(361, 28);
             this.gestionDeExistenciasToolStripMenuItem.Text = "Gestion de Existencias";
@@ -199,6 +204,7 @@ namespace SCDI.GUI
             // 
             // gestionDeClasificacionesToolStripMenuItem
             // 
+            this.gestionDeClasificacionesToolStripMenuItem.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gestionDeClasificacionesToolStripMenuItem.Name = "gestionDeClasificacionesToolStripMenuItem";
             this.gestionDeClasificacionesToolStripMenuItem.Size = new System.Drawing.Size(361, 28);
             this.gestionDeClasificacionesToolStripMenuItem.Text = "Gestion de Clasificaciones";
@@ -206,6 +212,7 @@ namespace SCDI.GUI
             // 
             // gestionDeRolesToolStripMenuItem
             // 
+            this.gestionDeRolesToolStripMenuItem.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gestionDeRolesToolStripMenuItem.Name = "gestionDeRolesToolStripMenuItem";
             this.gestionDeRolesToolStripMenuItem.Size = new System.Drawing.Size(361, 28);
             this.gestionDeRolesToolStripMenuItem.Text = "Gestion de Roles";
@@ -213,33 +220,34 @@ namespace SCDI.GUI
             // 
             // gestionDeClientesToolStripMenuItem
             // 
+            this.gestionDeClientesToolStripMenuItem.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gestionDeClientesToolStripMenuItem.Name = "gestionDeClientesToolStripMenuItem";
             this.gestionDeClientesToolStripMenuItem.Size = new System.Drawing.Size(361, 28);
             this.gestionDeClientesToolStripMenuItem.Text = "Gestion de Clientes";
             this.gestionDeClientesToolStripMenuItem.Click += new System.EventHandler(this.gestionDeClientesToolStripMenuItem_Click);
             // 
-            // gestionDeDireccionesToolStripMenuItem
+            // toolStripMenuItem8
             // 
             this.gestionDeDireccionesToolStripMenuItem.Name = "gestionDeDireccionesToolStripMenuItem";
             this.gestionDeDireccionesToolStripMenuItem.Size = new System.Drawing.Size(361, 28);
             this.gestionDeDireccionesToolStripMenuItem.Text = "Gestion de Direcciones";
             this.gestionDeDireccionesToolStripMenuItem.Click += new System.EventHandler(this.gestionDeDireccionesToolStripMenuItem_Click);
             // 
-            // gestionDeSalidasToolStripMenuItem
+            // toolStripMenuItem7
             // 
             this.gestionDeSalidasToolStripMenuItem.Name = "gestionDeSalidasToolStripMenuItem";
             this.gestionDeSalidasToolStripMenuItem.Size = new System.Drawing.Size(361, 28);
             this.gestionDeSalidasToolStripMenuItem.Text = "Gestion de Salidas";
             this.gestionDeSalidasToolStripMenuItem.Click += new System.EventHandler(this.gestionDeSalidasToolStripMenuItem_Click);
             // 
-            // gestionDeSalidasDeProductosToolStripMenuItem
+            // toolStripMenuItem6
             // 
             this.gestionDeSalidasDeProductosToolStripMenuItem.Name = "gestionDeSalidasDeProductosToolStripMenuItem";
             this.gestionDeSalidasDeProductosToolStripMenuItem.Size = new System.Drawing.Size(361, 28);
             this.gestionDeSalidasDeProductosToolStripMenuItem.Text = "Gestion de Salidas de Productos";
             this.gestionDeSalidasDeProductosToolStripMenuItem.Click += new System.EventHandler(this.gestionDeSalidasDeProductosToolStripMenuItem_Click);
             // 
-            // gestionDeEntradasDeProductosToolStripMenuItem
+            // toolStripMenuItem5
             // 
             this.gestionDeEntradasDeProductosToolStripMenuItem.Name = "gestionDeEntradasDeProductosToolStripMenuItem";
             this.gestionDeEntradasDeProductosToolStripMenuItem.Size = new System.Drawing.Size(361, 28);
@@ -248,6 +256,7 @@ namespace SCDI.GUI
             // 
             // gestionDePermisosToolStripMenuItem
             // 
+            this.gestionDePermisosToolStripMenuItem.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gestionDePermisosToolStripMenuItem.Name = "gestionDePermisosToolStripMenuItem";
             this.gestionDePermisosToolStripMenuItem.Size = new System.Drawing.Size(361, 28);
             this.gestionDePermisosToolStripMenuItem.Text = "Gestion de Permisos";
@@ -255,6 +264,7 @@ namespace SCDI.GUI
             // 
             // gestionDeOpcionesToolStripMenuItem
             // 
+            this.gestionDeOpcionesToolStripMenuItem.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gestionDeOpcionesToolStripMenuItem.Name = "gestionDeOpcionesToolStripMenuItem";
             this.gestionDeOpcionesToolStripMenuItem.Size = new System.Drawing.Size(361, 28);
             this.gestionDeOpcionesToolStripMenuItem.Text = "Gestion de Opciones";
@@ -262,6 +272,7 @@ namespace SCDI.GUI
             // 
             // toolStripMenuItem2
             // 
+            this.toolStripMenuItem2.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
             this.toolStripMenuItem2.Size = new System.Drawing.Size(361, 28);
             this.toolStripMenuItem2.Text = "Gestion de Productos";
@@ -269,6 +280,7 @@ namespace SCDI.GUI
             // 
             // gestionDeCategoriasToolStripMenuItem
             // 
+            this.gestionDeCategoriasToolStripMenuItem.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gestionDeCategoriasToolStripMenuItem.Name = "gestionDeCategoriasToolStripMenuItem";
             this.gestionDeCategoriasToolStripMenuItem.Size = new System.Drawing.Size(361, 28);
             this.gestionDeCategoriasToolStripMenuItem.Text = "Gestion de Categorias";
@@ -276,6 +288,7 @@ namespace SCDI.GUI
             // 
             // gestionDeMunicipiosToolStripMenuItem
             // 
+            this.gestionDeMunicipiosToolStripMenuItem.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gestionDeMunicipiosToolStripMenuItem.Name = "gestionDeMunicipiosToolStripMenuItem";
             this.gestionDeMunicipiosToolStripMenuItem.Size = new System.Drawing.Size(361, 28);
             this.gestionDeMunicipiosToolStripMenuItem.Text = "Gestion de municipios";
@@ -283,6 +296,7 @@ namespace SCDI.GUI
             // 
             // gestionDeProveedoresToolStripMenuItem
             // 
+            this.gestionDeProveedoresToolStripMenuItem.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gestionDeProveedoresToolStripMenuItem.Name = "gestionDeProveedoresToolStripMenuItem";
             this.gestionDeProveedoresToolStripMenuItem.Size = new System.Drawing.Size(361, 28);
             this.gestionDeProveedoresToolStripMenuItem.Text = "Gestion de proveedores";
@@ -292,13 +306,16 @@ namespace SCDI.GUI
             // 
             this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.clientesToolStripMenuItem});
-            this.reportesToolStripMenuItem.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reportesToolStripMenuItem.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reportesToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("reportesToolStripMenuItem.Image")));
+            this.reportesToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
             this.reportesToolStripMenuItem.Size = new System.Drawing.Size(94, 28);
             this.reportesToolStripMenuItem.Text = "Reportes";
             // 
             // clientesToolStripMenuItem
             // 
+            this.clientesToolStripMenuItem.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
             this.clientesToolStripMenuItem.Size = new System.Drawing.Size(156, 28);
             this.clientesToolStripMenuItem.Text = "Clientes";
@@ -399,15 +416,10 @@ namespace SCDI.GUI
         private System.Windows.Forms.ToolStripMenuItem gestionDeRolesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestioDeDepartamentosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionDeProductosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem gestionDeEntradasToolStripMenuItem;
         //private System.Windows.Forms.ToolStripMenuItem gestionDeProductosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionDeExistenciasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionDeClasificacionesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionDeClientesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem gestionDeDireccionesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem gestionDeSalidasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem gestionDeSalidasDeProductosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem gestionDeEntradasDeProductosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionDePermisosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionDeOpcionesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;

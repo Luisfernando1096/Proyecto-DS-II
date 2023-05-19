@@ -51,6 +51,7 @@ namespace General.GUI
             this.idDireccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dui = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnSeleccionar = new System.Windows.Forms.Button();
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
@@ -241,11 +242,25 @@ namespace General.GUI
             this.nit.Name = "nit";
             this.nit.ReadOnly = true;
             // 
+            // btnSeleccionar
+            // 
+            this.btnSeleccionar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSeleccionar.BackgroundImage")));
+            this.btnSeleccionar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSeleccionar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSeleccionar.Location = new System.Drawing.Point(763, 2);
+            this.btnSeleccionar.Name = "btnSeleccionar";
+            this.btnSeleccionar.Size = new System.Drawing.Size(29, 29);
+            this.btnSeleccionar.TabIndex = 7;
+            this.btnSeleccionar.UseVisualStyleBackColor = true;
+            this.btnSeleccionar.Visible = false;
+            this.btnSeleccionar.Click += new System.EventHandler(this.btnSeleccionar_Click);
+            // 
             // ClientesGestion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(804, 376);
+            this.Controls.Add(this.btnSeleccionar);
             this.Controls.Add(this.dgvDatos);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
@@ -284,5 +299,6 @@ namespace General.GUI
         private System.Windows.Forms.DataGridViewTextBoxColumn idDireccion;
         private System.Windows.Forms.DataGridViewTextBoxColumn dui;
         private System.Windows.Forms.DataGridViewTextBoxColumn nit;
+        public System.Windows.Forms.Button btnSeleccionar;
     }
 }

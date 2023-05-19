@@ -61,8 +61,6 @@
     <Compile Include="GUI\CategoriasEdicion.Designer.cs">
       <DependentUpon>CategoriasEdicion.cs</DependentUpon>
     </Compile>
-    <Compile Include="CLS\Salidas.cs" />
-    <Compile Include="CLS\SalidasProductos.cs" />
     <Compile Include="GUI\CategoriasGestion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,23 +103,11 @@
     <Compile Include="GUI\ClasificacionesEdicion.Designer.cs">
       <DependentUpon>ClasificacionesEdicion.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\EntradasGestion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\EntradasGestion.Designer.cs">
-      <DependentUpon>EntradasGestion.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI\ClasificacionesGestion.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\ClasificacionesGestion.Designer.cs">
       <DependentUpon>ClasificacionesGestion.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\EntradasProductosGestion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\EntradasProductosGestion.Designer.cs">
-      <DependentUpon>EntradasProductosGestion.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\ExistenciaEdicion.cs">
       <SubType>Form</SubType>
@@ -207,24 +193,6 @@
     <Compile Include="GUI\RolesEdicion.Designer.cs">
       <DependentUpon>RolesEdicion.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\SalidasEdicion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\SalidasEdicion.Designer.cs">
-      <DependentUpon>SalidasEdicion.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\SalidasProductosEdicion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\SalidasProductosEdicion.Designer.cs">
-      <DependentUpon>SalidasProductosEdicion.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\SalidasProductosGestion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\SalidasProductosGestion.Designer.cs">
-      <DependentUpon>SalidasProductosGestion.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI\RolesGestion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -242,12 +210,6 @@
     </Compile>
     <Compile Include="GUI\UsuariosGestion.Designer.cs">
       <DependentUpon>UsuariosGestion.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\SalidasGestion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\SalidasGestion.Designer.cs">
-      <DependentUpon>SalidasGestion.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -282,14 +244,8 @@
     <EmbeddedResource Include="GUI\EmpleadosEdicion.resx">
       <DependentUpon>EmpleadosEdicion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\EntradasGestion.resx">
-      <DependentUpon>EntradasGestion.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GUI\ClasificacionesGestion.resx">
       <DependentUpon>ClasificacionesGestion.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\EntradasProductosGestion.resx">
-      <DependentUpon>EntradasProductosGestion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\ExistenciaEdicion.resx">
       <DependentUpon>ExistenciaEdicion.cs</DependentUpon>
@@ -333,15 +289,6 @@
     <EmbeddedResource Include="GUI\RolesEdicion.resx">
       <DependentUpon>RolesEdicion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\SalidasEdicion.resx">
-      <DependentUpon>SalidasEdicion.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\SalidasProductosEdicion.resx">
-      <DependentUpon>SalidasProductosEdicion.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\SalidasProductosGestion.resx">
-      <DependentUpon>SalidasProductosGestion.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GUI\RolesGestion.resx">
       <DependentUpon>RolesGestion.cs</DependentUpon>
     </EmbeddedResource>
@@ -350,9 +297,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UsuariosGestion.resx">
       <DependentUpon>UsuariosGestion.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\SalidasGestion.resx">
-      <DependentUpon>SalidasGestion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
