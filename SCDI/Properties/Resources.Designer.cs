@@ -59,25 +59,5 @@ namespace SCDI.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap icons8_filled_circle_60 {
-            get {
-                object obj = ResourceManager.GetObject("icons8-filled-circle-60", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap icons8_filled_circle_green_60 {
-            get {
-                object obj = ResourceManager.GetObject("icons8-filled-circle-green-60", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
     }
 }

@@ -276,6 +276,7 @@ namespace Entradas.GUI
                 {
                     IdProducto = Int32.Parse(row.Cells["idProducto"].Value.ToString()),
                     IdEntrada = idEntrada,
+                    Cantidad = Int32.Parse(row.Cells["cantidad"].Value.ToString()),
                     Precio_compra = Double.Parse(row.Cells["precio_compra"].Value.ToString()),
                     Precio_venta = Double.Parse(row.Cells["precio_venta"].Value.ToString()),
                     Sub_total = Double.Parse(row.Cells["sub_total"].Value.ToString())
@@ -342,7 +343,7 @@ namespace Entradas.GUI
             dgvDatos.Rows.Clear();
             txtNombreProveedor.Text = "";
             txtDocumento.Text = "";
-            txtDocumento.Text = "";
+            txtDocumentoEntrada.Text = "";
             txtCodigoProducto.Text = "";
             txtPrecioCompra.Text = "";
             txtPrecioVenta.Text = "";

@@ -11,6 +11,7 @@ namespace Entradas.CLS
         int idCompra;
         int idProducto;
         int idEntrada;
+        int cantidad;
         double precio_compra;
         double precio_venta;
         double sub_total;
@@ -21,11 +22,13 @@ namespace Entradas.CLS
         public double Precio_compra { get => precio_compra; set => precio_compra = value; }
         public double Precio_venta { get => precio_venta; set => precio_venta = value; }
         public double Sub_total { get => sub_total; set => sub_total = value; }
+        public int Cantidad { get => cantidad; set => cantidad = value; }
+
         public Boolean Insertar()
         {
             Boolean resultado = false;
             string sentencia;
-            sentencia = @"INSERT INTO compras(idProducto, idEntrada, precio_compra, precio_venta, sub_total) VALUES(" + idProducto + ", " + idEntrada + ", " + precio_compra + ", " + precio_venta + ", " + sub_total + ");";
+            sentencia = @"INSERT INTO compras(idProducto, idEntrada, cantidad, precio_compra, precio_venta, sub_total) VALUES(" + idProducto + ", " + idEntrada + ", " + cantidad + ", " + precio_compra + ", " + precio_venta + ", " + sub_total + ");";
 
             try
             {
@@ -50,7 +53,7 @@ namespace Entradas.CLS
         {
             Boolean resultado = false;
             string sentencia;
-            sentencia = @"UPDATE existencias SET idProducto = " + idProducto + ", idEntrada = " + idEntrada + ", precio_compra = " + precio_compra + ", precio_venta = " + precio_venta + ", sub_total = " + sub_total + " " +
+            sentencia = @"UPDATE existencias SET idProducto = " + idProducto + ", idEntrada = " + idEntrada + ", cantidad = " + cantidad + ", precio_compra = " + precio_compra + ", precio_venta = " + precio_venta + ", sub_total = " + sub_total + " " +
                 "WHERE idCompra = " + idCompra + ";";
 
             try
