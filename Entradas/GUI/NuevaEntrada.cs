@@ -71,6 +71,8 @@ namespace Entradas.GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
+            txtDocumento.Text = "";
+            txtNombreProveedor.Text = "";
             General.GUI.ProveedoresGestion f = new General.GUI.ProveedoresGestion();
             f.btnSeleccionar.Visible = true;
             f.ShowDialog();
@@ -84,6 +86,9 @@ namespace Entradas.GUI
 
         private void button2_Click(object sender, EventArgs e)
         {
+            txtCodigoProducto.Text = "";
+            txtNombreProducto.Text = "";
+            txtPrecioVenta.Text = "";
             General.GUI.ProductosGestion f = new General.GUI.ProductosGestion();
             f.btnSeleccionar.Visible = true;
             f.ShowDialog();
@@ -159,7 +164,7 @@ namespace Entradas.GUI
                 datosProducto.Cells["nombre"].Value.ToString(),
                 datosProducto.Cells["descripcion"].Value.ToString(),
                 txtPrecioCompra.Text.ToString(),
-                datosProducto.Cells["precio_venta"].Value.ToString(),
+                txtPrecioVenta.Text.ToString(),
                 Double.Parse(txtCantidad.Text) * Double.Parse(txtPrecioCompra.Text.ToString()),
                 txtCantidad.Text,
                 datosProducto.Cells["idExistencia"].Value.ToString(),
@@ -192,9 +197,19 @@ namespace Entradas.GUI
 
         private void button4_Click(object sender, EventArgs e)
         {
-            if (txtDocumento.Text.Trim() == "")
+            if (txtDocumentoEntrada.Text.Trim() == "")
             {
                 MessageBox.Show("Debe colocar el numero de documento", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            if (txtDocumentoEntrada.Text.Trim() == "")
+            {
+                MessageBox.Show("Debe seleccionar un proveedor", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            if (dgvDatos.Rows.Count < 1)
+            {
+                MessageBox.Show("Debe agregar al menos una entrada", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
             DataTable tDoc = DataManager.DBConsultas.ObtenerListaDocumentos();
@@ -337,6 +352,20 @@ namespace Entradas.GUI
             txtDocumento.Text = "";
             MessageBox.Show("Se registro exitosamente...", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
             
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Esta seguro que desea eliminar?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                dgvDatos.Rows.RemoveAt(dgvDatos.CurrentRow.Index);
+                MessageBox.Show("¡Registro eliminado correctamente!", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                CalcularTotal();
+                if (dgvDatos.Rows.Count < 1)
+                {
+                    btnEliminar.Visible = false;
+                }
+            }
         }
     }
 }

@@ -42,6 +42,8 @@ namespace Salidas.GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
+            txtDui.Text = "";
+            txtNombre.Text = "";
             General.GUI.ClientesGestion f = new General.GUI.ClientesGestion();
             f.btnSeleccionar.Visible = true;
             f.ShowDialog();
@@ -56,11 +58,14 @@ namespace Salidas.GUI
 
         private void button2_Click(object sender, EventArgs e)
         {
+            txtNombreProducto.Text = "";
+            txtCodigo.Text = "";
+            txtExistencia.Text = "";
             General.GUI.ProductosGestion f = new General.GUI.ProductosGestion();
             f.btnSeleccionar.Visible = true;
             f.ShowDialog();
             datosProducto = f.datosProEnviar;
-            if (datosCliente != null)
+            if (datosProducto != null)
             {
                 txtCodigo.Text = datosProducto.Cells["codigo"].Value.ToString();
                 txtNombreProducto.Text = datosProducto.Cells["nombre"].Value.ToString();
