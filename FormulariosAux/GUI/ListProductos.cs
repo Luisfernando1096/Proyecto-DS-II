@@ -13,6 +13,8 @@ namespace FormulariosAux.GUI
     public partial class ListProductos : Form
     {
         BindingSource datos = new BindingSource();
+        public DataGridViewRow datosProEnviar;
+
         private void CargarDatos()
         {
             try
@@ -159,6 +161,13 @@ namespace FormulariosAux.GUI
             CargarDatos();
             txtBuscarPorDoc.Text = "";
             txtBuscarPorNombre.Text = "";
+        }
+
+        private void btnSeleccionar_Click(object sender, EventArgs e)
+        {
+            datosProEnviar = dgvDatos.CurrentRow;
+            this.DialogResult = DialogResult.OK;
+            this.Close();
         }
     }
 }

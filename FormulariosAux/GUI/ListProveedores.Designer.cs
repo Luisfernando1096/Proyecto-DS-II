@@ -49,6 +49,7 @@ namespace FormulariosAux.GUI
             this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idDireccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             this.SuspendLayout();
@@ -58,30 +59,30 @@ namespace FormulariosAux.GUI
             this.btnSeleccionar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSeleccionar.BackgroundImage")));
             this.btnSeleccionar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnSeleccionar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSeleccionar.Location = new System.Drawing.Point(939, 10);
-            this.btnSeleccionar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSeleccionar.Location = new System.Drawing.Point(746, 8);
             this.btnSeleccionar.Name = "btnSeleccionar";
-            this.btnSeleccionar.Size = new System.Drawing.Size(39, 36);
+            this.btnSeleccionar.Size = new System.Drawing.Size(29, 29);
             this.btnSeleccionar.TabIndex = 74;
             this.btnSeleccionar.UseVisualStyleBackColor = true;
             this.btnSeleccionar.Visible = false;
+            this.btnSeleccionar.Click += new System.EventHandler(this.btnSeleccionar_Click);
             // 
             // textBox2
             // 
             this.textBox2.Enabled = false;
             this.textBox2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(32, 13);
+            this.textBox2.Location = new System.Drawing.Point(24, 11);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(72, 25);
+            this.textBox2.Size = new System.Drawing.Size(55, 21);
             this.textBox2.TabIndex = 73;
             this.textBox2.Text = "Nombre:";
             // 
             // txtBuscarPorNombre
             // 
-            this.txtBuscarPorNombre.Location = new System.Drawing.Point(111, 14);
-            this.txtBuscarPorNombre.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBuscarPorNombre.Location = new System.Drawing.Point(83, 11);
             this.txtBuscarPorNombre.Name = "txtBuscarPorNombre";
-            this.txtBuscarPorNombre.Size = new System.Drawing.Size(284, 25);
+            this.txtBuscarPorNombre.Size = new System.Drawing.Size(214, 21);
             this.txtBuscarPorNombre.TabIndex = 72;
             this.txtBuscarPorNombre.Text = "";
             this.txtBuscarPorNombre.TextChanged += new System.EventHandler(this.txtBuscarPorNombre_TextChanged);
@@ -91,10 +92,9 @@ namespace FormulariosAux.GUI
             this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.Location = new System.Drawing.Point(774, 8);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Location = new System.Drawing.Point(580, 6);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(36, 36);
+            this.button1.Size = new System.Drawing.Size(27, 29);
             this.button1.TabIndex = 71;
             this.button1.Text = "0";
             this.button1.UseVisualStyleBackColor = true;
@@ -104,18 +104,18 @@ namespace FormulariosAux.GUI
             // 
             this.textBox1.Enabled = false;
             this.textBox1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(456, 12);
+            this.textBox1.Location = new System.Drawing.Point(342, 10);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(72, 25);
+            this.textBox1.Size = new System.Drawing.Size(55, 21);
             this.textBox1.TabIndex = 70;
             this.textBox1.Text = "N° Doc.";
             // 
             // txtBuscarPorDoc
             // 
-            this.txtBuscarPorDoc.Location = new System.Drawing.Point(543, 12);
-            this.txtBuscarPorDoc.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBuscarPorDoc.Location = new System.Drawing.Point(407, 10);
             this.txtBuscarPorDoc.Name = "txtBuscarPorDoc";
-            this.txtBuscarPorDoc.Size = new System.Drawing.Size(226, 25);
+            this.txtBuscarPorDoc.Size = new System.Drawing.Size(170, 21);
             this.txtBuscarPorDoc.TabIndex = 69;
             this.txtBuscarPorDoc.Text = "";
             this.txtBuscarPorDoc.TextChanged += new System.EventHandler(this.txtBuscarPorDoc_TextChanged);
@@ -133,24 +133,24 @@ namespace FormulariosAux.GUI
             this.toolStripSeparator3});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1051, 54);
+            this.toolStrip1.Size = new System.Drawing.Size(788, 44);
             this.toolStrip1.TabIndex = 68;
             this.toolStrip1.Text = "toolStrip1";
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 54);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 44);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 54);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 44);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 54);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 44);
             // 
             // dgvDatos
             // 
@@ -179,15 +179,14 @@ namespace FormulariosAux.GUI
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvDatos.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvDatos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvDatos.Location = new System.Drawing.Point(0, 54);
-            this.dgvDatos.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvDatos.Location = new System.Drawing.Point(0, 44);
             this.dgvDatos.MultiSelect = false;
             this.dgvDatos.Name = "dgvDatos";
             this.dgvDatos.ReadOnly = true;
             this.dgvDatos.RowHeadersVisible = false;
             this.dgvDatos.RowHeadersWidth = 51;
             this.dgvDatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDatos.Size = new System.Drawing.Size(1051, 524);
+            this.dgvDatos.Size = new System.Drawing.Size(788, 426);
             this.dgvDatos.TabIndex = 75;
             // 
             // idProveedor
@@ -245,11 +244,22 @@ namespace FormulariosAux.GUI
             this.idDireccion.Visible = false;
             this.idDireccion.Width = 125;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(665, 12);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(80, 20);
+            this.label1.TabIndex = 85;
+            this.label1.Text = "Seleccionar";
+            // 
             // ListProveedores
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1051, 578);
+            this.ClientSize = new System.Drawing.Size(788, 470);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvDatos);
             this.Controls.Add(this.btnSeleccionar);
             this.Controls.Add(this.textBox2);
@@ -259,6 +269,7 @@ namespace FormulariosAux.GUI
             this.Controls.Add(this.txtBuscarPorDoc);
             this.Controls.Add(this.toolStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ListProveedores";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ListProveedores";
@@ -290,5 +301,6 @@ namespace FormulariosAux.GUI
         private System.Windows.Forms.DataGridViewTextBoxColumn telefono;
         private System.Windows.Forms.DataGridViewTextBoxColumn direccion;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDireccion;
+        private System.Windows.Forms.Label label1;
     }
 }

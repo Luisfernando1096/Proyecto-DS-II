@@ -12,29 +12,40 @@ namespace Salidas.GUI
 {
     public partial class BuscarSalida : Form
     {
-        BindingSource datos = new BindingSource();
         public BuscarSalida()
         {
             InitializeComponent();
             dtpFecha.Format = DateTimePickerFormat.Custom;
-            dtpFecha.CustomFormat = "yyyy/MM/dd";
+            dtpFecha.CustomFormat = " ";
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             try
             {
-                datos.DataSource = DataManager.DBConsultas.VerRegistroSalidas(txtDocumento.Text);
-                dgvDatos.DataSource = datos;
+                DataTable tEntradas = DataManager.DBConsultas.VerRegistroSalidas(txtDocumento.Text);
+                dgvDatos.DataSource = tEntradas;
                 dgvDatos.AutoGenerateColumns = false;//Impide generar automaticamente las columnas de encabezado
                                                      //Codigo para mostrar cuantas filas se
-                if (dgvDatos.RowCount>0)
+                if (dgvDatos.RowCount > 0)
                 {
-                    txtDui.Text = dgvDatos.Rows[0].Cells[7].Value.ToString();
-                    txtNombre.Text = dgvDatos.Rows[0].Cells[8].Value.ToString();
-                    dtpFecha.Text = dgvDatos.Rows[0].Cells[9].Value.ToString();
-                    txtUsuario.Text = dgvDatos.Rows[0].Cells[11].Value.ToString();
-                    lblTotal.Text = dgvDatos.Rows[0].Cells[10].Value.ToString();
+                    dtpFecha.Format = DateTimePickerFormat.Custom;
+                    dtpFecha.CustomFormat = "yyyy/MM/dd";
+                    txtDui.Text = dgvDatos.Rows[0].Cells["dui"].Value.ToString();
+                    txtNombre.Text = dgvDatos.Rows[0].Cells["nombres_cliente"].Value.ToString();
+                    dtpFecha.Text = dgvDatos.Rows[0].Cells["fecha_salida"].Value.ToString();
+                    txtUsuario.Text = dgvDatos.Rows[0].Cells["usuario"].Value.ToString();
+                    lblTotal.Text = dgvDatos.Rows[0].Cells["total"].Value.ToString();
+                }
+                else
+                {
+                    dtpFecha.Format = DateTimePickerFormat.Custom;
+                    dtpFecha.CustomFormat = " ";
+                    txtDui.Text = "";
+                    txtNombre.Text = "";
+                    dtpFecha.Text = "";
+                    txtUsuario.Text = "";
+                    lblTotal.Text = "0.00";
                 }
             }
             catch (Exception)
@@ -42,6 +53,11 @@ namespace Salidas.GUI
 
                 throw;
             }
+        }
+
+        private void BuscarSalida_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

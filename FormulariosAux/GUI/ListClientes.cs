@@ -13,6 +13,8 @@ namespace FormulariosAux.GUI
     public partial class ListClientes : Form
     {
         BindingSource datos = new BindingSource();
+        public DataGridViewRow datosCliEnviar;
+
         private void CargarDatos()
         {
             try
@@ -148,6 +150,13 @@ namespace FormulariosAux.GUI
             txtBuscarPorDoc.Text = "";
             txtBuscarPorNombre.Text = "";
             CargarDatos();
+        }
+
+        private void btnSeleccionar_Click(object sender, EventArgs e)
+        {
+            datosCliEnviar = dgvDatos.CurrentRow;
+            this.DialogResult = DialogResult.OK;
+            this.Close();
         }
     }
 }

@@ -13,7 +13,6 @@ namespace General.GUI
     public partial class ClientesGestion : Form
     {
         BindingSource datos = new BindingSource();
-        public DataGridViewRow datosCliEnviar { get; set; }
 
         private void CargarDatos()
         {
@@ -87,11 +86,5 @@ namespace General.GUI
             CargarDatos();
         }
 
-        private void btnSeleccionar_Click(object sender, EventArgs e)
-        {
-            datosCliEnviar = dgvDatos.CurrentRow;
-            this.DialogResult = DialogResult.OK;
-            this.Close();
-        }
     }
 }

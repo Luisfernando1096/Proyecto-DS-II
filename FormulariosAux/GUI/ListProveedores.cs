@@ -13,6 +13,8 @@ namespace FormulariosAux.GUI
     public partial class ListProveedores : Form
     {
         BindingSource datos = new BindingSource();
+        public DataGridViewRow datosProvEnviar;
+
         public ListProveedores()
         {
             InitializeComponent();
@@ -142,6 +144,13 @@ namespace FormulariosAux.GUI
             {
                 e.Handled = true;
             }
+        }
+
+        private void btnSeleccionar_Click(object sender, EventArgs e)
+        {
+            datosProvEnviar = dgvDatos.CurrentRow;
+            this.DialogResult = DialogResult.OK;
+            this.Close();
         }
     }
 }

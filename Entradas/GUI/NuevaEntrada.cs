@@ -73,7 +73,7 @@ namespace Entradas.GUI
         {
             txtDocumento.Text = "";
             txtNombreProveedor.Text = "";
-            General.GUI.ProveedoresGestion f = new General.GUI.ProveedoresGestion();
+            FormulariosAux.GUI.ListProveedores f = new FormulariosAux.GUI.ListProveedores();
             f.btnSeleccionar.Visible = true;
             f.ShowDialog();
             datosProveedor = f.datosProvEnviar;
@@ -89,7 +89,7 @@ namespace Entradas.GUI
             txtCodigoProducto.Text = "";
             txtNombreProducto.Text = "";
             txtPrecioVenta.Text = "";
-            General.GUI.ProductosGestion f = new General.GUI.ProductosGestion();
+            FormulariosAux.GUI.ListProductos f = new FormulariosAux.GUI.ListProductos();
             f.btnSeleccionar.Visible = true;
             f.ShowDialog();
             datosProducto = f.datosProEnviar;

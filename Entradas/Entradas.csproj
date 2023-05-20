@@ -94,6 +94,10 @@
       <Project>{f8c314f7-9aea-4527-9983-6a90fa92f1c6}</Project>
       <Name>DataManager</Name>
     </ProjectReference>
+    <ProjectReference Include="..\FormulariosAux\FormulariosAux.csproj">
+      <Project>{23ab8b0f-1f3d-4354-b5c9-b36cce413651}</Project>
+      <Name>FormulariosAux</Name>
+    </ProjectReference>
     <ProjectReference Include="..\General\General.csproj">
       <Project>{26f01be9-34ff-4e31-8cc0-29014ddc2a27}</Project>
       <Name>General</Name>

@@ -44,7 +44,7 @@ namespace Salidas.GUI
         {
             txtDui.Text = "";
             txtNombre.Text = "";
-            General.GUI.ClientesGestion f = new General.GUI.ClientesGestion();
+            FormulariosAux.GUI.ListClientes f = new FormulariosAux.GUI.ListClientes();
             f.btnSeleccionar.Visible = true;
             f.ShowDialog();
             datosCliente = f.datosCliEnviar;
@@ -61,7 +61,7 @@ namespace Salidas.GUI
             txtNombreProducto.Text = "";
             txtCodigo.Text = "";
             txtExistencia.Text = "";
-            General.GUI.ProductosGestion f = new General.GUI.ProductosGestion();
+            FormulariosAux.GUI.ListProductos f = new FormulariosAux.GUI.ListProductos();
             f.btnSeleccionar.Visible = true;
             f.ShowDialog();
             datosProducto = f.datosProEnviar;
