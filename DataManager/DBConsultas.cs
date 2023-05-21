@@ -72,7 +72,7 @@ namespace DataManager
             }
         }
 
-        public static DataTable Inventario()
+        public static DataTable Inventario(string inicio, string fin)
         {
             try
             {
@@ -103,7 +103,7 @@ namespace DataManager
                                             INNER JOIN
                                                 entradas ON entradas.idEntrada = detalle_entradas.idEntrada
                                             WHERE
-                                                entradas.fecha_entrada IN ('2023-05-21', '2023-05-21')
+                                                entradas.fecha_entrada BETWEEN '" + inicio + @"' AND '" + fin + @"'
                                             GROUP BY
                                                 detalle_entradas.idProducto, detalle_entradas.precio_compra
                                         ) AS entradas ON productos.idProducto = entradas.idProducto
@@ -119,7 +119,7 @@ namespace DataManager
                                             INNER JOIN
                                                 salidas ON salidas.idSalida = detalle_salidas.idSalida
                                             WHERE
-                                                salidas.fecha_salida IN ('2023-05-21', '2023-05-21')
+                                                salidas.fecha_salida BETWEEN '" + inicio + @"' AND '" + fin + @"'
                                             GROUP BY
                                                 detalle_salidas.idProducto, detalle_salidas.precio_venta
                                         ) AS salidas ON productos.idProducto = salidas.idProducto;";

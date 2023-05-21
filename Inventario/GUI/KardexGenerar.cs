@@ -12,19 +12,29 @@ namespace Inventario.GUI
 {
     public partial class KardexGenerar : Form
     {
+        BindingSource datos = new BindingSource();
         public KardexGenerar()
         {
             InitializeComponent();
+            dtpInicio.Format = DateTimePickerFormat.Custom;
+            dtpInicio.CustomFormat = "yyyy/MM/dd";
+            dtpFin.Format = DateTimePickerFormat.Custom;
+            dtpFin.CustomFormat = "yyyy/MM/dd";
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            if(dgvDatos.Rows.Count > 0)
+            try
             {
-                dgvDatos.Rows.Clear();
+                datos.DataSource = DataManager.DBConsultas.Inventario(dtpInicio.Text, dtpFin.Text);
+                dgvDatos.DataSource = datos;
+                dgvDatos.AutoGenerateColumns = false;
             }
-            
-            dgvDatos.DataSource = DataManager.DBConsultas.Inventario();
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 }
