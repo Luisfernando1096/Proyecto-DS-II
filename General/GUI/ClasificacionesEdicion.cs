@@ -19,38 +19,51 @@ namespace General.GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //Crear el objeto entidad
-            CLS.Clasificaciones r = new CLS.Clasificaciones();
-            //Sincronizar la entidad con la interfaz
-            r.Clasificacion = txtClasificacion.Text;
-            //Realizar la operacion necesaria
-
-            if (txtIdClasificacion.TextLength > 0)
+            try
             {
-                r.IdClasificacion  = Int32.Parse(txtIdClasificacion.Text);
-                if (r.Actualizar())
+                //Crear el objeto entidad
+                CLS.Clasificaciones r = new CLS.Clasificaciones();
+                //Sincronizar la entidad con la interfaz
+                r.Clasificacion = txtClasificacion.Text;
+                //Realizar la operacion necesaria
+
+                if (txtClasificacion.Text != "")
                 {
-                    MessageBox.Show("¡Registro actualizado correctamente!", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Close();
+                    if (txtIdClasificacion.TextLength > 0)
+                    {
+                        r.IdClasificacion = Int32.Parse(txtIdClasificacion.Text);
+                        if (r.Actualizar())
+                        {
+                            MessageBox.Show("¡Registro actualizado correctamente!", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("¡El registro no se actualizo correctamente!", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                    }
+                    else
+                    {
+                        if (r.Insertar())
+                        {
+                            MessageBox.Show("¡Registro insertado correctamente!", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("¡El registro no fue insertado correctamente!", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("¡El registro no se actualizo correctamente!", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("El campo de Clasificacion no puede estar vacío. Por favor, ingrese un valor.", "Campo requerido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
-            else
+            catch (Exception)
             {
-                if (r.Insertar())
-                {
-                    MessageBox.Show("¡Registro insertado correctamente!", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Close();
-                }
-                else
-                {
-                    MessageBox.Show("¡El registro no fue insertado correctamente!", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
+                throw;
             }
-
         }
 
         private void button2_Click(object sender, EventArgs e)

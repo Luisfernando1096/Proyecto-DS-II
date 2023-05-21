@@ -148,7 +148,7 @@ namespace DataManager
             try
             {
                 DataTable resultado = new DataTable();
-                String sentencia = @"SELECT a.idProducto, a.nombre, a.codigo, a.descripcion, a.precio_venta, b.categoria, c.idExistencia, c.existencia, b.idCategoria
+                String sentencia = @"SELECT a.idProducto, a.nombre, a.codigo, a.descripcion, a.precio_venta, c.idExistencia, c.existencia, b.idCategoria, b.categoria
                                     FROM productos a, categorias b, existencias c
                                     WHERE a.idCategoria=b.idCategoria and a.idProducto=c.idExistencia;";
                 DBOperacion operacion = new DBOperacion();

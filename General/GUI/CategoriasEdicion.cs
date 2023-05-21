@@ -24,34 +24,47 @@ namespace General.GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            General.CLS.Categorias categoria = new General.CLS.Categorias();
-            categoria.Categoria = txtCategoria.Text;
-
-            if (txtIdCategoria.TextLength > 0)
+            try
             {
-                categoria.IdCategoria = Int32.Parse(txtIdCategoria.Text);
-                if (categoria.Actualizar())
+                General.CLS.Categorias categoria = new General.CLS.Categorias();
+                categoria.Categoria = txtCategoria.Text;
+                if (txtCategoria.Text != "")
                 {
-                    MessageBox.Show("¡Registro actualizado correctamente!", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Close();
+                    if (txtIdCategoria.TextLength > 0)
+                    {
+                        categoria.IdCategoria = Int32.Parse(txtIdCategoria.Text);
+                        if (categoria.Actualizar())
+                        {
+                            MessageBox.Show("¡Registro actualizado correctamente!", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("¡El registro no se actualizo correctamente!", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                    }
+                    else
+                    {
+                        if (categoria.Insertar())
+                        {
+                            MessageBox.Show("¡Registro insertado correctamente!", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("¡El registro no fue insertado correctamente!", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("¡El registro no se actualizo correctamente!", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("El campo de categoria no puede estar vacío. Por favor, ingrese un valor.", "Campo requerido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
-            else
+            catch (Exception)
             {
-                if (categoria.Insertar())
-                {
-                    MessageBox.Show("¡Registro insertado correctamente!", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Close();
-                }
-                else
-                {
-                    MessageBox.Show("¡El registro no fue insertado correctamente!", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-
+                throw;
             }
         }
     }
