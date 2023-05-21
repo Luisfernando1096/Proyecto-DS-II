@@ -57,7 +57,7 @@ namespace Salidas.GUI
 
         private void BuscarSalida_Load(object sender, EventArgs e)
         {
-
+            
         }
     }
 }

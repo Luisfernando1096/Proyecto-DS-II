@@ -315,7 +315,16 @@ namespace Salidas.GUI
 
         private void SalidaNueva_Load(object sender, EventArgs e)
         {
-
+            /*// Verificar si ya existe un formulario abierto
+            foreach (Form form in this.MdiParent.MdiChildren)
+            {
+                if (form != this)
+                {
+                    // Mostrar mensaje de error o realizar alguna acción
+                    MessageBox.Show("Ya hay un formulario abierto, cierrelo antes de abrir otro", "Error");
+                    return;
+                }
+            }*/
         }
 
         private void button5_Click(object sender, EventArgs e)
