@@ -72,6 +72,69 @@ namespace DataManager
             }
         }
 
+        public static DataTable Inventario()
+        {
+            try
+            {
+                DataTable resultado = new DataTable();
+                String sentencia = @"SELECT
+                                        productos.codigo AS codigo_producto,
+                                        productos.nombre AS nombre_producto,
+                                        productos.descripcion AS descripcion_producto,
+                                        entradas.suma_sub_total AS subTotalCompras,
+                                        COALESCE(salidas.suma_sub_total, 0) AS subTotalVentas,
+                                        entradas.suma_cantidad AS cantidad_entradas,
+                                        entradas.precio_compra AS precio_compra,
+                                        COALESCE(salidas.suma_cantidad, 0) AS cantidad_salidas,
+                                        COALESCE(salidas.precio_venta, 0) AS precio_venta,
+                                        (COALESCE(entradas.suma_cantidad, 0) - COALESCE(salidas.suma_cantidad, 0)) AS stock_actual,
+                                        (COALESCE(salidas.suma_sub_total, 0) - COALESCE(entradas.suma_sub_total, 0)) AS flujo_actual
+                                    FROM
+                                        productos
+                                    INNER JOIN
+                                        (
+                                            SELECT
+                                                detalle_entradas.idProducto,
+                                                COALESCE(SUM(detalle_entradas.sub_total), 0) AS suma_sub_total,
+                                                COALESCE(SUM(detalle_entradas.cantidad), 0) AS suma_cantidad,
+                                                detalle_entradas.precio_compra
+                                            FROM
+                                                detalle_entradas
+                                            INNER JOIN
+                                                entradas ON entradas.idEntrada = detalle_entradas.idEntrada
+                                            WHERE
+                                                entradas.fecha_entrada IN ('2023-05-21', '2023-05-21')
+                                            GROUP BY
+                                                detalle_entradas.idProducto, detalle_entradas.precio_compra
+                                        ) AS entradas ON productos.idProducto = entradas.idProducto
+                                    LEFT JOIN
+                                        (
+                                            SELECT
+                                                detalle_salidas.idProducto,
+                                                COALESCE(SUM(detalle_salidas.sub_total), 0) AS suma_sub_total,
+                                                COALESCE(SUM(detalle_salidas.cantidad), 0) AS suma_cantidad,
+                                                detalle_salidas.precio_venta
+                                            FROM
+                                                detalle_salidas
+                                            INNER JOIN
+                                                salidas ON salidas.idSalida = detalle_salidas.idSalida
+                                            WHERE
+                                                salidas.fecha_salida IN ('2023-05-21', '2023-05-21')
+                                            GROUP BY
+                                                detalle_salidas.idProducto, detalle_salidas.precio_venta
+                                        ) AS salidas ON productos.idProducto = salidas.idProducto;";
+                DBOperacion operacion = new DBOperacion();
+
+                resultado = operacion.Consultar(sentencia);
+                return resultado;
+            }
+            catch (Exception)
+            {
+                return new DataTable();
+                throw;
+            }
+        }
+
         public static DataTable DocumentoProveedor()
         {
             try

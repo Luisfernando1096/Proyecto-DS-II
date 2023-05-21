@@ -52,7 +52,12 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\DataManager\DataManager.csproj">
+      <Project>{f8c314f7-9aea-4527-9983-6a90fa92f1c6}</Project>
+      <Name>DataManager</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="GUI\KardexGenerar.resx">
       <DependentUpon>KardexGenerar.cs</DependentUpon>

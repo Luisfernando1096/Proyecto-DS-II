@@ -16,5 +16,15 @@ namespace Inventario.GUI
         {
             InitializeComponent();
         }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            if(dgvDatos.Rows.Count > 0)
+            {
+                dgvDatos.Rows.Clear();
+            }
+            
+            dgvDatos.DataSource = DataManager.DBConsultas.Inventario();
+        }
     }
 }

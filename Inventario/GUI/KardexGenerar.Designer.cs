@@ -33,23 +33,22 @@ namespace Inventario.GUI
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KardexGenerar));
             this.dgvDatos = new System.Windows.Forms.DataGridView();
-            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sub_total = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precio_venta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dui = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombres_cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fecha_salida = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.total = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dtpInicio = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.dtpFin = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
+            this.codigo_producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre_producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcion_producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidad_entradas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precio_compra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.subTotalCompras = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidad_salidas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precio_venta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.subTotalVentas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stock_actual = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.flujo_actual = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,18 +63,17 @@ namespace Inventario.GUI
             this.dgvDatos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.dgvDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDatos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.codigo,
-            this.nombre,
-            this.descripcion,
-            this.sub_total,
-            this.cantidad,
+            this.codigo_producto,
+            this.nombre_producto,
+            this.descripcion_producto,
+            this.cantidad_entradas,
+            this.precio_compra,
+            this.subTotalCompras,
+            this.cantidad_salidas,
             this.precio_venta,
-            this.categoria,
-            this.dui,
-            this.nombres_cliente,
-            this.fecha_salida,
-            this.total,
-            this.usuario});
+            this.subTotalVentas,
+            this.stock_actual,
+            this.flujo_actual});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -90,100 +88,8 @@ namespace Inventario.GUI
             this.dgvDatos.ReadOnly = true;
             this.dgvDatos.RowHeadersVisible = false;
             this.dgvDatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDatos.Size = new System.Drawing.Size(964, 346);
+            this.dgvDatos.Size = new System.Drawing.Size(1105, 346);
             this.dgvDatos.TabIndex = 14;
-            // 
-            // codigo
-            // 
-            this.codigo.DataPropertyName = "codigo";
-            this.codigo.HeaderText = "Codigo";
-            this.codigo.Name = "codigo";
-            this.codigo.ReadOnly = true;
-            // 
-            // nombre
-            // 
-            this.nombre.DataPropertyName = "nombre";
-            this.nombre.HeaderText = "Nombre Producto";
-            this.nombre.Name = "nombre";
-            this.nombre.ReadOnly = true;
-            this.nombre.Width = 200;
-            // 
-            // descripcion
-            // 
-            this.descripcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.descripcion.DataPropertyName = "descripcion";
-            this.descripcion.HeaderText = "Descripcion";
-            this.descripcion.Name = "descripcion";
-            this.descripcion.ReadOnly = true;
-            // 
-            // sub_total
-            // 
-            this.sub_total.DataPropertyName = "sub_total";
-            this.sub_total.HeaderText = "SubTotal";
-            this.sub_total.Name = "sub_total";
-            this.sub_total.ReadOnly = true;
-            // 
-            // cantidad
-            // 
-            this.cantidad.DataPropertyName = "cantidad";
-            this.cantidad.HeaderText = "Cantidad";
-            this.cantidad.Name = "cantidad";
-            this.cantidad.ReadOnly = true;
-            // 
-            // precio_venta
-            // 
-            this.precio_venta.DataPropertyName = "precio_venta";
-            this.precio_venta.HeaderText = "Precio Venta";
-            this.precio_venta.Name = "precio_venta";
-            this.precio_venta.ReadOnly = true;
-            this.precio_venta.Visible = false;
-            // 
-            // categoria
-            // 
-            this.categoria.DataPropertyName = "categoria";
-            this.categoria.HeaderText = "Categoria";
-            this.categoria.Name = "categoria";
-            this.categoria.ReadOnly = true;
-            // 
-            // dui
-            // 
-            this.dui.DataPropertyName = "dui";
-            this.dui.HeaderText = "Dui";
-            this.dui.Name = "dui";
-            this.dui.ReadOnly = true;
-            this.dui.Visible = false;
-            // 
-            // nombres_cliente
-            // 
-            this.nombres_cliente.DataPropertyName = "nombres_cliente";
-            this.nombres_cliente.HeaderText = "Nombre Cliente";
-            this.nombres_cliente.Name = "nombres_cliente";
-            this.nombres_cliente.ReadOnly = true;
-            this.nombres_cliente.Visible = false;
-            // 
-            // fecha_salida
-            // 
-            this.fecha_salida.DataPropertyName = "fecha_salida";
-            this.fecha_salida.HeaderText = "Fecha Salida";
-            this.fecha_salida.Name = "fecha_salida";
-            this.fecha_salida.ReadOnly = true;
-            this.fecha_salida.Visible = false;
-            // 
-            // total
-            // 
-            this.total.DataPropertyName = "total";
-            this.total.HeaderText = "Total";
-            this.total.Name = "total";
-            this.total.ReadOnly = true;
-            this.total.Visible = false;
-            // 
-            // usuario
-            // 
-            this.usuario.DataPropertyName = "usuario";
-            this.usuario.HeaderText = "Usuario";
-            this.usuario.Name = "usuario";
-            this.usuario.ReadOnly = true;
-            this.usuario.Visible = false;
             // 
             // dtpInicio
             // 
@@ -234,12 +140,93 @@ namespace Inventario.GUI
             this.btnBuscar.Size = new System.Drawing.Size(28, 26);
             this.btnBuscar.TabIndex = 22;
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // codigo_producto
+            // 
+            this.codigo_producto.DataPropertyName = "codigo_producto";
+            this.codigo_producto.HeaderText = "Codigo";
+            this.codigo_producto.Name = "codigo_producto";
+            this.codigo_producto.ReadOnly = true;
+            // 
+            // nombre_producto
+            // 
+            this.nombre_producto.DataPropertyName = "nombre_producto";
+            this.nombre_producto.HeaderText = "Nombre Producto";
+            this.nombre_producto.Name = "nombre_producto";
+            this.nombre_producto.ReadOnly = true;
+            this.nombre_producto.Width = 200;
+            // 
+            // descripcion_producto
+            // 
+            this.descripcion_producto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.descripcion_producto.DataPropertyName = "descripcion_producto";
+            this.descripcion_producto.HeaderText = "Descripcion";
+            this.descripcion_producto.Name = "descripcion_producto";
+            this.descripcion_producto.ReadOnly = true;
+            this.descripcion_producto.Visible = false;
+            // 
+            // cantidad_entradas
+            // 
+            this.cantidad_entradas.DataPropertyName = "cantidad_entradas";
+            this.cantidad_entradas.HeaderText = "CantidadEntradas";
+            this.cantidad_entradas.Name = "cantidad_entradas";
+            this.cantidad_entradas.ReadOnly = true;
+            // 
+            // precio_compra
+            // 
+            this.precio_compra.DataPropertyName = "precio_compra";
+            this.precio_compra.HeaderText = "Precio Compra";
+            this.precio_compra.Name = "precio_compra";
+            this.precio_compra.ReadOnly = true;
+            // 
+            // subTotalCompras
+            // 
+            this.subTotalCompras.DataPropertyName = "subTotalCompras";
+            this.subTotalCompras.HeaderText = "SubTotalCompras";
+            this.subTotalCompras.Name = "subTotalCompras";
+            this.subTotalCompras.ReadOnly = true;
+            // 
+            // cantidad_salidas
+            // 
+            this.cantidad_salidas.DataPropertyName = "cantidad_salidas";
+            this.cantidad_salidas.HeaderText = "CantidadSalidas";
+            this.cantidad_salidas.Name = "cantidad_salidas";
+            this.cantidad_salidas.ReadOnly = true;
+            // 
+            // precio_venta
+            // 
+            this.precio_venta.DataPropertyName = "precio_venta";
+            this.precio_venta.HeaderText = "Precio Venta";
+            this.precio_venta.Name = "precio_venta";
+            this.precio_venta.ReadOnly = true;
+            // 
+            // subTotalVentas
+            // 
+            this.subTotalVentas.DataPropertyName = "subTotalVentas";
+            this.subTotalVentas.HeaderText = "SubTotalVentas";
+            this.subTotalVentas.Name = "subTotalVentas";
+            this.subTotalVentas.ReadOnly = true;
+            // 
+            // stock_actual
+            // 
+            this.stock_actual.DataPropertyName = "stock_actual";
+            this.stock_actual.HeaderText = "Existencia Actual";
+            this.stock_actual.Name = "stock_actual";
+            this.stock_actual.ReadOnly = true;
+            // 
+            // flujo_actual
+            // 
+            this.flujo_actual.DataPropertyName = "flujo_actual";
+            this.flujo_actual.HeaderText = "Flujo Actual";
+            this.flujo_actual.Name = "flujo_actual";
+            this.flujo_actual.ReadOnly = true;
             // 
             // KardexGenerar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(981, 450);
+            this.ClientSize = new System.Drawing.Size(1124, 450);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.dtpFin);
             this.Controls.Add(this.label1);
@@ -258,22 +245,21 @@ namespace Inventario.GUI
         #endregion
 
         private System.Windows.Forms.DataGridView dgvDatos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sub_total;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cantidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn precio_venta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn categoria;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dui;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombres_cliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fecha_salida;
-        private System.Windows.Forms.DataGridViewTextBoxColumn total;
-        private System.Windows.Forms.DataGridViewTextBoxColumn usuario;
         private System.Windows.Forms.DateTimePicker dtpInicio;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker dtpFin;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codigo_producto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombre_producto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descripcion_producto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cantidad_entradas;
+        private System.Windows.Forms.DataGridViewTextBoxColumn precio_compra;
+        private System.Windows.Forms.DataGridViewTextBoxColumn subTotalCompras;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cantidad_salidas;
+        private System.Windows.Forms.DataGridViewTextBoxColumn precio_venta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn subTotalVentas;
+        private System.Windows.Forms.DataGridViewTextBoxColumn stock_actual;
+        private System.Windows.Forms.DataGridViewTextBoxColumn flujo_actual;
     }
 }
