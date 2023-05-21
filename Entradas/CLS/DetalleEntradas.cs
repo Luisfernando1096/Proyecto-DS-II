@@ -4,27 +4,29 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Salidas.CLS
+namespace Entradas.CLS
 {
-    class Ventas
+    class DetalleEntradas
     {
-        int idVenta;
-        int idSalida;
+        int idDetalleEntradas;
         int idProducto;
+        int idEntrada;
         int cantidad;
-        double subTotal;
+        double precio_compra;
+        double sub_total;
 
-        public int IdVenta { get => idVenta; set => idVenta = value; }
-        public int IdSalida { get => idSalida; set => idSalida = value; }
         public int IdProducto { get => idProducto; set => idProducto = value; }
+        public int IdEntrada { get => idEntrada; set => idEntrada = value; }
+        public double Precio_compra { get => precio_compra; set => precio_compra = value; }
+        public double Sub_total { get => sub_total; set => sub_total = value; }
         public int Cantidad { get => cantidad; set => cantidad = value; }
-        public double SubTotal { get => subTotal; set => subTotal = value; }
+        public int IdDetalleEntradas { get => idDetalleEntradas; set => idDetalleEntradas = value; }
 
         public Boolean Insertar()
         {
             Boolean resultado = false;
             string sentencia;
-            sentencia = @"INSERT INTO ventas(idSalida, idProducto, cantidad, sub_total) VALUES(" + idSalida + ", " + idProducto + ", " + cantidad + ", " + subTotal + ");";
+            sentencia = @"INSERT INTO detalle_entradas(idProducto, idEntrada, cantidad, precio_compra, sub_total) VALUES(" + idProducto + ", " + idEntrada + ", " + cantidad + ", " + precio_compra + ", " + sub_total + ");";
 
             try
             {
@@ -49,8 +51,8 @@ namespace Salidas.CLS
         {
             Boolean resultado = false;
             string sentencia;
-            sentencia = @"UPDATE ventas SET idSalida = " + idSalida + ", idProducto = " + idProducto + ", cantidad = '" + cantidad + "', sub_total = " + subTotal + " " +
-                "WHERE idVenta = " + idVenta + ";";
+            sentencia = @"UPDATE detalle_entradas SET idProducto = " + idProducto + ", idEntrada = " + idEntrada + ", cantidad = " + cantidad + ", precio_compra = " + precio_compra + ", sub_total = " + sub_total + " " +
+                "WHERE idDetalleEntrada = " + idDetalleEntradas + ";";
 
             try
             {
@@ -75,8 +77,8 @@ namespace Salidas.CLS
         {
             Boolean resultado = false;
             string sentencia;
-            sentencia = @"DELETE FROM ventas " +
-                "WHERE idVenta = " + idVenta + ";";
+            sentencia = @"DELETE FROM detalle_entradas " +
+                "WHERE idDetalleEntrada = " + idDetalleEntradas + ";";
 
             try
             {

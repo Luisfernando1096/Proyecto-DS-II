@@ -46,7 +46,7 @@
   <ItemGroup>
     <Compile Include="CLS\Existencias.cs" />
     <Compile Include="CLS\Salidas.cs" />
-    <Compile Include="CLS\Ventas.cs" />
+    <Compile Include="CLS\DatalleSalidas.cs" />
     <Compile Include="GUI\BuscarSalida.cs">
       <SubType>Form</SubType>
     </Compile>

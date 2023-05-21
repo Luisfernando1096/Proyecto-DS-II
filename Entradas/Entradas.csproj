@@ -46,7 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CLS\Compras.cs" />
+    <Compile Include="CLS\DetalleEntradas.cs" />
     <Compile Include="CLS\Entradas.cs" />
     <Compile Include="CLS\Existencias.cs" />
     <Compile Include="GUI\NuevaEntrada.cs">

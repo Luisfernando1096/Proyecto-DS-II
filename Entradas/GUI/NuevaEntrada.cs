@@ -88,7 +88,6 @@ namespace Entradas.GUI
         {
             txtCodigoProducto.Text = "";
             txtNombreProducto.Text = "";
-            txtPrecioVenta.Text = "";
             FormulariosAux.GUI.ListProductos f = new FormulariosAux.GUI.ListProductos();
             f.btnSeleccionar.Visible = true;
             f.ShowDialog();
@@ -97,7 +96,6 @@ namespace Entradas.GUI
             {
                 txtCodigoProducto.Text = datosProducto.Cells["codigo"].Value.ToString();
                 txtNombreProducto.Text = datosProducto.Cells["nombre"].Value.ToString();
-                txtPrecioVenta.Text = datosProducto.Cells["precio_venta"].Value.ToString();
             }
         }
 
@@ -165,8 +163,8 @@ namespace Entradas.GUI
                 datosProducto.Cells["descripcion"].Value.ToString(),
                 txtPrecioCompra.Text.ToString(),
                 txtPrecioVenta.Text.ToString(),
-                Double.Parse(txtCantidad.Text) * Double.Parse(txtPrecioCompra.Text.ToString()),
                 txtCantidad.Text,
+                Double.Parse(txtCantidad.Text) * Double.Parse(txtPrecioCompra.Text.ToString()),
                 datosProducto.Cells["idExistencia"].Value.ToString(),
                 datosProducto.Cells["idCategoria"].Value.ToString(),
             });
@@ -263,7 +261,7 @@ namespace Entradas.GUI
         {
             int idEntrada = 0;
             DataTable tEntrada = DataManager.DBConsultas.ObtenerUltimaEntrada();
-            List<CLS.Compras> oLista = new List<CLS.Compras>();
+            List<CLS.DetalleEntradas> oLista = new List<CLS.DetalleEntradas>();
             List<CLS.Existencias> lstExistencias = new List<CLS.Existencias>();
             List<General.CLS.Productos> lstProductos = new List<General.CLS.Productos>();
             idEntrada = Int32.Parse(tEntrada.Rows[0][0].ToString());
@@ -272,13 +270,12 @@ namespace Entradas.GUI
 
             foreach (DataGridViewRow row in dgvDatos.Rows)
             {
-                oLista.Add(new CLS.Compras()
+                oLista.Add(new CLS.DetalleEntradas()
                 {
                     IdProducto = Int32.Parse(row.Cells["idProducto"].Value.ToString()),
                     IdEntrada = idEntrada,
                     Cantidad = Int32.Parse(row.Cells["cantidad"].Value.ToString()),
                     Precio_compra = Double.Parse(row.Cells["precio_compra"].Value.ToString()),
-                    Precio_venta = Double.Parse(row.Cells["precio_venta"].Value.ToString()),
                     Sub_total = Double.Parse(row.Cells["sub_total"].Value.ToString())
                 });
                 lstExistencias.Add(new CLS.Existencias()
@@ -312,18 +309,18 @@ namespace Entradas.GUI
                 MessageBox.Show("Fallo en actualizar existencia", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
-            //Insertamos las ventas
+            //Insertamos las detalle_entradas
             bool controlV = false;
-            foreach (var ventas in oLista)
+            foreach (var detalle_entradas in oLista)
             {
-                if (!ventas.Insertar())
+                if (!detalle_entradas.Insertar())
                 {
                     controlV = true;
                 }
             }
             if (controlV)
             {
-                MessageBox.Show("Fallo in insertar venta", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Fallo al insertar venta", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
             //Actualizamos las existencias

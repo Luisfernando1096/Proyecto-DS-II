@@ -57,6 +57,11 @@ namespace Entradas.GUI
             this.txtDocumentoEntrada = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvDatos = new System.Windows.Forms.DataGridView();
+            this.label = new System.Windows.Forms.Label();
+            this.lblTotal = new System.Windows.Forms.Label();
+            this.lblTexto = new System.Windows.Forms.Label();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.idProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.existencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,15 +69,10 @@ namespace Entradas.GUI
             this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precio_compra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precio_venta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sub_total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sub_total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idExistencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label = new System.Windows.Forms.Label();
-            this.lblTotal = new System.Windows.Forms.Label();
-            this.lblTexto = new System.Windows.Forms.Label();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             this.gbCliente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
@@ -355,8 +355,8 @@ namespace Entradas.GUI
             this.descripcion,
             this.precio_compra,
             this.precio_venta,
-            this.sub_total,
             this.cantidad,
+            this.sub_total,
             this.idExistencia,
             this.idCategoria});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -375,78 +375,6 @@ namespace Entradas.GUI
             this.dgvDatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDatos.Size = new System.Drawing.Size(1001, 278);
             this.dgvDatos.TabIndex = 28;
-            // 
-            // idProducto
-            // 
-            this.idProducto.HeaderText = "ID";
-            this.idProducto.Name = "idProducto";
-            this.idProducto.ReadOnly = true;
-            this.idProducto.Width = 50;
-            // 
-            // existencia
-            // 
-            this.existencia.HeaderText = "Existencia";
-            this.existencia.Name = "existencia";
-            this.existencia.ReadOnly = true;
-            this.existencia.Visible = false;
-            // 
-            // codigo
-            // 
-            this.codigo.HeaderText = "Codigo";
-            this.codigo.Name = "codigo";
-            this.codigo.ReadOnly = true;
-            // 
-            // nombre_producto
-            // 
-            this.nombre_producto.HeaderText = "Nombre Producto";
-            this.nombre_producto.Name = "nombre_producto";
-            this.nombre_producto.ReadOnly = true;
-            this.nombre_producto.Width = 200;
-            // 
-            // descripcion
-            // 
-            this.descripcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.descripcion.HeaderText = "Descripcion";
-            this.descripcion.Name = "descripcion";
-            this.descripcion.ReadOnly = true;
-            // 
-            // precio_compra
-            // 
-            this.precio_compra.HeaderText = "Precio Compra";
-            this.precio_compra.Name = "precio_compra";
-            this.precio_compra.ReadOnly = true;
-            // 
-            // precio_venta
-            // 
-            this.precio_venta.HeaderText = "Precio Venta";
-            this.precio_venta.Name = "precio_venta";
-            this.precio_venta.ReadOnly = true;
-            // 
-            // sub_total
-            // 
-            this.sub_total.HeaderText = "SubTotal";
-            this.sub_total.Name = "sub_total";
-            this.sub_total.ReadOnly = true;
-            // 
-            // cantidad
-            // 
-            this.cantidad.HeaderText = "Cantidad";
-            this.cantidad.Name = "cantidad";
-            this.cantidad.ReadOnly = true;
-            // 
-            // idExistencia
-            // 
-            this.idExistencia.HeaderText = "Id Existencia";
-            this.idExistencia.Name = "idExistencia";
-            this.idExistencia.ReadOnly = true;
-            this.idExistencia.Visible = false;
-            // 
-            // idCategoria
-            // 
-            this.idCategoria.HeaderText = "Id Categoria";
-            this.idCategoria.Name = "idCategoria";
-            this.idCategoria.ReadOnly = true;
-            this.idCategoria.Visible = false;
             // 
             // label
             // 
@@ -501,6 +429,79 @@ namespace Entradas.GUI
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(120, 26);
             this.dtpFecha.TabIndex = 33;
+            // 
+            // idProducto
+            // 
+            this.idProducto.HeaderText = "ID";
+            this.idProducto.Name = "idProducto";
+            this.idProducto.ReadOnly = true;
+            this.idProducto.Width = 50;
+            // 
+            // existencia
+            // 
+            this.existencia.HeaderText = "Existencia";
+            this.existencia.Name = "existencia";
+            this.existencia.ReadOnly = true;
+            this.existencia.Visible = false;
+            // 
+            // codigo
+            // 
+            this.codigo.HeaderText = "Codigo";
+            this.codigo.Name = "codigo";
+            this.codigo.ReadOnly = true;
+            // 
+            // nombre_producto
+            // 
+            this.nombre_producto.HeaderText = "Nombre Producto";
+            this.nombre_producto.Name = "nombre_producto";
+            this.nombre_producto.ReadOnly = true;
+            this.nombre_producto.Width = 200;
+            // 
+            // descripcion
+            // 
+            this.descripcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.descripcion.HeaderText = "Descripcion";
+            this.descripcion.Name = "descripcion";
+            this.descripcion.ReadOnly = true;
+            // 
+            // precio_compra
+            // 
+            this.precio_compra.HeaderText = "Precio Compra";
+            this.precio_compra.Name = "precio_compra";
+            this.precio_compra.ReadOnly = true;
+            // 
+            // precio_venta
+            // 
+            this.precio_venta.HeaderText = "Precio Venta";
+            this.precio_venta.Name = "precio_venta";
+            this.precio_venta.ReadOnly = true;
+            this.precio_venta.Visible = false;
+            // 
+            // cantidad
+            // 
+            this.cantidad.HeaderText = "Cantidad";
+            this.cantidad.Name = "cantidad";
+            this.cantidad.ReadOnly = true;
+            // 
+            // sub_total
+            // 
+            this.sub_total.HeaderText = "SubTotal";
+            this.sub_total.Name = "sub_total";
+            this.sub_total.ReadOnly = true;
+            // 
+            // idExistencia
+            // 
+            this.idExistencia.HeaderText = "Id Existencia";
+            this.idExistencia.Name = "idExistencia";
+            this.idExistencia.ReadOnly = true;
+            this.idExistencia.Visible = false;
+            // 
+            // idCategoria
+            // 
+            this.idCategoria.HeaderText = "Id Categoria";
+            this.idCategoria.Name = "idCategoria";
+            this.idCategoria.ReadOnly = true;
+            this.idCategoria.Visible = false;
             // 
             // NuevaEntrada
             // 
@@ -572,8 +573,8 @@ namespace Entradas.GUI
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn precio_compra;
         private System.Windows.Forms.DataGridViewTextBoxColumn precio_venta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sub_total;
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sub_total;
         private System.Windows.Forms.DataGridViewTextBoxColumn idExistencia;
         private System.Windows.Forms.DataGridViewTextBoxColumn idCategoria;
     }

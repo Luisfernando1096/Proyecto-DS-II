@@ -58,6 +58,7 @@ namespace Salidas.GUI
 
         private void button2_Click(object sender, EventArgs e)
         {
+            txtPrecioVenta.Text = "";
             txtNombreProducto.Text = "";
             txtCodigo.Text = "";
             txtExistencia.Text = "";
@@ -70,6 +71,7 @@ namespace Salidas.GUI
                 txtCodigo.Text = datosProducto.Cells["codigo"].Value.ToString();
                 txtNombreProducto.Text = datosProducto.Cells["nombre"].Value.ToString();
                 txtExistencia.Text = datosProducto.Cells["existencia"].Value.ToString();
+                txtPrecioVenta.Text = datosProducto.Cells["precio_venta"].Value.ToString();
             }
         }
 
@@ -246,7 +248,7 @@ namespace Salidas.GUI
         {
             int idSalida = 0;
             DataTable tSalida = DataManager.DBConsultas.ObtenerUltimaSalida();
-            List<CLS.Ventas> oLista = new List<CLS.Ventas>();
+            List<CLS.DatalleSalidas> oLista = new List<CLS.DatalleSalidas>();
             List<CLS.Existencias> lstExistencias = new List<CLS.Existencias>();
             idSalida = Int32.Parse(tSalida.Rows[0][1].ToString());
 
@@ -254,11 +256,12 @@ namespace Salidas.GUI
 
             foreach (DataGridViewRow row in dgvDatos.Rows)
             {
-                oLista.Add(new CLS.Ventas()
+                oLista.Add(new CLS.DatalleSalidas()
                 {
                     IdSalida = idSalida,
                     IdProducto = Int32.Parse(row.Cells["idProducto"].Value.ToString()),
                     Cantidad = Convert.ToInt32(row.Cells["cantidad"].Value.ToString()),
+                    Precio_venta = Double.Parse(row.Cells["precio_venta"].Value.ToString()),
                     SubTotal = Double.Parse(row.Cells["sub_total"].Value.ToString())
                 });
                 lstExistencias.Add(new CLS.Existencias(){
@@ -282,18 +285,18 @@ namespace Salidas.GUI
                 MessageBox.Show("Fallo en actualizar existencia", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
-            //Insertamos las ventas
+            //Insertamos las detalle_salidas
             bool controlV = false;
-            foreach (var ventas in oLista)
+            foreach (var detalle_salidas in oLista)
             {
-                if (!ventas.Insertar())
+                if (!detalle_salidas.Insertar())
                 {
                     controlV = true;
                 }
             }
             if (controlV)
             {
-                MessageBox.Show("Fallo in insertar venta", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Fallo al insertar venta", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
             dgvDatos.Rows.Clear();
