@@ -110,9 +110,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\icons8-filled-circle-60.png" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\DataManager\DataManager.csproj">
       <Project>{f8c314f7-9aea-4527-9983-6a90fa92f1c6}</Project>
       <Name>DataManager</Name>
@@ -141,9 +138,6 @@
       <Project>{de3373b4-20c5-4fb5-a2df-4beb2e4dcaa0}</Project>
       <Name>SessionManager</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-filled-circle-green-60.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
