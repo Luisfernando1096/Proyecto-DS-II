@@ -42,37 +42,51 @@ namespace General.GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //Crear el objeto entidad
-            CLS.Municipios r = new CLS.Municipios();
-            //Sincronizar la entidad con la interfaz
-            r.Municipio = txtMunicipio.Text;
-            r.IdDepartamento = Int32.Parse(cmbDepartamento.SelectedValue.ToString());
-            //Realizar la operacion necesaria
-
-            if (txtIdMunicipio.TextLength > 0)
+            try
             {
-                r.IdMunicipio = Int32.Parse(txtIdMunicipio.Text);
-                if (r.Actualizar())
+                if (txtMunicipio.Text == "")
                 {
-                    MessageBox.Show("¡Registro actualizado correctamente!", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Close();
+                    MessageBox.Show("El campo de Municipio no puede estar vacío. Por favor, ingrese un valor.", "Campo requerido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
-                    MessageBox.Show("¡El registro no se actualizo correctamente!", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    //Crear el objeto entidad
+                    CLS.Municipios r = new CLS.Municipios();
+                    //Sincronizar la entidad con la interfaz
+                    r.Municipio = txtMunicipio.Text;
+                    r.IdDepartamento = Int32.Parse(cmbDepartamento.SelectedValue.ToString());
+                    //Realizar la operacion necesaria
+
+                    if (txtIdMunicipio.TextLength > 0)
+                    {
+                        r.IdMunicipio = Int32.Parse(txtIdMunicipio.Text);
+                        if (r.Actualizar())
+                        {
+                            MessageBox.Show("¡Registro actualizado correctamente!", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("¡El registro no se actualizo correctamente!", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                    }
+                    else
+                    {
+                        if (r.Insertar())
+                        {
+                            MessageBox.Show("¡Registro insertado correctamente!", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("¡El registro no fue insertado correctamente!", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                    }
                 }
             }
-            else
+            catch (Exception)
             {
-                if (r.Insertar())
-                {
-                    MessageBox.Show("¡Registro insertado correctamente!", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Close();
-                }
-                else
-                {
-                    MessageBox.Show("¡El registro no fue insertado correctamente!", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
+                throw;
             }
         }
 

@@ -158,5 +158,13 @@ namespace FormulariosAux.GUI
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
+
+        private void txtBuscarPorDoc_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

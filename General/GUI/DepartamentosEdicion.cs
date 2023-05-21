@@ -24,33 +24,46 @@ namespace General.GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            General.CLS.Departamentos departamento = new General.CLS.Departamentos();
-            departamento.Nombre = txtDepartamento.Text;
-
-            if (txtIdDepartamento.TextLength > 0)
+            try
             {
-                departamento.IdDepartamento = Int32.Parse(txtIdDepartamento.Text);
-                if (departamento.Actuzalizar())
+                General.CLS.Departamentos departamento = new General.CLS.Departamentos();
+                departamento.Nombre = txtDepartamento.Text;
+                if (txtDepartamento.Text != "")
                 {
-                    MessageBox.Show("¡Registro actualizado correctamente!", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Close();
+                    if (txtIdDepartamento.TextLength > 0)
+                    {
+                        departamento.IdDepartamento = Int32.Parse(txtIdDepartamento.Text);
+                        if (departamento.Actuzalizar())
+                        {
+                            MessageBox.Show("¡Registro actualizado correctamente!", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("¡El registro no se actualizo correctamente!", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                    }
+                    else
+                    {
+                        if (departamento.Insertar())
+                        {
+                            MessageBox.Show("¡Registro insertado correctamente!", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("¡El registro no fue insertado correctamente!", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("¡El registro no se actualizo correctamente!", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("El campo de Departamento no puede estar vacío. Por favor, ingrese un valor.", "Campo requerido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
-            else
+            catch (Exception)
             {
-                if (departamento.Insertar())
-                {
-                    MessageBox.Show("¡Registro insertado correctamente!", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Close();
-                }
-                else
-                {
-                    MessageBox.Show("¡El registro no fue insertado correctamente!", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
+                throw;
             }
         }
     }

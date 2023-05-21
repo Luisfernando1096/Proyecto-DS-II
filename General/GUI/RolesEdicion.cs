@@ -24,42 +24,52 @@ namespace General.GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //Crear el objeto entidad
-            CLS.Roles r = new CLS.Roles();
-            //Sincronizar la entidad con la interfaz
-            r.Rol = txtRol.Text;
-            //Realizar la operacion necesaria
-
-            if (txtIdRol.TextLength > 0)
+            try
             {
-                r.IdRol = Int32.Parse(txtIdRol.Text);
-                if (r.Actualizar())
+                //Crear el objeto entidad
+                CLS.Roles r = new CLS.Roles();
+                //Sincronizar la entidad con la interfaz
+                r.Rol = txtRol.Text;
+                //Realizar la operacion necesaria
+
+                if (txtRol.Text != "")
                 {
-                    MessageBox.Show("¡Registro actualizado correctamente!", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Close();
+                    if (txtIdRol.TextLength > 0)
+                    {
+                        r.IdRol = Int32.Parse(txtIdRol.Text);
+                        if (r.Actualizar())
+                        {
+                            MessageBox.Show("¡Registro actualizado correctamente!", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("¡El registro no se actualizo correctamente!", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                    }
+                    else
+                    {
+                        if (r.Insertar())
+                        {
+                            MessageBox.Show("¡Registro insertado correctamente!", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("¡El registro no fue insertado correctamente!", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("¡El registro no se actualizo correctamente!", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("El campo de Rol no puede estar vacío. Por favor, ingrese un valor.", "Campo requerido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
+
             }
-            else
+            catch (Exception)
             {
-                if (r.Insertar())
-                {
-                    MessageBox.Show("¡Registro insertado correctamente!", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Close();
-                }
-                else
-                {
-                    MessageBox.Show("¡El registro no fue insertado correctamente!", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
+                throw;
             }
-
-        }
-
-        private void RolesEdicion_Load(object sender, EventArgs e)
-        {
         }
     }
 }

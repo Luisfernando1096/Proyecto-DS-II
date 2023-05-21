@@ -65,12 +65,19 @@ namespace General.GUI
 
         private void btnSeleccionar_Click(object sender, EventArgs e)
         {
-            empleadoEnviar = dgvDatos.CurrentRow.Cells["Nombres"].Value.ToString();
-            apellidoEnviar = dgvDatos.CurrentRow.Cells["Apellidos"].Value.ToString();
-            idEnviar = dgvDatos.CurrentRow.Cells["ID"].Value.ToString();
+            if (dgvDatos.SelectedRows.Count != 0)
+            {
+                empleadoEnviar = dgvDatos.CurrentRow.Cells["Nombres"].Value.ToString();
+                apellidoEnviar = dgvDatos.CurrentRow.Cells["Apellidos"].Value.ToString();
+                idEnviar = dgvDatos.CurrentRow.Cells["ID"].Value.ToString();
 
-            this.DialogResult = DialogResult.OK;
-            this.Close();
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Por favor, debe selecionar un empleado", "Selección requerida", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
 
         private void btnBuscarEmpleado_Click(object sender, EventArgs e)
