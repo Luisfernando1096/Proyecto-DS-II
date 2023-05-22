@@ -147,7 +147,8 @@ namespace Salidas.GUI
             });
             //Calculando el total
             CalcularTotal();
-            
+
+            txtPrecioVenta.Text = "";
             txtCodigo.Text = "";
             txtExistencia.Text = "";
             txtCantidad.Text = "";

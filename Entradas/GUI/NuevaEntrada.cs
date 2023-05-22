@@ -261,12 +261,15 @@ namespace Entradas.GUI
         {
             int idEntrada = 0;
             DataTable tEntrada = DataManager.DBConsultas.ObtenerUltimaEntrada();
+            DataTable tDetalles = DataManager.DBConsultas.IdDetalleEntradas();
+            CLS.DetalleEntradas dealleActualizar = new CLS.DetalleEntradas();
             List<CLS.DetalleEntradas> oLista = new List<CLS.DetalleEntradas>();
             List<CLS.Existencias> lstExistencias = new List<CLS.Existencias>();
             List<General.CLS.Productos> lstProductos = new List<General.CLS.Productos>();
             idEntrada = Int32.Parse(tEntrada.Rows[0][0].ToString());
 
             CLS.Existencias existencia = new CLS.Existencias();
+            bool controlDA = false;
 
             foreach (DataGridViewRow row in dgvDatos.Rows)
             {
@@ -293,7 +296,27 @@ namespace Entradas.GUI
                     Precio_venta = Double.Parse(row.Cells["precio_venta"].Value.ToString()),
                     Idcategoria = Int32.Parse(row.Cells["idCategoria"].Value.ToString()),
                 });
+                //Actualizar precios
+                foreach (DataRow item in tDetalles.Rows)
+                {
+                    dealleActualizar.IdDetalleEntradas = Int32.Parse(item["idDetalleEntrada"].ToString());
+                    dealleActualizar.Precio_compra = Double.Parse(row.Cells["precio_compra"].Value.ToString());
+                    if (Int32.Parse(item["idProducto"].ToString()) == Int32.Parse(row.Cells["idProducto"].Value.ToString()))
+                    {
+                        if (!dealleActualizar.ActualizarPrecio())
+                        {
+                            controlDA = true;
+                        }
+                    }
+                    
 
+                }
+
+            }
+            if (controlDA)
+            {
+                MessageBox.Show("Fallo en actualizar detalles", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
             }
             //Actualizamos las existencias
             bool controlE = false;
@@ -315,7 +338,7 @@ namespace Entradas.GUI
             {
                 if (!detalle_entradas.Insertar())
                 {
-                    controlV = true;
+                     controlV = true;
                 }
             }
             if (controlV)

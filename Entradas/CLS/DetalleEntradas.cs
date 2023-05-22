@@ -72,6 +72,31 @@ namespace Entradas.CLS
 
             return resultado;
         }
+        public Boolean ActualizarPrecio()
+        {
+            Boolean resultado = false;
+            string sentencia;
+            sentencia = @"UPDATE detalle_entradas SET precio_compra = " + precio_compra + " " +
+                "WHERE idDetalleEntrada = " + idDetalleEntradas + ";";
+
+            try
+            {
+                DataManager.DBOperacion op = new DataManager.DBOperacion();
+                Int32 filasActualizadas = 0;
+                filasActualizadas = op.EjecutarSentencia(sentencia);
+                if (filasActualizadas > 0)
+                {
+                    resultado = true;
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+            return resultado;
+        }
 
         public Boolean Eliminar()
         {
