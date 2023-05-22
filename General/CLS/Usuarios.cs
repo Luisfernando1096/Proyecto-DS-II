@@ -66,7 +66,7 @@ namespace General.CLS
         {
             Boolean resultado = false;
             string sentencia;
-            sentencia = @"UPDATE Usuarios SET usuario = '" + usuario + "', clave = SHA2(CONCAT(MD5('" + clave + "')), 256), idEmpleado = '" +
+            sentencia = @"UPDATE Usuarios SET usuario = '" + usuario + "', clave = sha1(md5('" + clave + "')), idEmpleado = '" +
                 idEmpleado + "', idRol = '" + idRol + "' WHERE idUsuario = " + idUsuario + ";";
 
             try

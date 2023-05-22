@@ -72,11 +72,6 @@ namespace General.GUI
                     General.CLS.Productos productos = new General.CLS.Productos();
                     productos.Nombre = txtNombre.Text;
                     productos.Codigo = txtCodigo.Text;
-                    if (CompararCodigo(txtCodigo.Text))
-                    {
-                        MessageBox.Show("El codigo ya está agregado a un producto", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                        return;
-                    }
                     productos.Descripcion = txtDescripcion.Text;
                     productos.Precio_venta = double.Parse(txtPrecio_venta.Text);
                     productos.Idcategoria = Convert.ToInt32(cmbCategorias.SelectedValue);
@@ -100,6 +95,11 @@ namespace General.GUI
                     }
                     else
                     {
+                        if (CompararCodigo(txtCodigo.Text))
+                        {
+                            MessageBox.Show("El codigo ya está agregado a un producto", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            return;
+                        }
                         if (productos.Insertar())
                         {
                             existencia.Existencia = 0;
