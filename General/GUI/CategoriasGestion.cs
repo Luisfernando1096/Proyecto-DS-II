@@ -23,7 +23,6 @@ namespace General.GUI
             }
             catch (Exception)
             {
-
                 throw;
             }
         }

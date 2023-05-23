@@ -52,6 +52,18 @@
     <Compile Include="CLS\DetalleEntradas.cs" />
     <Compile Include="CLS\Entradas.cs" />
     <Compile Include="CLS\Existencias.cs" />
+    <Compile Include="GUI\BuscarEntradas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\BuscarEntradas.Designer.cs">
+      <DependentUpon>BuscarEntradas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ListarEntradas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ListarEntradas.Designer.cs">
+      <DependentUpon>ListarEntradas.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\NuevaEntrada.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -59,6 +71,12 @@
       <DependentUpon>NuevaEntrada.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUI\BuscarEntradas.resx">
+      <DependentUpon>BuscarEntradas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ListarEntradas.resx">
+      <DependentUpon>ListarEntradas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\NuevaEntrada.resx">
       <DependentUpon>NuevaEntrada.cs</DependentUpon>
     </EmbeddedResource>

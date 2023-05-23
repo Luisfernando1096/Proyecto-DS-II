@@ -8,13 +8,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Salidas.GUI
+namespace Entradas.GUI
 {
-    public partial class BuscarSalida : Form
+    public partial class BuscarEntradas : Form
     {
-        public BuscarSalida()
+        public BuscarEntradas()
         {
             InitializeComponent();
+        }
+
+        private void BuscarEntradas_Load(object sender, EventArgs e)
+        {
             dtpFecha.Format = DateTimePickerFormat.Custom;
             dtpFecha.CustomFormat = " ";
         }
@@ -23,7 +27,7 @@ namespace Salidas.GUI
         {
             try
             {
-                DataTable tEntradas = DataManager.DBConsultas.VerRegistroSalidas(txtDocumento.Text);
+                DataTable tEntradas = DataManager.DBConsultas.Entradas(txtDocumento.Text);
                 dgvDatos.DataSource = tEntradas;
                 dgvDatos.AutoGenerateColumns = false;//Impide generar automaticamente las columnas de encabezado
                                                      //Codigo para mostrar cuantas filas se
@@ -31,9 +35,9 @@ namespace Salidas.GUI
                 {
                     dtpFecha.Format = DateTimePickerFormat.Custom;
                     dtpFecha.CustomFormat = "yyyy/MM/dd";
-                    txtDui.Text = dgvDatos.Rows[0].Cells["dui"].Value.ToString();
-                    txtNombre.Text = dgvDatos.Rows[0].Cells["nombres_cliente"].Value.ToString();
-                    dtpFecha.Text = dgvDatos.Rows[0].Cells["fecha_salida"].Value.ToString();
+                    txtDocProveedor.Text = dgvDatos.Rows[0].Cells["documento"].Value.ToString();
+                    txtNombreProveedor.Text = dgvDatos.Rows[0].Cells["nombre_proveedor"].Value.ToString();
+                    dtpFecha.Text = dgvDatos.Rows[0].Cells["fecha_entrada"].Value.ToString();
                     txtUsuario.Text = dgvDatos.Rows[0].Cells["usuario"].Value.ToString();
                     lblTotal.Text = dgvDatos.Rows[0].Cells["total"].Value.ToString();
                 }
@@ -41,8 +45,8 @@ namespace Salidas.GUI
                 {
                     dtpFecha.Format = DateTimePickerFormat.Custom;
                     dtpFecha.CustomFormat = " ";
-                    txtDui.Text = "";
-                    txtNombre.Text = "";
+                    txtDocProveedor.Text = "";
+                    txtNombreProveedor.Text = "";
                     dtpFecha.Text = "";
                     txtUsuario.Text = "";
                     lblTotal.Text = "0.00";
@@ -59,8 +63,8 @@ namespace Salidas.GUI
         {
             txtDocumento.Text = "";
             dtpFecha.Format = DateTimePickerFormat.Custom;
-            txtDui.Text = "";
-            txtNombre.Text = "";
+            txtDocProveedor.Text = "";
+            txtNombreProveedor.Text = "";
             txtUsuario.Text = "";
             dgvDatos.DataSource = null;
             dgvDatos.Rows.Clear();

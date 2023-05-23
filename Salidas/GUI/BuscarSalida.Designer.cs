@@ -60,6 +60,7 @@ namespace Salidas.GUI
             this.label5 = new System.Windows.Forms.Label();
             this.label = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
+            this.btnEliminar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             this.gbCliente.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -96,26 +97,31 @@ namespace Salidas.GUI
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvDatos.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvDatos.Location = new System.Drawing.Point(2, 106);
+            this.dgvDatos.Location = new System.Drawing.Point(3, 130);
+            this.dgvDatos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvDatos.MultiSelect = false;
             this.dgvDatos.Name = "dgvDatos";
             this.dgvDatos.ReadOnly = true;
             this.dgvDatos.RowHeadersVisible = false;
+            this.dgvDatos.RowHeadersWidth = 51;
             this.dgvDatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDatos.Size = new System.Drawing.Size(964, 278);
+            this.dgvDatos.Size = new System.Drawing.Size(1285, 342);
             this.dgvDatos.TabIndex = 13;
             // 
             // codigo
             // 
             this.codigo.DataPropertyName = "codigo";
             this.codigo.HeaderText = "Codigo";
+            this.codigo.MinimumWidth = 6;
             this.codigo.Name = "codigo";
             this.codigo.ReadOnly = true;
+            this.codigo.Width = 125;
             // 
             // nombre
             // 
             this.nombre.DataPropertyName = "nombre";
             this.nombre.HeaderText = "Nombre Producto";
+            this.nombre.MinimumWidth = 6;
             this.nombre.Name = "nombre";
             this.nombre.ReadOnly = true;
             this.nombre.Width = 200;
@@ -125,6 +131,7 @@ namespace Salidas.GUI
             this.descripcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.descripcion.DataPropertyName = "descripcion";
             this.descripcion.HeaderText = "Descripcion";
+            this.descripcion.MinimumWidth = 6;
             this.descripcion.Name = "descripcion";
             this.descripcion.ReadOnly = true;
             // 
@@ -132,78 +139,97 @@ namespace Salidas.GUI
             // 
             this.sub_total.DataPropertyName = "sub_total";
             this.sub_total.HeaderText = "SubTotal";
+            this.sub_total.MinimumWidth = 6;
             this.sub_total.Name = "sub_total";
             this.sub_total.ReadOnly = true;
+            this.sub_total.Width = 125;
             // 
             // cantidad
             // 
             this.cantidad.DataPropertyName = "cantidad";
             this.cantidad.HeaderText = "Cantidad";
+            this.cantidad.MinimumWidth = 6;
             this.cantidad.Name = "cantidad";
             this.cantidad.ReadOnly = true;
+            this.cantidad.Width = 125;
             // 
             // precio_venta
             // 
             this.precio_venta.DataPropertyName = "precio_venta";
             this.precio_venta.HeaderText = "Precio Venta";
+            this.precio_venta.MinimumWidth = 6;
             this.precio_venta.Name = "precio_venta";
             this.precio_venta.ReadOnly = true;
             this.precio_venta.Visible = false;
+            this.precio_venta.Width = 125;
             // 
             // categoria
             // 
             this.categoria.DataPropertyName = "categoria";
             this.categoria.HeaderText = "Categoria";
+            this.categoria.MinimumWidth = 6;
             this.categoria.Name = "categoria";
             this.categoria.ReadOnly = true;
+            this.categoria.Width = 125;
             // 
             // dui
             // 
             this.dui.DataPropertyName = "dui";
             this.dui.HeaderText = "Dui";
+            this.dui.MinimumWidth = 6;
             this.dui.Name = "dui";
             this.dui.ReadOnly = true;
             this.dui.Visible = false;
+            this.dui.Width = 125;
             // 
             // nombres_cliente
             // 
             this.nombres_cliente.DataPropertyName = "nombres_cliente";
             this.nombres_cliente.HeaderText = "Nombre Cliente";
+            this.nombres_cliente.MinimumWidth = 6;
             this.nombres_cliente.Name = "nombres_cliente";
             this.nombres_cliente.ReadOnly = true;
             this.nombres_cliente.Visible = false;
+            this.nombres_cliente.Width = 125;
             // 
             // fecha_salida
             // 
             this.fecha_salida.DataPropertyName = "fecha_salida";
             this.fecha_salida.HeaderText = "Fecha Salida";
+            this.fecha_salida.MinimumWidth = 6;
             this.fecha_salida.Name = "fecha_salida";
             this.fecha_salida.ReadOnly = true;
             this.fecha_salida.Visible = false;
+            this.fecha_salida.Width = 125;
             // 
             // total
             // 
             this.total.DataPropertyName = "total";
             this.total.HeaderText = "Total";
+            this.total.MinimumWidth = 6;
             this.total.Name = "total";
             this.total.ReadOnly = true;
             this.total.Visible = false;
+            this.total.Width = 125;
             // 
             // usuario
             // 
             this.usuario.DataPropertyName = "usuario";
             this.usuario.HeaderText = "Usuario";
+            this.usuario.MinimumWidth = 6;
             this.usuario.Name = "usuario";
             this.usuario.ReadOnly = true;
             this.usuario.Visible = false;
+            this.usuario.Width = 125;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(16, 11);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(136, 20);
+            this.label1.Size = new System.Drawing.Size(169, 24);
             this.label1.TabIndex = 14;
             this.label1.Text = "Numero Documento: ";
             // 
@@ -214,9 +240,11 @@ namespace Salidas.GUI
             this.gbCliente.Controls.Add(this.txtDui);
             this.gbCliente.Controls.Add(this.label2);
             this.gbCliente.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbCliente.Location = new System.Drawing.Point(436, 9);
+            this.gbCliente.Location = new System.Drawing.Point(581, 11);
+            this.gbCliente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gbCliente.Name = "gbCliente";
-            this.gbCliente.Size = new System.Drawing.Size(523, 91);
+            this.gbCliente.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbCliente.Size = new System.Drawing.Size(697, 112);
             this.gbCliente.TabIndex = 15;
             this.gbCliente.TabStop = false;
             this.gbCliente.Text = "Datos del Cliente";
@@ -226,18 +254,20 @@ namespace Salidas.GUI
             this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNombre.Enabled = false;
             this.txtNombre.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(319, 36);
+            this.txtNombre.Location = new System.Drawing.Point(425, 44);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(195, 26);
+            this.txtNombre.Size = new System.Drawing.Size(259, 30);
             this.txtNombre.TabIndex = 9;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(189, 38);
+            this.label4.Location = new System.Drawing.Point(252, 47);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(129, 20);
+            this.label4.Size = new System.Drawing.Size(155, 24);
             this.label4.TabIndex = 8;
             this.label4.Text = "Nombre del Cliente:";
             // 
@@ -246,18 +276,20 @@ namespace Salidas.GUI
             this.txtDui.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDui.Enabled = false;
             this.txtDui.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDui.Location = new System.Drawing.Point(50, 36);
+            this.txtDui.Location = new System.Drawing.Point(67, 44);
+            this.txtDui.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtDui.Name = "txtDui";
-            this.txtDui.Size = new System.Drawing.Size(121, 26);
+            this.txtDui.Size = new System.Drawing.Size(161, 30);
             this.txtDui.TabIndex = 7;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(11, 38);
+            this.label2.Location = new System.Drawing.Point(15, 47);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(32, 20);
+            this.label2.Size = new System.Drawing.Size(39, 24);
             this.label2.TabIndex = 5;
             this.label2.Text = "Dui:";
             // 
@@ -265,9 +297,10 @@ namespace Salidas.GUI
             // 
             this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Location = new System.Drawing.Point(299, 7);
+            this.button1.Location = new System.Drawing.Point(399, 9);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(28, 26);
+            this.button1.Size = new System.Drawing.Size(37, 32);
             this.button1.TabIndex = 10;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -276,9 +309,10 @@ namespace Salidas.GUI
             // 
             this.txtDocumento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDocumento.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDocumento.Location = new System.Drawing.Point(154, 7);
+            this.txtDocumento.Location = new System.Drawing.Point(205, 9);
+            this.txtDocumento.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtDocumento.Name = "txtDocumento";
-            this.txtDocumento.Size = new System.Drawing.Size(139, 26);
+            this.txtDocumento.Size = new System.Drawing.Size(185, 30);
             this.txtDocumento.TabIndex = 16;
             // 
             // groupBox1
@@ -288,9 +322,11 @@ namespace Salidas.GUI
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(16, 38);
+            this.groupBox1.Location = new System.Drawing.Point(21, 47);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(412, 64);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Size = new System.Drawing.Size(549, 79);
             this.groupBox1.TabIndex = 17;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos del Cliente";
@@ -301,9 +337,10 @@ namespace Salidas.GUI
             this.dtpFecha.Enabled = false;
             this.dtpFecha.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecha.Location = new System.Drawing.Point(67, 29);
+            this.dtpFecha.Location = new System.Drawing.Point(89, 36);
+            this.dtpFecha.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtpFecha.Name = "dtpFecha";
-            this.dtpFecha.Size = new System.Drawing.Size(110, 26);
+            this.dtpFecha.Size = new System.Drawing.Size(145, 30);
             this.dtpFecha.TabIndex = 18;
             // 
             // txtUsuario
@@ -311,18 +348,20 @@ namespace Salidas.GUI
             this.txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtUsuario.Enabled = false;
             this.txtUsuario.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsuario.Location = new System.Drawing.Point(299, 29);
+            this.txtUsuario.Location = new System.Drawing.Point(399, 36);
+            this.txtUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(102, 26);
+            this.txtUsuario.Size = new System.Drawing.Size(135, 30);
             this.txtUsuario.TabIndex = 9;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(187, 31);
+            this.label3.Location = new System.Drawing.Point(249, 38);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(106, 20);
+            this.label3.Size = new System.Drawing.Size(128, 24);
             this.label3.TabIndex = 8;
             this.label3.Text = "Usuario atendio:";
             // 
@@ -330,9 +369,10 @@ namespace Salidas.GUI
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(11, 31);
+            this.label5.Location = new System.Drawing.Point(15, 38);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(50, 20);
+            this.label5.Size = new System.Drawing.Size(60, 24);
             this.label5.TabIndex = 5;
             this.label5.Text = "Fecha:";
             // 
@@ -340,9 +380,10 @@ namespace Salidas.GUI
             // 
             this.label.AutoSize = true;
             this.label.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label.Location = new System.Drawing.Point(-2, 388);
+            this.label.Location = new System.Drawing.Point(-3, 478);
+            this.label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label.Name = "label";
-            this.label.Size = new System.Drawing.Size(60, 23);
+            this.label.Size = new System.Drawing.Size(74, 28);
             this.label.TabIndex = 18;
             this.label.Text = "Total:";
             // 
@@ -350,17 +391,31 @@ namespace Salidas.GUI
             // 
             this.lblTotal.AutoSize = true;
             this.lblTotal.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotal.Location = new System.Drawing.Point(56, 388);
+            this.lblTotal.Location = new System.Drawing.Point(75, 478);
+            this.lblTotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(48, 23);
+            this.lblTotal.Size = new System.Drawing.Size(58, 28);
             this.lblTotal.TabIndex = 19;
             this.lblTotal.Text = "0.00";
             // 
+            // btnEliminar
+            // 
+            this.btnEliminar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEliminar.BackgroundImage")));
+            this.btnEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEliminar.Location = new System.Drawing.Point(455, 11);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(38, 32);
+            this.btnEliminar.TabIndex = 29;
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
             // BuscarSalida
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(969, 445);
+            this.ClientSize = new System.Drawing.Size(1292, 548);
+            this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.label);
             this.Controls.Add(this.lblTotal);
             this.Controls.Add(this.groupBox1);
@@ -369,10 +424,10 @@ namespace Salidas.GUI
             this.Controls.Add(this.gbCliente);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvDatos);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "BuscarSalida";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BuscarSalida";
-            this.Load += new System.EventHandler(this.BuscarSalida_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).EndInit();
             this.gbCliente.ResumeLayout(false);
             this.gbCliente.PerformLayout();
@@ -413,5 +468,6 @@ namespace Salidas.GUI
         private System.Windows.Forms.DateTimePicker dtpFecha;
         private System.Windows.Forms.Label label;
         private System.Windows.Forms.Label lblTotal;
+        private System.Windows.Forms.Button btnEliminar;
     }
 }

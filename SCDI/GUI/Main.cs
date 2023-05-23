@@ -465,5 +465,47 @@ namespace SCDI.GUI
             f.MdiParent = this;
             f.Show();
         }
+
+        private void buscarEntradaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (FormularioEstaAbierto(typeof(Entradas.GUI.BuscarEntradas)))
+                {
+                    MessageBox.Show("La ventana de Busqueda de Salidas ya está abierta.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    Entradas.GUI.BuscarEntradas f = new Entradas.GUI.BuscarEntradas();
+                    f.MdiParent = this;
+                    f.Show();
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        private void listarEntradaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (FormularioEstaAbierto(typeof(Entradas.GUI.ListarEntradas)))
+                {
+                    MessageBox.Show("La ventana de Busqueda de Salidas ya está abierta.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    Entradas.GUI.ListarEntradas f = new Entradas.GUI.ListarEntradas();
+                    f.MdiParent = this;
+                    f.Show();
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }
