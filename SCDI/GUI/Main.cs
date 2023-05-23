@@ -478,7 +478,8 @@ namespace SCDI.GUI
             f.ShowDialog();
         }
 
-        private void buscarEntradaToolStripMenuItem_Click(object sender, EventArgs e)
+
+        private void buscarEntradaToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -499,7 +500,7 @@ namespace SCDI.GUI
             }
         }
 
-        private void listarEntradaToolStripMenuItem_Click(object sender, EventArgs e)
+        private void listarEntradaToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             try
             {

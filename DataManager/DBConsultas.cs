@@ -984,7 +984,7 @@ namespace DataManager
             {
                 DataTable resultado = new DataTable();
                 String sentencia = @"SELECT e.idEntrada, e.documento_entrada, e.fecha_entrada, u.idUsuario, u.usuario, pro.idProveedor, pro.documento, pro.nombre AS nombre_proveedor,
-                                    dt.idDetalleEntrada, dt.idProducto, p.codigo, p.nombre AS nombre_producto, dt.precio_compra, e.cantidad, dt.sub_total, e.total
+                                    dt.idDetalleEntrada, dt.idProducto, p.codigo, p.nombre AS nombre_producto, dt.precio_compra, dt.cantidad, dt.sub_total, e.total
                                     FROM entradas e, usuarios u, proveedores pro, detalle_entradas dt, productos p
                                     WHERE e.idUsuario = u.idUsuario
                                     AND e.idProveedor = pro.idProveedor
