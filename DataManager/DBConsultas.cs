@@ -610,7 +610,8 @@ namespace DataManager
             try
             {
                 DataTable resultado = new DataTable();
-                String sentencia = @"select idExistencia, existencia, idProducto from existencias;";
+                String sentencia = @"select e.idExistencia, p.nombre , e.existencia from existencias e, productos p
+                                    where e.idProducto = p.idProducto;";
                 DBOperacion operacion = new DBOperacion();
 
                 resultado = operacion.Consultar(sentencia);
@@ -966,6 +967,76 @@ namespace DataManager
                                     IF(IFNULL((SELECT z.idPermiso FROM permisos z where z.idRol=" + idRol + @" and z.idOpcion=a.idOpcion),0)>0,1,0) asignado
                                     From opciones a, clasificaciones b 
                                     where a.idClasificacion=b.idClasificacion;";
+                DBOperacion operacion = new DBOperacion();
+
+                resultado = operacion.Consultar(sentencia);
+                return resultado;
+            }
+            catch (Exception)
+            {
+                return new DataTable();
+                throw;
+            }
+        }
+        public static DataTable Entradas(string doc)
+        {
+            try
+            {
+                DataTable resultado = new DataTable();
+                String sentencia = @"SELECT e.idEntrada, e.documento_entrada, e.fecha_entrada, u.idUsuario, u.usuario, pro.idProveedor, pro.documento, pro.nombre AS nombre_proveedor,
+                                    dt.idDetalleEntrada, dt.idProducto, p.codigo, p.nombre AS nombre_producto, dt.precio_compra, e.cantidad, dt.sub_total, e.total
+                                    FROM entradas e, usuarios u, proveedores pro, detalle_entradas dt, productos p
+                                    WHERE e.idUsuario = u.idUsuario
+                                    AND e.idProveedor = pro.idProveedor
+                                    AND dt.idEntrada = e.idEntrada
+                                    AND dt.idProducto = p.idProducto AND e.documento_entrada='" + doc + "';";
+                DBOperacion operacion = new DBOperacion();
+
+                resultado = operacion.Consultar(sentencia);
+                return resultado;
+            }
+            catch (Exception)
+            {
+                return new DataTable();
+                throw;
+            }
+        }
+        public static DataTable ConsultarEntradas()
+        {
+            try
+            {
+                DataTable resultado = new DataTable();
+                String sentencia = @"SELECT e.idEntrada, e.documento_entrada, e.fecha_entrada, u.idUsuario, u.usuario, pro.idProveedor, pro.documento, pro.nombre AS nombre_proveedor,
+                                    dt.idDetalleEntrada, dt.idProducto, p.codigo, p.nombre AS nombre_producto, dt.precio_compra, e.cantidad, dt.sub_total, e.total
+                                    FROM entradas e, usuarios u, proveedores pro, detalle_entradas dt, productos p
+                                    WHERE e.idUsuario = u.idUsuario
+                                    AND e.idProveedor = pro.idProveedor
+                                    AND dt.idEntrada = e.idEntrada
+                                    AND dt.idProducto = p.idProducto;";
+                DBOperacion operacion = new DBOperacion();
+
+                resultado = operacion.Consultar(sentencia);
+                return resultado;
+            }
+            catch (Exception)
+            {
+                return new DataTable();
+                throw;
+            }
+        }
+        public static DataTable RangoFechaEntradas(string inicio, string fin)
+        {
+            try
+            {
+                DataTable resultado = new DataTable();
+                String sentencia = @"SELECT e.idEntrada, e.documento_entrada, e.fecha_entrada, u.idUsuario, u.usuario, pro.idProveedor, pro.documento, pro.nombre AS nombre_proveedor,
+                            dt.idDetalleEntrada, dt.idProducto, p.codigo, p.nombre AS nombre_producto, dt.precio_compra, e.cantidad, dt.sub_total, e.total
+                            FROM entradas e, usuarios u, proveedores pro, detalle_entradas dt, productos p
+                            WHERE e.idUsuario = u.idUsuario
+                            AND e.idProveedor = pro.idProveedor
+                            AND dt.idEntrada = e.idEntrada
+                            AND dt.idProducto = p.idProducto
+                            AND e.fecha_entrada BETWEEN '" + inicio + @"' AND '" + fin + @"';";
                 DBOperacion operacion = new DBOperacion();
 
                 resultado = operacion.Consultar(sentencia);

@@ -68,13 +68,9 @@ namespace FormulariosAux.GUI
                         }
                         foreach (DataGridViewRow r in dgvDatos.Rows)
                         {
-                            foreach (DataGridViewCell c in r.Cells)
+                            if (r.Cells["dui"].Value.ToString().ToUpper().IndexOf(txtBuscarPorDoc.Text.ToUpper()) == 0)
                             {
-                                if ((c.Value.ToString().ToUpper()).IndexOf(txtBuscarPorDoc.Text.ToUpper()) == 0)
-                                {
-                                    r.Visible = true;
-                                    break;
-                                }
+                                r.Visible = true;
                             }
                         }
                     }
@@ -91,13 +87,9 @@ namespace FormulariosAux.GUI
                         foreach (DataGridViewRow r in dgvDatos.Rows)
                         {
                             bool encontradoPorNombre = false;
-                            foreach (DataGridViewCell c in r.Cells)
+                            if (r.Cells["nombres_cliente"].Value.ToString().ToUpper().IndexOf(txtBuscarPorNombre.Text.ToUpper()) == 0)
                             {
-                                if ((c.Value.ToString().ToUpper()).IndexOf(txtBuscarPorNombre.Text.ToUpper()) == 0)
-                                {
-                                    encontradoPorNombre = true;
-                                    break;
-                                }
+                                encontradoPorNombre = true;
                             }
                             r.Visible = encontradoPorNombre;
                         }
@@ -110,17 +102,9 @@ namespace FormulariosAux.GUI
                             if (r.Visible)
                             {
                                 bool encontradoPorDoc = false;
-                                foreach (DataGridViewCell c in r.Cells)
+                                if (r.Cells["dui"].Value.ToString().ToUpper().StartsWith(txtBuscarPorDoc.Text.ToUpper()))
                                 {
-                                    string valorCelda = c.Value.ToString().ToUpper();
-                                    string valorBuscado = txtBuscarPorDoc.Text.ToUpper();
-
-                                    // Realizar comparación utilizando StartsWith() para ignorar los ceros iniciales o caracteres en blanco
-                                    if (valorCelda.StartsWith(valorBuscado))
-                                    {
-                                        encontradoPorDoc = true;
-                                        break;
-                                    }
+                                    encontradoPorDoc = true;
                                 }
                                 r.Visible = encontradoPorDoc;
                             }
@@ -130,10 +114,10 @@ namespace FormulariosAux.GUI
             }
             catch (Exception)
             {
-
                 throw;
             }
-        }           
+        }
+
 
         private void txtBuscarPorNombre_TextChanged(object sender, EventArgs e)
         {

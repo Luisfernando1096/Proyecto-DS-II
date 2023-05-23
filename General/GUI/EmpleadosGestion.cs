@@ -109,7 +109,7 @@ namespace General.GUI
 
         private void txtBucarEmpleado_TextChanged(object sender, EventArgs e)
         {
-            if (txtBucarEmpleado.Text!="")
+            if (txtBucarEmpleado.Text != "")
             {
                 dgvDatos.CurrentCell = null;
                 foreach (DataGridViewRow r in dgvDatos.Rows)
@@ -118,13 +118,9 @@ namespace General.GUI
                 }
                 foreach (DataGridViewRow r in dgvDatos.Rows)
                 {
-                    foreach (DataGridViewCell c in r.Cells)
+                    if (r.Cells["Nombres"].Value.ToString().ToUpper().IndexOf(txtBucarEmpleado.Text.ToUpper()) == 0)
                     {
-                        if ((c.Value.ToString().ToUpper()).IndexOf(txtBucarEmpleado.Text.ToUpper()) == 0)
-                        {
-                            r.Visible = true;
-                            break;
-                        }
+                        r.Visible = true;
                     }
                 }
             }
@@ -132,6 +128,7 @@ namespace General.GUI
             {
                 CargarDatos();
             }
+
         }
 
         private void button1_Click(object sender, EventArgs e)
