@@ -33,79 +33,12 @@ namespace DataManager
             
         }
 
-        public static DataTable VerRegistroSalidas(string doc)
+        public static DataTable ReporteExistencias()
         {
             try
             {
                 DataTable resultado = new DataTable();
-                String sentencia = @"SELECT a.codigo, a.nombre, a.descripcion, a.precio_venta, b.categoria, c.cantidad, e.dui, e.nombres_cliente, d.fecha_salida, c.sub_total, d.total, f.usuario
-                                    FROM productos a, categorias b, detalle_salidas c, salidas d, clientes e, usuarios f
-                                    WHERE a.idCategoria=b.idCategoria AND c.idProducto=a.idProducto AND c.idSalida=d.idSalida
-                                    AND d.idCliente=e.idCliente AND f.idUsuario=d.idUsuario AND d.documento_salida='" + doc + "';";
-                DataManager.DBOperacion operacion = new DataManager.DBOperacion();
-
-                resultado = operacion.Consultar(sentencia);
-                return resultado;
-            }
-            catch (Exception)
-            {
-                return new DataTable();
-                throw;
-            }
-        }
-
-        public static object InventarioPorNombre(string nombre, string inicio, string fin)
-        {
-            try
-            {
-                DataTable resultado = new DataTable();
-                String sentencia = @"SELECT
-                                        productos.codigo AS codigo_producto,
-                                        productos.nombre AS nombre_producto,
-                                        productos.descripcion AS descripcion_producto,
-                                        entradas.suma_sub_total AS subTotalCompras,
-                                        COALESCE(salidas.suma_sub_total, 0) AS subTotalVentas,
-                                        entradas.suma_cantidad AS cantidad_entradas,
-                                        entradas.precio_compra AS precio_compra,
-                                        COALESCE(salidas.suma_cantidad, 0) AS cantidad_salidas,
-                                        COALESCE(salidas.precio_venta, 0) AS precio_venta,
-                                        (existencias.existencia) AS stock_actual,
-                                        (COALESCE(salidas.suma_sub_total, 0) - COALESCE(entradas.suma_sub_total, 0)) AS flujo_actual
-                                    FROM
-                                        productos
-                                    INNER JOIN
-                                        (
-                                            SELECT
-                                                detalle_entradas.idProducto,
-                                                COALESCE(SUM(detalle_entradas.sub_total), 0) AS suma_sub_total,
-                                                COALESCE(SUM(detalle_entradas.cantidad), 0) AS suma_cantidad,
-                                                detalle_entradas.precio_compra
-                                            FROM
-                                                detalle_entradas
-                                            INNER JOIN
-                                                entradas ON entradas.idEntrada = detalle_entradas.idEntrada
-                                            WHERE  
-                                            entradas.fecha_entrada BETWEEN '" + inicio + @"' AND '" + fin + @"'
-                                            GROUP BY
-                                                detalle_entradas.idProducto, detalle_entradas.precio_compra
-                                        ) AS entradas ON productos.idProducto = entradas.idProducto
-                                    LEFT JOIN
-                                        (
-                                            SELECT
-                                                detalle_salidas.idProducto,
-                                                COALESCE(SUM(detalle_salidas.sub_total), 0) AS suma_sub_total,
-                                                COALESCE(SUM(detalle_salidas.cantidad), 0) AS suma_cantidad,
-                                                detalle_salidas.precio_venta
-                                            FROM
-                                                detalle_salidas
-                                            INNER JOIN
-                                                salidas ON salidas.idSalida = detalle_salidas.idSalida
-                                            WHERE
-                                                salidas.fecha_salida BETWEEN '" + inicio + @"' AND '" + fin + @"'
-                                            GROUP BY
-                                                detalle_salidas.idProducto, detalle_salidas.precio_venta
-                                        ) AS salidas ON productos.idProducto = salidas.idProducto
-                                        WHERE productos.nombre like '%" + nombre + "%';";
+                String sentencia = @"SELECT * FROM existencias";
                 DBOperacion operacion = new DBOperacion();
 
                 resultado = operacion.Consultar(sentencia);
@@ -118,97 +51,7 @@ namespace DataManager
             }
         }
 
-        public static object FlujoMayor(string inicio, string fin)
-        {
-            try
-            {
-                DataTable resultado = new DataTable();
-                String sentencia = @"SELECT
-                                        productos.codigo AS codigo_producto,
-                                        productos.nombre AS nombre_producto,
-                                        productos.descripcion AS descripcion_producto,
-                                        entradas.suma_sub_total AS subTotalCompras,
-                                        COALESCE(salidas.suma_sub_total, 0) AS subTotalVentas,
-                                        entradas.suma_cantidad AS cantidad_entradas,
-                                        entradas.precio_compra AS precio_compra,
-                                        COALESCE(salidas.suma_cantidad, 0) AS cantidad_salidas,
-                                        COALESCE(salidas.precio_venta, 0) AS precio_venta,
-                                        (existencias.existencia) AS stock_actual,
-                                        (COALESCE(salidas.suma_sub_total, 0) - COALESCE(entradas.suma_sub_total, 0)) AS flujo_actual
-                                    FROM
-                                        productos
-                                    INNER JOIN
-                                        (
-                                            SELECT
-                                                detalle_entradas.idProducto,
-                                                COALESCE(SUM(detalle_entradas.sub_total), 0) AS suma_sub_total,
-                                                COALESCE(SUM(detalle_entradas.cantidad), 0) AS suma_cantidad,
-                                                detalle_entradas.precio_compra
-                                            FROM
-                                                detalle_entradas
-                                            INNER JOIN
-                                                entradas ON entradas.idEntrada = detalle_entradas.idEntrada
-                                            WHERE
-                                                entradas.fecha_entrada BETWEEN '" + inicio + @"' AND '" + fin + @"'
-                                            GROUP BY
-                                                detalle_entradas.idProducto, detalle_entradas.precio_compra
-                                        ) AS entradas ON productos.idProducto = entradas.idProducto
-                                    INNER JOIN
-                                        (
-                                            SELECT
-                                                detalle_entradas.idProducto,
-                                                COALESCE(SUM(detalle_entradas.sub_total), 0) AS suma_sub_total,
-                                                COALESCE(SUM(detalle_entradas.cantidad), 0) AS suma_cantidad,
-                                                detalle_entradas.precio_compra
-                                            FROM
-                                                detalle_entradas
-                                            INNER JOIN
-                                                entradas ON entradas.idEntrada = detalle_entradas.idEntrada
-                                            WHERE  
-                                            entradas.fecha_entrada BETWEEN '" + inicio + @"' AND '" + fin + @"'
-                                            GROUP BY
-                                                detalle_entradas.idProducto, detalle_entradas.precio_compra
-                                        ) AS entradas ON productos.idProducto = entradas.idProducto
-                                    INNER JOIN
-                                        (
-                                            SELECT
-                                                existencias.idProducto,
-                                                existencias.existencia
-                                            FROM
-                                                existencias
-                                            GROUP BY
-                                                existencias.idProducto, existencias.existencia
-                                        ) AS existencias ON productos.idProducto = existencias.idProducto
-                                    LEFT JOIN
-                                        (
-                                            SELECT
-                                                detalle_salidas.idProducto,
-                                                COALESCE(SUM(detalle_salidas.sub_total), 0) AS suma_sub_total,
-                                                COALESCE(SUM(detalle_salidas.cantidad), 0) AS suma_cantidad,
-                                                detalle_salidas.precio_venta
-                                            FROM
-                                                detalle_salidas
-                                            INNER JOIN
-                                                salidas ON salidas.idSalida = detalle_salidas.idSalida
-                                            WHERE
-                                                salidas.fecha_salida BETWEEN '" + inicio + @"' AND '" + fin + @"'
-                                            GROUP BY
-                                                detalle_salidas.idProducto, detalle_salidas.precio_venta
-                                        ) AS salidas ON productos.idProducto = salidas.idProducto
-                                        WHERE (COALESCE(salidas.suma_sub_total, 0) - COALESCE(entradas.suma_sub_total, 0)) >= 0;";
-                DBOperacion operacion = new DBOperacion();
-
-                resultado = operacion.Consultar(sentencia);
-                return resultado;
-            }
-            catch (Exception)
-            {
-                return new DataTable();
-                throw;
-            }
-        }
-
-        public static object FlujoMenor(string inicio, string fin)
+        public static DataTable ReporteInventario(string inicio, string fin)
         {
             try
             {
@@ -246,6 +89,85 @@ namespace DataManager
                                         INNER JOIN
                                         (
                                             SELECT
+                                                existencias.idProducto,
+                                                existencias.existencia
+                                            FROM
+                                                existencias
+                                            GROUP BY
+                                                existencias.idProducto, existencias.existencia
+                                        ) AS existencias ON productos.idProducto = existencias.idProducto
+                                        LEFT JOIN
+                                        (
+                                            SELECT
+                                                detalle_salidas.idProducto,
+                                                COALESCE(SUM(detalle_salidas.sub_total), 0) AS suma_sub_total,
+                                                COALESCE(SUM(detalle_salidas.cantidad), 0) AS suma_cantidad,
+                                                detalle_salidas.precio_venta
+                                            FROM
+                                                detalle_salidas
+                                            INNER JOIN
+                                                salidas ON salidas.idSalida = detalle_salidas.idSalida
+                                            WHERE
+                                                salidas.fecha_salida BETWEEN '" + inicio + @"' AND '" + fin + @"'
+                                            GROUP BY
+                                                detalle_salidas.idProducto, detalle_salidas.precio_venta
+                                        ) AS salidas ON productos.idProducto = salidas.idProducto
+                                        WHERE (COALESCE(salidas.suma_sub_total, 0) - COALESCE(entradas.suma_sub_total, 0)) >= 0;";
+                DBOperacion operacion = new DBOperacion();
+
+                resultado = operacion.Consultar(sentencia);
+                return resultado;
+            }
+            catch (Exception)
+            {
+                return new DataTable();
+                throw;
+            }
+        }
+
+        public static DataTable VerRegistroSalidas(string doc)
+        {
+            try
+            {
+                DataTable resultado = new DataTable();
+                String sentencia = @"SELECT a.codigo, a.nombre, a.descripcion, a.precio_venta, b.categoria, c.cantidad, e.dui, e.nombres_cliente, d.fecha_salida, c.sub_total, d.total, f.usuario
+                                    FROM productos a, categorias b, detalle_salidas c, salidas d, clientes e, usuarios f
+                                    WHERE a.idCategoria=b.idCategoria AND c.idProducto=a.idProducto AND c.idSalida=d.idSalida
+                                    AND d.idCliente=e.idCliente AND f.idUsuario=d.idUsuario AND d.documento_salida='" + doc + "';";
+                DataManager.DBOperacion operacion = new DataManager.DBOperacion();
+
+                resultado = operacion.Consultar(sentencia);
+                return resultado;
+            }
+            catch (Exception)
+            {
+                return new DataTable();
+                throw;
+            }
+        }
+
+        public static DataTable InventarioPorNombre(string nombre, string inicio, string fin)
+        {
+            try
+            {
+                DataTable resultado = new DataTable();
+                String sentencia = @"SELECT
+                                        productos.codigo AS codigo_producto,
+                                        productos.nombre AS nombre_producto,
+                                        productos.descripcion AS descripcion_producto,
+                                        entradas.suma_sub_total AS subTotalCompras,
+                                        COALESCE(salidas.suma_sub_total, 0) AS subTotalVentas,
+                                        entradas.suma_cantidad AS cantidad_entradas,
+                                        entradas.precio_compra AS precio_compra,
+                                        COALESCE(salidas.suma_cantidad, 0) AS cantidad_salidas,
+                                        COALESCE(salidas.precio_venta, 0) AS precio_venta,
+                                        (existencias.existencia) AS stock_actual,
+                                        (COALESCE(salidas.suma_sub_total, 0) - COALESCE(entradas.suma_sub_total, 0)) AS flujo_actual
+                                    FROM
+                                        productos
+                                    INNER JOIN
+                                        (
+                                            SELECT
                                                 detalle_entradas.idProducto,
                                                 COALESCE(SUM(detalle_entradas.sub_total), 0) AS suma_sub_total,
                                                 COALESCE(SUM(detalle_entradas.cantidad), 0) AS suma_cantidad,
@@ -254,8 +176,174 @@ namespace DataManager
                                                 detalle_entradas
                                             INNER JOIN
                                                 entradas ON entradas.idEntrada = detalle_entradas.idEntrada
-                                            WHERE  
-                                            entradas.fecha_entrada BETWEEN '" + inicio + @"' AND '" + fin + @"'
+                                            WHERE
+                                                entradas.fecha_entrada BETWEEN '" + inicio + @"' AND '" + fin + @"'
+                                            GROUP BY
+                                                detalle_entradas.idProducto, detalle_entradas.precio_compra
+                                        ) AS entradas ON productos.idProducto = entradas.idProducto
+                                        INNER JOIN
+                                        (
+                                            SELECT
+                                                existencias.idProducto,
+                                                existencias.existencia
+                                            FROM
+                                                existencias
+                                            GROUP BY
+                                                existencias.idProducto, existencias.existencia
+                                        ) AS existencias ON productos.idProducto = existencias.idProducto
+                                        LEFT JOIN
+                                        (
+                                            SELECT
+                                                detalle_salidas.idProducto,
+                                                COALESCE(SUM(detalle_salidas.sub_total), 0) AS suma_sub_total,
+                                                COALESCE(SUM(detalle_salidas.cantidad), 0) AS suma_cantidad,
+                                                detalle_salidas.precio_venta
+                                            FROM
+                                                detalle_salidas
+                                            INNER JOIN
+                                                salidas ON salidas.idSalida = detalle_salidas.idSalida
+                                            WHERE
+                                                salidas.fecha_salida BETWEEN '" + inicio + @"' AND '" + fin + @"'
+                                            GROUP BY
+                                                detalle_salidas.idProducto, detalle_salidas.precio_venta
+                                        ) AS salidas ON productos.idProducto = salidas.idProducto
+                                        WHERE productos.nombre like '%" + nombre + "%';";
+                DBOperacion operacion = new DBOperacion();
+
+                resultado = operacion.Consultar(sentencia);
+                return resultado;
+            }
+            catch (Exception)
+            {
+                return new DataTable();
+                throw;
+            }
+        }
+
+        public static DataTable FlujoMayor(string inicio, string fin)
+        {
+            try
+            {
+                DataTable resultado = new DataTable();
+                String sentencia = @"SELECT
+                                        productos.codigo AS codigo_producto,
+                                        productos.nombre AS nombre_producto,
+                                        productos.descripcion AS descripcion_producto,
+                                        entradas.suma_sub_total AS subTotalCompras,
+                                        COALESCE(salidas.suma_sub_total, 0) AS subTotalVentas,
+                                        entradas.suma_cantidad AS cantidad_entradas,
+                                        entradas.precio_compra AS precio_compra,
+                                        COALESCE(salidas.suma_cantidad, 0) AS cantidad_salidas,
+                                        COALESCE(salidas.precio_venta, 0) AS precio_venta,
+                                        (existencias.existencia) AS stock_actual,
+                                        (COALESCE(salidas.suma_sub_total, 0) - COALESCE(entradas.suma_sub_total, 0)) AS flujo_actual
+                                    FROM
+                                        productos
+                                    INNER JOIN
+                                        (
+                                            SELECT
+                                                detalle_entradas.idProducto,
+                                                COALESCE(SUM(detalle_entradas.sub_total), 0) AS suma_sub_total,
+                                                COALESCE(SUM(detalle_entradas.cantidad), 0) AS suma_cantidad,
+                                                detalle_entradas.precio_compra
+                                            FROM
+                                                detalle_entradas
+                                            INNER JOIN
+                                                entradas ON entradas.idEntrada = detalle_entradas.idEntrada
+                                            WHERE
+                                                entradas.fecha_entrada BETWEEN '" + inicio + @"' AND '" + fin + @"'
+                                            GROUP BY
+                                                detalle_entradas.idProducto, detalle_entradas.precio_compra
+                                        ) AS entradas ON productos.idProducto = entradas.idProducto
+                                        INNER JOIN
+                                        (
+                                            SELECT
+                                                existencias.idProducto,
+                                                existencias.existencia
+                                            FROM
+                                                existencias
+                                            GROUP BY
+                                                existencias.idProducto, existencias.existencia
+                                        ) AS existencias ON productos.idProducto = existencias.idProducto
+                                        LEFT JOIN
+                                        (
+                                            SELECT
+                                                detalle_salidas.idProducto,
+                                                COALESCE(SUM(detalle_salidas.sub_total), 0) AS suma_sub_total,
+                                                COALESCE(SUM(detalle_salidas.cantidad), 0) AS suma_cantidad,
+                                                detalle_salidas.precio_venta
+                                            FROM
+                                                detalle_salidas
+                                            INNER JOIN
+                                                salidas ON salidas.idSalida = detalle_salidas.idSalida
+                                            WHERE
+                                                salidas.fecha_salida BETWEEN '" + inicio + @"' AND '" + fin + @"'
+                                            GROUP BY
+                                                detalle_salidas.idProducto, detalle_salidas.precio_venta
+                                        ) AS salidas ON productos.idProducto = salidas.idProducto
+                                        WHERE (COALESCE(salidas.suma_sub_total, 0) - COALESCE(entradas.suma_sub_total, 0)) >= 0;";
+                DBOperacion operacion = new DBOperacion();
+
+                resultado = operacion.Consultar(sentencia);
+                return resultado;
+            }
+            catch (Exception)
+            {
+                return new DataTable();
+                throw;
+            }
+        }
+
+        public static DataTable IdDetalleSalidas()
+        {
+            try
+            {
+                DataTable resultado = new DataTable();
+                String sentencia = @"select idDetalleSalida, idProducto from detalle_salidas;";
+                DBOperacion operacion = new DBOperacion();
+
+                resultado = operacion.Consultar(sentencia);
+                return resultado;
+            }
+            catch (Exception)
+            {
+                return new DataTable();
+                throw;
+            }
+        }
+
+        public static DataTable FlujoMenor(string inicio, string fin)
+        {
+            try
+            {
+                DataTable resultado = new DataTable();
+                String sentencia = @"SELECT
+                                        productos.codigo AS codigo_producto,
+                                        productos.nombre AS nombre_producto,
+                                        productos.descripcion AS descripcion_producto,
+                                        entradas.suma_sub_total AS subTotalCompras,
+                                        COALESCE(salidas.suma_sub_total, 0) AS subTotalVentas,
+                                        entradas.suma_cantidad AS cantidad_entradas,
+                                        entradas.precio_compra AS precio_compra,
+                                        COALESCE(salidas.suma_cantidad, 0) AS cantidad_salidas,
+                                        COALESCE(salidas.precio_venta, 0) AS precio_venta,
+                                        (existencias.existencia) AS stock_actual,
+                                        (COALESCE(salidas.suma_sub_total, 0) - COALESCE(entradas.suma_sub_total, 0)) AS flujo_actual
+                                    FROM
+                                        productos
+                                    INNER JOIN
+                                        (
+                                            SELECT
+                                                detalle_entradas.idProducto,
+                                                COALESCE(SUM(detalle_entradas.sub_total), 0) AS suma_sub_total,
+                                                COALESCE(SUM(detalle_entradas.cantidad), 0) AS suma_cantidad,
+                                                detalle_entradas.precio_compra
+                                            FROM
+                                                detalle_entradas
+                                            INNER JOIN
+                                                entradas ON entradas.idEntrada = detalle_entradas.idEntrada
+                                            WHERE
+                                                entradas.fecha_entrada BETWEEN '" + inicio + @"' AND '" + fin + @"'
                                             GROUP BY
                                                 detalle_entradas.idProducto, detalle_entradas.precio_compra
                                         ) AS entradas ON productos.idProducto = entradas.idProducto

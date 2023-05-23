@@ -465,5 +465,17 @@ namespace SCDI.GUI
             f.MdiParent = this;
             f.Show();
         }
+
+        private void inventarioToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Reportes.GUI.VisorInventario f = new Reportes.GUI.VisorInventario();
+            f.ShowDialog();
+        }
+
+        private void existenciasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Reportes.GUI.VisorExistencias f = new Reportes.GUI.VisorExistencias();
+            f.ShowDialog();
+        }
     }
 }

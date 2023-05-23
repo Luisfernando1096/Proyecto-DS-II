@@ -98,6 +98,10 @@
       <Project>{26f01be9-34ff-4e31-8cc0-29014ddc2a27}</Project>
       <Name>General</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Salidas\Salidas.csproj">
+      <Project>{840b874b-f3a0-4960-8b31-a2efaa1a0a34}</Project>
+      <Name>Salidas</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SessionManager\SessionManager.csproj">
       <Project>{de3373b4-20c5-4fb5-a2df-4beb2e4dcaa0}</Project>
       <Name>SessionManager</Name>

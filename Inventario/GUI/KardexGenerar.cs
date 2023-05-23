@@ -31,12 +31,15 @@ namespace Inventario.GUI
             }
             catch (Exception)
             {
-
                 throw;
             }
         }
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+            txtBusqueda.Visible = false;
+            btnFiltrar.Visible = false;
+            cmbOpcion.SelectedIndex = -1;
+            cmbOpcion.Text = "Seleccione opcion";
             CargarDatos();
         }
 
@@ -49,7 +52,7 @@ namespace Inventario.GUI
         {
             try
             {
-                datos.DataSource = DataManager.DBConsultas.InventarioPorNombre(txtBusqueda.Text,dtpInicio.Text, dtpFin.Text);
+                datos.DataSource = DataManager.DBConsultas.InventarioPorNombre(txtBusqueda.Text, dtpInicio.Text, dtpFin.Text);
                 dgvDatos.DataSource = datos;
                 dgvDatos.AutoGenerateColumns = false;
             }
@@ -105,6 +108,40 @@ namespace Inventario.GUI
             {
                 txtBusqueda.Visible = false;
                 btnFiltrar.Visible = false;
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (dgvDatos.Rows.Count>0)
+            {
+                if (cmbOpcion.SelectedIndex == 0)
+                {
+                    DataTable datos = new DataTable();
+                    Reportes.REP.Inventario oReporte = new Reportes.REP.Inventario();
+                    datos = DataManager.DBConsultas.InventarioPorNombre(txtBusqueda.Text, dtpInicio.Text, dtpFin.Text);
+                    oReporte.SetDataSource(datos);
+                    Reportes.GUI.VisorInventario f = new Reportes.GUI.VisorInventario();
+                    f.crvVisor.ReportSource = oReporte;
+                    f.ShowDialog();
+                }
+                else if (cmbOpcion.SelectedIndex == 1)
+                {
+
+                }
+                else if (cmbOpcion.SelectedIndex == 2)
+                {
+
+                }
+                else
+                {
+
+                }
+            }
+            else
+            {
+                MessageBox.Show("No hay datos que mostrar en el reporte", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
             }
         }
     }

@@ -53,6 +53,7 @@ namespace Inventario.GUI
             this.txtBusqueda = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnFiltrar = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -86,13 +87,13 @@ namespace Inventario.GUI
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvDatos.DefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvDatos.Location = new System.Drawing.Point(9, 65);
+            this.dgvDatos.Location = new System.Drawing.Point(9, 72);
             this.dgvDatos.MultiSelect = false;
             this.dgvDatos.Name = "dgvDatos";
             this.dgvDatos.ReadOnly = true;
             this.dgvDatos.RowHeadersVisible = false;
             this.dgvDatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDatos.Size = new System.Drawing.Size(1105, 379);
+            this.dgvDatos.Size = new System.Drawing.Size(1105, 372);
             this.dgvDatos.TabIndex = 14;
             // 
             // codigo_producto
@@ -273,11 +274,23 @@ namespace Inventario.GUI
             this.btnFiltrar.Visible = false;
             this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(12, 34);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(105, 34);
+            this.button1.TabIndex = 83;
+            this.button1.Text = "Ver Reporte";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // KardexGenerar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1124, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnFiltrar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtBusqueda);
@@ -320,5 +333,6 @@ namespace Inventario.GUI
         public System.Windows.Forms.TextBox txtBusqueda;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnFiltrar;
+        private System.Windows.Forms.Button button1;
     }
 }

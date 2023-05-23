@@ -262,7 +262,9 @@ namespace Entradas.GUI
             int idEntrada = 0;
             DataTable tEntrada = DataManager.DBConsultas.ObtenerUltimaEntrada();
             DataTable tDetalles = DataManager.DBConsultas.IdDetalleEntradas();
+            DataTable tDetallesS = DataManager.DBConsultas.IdDetalleSalidas();
             CLS.DetalleEntradas dealleActualizar = new CLS.DetalleEntradas();
+            Salidas.CLS.DatalleSalidas dealleActualizarS = new Salidas.CLS.DatalleSalidas();
             List<CLS.DetalleEntradas> oLista = new List<CLS.DetalleEntradas>();
             List<CLS.Existencias> lstExistencias = new List<CLS.Existencias>();
             List<General.CLS.Productos> lstProductos = new List<General.CLS.Productos>();
@@ -296,7 +298,7 @@ namespace Entradas.GUI
                     Precio_venta = Double.Parse(row.Cells["precio_venta"].Value.ToString()),
                     Idcategoria = Int32.Parse(row.Cells["idCategoria"].Value.ToString()),
                 });
-                //Actualizar precios
+                //Actualizar precios compra
                 foreach (DataRow item in tDetalles.Rows)
                 {
                     dealleActualizar.IdDetalleEntradas = Int32.Parse(item["idDetalleEntrada"].ToString());
@@ -308,7 +310,20 @@ namespace Entradas.GUI
                             controlDA = true;
                         }
                     }
-                    
+                }
+                //Actualizar precios venta
+                foreach (DataRow item in tDetallesS.Rows)
+                {
+                    dealleActualizarS.IdDetalleSalida = Int32.Parse(item["idDetalleSalida"].ToString());
+                    dealleActualizarS.Precio_venta = Double.Parse(row.Cells["precio_venta"].Value.ToString());
+                    if (Int32.Parse(item["idProducto"].ToString()) == Int32.Parse(row.Cells["idProducto"].Value.ToString()))
+                    {
+                        if (!dealleActualizarS.ActualizarPrecio())
+                        {
+                            controlDA = true;
+                        }
+                    }
+
 
                 }
 

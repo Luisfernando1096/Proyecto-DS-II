@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Salidas.CLS
 {
-    class DatalleSalidas
+    public class DatalleSalidas
     {
         int idDetalleSalida;
         int idSalida;
@@ -86,6 +86,32 @@ namespace Salidas.CLS
                 Int32 filasEliminadas = 0;
                 filasEliminadas = op.EjecutarSentencia(sentencia);
                 if (filasEliminadas > 0)
+                {
+                    resultado = true;
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+            return resultado;
+        }
+
+        public bool ActualizarPrecio()
+        {
+            Boolean resultado = false;
+            string sentencia;
+            sentencia = @"UPDATE detalle_salidas SET precio_venta = " + precio_venta + " " +
+                "WHERE idDetalleSalida = " + idDetalleSalida + ";";
+
+            try
+            {
+                DataManager.DBOperacion op = new DataManager.DBOperacion();
+                Int32 filasActualizadas = 0;
+                filasActualizadas = op.EjecutarSentencia(sentencia);
+                if (filasActualizadas > 0)
                 {
                     resultado = true;
                 }
