@@ -29,7 +29,8 @@ namespace General.GUI
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             DireccionesGestion f = new DireccionesGestion();
-            f.btnSeleccionar.Visible = true;       
+            f.btnSeleccionar.Visible = true;
+            f.lblSeleccionar.Visible = true;
             var result = f.ShowDialog();
             if (result == DialogResult.OK)
             {

@@ -20,6 +20,7 @@ namespace General.GUI
         {
             EmpleadosGestion f = new EmpleadosGestion();
             f.btnSeleccionar.Visible = true;
+            f.lblSeleccionar.Visible = true;
             var result = f.ShowDialog();
             if (result == DialogResult.OK)
             {

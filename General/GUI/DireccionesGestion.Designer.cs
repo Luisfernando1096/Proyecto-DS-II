@@ -49,7 +49,7 @@ namespace General.GUI
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblRegistros = new System.Windows.Forms.ToolStripStatusLabel();
             this.btnSeleccionar = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblSeleccionar = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -229,22 +229,23 @@ namespace General.GUI
             this.btnSeleccionar.Visible = false;
             this.btnSeleccionar.Click += new System.EventHandler(this.btnSeleccionar_Click);
             // 
-            // label1
+            // lblSeleccionar
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(351, 5);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 20);
-            this.label1.TabIndex = 86;
-            this.label1.Text = "Seleccionar";
+            this.lblSeleccionar.AutoSize = true;
+            this.lblSeleccionar.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSeleccionar.Location = new System.Drawing.Point(351, 5);
+            this.lblSeleccionar.Name = "lblSeleccionar";
+            this.lblSeleccionar.Size = new System.Drawing.Size(80, 20);
+            this.lblSeleccionar.TabIndex = 86;
+            this.lblSeleccionar.Text = "Seleccionar";
+            this.lblSeleccionar.Visible = false;
             // 
             // DireccionesGestion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(470, 306);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblSeleccionar);
             this.Controls.Add(this.btnSeleccionar);
             this.Controls.Add(this.dgvDatos);
             this.Controls.Add(this.toolStrip1);
@@ -283,6 +284,6 @@ namespace General.GUI
         private System.Windows.Forms.DataGridViewTextBoxColumn no_calle;
         public System.Windows.Forms.ToolStripButton btnEliminar;
         public System.Windows.Forms.ToolStripButton btnEditar;
-        private System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Label lblSeleccionar;
     }
 }

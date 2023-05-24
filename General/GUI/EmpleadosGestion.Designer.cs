@@ -37,9 +37,10 @@ namespace General.GUI
             this.Nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nacimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dui = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.genero = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idDireccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dui = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblRegistros = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
@@ -51,8 +52,8 @@ namespace General.GUI
             this.btnAgregar = new System.Windows.Forms.ToolStripButton();
             this.btnSeleccionar = new System.Windows.Forms.Button();
             this.txtBucarEmpleado = new System.Windows.Forms.RichTextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblSeleccionar = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -74,9 +75,10 @@ namespace General.GUI
             this.Nombres,
             this.Apellidos,
             this.nacimiento,
+            this.dui,
             this.genero,
             this.idDireccion,
-            this.dui});
+            this.Direccion});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -93,7 +95,7 @@ namespace General.GUI
             this.dgvDatos.RowHeadersVisible = false;
             this.dgvDatos.RowHeadersWidth = 51;
             this.dgvDatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDatos.Size = new System.Drawing.Size(846, 321);
+            this.dgvDatos.Size = new System.Drawing.Size(1060, 321);
             this.dgvDatos.TabIndex = 5;
             // 
             // ID
@@ -103,7 +105,6 @@ namespace General.GUI
             this.ID.MinimumWidth = 6;
             this.ID.Name = "ID";
             this.ID.ReadOnly = true;
-            this.ID.Width = 125;
             // 
             // Nombres
             // 
@@ -112,7 +113,7 @@ namespace General.GUI
             this.Nombres.MinimumWidth = 6;
             this.Nombres.Name = "Nombres";
             this.Nombres.ReadOnly = true;
-            this.Nombres.Width = 125;
+            this.Nombres.Width = 150;
             // 
             // Apellidos
             // 
@@ -121,7 +122,7 @@ namespace General.GUI
             this.Apellidos.MinimumWidth = 6;
             this.Apellidos.Name = "Apellidos";
             this.Apellidos.ReadOnly = true;
-            this.Apellidos.Width = 125;
+            this.Apellidos.Width = 150;
             // 
             // nacimiento
             // 
@@ -131,6 +132,15 @@ namespace General.GUI
             this.nacimiento.Name = "nacimiento";
             this.nacimiento.ReadOnly = true;
             this.nacimiento.Width = 125;
+            // 
+            // dui
+            // 
+            this.dui.DataPropertyName = "dui";
+            this.dui.HeaderText = "Dui";
+            this.dui.MinimumWidth = 6;
+            this.dui.Name = "dui";
+            this.dui.ReadOnly = true;
+            this.dui.Width = 125;
             // 
             // genero
             // 
@@ -148,16 +158,17 @@ namespace General.GUI
             this.idDireccion.MinimumWidth = 6;
             this.idDireccion.Name = "idDireccion";
             this.idDireccion.ReadOnly = true;
+            this.idDireccion.Visible = false;
             this.idDireccion.Width = 125;
             // 
-            // dui
+            // Direccion
             // 
-            this.dui.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dui.DataPropertyName = "dui";
-            this.dui.HeaderText = "Dui";
-            this.dui.MinimumWidth = 6;
-            this.dui.Name = "dui";
-            this.dui.ReadOnly = true;
+            this.Direccion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Direccion.DataPropertyName = "direccion";
+            this.Direccion.HeaderText = "Direccion";
+            this.Direccion.MinimumWidth = 6;
+            this.Direccion.Name = "Direccion";
+            this.Direccion.ReadOnly = true;
             // 
             // statusStrip1
             // 
@@ -167,7 +178,7 @@ namespace General.GUI
             this.lblRegistros});
             this.statusStrip1.Location = new System.Drawing.Point(0, 353);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(846, 23);
+            this.statusStrip1.Size = new System.Drawing.Size(1060, 23);
             this.statusStrip1.TabIndex = 3;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -193,7 +204,7 @@ namespace General.GUI
             this.btnAgregar});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(846, 32);
+            this.toolStrip1.Size = new System.Drawing.Size(1060, 32);
             this.toolStrip1.TabIndex = 4;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -209,6 +220,7 @@ namespace General.GUI
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(99, 29);
             this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // toolStripSeparator1
             // 
@@ -222,6 +234,7 @@ namespace General.GUI
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(82, 29);
             this.btnEditar.Text = "Editar";
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // toolStripSeparator3
             // 
@@ -235,13 +248,14 @@ namespace General.GUI
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(99, 29);
             this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnSeleccionar
             // 
             this.btnSeleccionar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSeleccionar.BackgroundImage")));
             this.btnSeleccionar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnSeleccionar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSeleccionar.Location = new System.Drawing.Point(811, 2);
+            this.btnSeleccionar.Location = new System.Drawing.Point(1023, 1);
             this.btnSeleccionar.Name = "btnSeleccionar";
             this.btnSeleccionar.Size = new System.Drawing.Size(29, 29);
             this.btnSeleccionar.TabIndex = 7;
@@ -251,46 +265,49 @@ namespace General.GUI
             // 
             // txtBucarEmpleado
             // 
-            this.txtBucarEmpleado.Location = new System.Drawing.Point(451, 5);
+            this.txtBucarEmpleado.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBucarEmpleado.Location = new System.Drawing.Point(463, 1);
             this.txtBucarEmpleado.Name = "txtBucarEmpleado";
-            this.txtBucarEmpleado.Size = new System.Drawing.Size(230, 21);
+            this.txtBucarEmpleado.Size = new System.Drawing.Size(226, 27);
             this.txtBucarEmpleado.TabIndex = 50;
             this.txtBucarEmpleado.Text = "";
             this.txtBucarEmpleado.TextChanged += new System.EventHandler(this.txtBucarEmpleado_TextChanged);
             // 
-            // textBox1
+            // lblSeleccionar
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(330, 6);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(119, 21);
-            this.textBox1.TabIndex = 51;
-            this.textBox1.Text = "Buscar por nombre:";
+            this.lblSeleccionar.AutoSize = true;
+            this.lblSeleccionar.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSeleccionar.Location = new System.Drawing.Point(942, 5);
+            this.lblSeleccionar.Name = "lblSeleccionar";
+            this.lblSeleccionar.Size = new System.Drawing.Size(80, 20);
+            this.lblSeleccionar.TabIndex = 86;
+            this.lblSeleccionar.Text = "Seleccionar";
+            this.lblSeleccionar.Visible = false;
+            this.lblSeleccionar.Click += new System.EventHandler(this.label1_Click);
             // 
-            // label1
+            // label2
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(730, 6);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 20);
-            this.label1.TabIndex = 86;
-            this.label1.Text = "Seleccionar";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(333, 5);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(128, 20);
+            this.label2.TabIndex = 87;
+            this.label2.Text = "Buscar por nombre:";
             // 
             // EmpleadosGestion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(846, 376);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.ClientSize = new System.Drawing.Size(1060, 376);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblSeleccionar);
             this.Controls.Add(this.txtBucarEmpleado);
             this.Controls.Add(this.btnSeleccionar);
             this.Controls.Add(this.dgvDatos);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EmpleadosGestion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -318,16 +335,18 @@ namespace General.GUI
         private System.Windows.Forms.ToolStripButton btnEditar;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripButton btnAgregar;
+        public System.Windows.Forms.Button btnSeleccionar;
+        public System.Windows.Forms.RichTextBox txtBucarEmpleado;
+        public System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombres;
         private System.Windows.Forms.DataGridViewTextBoxColumn Apellidos;
         private System.Windows.Forms.DataGridViewTextBoxColumn nacimiento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dui;
         private System.Windows.Forms.DataGridViewTextBoxColumn genero;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDireccion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dui;
-        public System.Windows.Forms.Button btnSeleccionar;
-        public System.Windows.Forms.RichTextBox txtBucarEmpleado;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Direccion;
+        private System.Windows.Forms.Label label2;
+        public System.Windows.Forms.Label lblSeleccionar;
     }
 }

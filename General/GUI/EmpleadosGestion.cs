@@ -38,22 +38,6 @@ namespace General.GUI
         public EmpleadosGestion()
         {
             InitializeComponent();
-            ///Ajustar Tamaño
-            int totalWidth = 0;
-            int totalHeight = 0;
-
-            foreach (DataGridViewColumn column in dgvDatos.Columns)
-            {
-                totalWidth += column.Width;
-            }
-
-            foreach (DataGridViewRow row in dgvDatos.Rows)
-            {
-                totalHeight += row.Height;
-            }
-
-            // Ajustar el tamaño del formulario
-            this.ClientSize = new System.Drawing.Size(totalWidth + 100, totalHeight + 500);
         }
 
         private void EmpleadosGestion_Load(object sender, EventArgs e)
@@ -128,6 +112,54 @@ namespace General.GUI
             {
                 CargarDatos();
             }
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            General.GUI.EmpleadosEdicion f = new General.GUI.EmpleadosEdicion();
+            f.ShowDialog();
+            CargarDatos();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Esta seguro que desea eliminar?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                CLS.Empleados c = new CLS.Empleados();
+                c.IdEmpleado = Int32.Parse(dgvDatos.CurrentRow.Cells["ID"].Value.ToString());
+                if (c.Eliminar())
+                {
+                    MessageBox.Show("¡Registro eliminado correctamente!", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("¡El registro no fue eliminado correctamente!", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            CargarDatos();
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Esta seguro que desea editar?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                EmpleadosEdicion f = new EmpleadosEdicion();
+                f.txtIdEmpleado.Text = dgvDatos.CurrentRow.Cells["ID"].Value.ToString();
+                f.txtIdDireccion.Text = dgvDatos.CurrentRow.Cells["idDireccion"].Value.ToString();
+                f.txtDireccion.Text = dgvDatos.CurrentRow.Cells["direccion"].Value.ToString();
+                f.txtNombres.Text = dgvDatos.CurrentRow.Cells["Nombres"].Value.ToString();
+                f.txtApellidos.Text = dgvDatos.CurrentRow.Cells["Apellidos"].Value.ToString();
+                f.cmbGenero.SelectedItem = dgvDatos.CurrentRow.Cells["genero"].Value.ToString();
+                f.dtpNacimiento.Text = dgvDatos.CurrentRow.Cells["nacimiento"].Value.ToString();
+                f.txtDui.Text = dgvDatos.CurrentRow.Cells["dui"].Value.ToString();
+                f.ShowDialog();
+            }
+            CargarDatos();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
