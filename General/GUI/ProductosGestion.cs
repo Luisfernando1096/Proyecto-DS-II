@@ -25,7 +25,9 @@ namespace General.GUI
                 datos.DataSource = DataManager.DBConsultas.Productos();
                 dgvDatos.DataSource = datos;
                 dgvDatos.AutoGenerateColumns = false;//Impide generar automaticamente las columnas de encabezado
-                //Codigo para insertar los datos en el datagrid
+                                                     //Codigo para insertar los datos en el datagrid
+                                                     //Codigo para mostrar cuantas filas se 
+                lblRegistros.Text = datos.List.Count.ToString() + " Registros Encontrados";
 
             }
             catch (Exception)
@@ -38,9 +40,6 @@ namespace General.GUI
         private void ProductosGestion_Load(object sender, EventArgs e)
         {
             CargarDatos();
-            //Codigo para mostrar cuantas filas se 
-            lblRegistros.Text = datos.List.Count.ToString() + " Registros Encontrados";
-            dgvDatos.Height = 70000;
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
