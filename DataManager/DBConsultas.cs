@@ -725,7 +725,7 @@ namespace DataManager
             {
                 DataTable resultado = new DataTable();
                 String sentencia = @"SELECT idEntrada FROM entradas
-                                    order by documento_entrada desc limit 1;";
+                                    order by idEntrada desc limit 1;";
                 DBOperacion operacion = new DBOperacion();
 
                 resultado = operacion.Consultar(sentencia);

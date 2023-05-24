@@ -127,15 +127,33 @@ namespace Inventario.GUI
                 }
                 else if (cmbOpcion.SelectedIndex == 1)
                 {
-
+                    DataTable datos = new DataTable();
+                    Reportes.REP.Inventario oReporte = new Reportes.REP.Inventario();
+                    datos = DataManager.DBConsultas.FlujoMenor(dtpInicio.Text, dtpFin.Text);
+                    oReporte.SetDataSource(datos);
+                    Reportes.GUI.VisorInventario f = new Reportes.GUI.VisorInventario();
+                    f.crvVisor.ReportSource = oReporte;
+                    f.ShowDialog();
                 }
                 else if (cmbOpcion.SelectedIndex == 2)
                 {
-
+                    DataTable datos = new DataTable();
+                    Reportes.REP.Inventario oReporte = new Reportes.REP.Inventario();
+                    datos = DataManager.DBConsultas.FlujoMayor(dtpInicio.Text, dtpFin.Text);
+                    oReporte.SetDataSource(datos);
+                    Reportes.GUI.VisorInventario f = new Reportes.GUI.VisorInventario();
+                    f.crvVisor.ReportSource = oReporte;
+                    f.ShowDialog();
                 }
                 else
                 {
-
+                    DataTable datos = new DataTable();
+                    Reportes.REP.Inventario oReporte = new Reportes.REP.Inventario();
+                    datos = DataManager.DBConsultas.Inventario(dtpInicio.Text, dtpFin.Text);
+                    oReporte.SetDataSource(datos);
+                    Reportes.GUI.VisorInventario f = new Reportes.GUI.VisorInventario();
+                    f.crvVisor.ReportSource = oReporte;
+                    f.ShowDialog();
                 }
             }
             else
