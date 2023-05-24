@@ -57,11 +57,9 @@ namespace SCDI.GUI
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.entradaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevaEntradaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.buscarEntradaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listarEntradaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inventarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kardexToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bgwConexion = new System.ComponentModel.BackgroundWorker();
@@ -286,8 +284,7 @@ namespace SCDI.GUI
             // 
             this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem3,
-            this.toolStripMenuItem4,
-            this.toolStripMenuItem5});
+            this.toolStripMenuItem4});
             this.toolStripMenuItem1.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem1.Image")));
             this.toolStripMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
@@ -311,19 +308,11 @@ namespace SCDI.GUI
             this.toolStripMenuItem4.Text = "Buscar Salida";
             this.toolStripMenuItem4.Click += new System.EventHandler(this.toolStripMenuItem4_Click);
             // 
-            // toolStripMenuItem5
-            // 
-            this.toolStripMenuItem5.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-            this.toolStripMenuItem5.Size = new System.Drawing.Size(188, 28);
-            this.toolStripMenuItem5.Text = "Listar Salida";
-            // 
             // entradaToolStripMenuItem
             // 
             this.entradaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.nuevaEntradaToolStripMenuItem,
-            this.buscarEntradaToolStripMenuItem,
-            this.listarEntradaToolStripMenuItem});
+            this.buscarEntradaToolStripMenuItem});
             this.entradaToolStripMenuItem.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.entradaToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("entradaToolStripMenuItem.Image")));
             this.entradaToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
@@ -346,14 +335,6 @@ namespace SCDI.GUI
             this.buscarEntradaToolStripMenuItem.Size = new System.Drawing.Size(201, 28);
             this.buscarEntradaToolStripMenuItem.Text = "Buscar Entrada";
             this.buscarEntradaToolStripMenuItem.Click += new System.EventHandler(this.buscarEntradaToolStripMenuItem_Click_1);
-            // 
-            // listarEntradaToolStripMenuItem
-            // 
-            this.listarEntradaToolStripMenuItem.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listarEntradaToolStripMenuItem.Name = "listarEntradaToolStripMenuItem";
-            this.listarEntradaToolStripMenuItem.Size = new System.Drawing.Size(201, 28);
-            this.listarEntradaToolStripMenuItem.Text = "Listar Entrada";
-            this.listarEntradaToolStripMenuItem.Click += new System.EventHandler(this.listarEntradaToolStripMenuItem_Click_1);
             // 
             // inventarioToolStripMenuItem
             // 
@@ -441,13 +422,11 @@ namespace SCDI.GUI
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;
         private System.Windows.Forms.ToolStripMenuItem entradaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nuevaEntradaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem inventarioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem kardexToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem buscarEntradaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem listarEntradaToolStripMenuItem;
     }
 }
 

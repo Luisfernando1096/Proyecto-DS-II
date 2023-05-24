@@ -269,6 +269,7 @@ namespace FormulariosAux.GUI
             this.Controls.Add(this.txtBuscarPorDoc);
             this.Controls.Add(this.toolStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ListProveedores";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

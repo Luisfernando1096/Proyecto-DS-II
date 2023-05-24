@@ -506,6 +506,7 @@ namespace Salidas.GUI
             this.Controls.Add(this.txtNoDocumento);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvDatos);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SalidaNueva";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Generar Nueva Salida";

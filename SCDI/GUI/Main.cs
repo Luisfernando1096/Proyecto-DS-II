@@ -500,25 +500,5 @@ namespace SCDI.GUI
             }
         }
 
-        private void listarEntradaToolStripMenuItem_Click_1(object sender, EventArgs e)
-        {
-            try
-            {
-                if (FormularioEstaAbierto(typeof(Entradas.GUI.ListarEntradas)))
-                {
-                    MessageBox.Show("La ventana de Busqueda de Salidas ya está abierta.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    Entradas.GUI.ListarEntradas f = new Entradas.GUI.ListarEntradas();
-                    f.MdiParent = this;
-                    f.Show();
-                }
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
     }
 }

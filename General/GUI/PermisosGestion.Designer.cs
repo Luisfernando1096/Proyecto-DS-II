@@ -29,6 +29,7 @@ namespace General.GUI
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PermisosGestion));
             this.cmbRoles = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvPermisos = new System.Windows.Forms.DataGridView();
@@ -141,6 +142,7 @@ namespace General.GUI
             this.Controls.Add(this.dgvPermisos);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmbRoles);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "PermisosGestion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -180,7 +180,7 @@ namespace General.GUI
             this.cmbCategorias.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCategorias.FormattingEnabled = true;
             this.cmbCategorias.Location = new System.Drawing.Point(364, 189);
-            this.cmbCategorias.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbCategorias.Margin = new System.Windows.Forms.Padding(2);
             this.cmbCategorias.Name = "cmbCategorias";
             this.cmbCategorias.Size = new System.Drawing.Size(162, 28);
             this.cmbCategorias.TabIndex = 43;
@@ -227,6 +227,7 @@ namespace General.GUI
             this.Controls.Add(this.txtIdProducto);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ProductosEdicion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Edicion de Productos";

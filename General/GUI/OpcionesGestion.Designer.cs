@@ -205,7 +205,8 @@ namespace General.GUI
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.dgvDatosClasificaciones);
             this.Controls.Add(this.toolStrip1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "OpcionesGestion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestion de Opciones";

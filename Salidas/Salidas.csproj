@@ -55,12 +55,6 @@
     <Compile Include="GUI\BuscarSalida.Designer.cs">
       <DependentUpon>BuscarSalida.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\FiltrarSalida.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\FiltrarSalida.Designer.cs">
-      <DependentUpon>FiltrarSalida.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI\SalidaNueva.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -29,9 +29,9 @@ namespace Entradas.GUI
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BuscarEntradas));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BuscarEntradas));
             this.label = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -39,7 +39,6 @@ namespace Entradas.GUI
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.txtDocumento = new System.Windows.Forms.TextBox();
             this.gbCliente = new System.Windows.Forms.GroupBox();
             this.txtNombreProveedor = new System.Windows.Forms.TextBox();
@@ -64,7 +63,6 @@ namespace Entradas.GUI
             this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sub_total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.total = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnEliminar = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.gbCliente.SuspendLayout();
@@ -75,10 +73,9 @@ namespace Entradas.GUI
             // 
             this.label.AutoSize = true;
             this.label.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label.Location = new System.Drawing.Point(31, 496);
-            this.label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label.Location = new System.Drawing.Point(23, 403);
             this.label.Name = "label";
-            this.label.Size = new System.Drawing.Size(74, 28);
+            this.label.Size = new System.Drawing.Size(60, 23);
             this.label.TabIndex = 26;
             this.label.Text = "Total:";
             // 
@@ -86,10 +83,9 @@ namespace Entradas.GUI
             // 
             this.lblTotal.AutoSize = true;
             this.lblTotal.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotal.Location = new System.Drawing.Point(109, 496);
-            this.lblTotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTotal.Location = new System.Drawing.Point(82, 403);
             this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(58, 28);
+            this.lblTotal.Size = new System.Drawing.Size(48, 23);
             this.lblTotal.TabIndex = 27;
             this.lblTotal.Text = "0.00";
             // 
@@ -100,11 +96,9 @@ namespace Entradas.GUI
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(17, 42);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Location = new System.Drawing.Point(13, 34);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(549, 79);
+            this.groupBox1.Size = new System.Drawing.Size(412, 64);
             this.groupBox1.TabIndex = 25;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos:";
@@ -115,10 +109,9 @@ namespace Entradas.GUI
             this.dtpFecha.Enabled = false;
             this.dtpFecha.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecha.Location = new System.Drawing.Point(89, 36);
-            this.dtpFecha.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpFecha.Location = new System.Drawing.Point(67, 29);
             this.dtpFecha.Name = "dtpFecha";
-            this.dtpFecha.Size = new System.Drawing.Size(145, 30);
+            this.dtpFecha.Size = new System.Drawing.Size(110, 26);
             this.dtpFecha.TabIndex = 18;
             // 
             // txtUsuario
@@ -126,20 +119,18 @@ namespace Entradas.GUI
             this.txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtUsuario.Enabled = false;
             this.txtUsuario.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsuario.Location = new System.Drawing.Point(399, 36);
-            this.txtUsuario.Margin = new System.Windows.Forms.Padding(4);
+            this.txtUsuario.Location = new System.Drawing.Point(299, 29);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(135, 30);
+            this.txtUsuario.Size = new System.Drawing.Size(102, 26);
             this.txtUsuario.TabIndex = 9;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(249, 38);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(187, 31);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(128, 24);
+            this.label3.Size = new System.Drawing.Size(106, 20);
             this.label3.TabIndex = 8;
             this.label3.Text = "Usuario atendio:";
             // 
@@ -147,34 +138,21 @@ namespace Entradas.GUI
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(15, 38);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(11, 31);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(60, 24);
+            this.label5.Size = new System.Drawing.Size(50, 20);
             this.label5.TabIndex = 5;
             this.label5.Text = "Fecha:";
-            // 
-            // button1
-            // 
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Location = new System.Drawing.Point(406, 4);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(37, 32);
-            this.button1.TabIndex = 20;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // txtDocumento
             // 
             this.txtDocumento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDocumento.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDocumento.Location = new System.Drawing.Point(212, 4);
-            this.txtDocumento.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDocumento.Location = new System.Drawing.Point(221, 3);
             this.txtDocumento.Name = "txtDocumento";
-            this.txtDocumento.Size = new System.Drawing.Size(185, 30);
+            this.txtDocumento.Size = new System.Drawing.Size(203, 26);
             this.txtDocumento.TabIndex = 24;
+            this.txtDocumento.TextChanged += new System.EventHandler(this.txtDocumento_TextChanged);
             // 
             // gbCliente
             // 
@@ -183,11 +161,9 @@ namespace Entradas.GUI
             this.gbCliente.Controls.Add(this.txtDocProveedor);
             this.gbCliente.Controls.Add(this.label2);
             this.gbCliente.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbCliente.Location = new System.Drawing.Point(574, 6);
-            this.gbCliente.Margin = new System.Windows.Forms.Padding(4);
+            this.gbCliente.Location = new System.Drawing.Point(430, 5);
             this.gbCliente.Name = "gbCliente";
-            this.gbCliente.Padding = new System.Windows.Forms.Padding(4);
-            this.gbCliente.Size = new System.Drawing.Size(799, 112);
+            this.gbCliente.Size = new System.Drawing.Size(599, 91);
             this.gbCliente.TabIndex = 23;
             this.gbCliente.TabStop = false;
             this.gbCliente.Text = "Datos del Proveedor: ";
@@ -197,20 +173,18 @@ namespace Entradas.GUI
             this.txtNombreProveedor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNombreProveedor.Enabled = false;
             this.txtNombreProveedor.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreProveedor.Location = new System.Drawing.Point(533, 45);
-            this.txtNombreProveedor.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNombreProveedor.Location = new System.Drawing.Point(400, 37);
             this.txtNombreProveedor.Name = "txtNombreProveedor";
-            this.txtNombreProveedor.Size = new System.Drawing.Size(259, 30);
+            this.txtNombreProveedor.Size = new System.Drawing.Size(195, 26);
             this.txtNombreProveedor.TabIndex = 9;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(336, 47);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(252, 38);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(185, 24);
+            this.label4.Size = new System.Drawing.Size(156, 20);
             this.label4.TabIndex = 8;
             this.label4.Text = "Nombre del Proveedor: ";
             // 
@@ -219,20 +193,18 @@ namespace Entradas.GUI
             this.txtDocProveedor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDocProveedor.Enabled = false;
             this.txtDocProveedor.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDocProveedor.Location = new System.Drawing.Point(161, 45);
-            this.txtDocProveedor.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDocProveedor.Location = new System.Drawing.Point(121, 37);
             this.txtDocProveedor.Name = "txtDocProveedor";
-            this.txtDocProveedor.Size = new System.Drawing.Size(161, 30);
+            this.txtDocProveedor.Size = new System.Drawing.Size(121, 26);
             this.txtDocProveedor.TabIndex = 7;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(15, 47);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(11, 38);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(134, 24);
+            this.label2.Size = new System.Drawing.Size(113, 20);
             this.label2.TabIndex = 5;
             this.label2.Text = "Doc. Proveedor: ";
             // 
@@ -240,12 +212,11 @@ namespace Entradas.GUI
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(23, 6);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(17, 6);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(169, 24);
+            this.label1.Size = new System.Drawing.Size(206, 20);
             this.label1.TabIndex = 22;
-            this.label1.Text = "Numero Documento: ";
+            this.label1.Text = "Digite el numero de documento: ";
             // 
             // dgvDatos
             // 
@@ -282,15 +253,14 @@ namespace Entradas.GUI
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvDatos.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvDatos.Location = new System.Drawing.Point(17, 129);
-            this.dgvDatos.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvDatos.Location = new System.Drawing.Point(13, 105);
             this.dgvDatos.MultiSelect = false;
             this.dgvDatos.Name = "dgvDatos";
             this.dgvDatos.ReadOnly = true;
             this.dgvDatos.RowHeadersVisible = false;
             this.dgvDatos.RowHeadersWidth = 51;
             this.dgvDatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDatos.Size = new System.Drawing.Size(1345, 342);
+            this.dgvDatos.Size = new System.Drawing.Size(1009, 278);
             this.dgvDatos.TabIndex = 21;
             // 
             // idEntrada
@@ -447,25 +417,12 @@ namespace Entradas.GUI
             this.total.Visible = false;
             this.total.Width = 125;
             // 
-            // btnEliminar
-            // 
-            this.btnEliminar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEliminar.BackgroundImage")));
-            this.btnEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnEliminar.Location = new System.Drawing.Point(461, 4);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(38, 32);
-            this.btnEliminar.TabIndex = 28;
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(1222, 494);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
+            this.button2.Location = new System.Drawing.Point(917, 398);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(140, 42);
+            this.button2.Size = new System.Drawing.Size(105, 34);
             this.button2.TabIndex = 85;
             this.button2.Text = "Ver Reporte";
             this.button2.UseVisualStyleBackColor = true;
@@ -473,20 +430,20 @@ namespace Entradas.GUI
             // 
             // BuscarEntradas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1392, 549);
+            this.ClientSize = new System.Drawing.Size(1028, 443);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.label);
             this.Controls.Add(this.lblTotal);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.txtDocumento);
             this.Controls.Add(this.gbCliente);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvDatos);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "BuscarEntradas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BuscarEntradas";
@@ -510,7 +467,6 @@ namespace Entradas.GUI
         private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button1;
         public System.Windows.Forms.TextBox txtDocumento;
         private System.Windows.Forms.GroupBox gbCliente;
         private System.Windows.Forms.TextBox txtNombreProveedor;
@@ -519,7 +475,6 @@ namespace Entradas.GUI
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvDatos;
-        private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.DataGridViewTextBoxColumn idEntrada;
         private System.Windows.Forms.DataGridViewTextBoxColumn documento_entrada;
         private System.Windows.Forms.DataGridViewTextBoxColumn fecha_entrada;

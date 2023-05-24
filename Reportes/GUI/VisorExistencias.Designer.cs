@@ -29,6 +29,7 @@ namespace Reportes.GUI
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VisorExistencias));
             this.crvVisor = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.SuspendLayout();
             // 
@@ -50,6 +51,7 @@ namespace Reportes.GUI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.crvVisor);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "VisorExistencias";
             this.Text = "VisorExistencias";
             this.Load += new System.EventHandler(this.VisorExistencias_Load);

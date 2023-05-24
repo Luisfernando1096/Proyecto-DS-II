@@ -33,6 +33,10 @@ namespace General.GUI
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MunicipiosGestion));
             this.dgvDatos = new System.Windows.Forms.DataGridView();
+            this.idMunicipio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.municipio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idDepartamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblRegistros = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
@@ -43,10 +47,6 @@ namespace General.GUI
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.btnAgregar = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.idMunicipio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.municipio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idDepartamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -85,6 +85,38 @@ namespace General.GUI
             this.dgvDatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDatos.Size = new System.Drawing.Size(484, 265);
             this.dgvDatos.TabIndex = 5;
+            // 
+            // idMunicipio
+            // 
+            this.idMunicipio.DataPropertyName = "idMunicipio";
+            this.idMunicipio.HeaderText = "idMunicipio";
+            this.idMunicipio.Name = "idMunicipio";
+            this.idMunicipio.ReadOnly = true;
+            // 
+            // municipio
+            // 
+            this.municipio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.municipio.DataPropertyName = "municipio";
+            this.municipio.HeaderText = "municipio";
+            this.municipio.Name = "municipio";
+            this.municipio.ReadOnly = true;
+            // 
+            // idDepartamento
+            // 
+            this.idDepartamento.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.idDepartamento.DataPropertyName = "idDepartamento";
+            this.idDepartamento.HeaderText = "idDepartamento";
+            this.idDepartamento.Name = "idDepartamento";
+            this.idDepartamento.ReadOnly = true;
+            this.idDepartamento.Visible = false;
+            // 
+            // nombre
+            // 
+            this.nombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nombre.DataPropertyName = "nombre";
+            this.nombre.HeaderText = "Departamento";
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
             // 
             // statusStrip1
             // 
@@ -171,38 +203,6 @@ namespace General.GUI
             this.toolStripSeparator4.Name = "toolStripSeparator4";
             this.toolStripSeparator4.Size = new System.Drawing.Size(6, 32);
             // 
-            // idMunicipio
-            // 
-            this.idMunicipio.DataPropertyName = "idMunicipio";
-            this.idMunicipio.HeaderText = "idMunicipio";
-            this.idMunicipio.Name = "idMunicipio";
-            this.idMunicipio.ReadOnly = true;
-            // 
-            // municipio
-            // 
-            this.municipio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.municipio.DataPropertyName = "municipio";
-            this.municipio.HeaderText = "municipio";
-            this.municipio.Name = "municipio";
-            this.municipio.ReadOnly = true;
-            // 
-            // idDepartamento
-            // 
-            this.idDepartamento.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.idDepartamento.DataPropertyName = "idDepartamento";
-            this.idDepartamento.HeaderText = "idDepartamento";
-            this.idDepartamento.Name = "idDepartamento";
-            this.idDepartamento.ReadOnly = true;
-            this.idDepartamento.Visible = false;
-            // 
-            // nombre
-            // 
-            this.nombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nombre.DataPropertyName = "nombre";
-            this.nombre.HeaderText = "Departamento";
-            this.nombre.Name = "nombre";
-            this.nombre.ReadOnly = true;
-            // 
             // MunicipiosGestion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -211,6 +211,7 @@ namespace General.GUI
             this.Controls.Add(this.dgvDatos);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MunicipiosGestion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestion de Municipios";

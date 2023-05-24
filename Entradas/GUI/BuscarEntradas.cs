@@ -25,38 +25,7 @@ namespace Entradas.GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            try
-            {
-                DataTable tEntradas = DataManager.DBConsultas.Entradas(txtDocumento.Text);
-                dgvDatos.DataSource = tEntradas;
-                dgvDatos.AutoGenerateColumns = false;//Impide generar automaticamente las columnas de encabezado
-                                                     //Codigo para mostrar cuantas filas se
-                if (dgvDatos.RowCount > 0)
-                {
-                    dtpFecha.Format = DateTimePickerFormat.Custom;
-                    dtpFecha.CustomFormat = "yyyy/MM/dd";
-                    txtDocProveedor.Text = dgvDatos.Rows[0].Cells["documento"].Value.ToString();
-                    txtNombreProveedor.Text = dgvDatos.Rows[0].Cells["nombre_proveedor"].Value.ToString();
-                    dtpFecha.Text = dgvDatos.Rows[0].Cells["fecha_entrada"].Value.ToString();
-                    txtUsuario.Text = dgvDatos.Rows[0].Cells["usuario"].Value.ToString();
-                    lblTotal.Text = dgvDatos.Rows[0].Cells["total"].Value.ToString();
-                }
-                else
-                {
-                    dtpFecha.Format = DateTimePickerFormat.Custom;
-                    dtpFecha.CustomFormat = " ";
-                    txtDocProveedor.Text = "";
-                    txtNombreProveedor.Text = "";
-                    dtpFecha.Text = "";
-                    txtUsuario.Text = "";
-                    lblTotal.Text = "0.00";
-                }
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
+            
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -88,6 +57,42 @@ namespace Entradas.GUI
             {
                 MessageBox.Show("No hay datos que mostrar en el reporte", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
+            }
+        }
+
+        private void txtDocumento_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                DataTable tEntradas = DataManager.DBConsultas.Entradas(txtDocumento.Text);
+                dgvDatos.DataSource = tEntradas;
+                dgvDatos.AutoGenerateColumns = false;//Impide generar automaticamente las columnas de encabezado
+                                                     //Codigo para mostrar cuantas filas se
+                if (dgvDatos.RowCount > 0)
+                {
+                    dtpFecha.Format = DateTimePickerFormat.Custom;
+                    dtpFecha.CustomFormat = "yyyy/MM/dd";
+                    txtDocProveedor.Text = dgvDatos.Rows[0].Cells["documento"].Value.ToString();
+                    txtNombreProveedor.Text = dgvDatos.Rows[0].Cells["nombre_proveedor"].Value.ToString();
+                    dtpFecha.Text = dgvDatos.Rows[0].Cells["fecha_entrada"].Value.ToString();
+                    txtUsuario.Text = dgvDatos.Rows[0].Cells["usuario"].Value.ToString();
+                    lblTotal.Text = dgvDatos.Rows[0].Cells["total"].Value.ToString();
+                }
+                else
+                {
+                    dtpFecha.Format = DateTimePickerFormat.Custom;
+                    dtpFecha.CustomFormat = " ";
+                    txtDocProveedor.Text = "";
+                    txtNombreProveedor.Text = "";
+                    dtpFecha.Text = "";
+                    txtUsuario.Text = "";
+                    lblTotal.Text = "0.00";
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
             }
         }
     }
