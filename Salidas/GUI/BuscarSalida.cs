@@ -67,5 +67,24 @@ namespace Salidas.GUI
             dtpFecha.Format = DateTimePickerFormat.Custom;
             dtpFecha.CustomFormat = " ";
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (dgvDatos.Rows.Count > 0)
+            {
+                    DataTable datos = new DataTable();
+                    Reportes.REP.Salidas oReporte = new Reportes.REP.Salidas();
+                    datos = DataManager.DBConsultas.VerRegistroSalidas(txtDocumento.Text);
+                    oReporte.SetDataSource(datos);
+                    Reportes.GUI.VisorSalidas f = new Reportes.GUI.VisorSalidas();
+                    f.crvVisor.ReportSource = oReporte;
+                    f.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("No hay datos que mostrar en el reporte", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+        }
     }
 }

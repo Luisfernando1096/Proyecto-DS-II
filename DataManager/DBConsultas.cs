@@ -130,7 +130,7 @@ namespace DataManager
             try
             {
                 DataTable resultado = new DataTable();
-                String sentencia = @"SELECT a.codigo, a.nombre, a.descripcion, a.precio_venta, b.categoria, c.cantidad, e.dui, e.nombres_cliente, d.fecha_salida, c.sub_total, d.total, f.usuario
+                String sentencia = @"SELECT d.documento_salida, a.codigo, a.nombre, a.descripcion, a.precio_venta, b.categoria, c.cantidad, e.dui, e.nombres_cliente, d.fecha_salida, c.sub_total, d.total, f.usuario
                                     FROM productos a, categorias b, detalle_salidas c, salidas d, clientes e, usuarios f
                                     WHERE a.idCategoria=b.idCategoria AND c.idProducto=a.idProducto AND c.idSalida=d.idSalida
                                     AND d.idCliente=e.idCliente AND f.idUsuario=d.idUsuario AND d.documento_salida='" + doc + "';";

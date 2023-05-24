@@ -12,6 +12,21 @@
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -58,6 +73,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ReporteClientes.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DAT\ReporteEntrada.cs">
+      <DependentUpon>ReporteEntrada.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DAT\ReporteEntrada.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReporteEntrada.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DAT\ReporteExistencias.cs">
       <DependentUpon>ReporteExistencias.xsd</DependentUpon>
     </Compile>
@@ -74,11 +97,28 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ReporteInventario.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DAT\ReporteSalidas.cs">
+      <DependentUpon>ReporteSalidas.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DAT\ReporteSalidas.Designer.cs">
+      <DependentUpon>ReporteSalidas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAT\ReporteSalidas1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReporteSalidas.xsd</DependentUpon>
+    </Compile>
     <Compile Include="GUI\VisorCliente.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\VisorCliente.Designer.cs">
       <DependentUpon>VisorCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\VisorEntradas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\VisorEntradas.Designer.cs">
+      <DependentUpon>VisorEntradas.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\VisorExistencias.cs">
       <SubType>Form</SubType>
@@ -92,11 +132,23 @@
     <Compile Include="GUI\VisorInventario.Designer.cs">
       <DependentUpon>VisorInventario.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\VisorSalidas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\VisorSalidas.Designer.cs">
+      <DependentUpon>VisorSalidas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="REP\Clientes.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Clientes.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="REP\Entradas.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Entradas.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="REP\Existencias.cs">
@@ -111,6 +163,12 @@
       <DependentUpon>Inventario.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="REP\Salidas.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Salidas.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="CLS\" />
@@ -119,15 +177,25 @@
     <EmbeddedResource Include="GUI\VisorCliente.resx">
       <DependentUpon>VisorCliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\VisorEntradas.resx">
+      <DependentUpon>VisorEntradas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\VisorExistencias.resx">
       <DependentUpon>VisorExistencias.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\VisorInventario.resx">
       <DependentUpon>VisorInventario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\VisorSalidas.resx">
+      <DependentUpon>VisorSalidas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="REP\Clientes.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Clientes.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REP\Entradas.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Entradas.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="REP\Existencias.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -136,6 +204,10 @@
     <EmbeddedResource Include="REP\Inventario.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Inventario.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REP\Salidas.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Salidas.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -153,6 +225,17 @@
     </None>
     <None Include="DAT\ReporteClientes.xss">
       <DependentUpon>ReporteClientes.xsd</DependentUpon>
+    </None>
+    <None Include="DAT\ReporteEntrada.xsc">
+      <DependentUpon>ReporteEntrada.xsd</DependentUpon>
+    </None>
+    <None Include="DAT\ReporteEntrada.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ReporteEntrada.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DAT\ReporteEntrada.xss">
+      <DependentUpon>ReporteEntrada.xsd</DependentUpon>
     </None>
     <None Include="DAT\ReporteExistencias.xsc">
       <DependentUpon>ReporteExistencias.xsd</DependentUpon>
@@ -176,12 +259,35 @@
     <None Include="DAT\ReporteInventario.xss">
       <DependentUpon>ReporteInventario.xsd</DependentUpon>
     </None>
+    <None Include="DAT\ReporteSalidas.xsc">
+      <DependentUpon>ReporteSalidas.xsd</DependentUpon>
+    </None>
+    <None Include="DAT\ReporteSalidas.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ReporteSalidas1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DAT\ReporteSalidas.xss">
+      <DependentUpon>ReporteSalidas.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DataManager\DataManager.csproj">
       <Project>{f8c314f7-9aea-4527-9983-6a90fa92f1c6}</Project>
       <Name>DataManager</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
