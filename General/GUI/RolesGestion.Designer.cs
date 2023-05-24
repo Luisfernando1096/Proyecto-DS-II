@@ -46,6 +46,7 @@ namespace General.GUI
             this.idRol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSeleccionar = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
@@ -190,6 +191,7 @@ namespace General.GUI
             // 
             // btnSeleccionar
             // 
+            this.btnSeleccionar.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnSeleccionar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSeleccionar.BackgroundImage")));
             this.btnSeleccionar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnSeleccionar.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -197,9 +199,20 @@ namespace General.GUI
             this.btnSeleccionar.Name = "btnSeleccionar";
             this.btnSeleccionar.Size = new System.Drawing.Size(29, 29);
             this.btnSeleccionar.TabIndex = 8;
-            this.btnSeleccionar.UseVisualStyleBackColor = true;
+            this.btnSeleccionar.UseVisualStyleBackColor = false;
             this.btnSeleccionar.Visible = false;
             this.btnSeleccionar.Click += new System.EventHandler(this.btnSeleccionar_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.label1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(326, 6);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(80, 20);
+            this.label1.TabIndex = 86;
+            this.label1.Text = "Seleccionar";
             // 
             // RolesGestion
             // 
@@ -207,6 +220,7 @@ namespace General.GUI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(447, 306);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnSeleccionar);
             this.Controls.Add(this.dgvDatos);
             this.Controls.Add(this.toolStrip1);
@@ -242,5 +256,6 @@ namespace General.GUI
         private System.Windows.Forms.DataGridViewTextBoxColumn idRol;
         private System.Windows.Forms.DataGridViewTextBoxColumn rol;
         public System.Windows.Forms.Button btnSeleccionar;
+        private System.Windows.Forms.Label label1;
     }
 }

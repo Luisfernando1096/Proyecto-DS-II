@@ -53,6 +53,7 @@ namespace General.GUI
             this.txtBucarEmpleado = new System.Windows.Forms.RichTextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -241,7 +242,7 @@ namespace General.GUI
             this.btnSeleccionar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSeleccionar.BackgroundImage")));
             this.btnSeleccionar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnSeleccionar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSeleccionar.Location = new System.Drawing.Point(807, 2);
+            this.btnSeleccionar.Location = new System.Drawing.Point(811, 2);
             this.btnSeleccionar.Name = "btnSeleccionar";
             this.btnSeleccionar.Size = new System.Drawing.Size(29, 29);
             this.btnSeleccionar.TabIndex = 7;
@@ -251,9 +252,9 @@ namespace General.GUI
             // 
             // txtBucarEmpleado
             // 
-            this.txtBucarEmpleado.Location = new System.Drawing.Point(490, 4);
+            this.txtBucarEmpleado.Location = new System.Drawing.Point(451, 5);
             this.txtBucarEmpleado.Name = "txtBucarEmpleado";
-            this.txtBucarEmpleado.Size = new System.Drawing.Size(258, 21);
+            this.txtBucarEmpleado.Size = new System.Drawing.Size(230, 21);
             this.txtBucarEmpleado.TabIndex = 50;
             this.txtBucarEmpleado.Text = "";
             this.txtBucarEmpleado.TextChanged += new System.EventHandler(this.txtBucarEmpleado_TextChanged);
@@ -262,8 +263,8 @@ namespace General.GUI
             // 
             this.textBox1.Enabled = false;
             this.textBox1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(367, 6);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Location = new System.Drawing.Point(330, 6);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(119, 21);
             this.textBox1.TabIndex = 51;
@@ -274,18 +275,29 @@ namespace General.GUI
             this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.Location = new System.Drawing.Point(753, 2);
+            this.button1.Location = new System.Drawing.Point(683, 1);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(27, 29);
             this.button1.TabIndex = 52;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(730, 6);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(80, 20);
+            this.label1.TabIndex = 86;
+            this.label1.Text = "Seleccionar";
+            // 
             // EmpleadosGestion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(846, 376);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.txtBucarEmpleado);
@@ -331,5 +343,6 @@ namespace General.GUI
         public System.Windows.Forms.RichTextBox txtBucarEmpleado;
         private System.Windows.Forms.TextBox textBox1;
         public System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label1;
     }
 }

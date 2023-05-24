@@ -13,6 +13,11 @@ namespace General.GUI
     public partial class ProductosGestion : Form
     {
         BindingSource datos = new BindingSource();
+
+        public ProductosGestion()
+        {
+            InitializeComponent();
+        }
         private void CargarDatos()
         {
             try
@@ -28,27 +33,6 @@ namespace General.GUI
 
                 throw;
             }
-        }
-
-        public ProductosGestion()
-        {
-            InitializeComponent();
-            ///Ajustar Tamaño
-            int totalWidth = 0;
-            int totalHeight = 0;
-
-            foreach (DataGridViewColumn column in dgvDatos.Columns)
-            {
-                totalWidth += column.Width;
-            }
-
-            foreach (DataGridViewRow row in dgvDatos.Rows)
-            {
-                totalHeight += row.Height;
-            }
-
-            // Ajustar el tamaño del formulario
-            this.ClientSize = new System.Drawing.Size(totalWidth + 100, totalHeight + 500);
         }
 
         private void ProductosGestion_Load(object sender, EventArgs e)

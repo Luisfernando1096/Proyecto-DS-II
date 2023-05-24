@@ -14,6 +14,11 @@ namespace General.GUI
     {
         BindingSource datos = new BindingSource();
 
+
+        public UsuariosGestion()
+        {
+            InitializeComponent();
+        }
         private void CargarDatos()
         {
             try
@@ -27,27 +32,6 @@ namespace General.GUI
 
                 throw;
             }
-        }
-
-        public UsuariosGestion()
-        {
-            InitializeComponent();
-            ///Ajustar Tamaño
-            int totalWidth = 0;
-            int totalHeight = 0;
-
-            foreach (DataGridViewColumn column in dgvUsuarios.Columns)
-            {
-                totalWidth += column.Width;
-            }
-
-            foreach (DataGridViewRow row in dgvUsuarios.Rows)
-            {
-                totalHeight += row.Height;
-            }
-
-            // Ajustar el tamaño del formulario
-            this.ClientSize = new System.Drawing.Size(totalWidth + 50, totalHeight + 500);
         }
 
         private void UsuariosGestion_Load(object sender, EventArgs e)

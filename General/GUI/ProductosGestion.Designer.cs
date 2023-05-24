@@ -85,7 +85,6 @@ namespace General.GUI
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvDatos.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvDatos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDatos.Location = new System.Drawing.Point(0, 32);
             this.dgvDatos.MultiSelect = false;
             this.dgvDatos.Name = "dgvDatos";
@@ -93,7 +92,7 @@ namespace General.GUI
             this.dgvDatos.RowHeadersVisible = false;
             this.dgvDatos.RowHeadersWidth = 51;
             this.dgvDatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDatos.Size = new System.Drawing.Size(772, 275);
+            this.dgvDatos.Size = new System.Drawing.Size(775, 275);
             this.dgvDatos.TabIndex = 5;
             // 
             // idProducto
@@ -182,7 +181,7 @@ namespace General.GUI
             this.lblRegistros});
             this.statusStrip1.Location = new System.Drawing.Point(0, 307);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(772, 23);
+            this.statusStrip1.Size = new System.Drawing.Size(775, 23);
             this.statusStrip1.TabIndex = 3;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -207,7 +206,7 @@ namespace General.GUI
             this.btnAgregar});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(772, 32);
+            this.toolStrip1.Size = new System.Drawing.Size(775, 32);
             this.toolStrip1.TabIndex = 6;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -257,7 +256,7 @@ namespace General.GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(772, 330);
+            this.ClientSize = new System.Drawing.Size(775, 330);
             this.Controls.Add(this.dgvDatos);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.statusStrip1);

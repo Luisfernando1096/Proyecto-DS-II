@@ -81,8 +81,7 @@ namespace General.GUI
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvUsuarios.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvUsuarios.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvUsuarios.Location = new System.Drawing.Point(0, 32);
+            this.dgvUsuarios.Location = new System.Drawing.Point(3, 32);
             this.dgvUsuarios.MultiSelect = false;
             this.dgvUsuarios.Name = "dgvUsuarios";
             this.dgvUsuarios.ReadOnly = true;
@@ -90,7 +89,7 @@ namespace General.GUI
             this.dgvUsuarios.RowHeadersWidth = 51;
             this.dgvUsuarios.RowTemplate.Height = 24;
             this.dgvUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvUsuarios.Size = new System.Drawing.Size(596, 329);
+            this.dgvUsuarios.Size = new System.Drawing.Size(587, 329);
             this.dgvUsuarios.TabIndex = 4;
             // 
             // idUsuario
@@ -118,6 +117,7 @@ namespace General.GUI
             this.Clave.MinimumWidth = 6;
             this.Clave.Name = "Clave";
             this.Clave.ReadOnly = true;
+            this.Clave.Visible = false;
             this.Clave.Width = 250;
             // 
             // IdEmpleado
@@ -172,7 +172,7 @@ namespace General.GUI
             this.btnAgregar});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(596, 32);
+            this.toolStrip1.Size = new System.Drawing.Size(594, 32);
             this.toolStrip1.TabIndex = 5;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -226,7 +226,7 @@ namespace General.GUI
             this.lblRegistros});
             this.statusStrip1.Location = new System.Drawing.Point(0, 361);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(596, 23);
+            this.statusStrip1.Size = new System.Drawing.Size(594, 23);
             this.statusStrip1.TabIndex = 6;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -242,12 +242,13 @@ namespace General.GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(596, 384);
+            this.ClientSize = new System.Drawing.Size(594, 384);
             this.Controls.Add(this.dgvUsuarios);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
             this.Name = "UsuariosGestion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestion de Usuarios";
