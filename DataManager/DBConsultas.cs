@@ -871,7 +871,11 @@ namespace DataManager
             try
             {
                 DataTable resultado = new DataTable();
-                String sentencia = @"SELECT idEmpleado, nombres_empleado, apellidos_empleado, nacimiento, genero, idDireccion, dui FROM empleados;";
+                String sentencia = @"SELECT d.idEmpleado, a.idDireccion, d.nombres_empleado, d.apellidos_empleado, d.nacimiento,d.genero, d.dui, 
+                                    concat(b.municipio, ', ', c.nombre, ', Casa N° ', 
+                                    ifnull(no_casa, 'No establecida'), ', Calle N° ', ifnull(no_calle, 'No establecida')) direccion 
+                                    FROM direcciones a, municipios b, departamentos c, empleados d
+                                    WHERE a.idMunicipio=b.idMunicipio and b.idDepartamento=c.idDepartamento and a.idDireccion=d.idDireccion;";
                 DBOperacion operacion = new DBOperacion();
 
                 resultado = operacion.Consultar(sentencia);

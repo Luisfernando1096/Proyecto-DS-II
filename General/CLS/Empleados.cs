@@ -28,7 +28,7 @@ namespace General.CLS
         {
             Boolean resultado = false;
             string sentencia;
-            sentencia = @"INSERT INTO empleados(nombres_empleado, apellidos_empleado, nacimiento, genero, idDireccion, dui)"+
+            sentencia = @"INSERT INTO empleados(nombres_empleado, apellidos_empleado, nacimiento, genero, idDireccion, dui)" +
                         " VALUES('" + nombres + "', '" + apellidos + "', '" + nacimiento + "', '" + genero + "', " + idDireccion + ", '" + dui + "');";
 
             try
@@ -55,9 +55,9 @@ namespace General.CLS
             Boolean resultado = false;
             string sentencia;
             sentencia = @"UPDATE empleados SET nombres_empleado = '" + nombres + "', apellidos_empleado = '" + apellidos +
-                        @"', nacimiento = '" + nacimiento + "', genero = '" + genero + "', idDireccion = " + idDireccion + ", dui = '" + dui + "' " +
-                        @"WHERE idEmpleado = " + idEmpleado + ";";
-
+                        "', nacimiento = '" + nacimiento + "', genero = '" + genero + "', idDireccion = " + idDireccion +
+                        ", dui = '" + dui + "'" +
+                        " WHERE idEmpleado = " + idEmpleado + ";";
             try
             {
                 DataManager.DBOperacion op = new DataManager.DBOperacion();
@@ -70,7 +70,6 @@ namespace General.CLS
             }
             catch (Exception)
             {
-
                 throw;
             }
 
@@ -83,7 +82,6 @@ namespace General.CLS
             string sentencia;
             sentencia = @"DELETE FROM empleados " +
                 "WHERE idEmpleado = " + idEmpleado + ";";
-
             try
             {
                 DataManager.DBOperacion op = new DataManager.DBOperacion();
