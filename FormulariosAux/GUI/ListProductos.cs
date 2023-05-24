@@ -34,21 +34,6 @@ namespace FormulariosAux.GUI
         public ListProductos()
         {
             InitializeComponent();
-            int totalWidth = 0;
-            int totalHeight = 0;
-
-            foreach (DataGridViewColumn column in dgvDatos.Columns)
-            {
-                totalWidth += column.Width;
-            }
-
-            foreach (DataGridViewRow row in dgvDatos.Rows)
-            {
-                totalHeight += row.Height;
-            }
-
-            // Ajustar el tamaño del formulario
-            this.ClientSize = new System.Drawing.Size(totalWidth + 100, totalHeight + 500);
         }
 
         private void ListProductos_Load(object sender, EventArgs e)
@@ -60,59 +45,22 @@ namespace FormulariosAux.GUI
         {
             try
             {
-                if (txtBuscarPorNombre.Text == "")
+                if (txtBuscarPorNombre.Text != "")
                 {
-                    if (txtBuscarPorDoc.Text != "")
+                    dgvDatos.CurrentCell = null;
+                    foreach (DataGridViewRow r in dgvDatos.Rows)
                     {
-                        dgvDatos.CurrentCell = null;
-                        foreach (DataGridViewRow r in dgvDatos.Rows)
+                        bool encontradoPorNombre = false;
+                        if (r.Cells["nombre"].Value.ToString().ToUpper().IndexOf(txtBuscarPorNombre.Text.ToUpper()) == 0)
                         {
-                            r.Visible = false;
+                            encontradoPorNombre = true;
                         }
-                        foreach (DataGridViewRow r in dgvDatos.Rows)
-                        {
-                            if (r.Cells["codigo"].Value.ToString().ToUpper().IndexOf(txtBuscarPorDoc.Text.ToUpper()) == 0)
-                            {
-                                r.Visible = true;
-                            }
-                        }
-                    }
-                    else
-                    {
-                        CargarDatos();
+                        r.Visible = encontradoPorNombre;
                     }
                 }
                 else
                 {
-                    if (txtBuscarPorNombre.Text != "")
-                    {
-                        dgvDatos.CurrentCell = null;
-                        foreach (DataGridViewRow r in dgvDatos.Rows)
-                        {
-                            bool encontradoPorNombre = false;
-                            if (r.Cells["nombre"].Value.ToString().ToUpper().IndexOf(txtBuscarPorNombre.Text.ToUpper()) == 0)
-                            {
-                                encontradoPorNombre = true;
-                            }
-                            r.Visible = encontradoPorNombre;
-                        }
-                    }
-
-                    if (txtBuscarPorDoc.Text != "")
-                    {
-                        foreach (DataGridViewRow r in dgvDatos.Rows)
-                        {
-                            if (r.Visible)
-                            {
-                                bool encontradoPorCodigo = false;
-                                if (r.Cells["codigo"].Value.ToString().ToUpper().StartsWith(txtBuscarPorDoc.Text.ToUpper()))
-                                {
-                                    encontradoPorCodigo = true;
-                                }
-                                r.Visible = encontradoPorCodigo;
-                            }
-                        }
-                    }
+                    CargarDatos();
                 }
             }
             catch (Exception)
@@ -138,13 +86,6 @@ namespace FormulariosAux.GUI
             {
                 e.Handled = true;
             }
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            CargarDatos();
-            txtBuscarPorDoc.Text = "";
-            txtBuscarPorNombre.Text = "";
         }
 
         private void btnSeleccionar_Click(object sender, EventArgs e)

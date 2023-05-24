@@ -52,7 +52,6 @@ namespace General.GUI
             this.btnSeleccionar = new System.Windows.Forms.Button();
             this.txtBucarEmpleado = new System.Windows.Forms.RichTextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             this.statusStrip1.SuspendLayout();
@@ -270,18 +269,6 @@ namespace General.GUI
             this.textBox1.TabIndex = 51;
             this.textBox1.Text = "Buscar por nombre:";
             // 
-            // button1
-            // 
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.Location = new System.Drawing.Point(683, 1);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(27, 29);
-            this.button1.TabIndex = 52;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -298,7 +285,6 @@ namespace General.GUI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(846, 376);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.txtBucarEmpleado);
             this.Controls.Add(this.btnSeleccionar);
@@ -342,7 +328,6 @@ namespace General.GUI
         public System.Windows.Forms.Button btnSeleccionar;
         public System.Windows.Forms.RichTextBox txtBucarEmpleado;
         private System.Windows.Forms.TextBox textBox1;
-        public System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
     }
 }

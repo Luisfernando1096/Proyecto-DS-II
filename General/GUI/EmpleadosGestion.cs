@@ -128,13 +128,6 @@ namespace General.GUI
             {
                 CargarDatos();
             }
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            CargarDatos();
-            txtBucarEmpleado.Text = "";
         }
     }
 }

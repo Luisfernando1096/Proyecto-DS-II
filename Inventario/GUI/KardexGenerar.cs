@@ -37,7 +37,7 @@ namespace Inventario.GUI
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             txtBusqueda.Visible = false;
-            btnFiltrar.Visible = false;
+            lblNombre.Visible = false;
             cmbOpcion.SelectedIndex = -1;
             cmbOpcion.Text = "Seleccione opcion";
             CargarDatos();
@@ -50,17 +50,7 @@ namespace Inventario.GUI
 
         private void btnFiltrar_Click(object sender, EventArgs e)
         {
-            try
-            {
-                datos.DataSource = DataManager.DBConsultas.InventarioPorNombre(txtBusqueda.Text, dtpInicio.Text, dtpFin.Text);
-                dgvDatos.DataSource = datos;
-                dgvDatos.AutoGenerateColumns = false;
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
+            
         }
 
         private void cmbOpcion_SelectedIndexChanged(object sender, EventArgs e)
@@ -68,12 +58,12 @@ namespace Inventario.GUI
             if(cmbOpcion.SelectedIndex == 0)
             {
                 txtBusqueda.Visible = true;
-                btnFiltrar.Visible = true;
+                lblNombre.Visible = true;
             }else if (cmbOpcion.SelectedIndex == 1)
             {
                 //mostrar flujo menor a cero
                 txtBusqueda.Visible = false;
-                btnFiltrar.Visible = false;
+                lblNombre.Visible = false;
                 try
                 {
                     datos.DataSource = DataManager.DBConsultas.FlujoMenor(dtpInicio.Text, dtpFin.Text);
@@ -90,7 +80,7 @@ namespace Inventario.GUI
             {
                 //mostrar flujo>0=
                 txtBusqueda.Visible = false;
-                btnFiltrar.Visible = false;
+                lblNombre.Visible = false;
                 try
                 {
                     datos.DataSource = DataManager.DBConsultas.FlujoMayor(dtpInicio.Text, dtpFin.Text);
@@ -107,7 +97,7 @@ namespace Inventario.GUI
             else
             {
                 txtBusqueda.Visible = false;
-                btnFiltrar.Visible = false;
+                lblNombre.Visible = false;
             }
         }
 
@@ -160,6 +150,21 @@ namespace Inventario.GUI
             {
                 MessageBox.Show("No hay datos que mostrar en el reporte", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
+            }
+        }
+
+        private void txtBusqueda_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                datos.DataSource = DataManager.DBConsultas.InventarioPorNombre(txtBusqueda.Text, dtpInicio.Text, dtpFin.Text);
+                dgvDatos.DataSource = datos;
+                dgvDatos.AutoGenerateColumns = false;
+            }
+            catch (Exception)
+            {
+
+                throw;
             }
         }
     }

@@ -38,70 +38,26 @@ namespace FormulariosAux.GUI
         {
             CargarDatos();
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            txtBuscarPorDoc.Text = "";
-            txtBuscarPorNombre.Text = "";
-            CargarDatos();
-        }
         private void FiltrarDatos()
         {
             try
             {
-                if (txtBuscarPorNombre.Text == "")
+                if (txtBuscarPorNombre.Text != "")
                 {
-                    if (txtBuscarPorDoc.Text != "")
+                    dgvDatos.CurrentCell = null;
+                    foreach (DataGridViewRow r in dgvDatos.Rows)
                     {
-                        dgvDatos.CurrentCell = null;
-                        foreach (DataGridViewRow r in dgvDatos.Rows)
+                        bool encontradoPorNombre = false;
+                        if (r.Cells["nombre"].Value.ToString().ToUpper().IndexOf(txtBuscarPorNombre.Text.ToUpper()) == 0)
                         {
-                            r.Visible = false;
+                            encontradoPorNombre = true;
                         }
-                        foreach (DataGridViewRow r in dgvDatos.Rows)
-                        {
-                            if (r.Cells["documento"].Value.ToString().ToUpper().IndexOf(txtBuscarPorDoc.Text.ToUpper()) == 0)
-                            {
-                                r.Visible = true;
-                            }
-                        }
-                    }
-                    else
-                    {
-                        CargarDatos();
+                        r.Visible = encontradoPorNombre;
                     }
                 }
                 else
                 {
-                    if (txtBuscarPorNombre.Text != "")
-                    {
-                        dgvDatos.CurrentCell = null;
-                        foreach (DataGridViewRow r in dgvDatos.Rows)
-                        {
-                            bool encontradoPorNombre = false;
-                            if (r.Cells["nombre"].Value.ToString().ToUpper().IndexOf(txtBuscarPorNombre.Text.ToUpper()) == 0)
-                            {
-                                encontradoPorNombre = true;
-                            }
-                            r.Visible = encontradoPorNombre;
-                        }
-                    }
-
-                    if (txtBuscarPorDoc.Text != "")
-                    {
-                        foreach (DataGridViewRow r in dgvDatos.Rows)
-                        {
-                            if (r.Visible)
-                            {
-                                bool encontradoPorDoc = false;
-                                if (r.Cells["documento"].Value.ToString().ToUpper().StartsWith(txtBuscarPorDoc.Text.ToUpper()))
-                                {
-                                    encontradoPorDoc = true;
-                                }
-                                r.Visible = encontradoPorDoc;
-                            }
-                        }
-                    }
+                    CargarDatos();
                 }
             }
             catch (Exception)
@@ -110,24 +66,9 @@ namespace FormulariosAux.GUI
             }
         }
 
-
-        private void txtBuscarPorDoc_TextChanged(object sender, EventArgs e)
-        {
-            FiltrarDatos();
-        }
-
         private void txtBuscarPorNombre_TextChanged(object sender, EventArgs e)
         {
             FiltrarDatos();
-        }
-
-
-        private void txtBuscarPorDoc_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
         }
 
         private void btnSeleccionar_Click(object sender, EventArgs e)

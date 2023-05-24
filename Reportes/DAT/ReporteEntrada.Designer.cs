@@ -301,6 +301,8 @@ namespace Reportes.DAT {
             
             private global::System.Data.DataColumn columntotal;
             
+            private global::System.Data.DataColumn columndescripcion;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public EntradasDataTable() {
@@ -424,6 +426,14 @@ namespace Reportes.DAT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn descripcionColumn {
+                get {
+                    return this.columndescripcion;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -459,7 +469,7 @@ namespace Reportes.DAT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public EntradasRow AddEntradasRow(string documento_entrada, string fecha_entrada, string usuario, string documento, string nombre_proveedor, string codigo, string nombre_producto, string precio_compra, string cantidad, string sub_total, string total) {
+            public EntradasRow AddEntradasRow(string documento_entrada, string fecha_entrada, string usuario, string documento, string nombre_proveedor, string codigo, string nombre_producto, string precio_compra, string cantidad, string sub_total, string total, string descripcion) {
                 EntradasRow rowEntradasRow = ((EntradasRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         documento_entrada,
@@ -472,7 +482,8 @@ namespace Reportes.DAT {
                         precio_compra,
                         cantidad,
                         sub_total,
-                        total};
+                        total,
+                        descripcion};
                 rowEntradasRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowEntradasRow);
                 return rowEntradasRow;
@@ -506,6 +517,7 @@ namespace Reportes.DAT {
                 this.columncantidad = base.Columns["cantidad"];
                 this.columnsub_total = base.Columns["sub_total"];
                 this.columntotal = base.Columns["total"];
+                this.columndescripcion = base.Columns["descripcion"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -533,6 +545,8 @@ namespace Reportes.DAT {
                 base.Columns.Add(this.columnsub_total);
                 this.columntotal = new global::System.Data.DataColumn("total", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columntotal);
+                this.columndescripcion = new global::System.Data.DataColumn("descripcion", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndescripcion);
                 this.columndocumento_entrada.Caption = "DataColumn1";
                 this.columnfecha_entrada.Caption = "DataColumn1";
                 this.columnusuario.Caption = "DataColumn1";
@@ -862,6 +876,22 @@ namespace Reportes.DAT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string descripcion {
+                get {
+                    try {
+                        return ((string)(this[this.tableEntradas.descripcionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'descripcion\' de la tabla \'Entradas\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableEntradas.descripcionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Isdocumento_entradaNull() {
                 return this.IsNull(this.tableEntradas.documento_entradaColumn);
             }
@@ -990,6 +1020,18 @@ namespace Reportes.DAT {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SettotalNull() {
                 this[this.tableEntradas.totalColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsdescripcionNull() {
+                return this.IsNull(this.tableEntradas.descripcionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetdescripcionNull() {
+                this[this.tableEntradas.descripcionColumn] = global::System.Convert.DBNull;
             }
         }
         

@@ -303,6 +303,8 @@ namespace Reportes.DAT {
             
             private global::System.Data.DataColumn columndocumento_salida;
             
+            private global::System.Data.DataColumn columnprecio_venta;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public SalidasDataTable() {
@@ -434,6 +436,14 @@ namespace Reportes.DAT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn precio_ventaColumn {
+                get {
+                    return this.columnprecio_venta;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -469,7 +479,7 @@ namespace Reportes.DAT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SalidasRow AddSalidasRow(string codigo, string nombre_producto, string descripcion, string sub_total, string cantidad, string categoria, string total, string fecha_salida, string usuario, string nombres_cliente, string dui, string documento_salida) {
+            public SalidasRow AddSalidasRow(string codigo, string nombre_producto, string descripcion, string sub_total, string cantidad, string categoria, string total, string fecha_salida, string usuario, string nombres_cliente, string dui, string documento_salida, string precio_venta) {
                 SalidasRow rowSalidasRow = ((SalidasRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         codigo,
@@ -483,7 +493,8 @@ namespace Reportes.DAT {
                         usuario,
                         nombres_cliente,
                         dui,
-                        documento_salida};
+                        documento_salida,
+                        precio_venta};
                 rowSalidasRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSalidasRow);
                 return rowSalidasRow;
@@ -518,6 +529,7 @@ namespace Reportes.DAT {
                 this.columnnombres_cliente = base.Columns["nombres_cliente"];
                 this.columndui = base.Columns["dui"];
                 this.columndocumento_salida = base.Columns["documento_salida"];
+                this.columnprecio_venta = base.Columns["precio_venta"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -547,6 +559,8 @@ namespace Reportes.DAT {
                 base.Columns.Add(this.columndui);
                 this.columndocumento_salida = new global::System.Data.DataColumn("documento_salida", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndocumento_salida);
+                this.columnprecio_venta = new global::System.Data.DataColumn("precio_venta", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnprecio_venta);
                 this.columnnombre_producto.Caption = "codigo";
                 this.columndescripcion.Caption = "codigo";
                 this.columnsub_total.Caption = "codigo";
@@ -890,6 +904,22 @@ namespace Reportes.DAT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string precio_venta {
+                get {
+                    try {
+                        return ((string)(this[this.tableSalidas.precio_ventaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'precio_venta\' de la tabla \'Salidas\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSalidas.precio_ventaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IscodigoNull() {
                 return this.IsNull(this.tableSalidas.codigoColumn);
             }
@@ -1030,6 +1060,18 @@ namespace Reportes.DAT {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setdocumento_salidaNull() {
                 this[this.tableSalidas.documento_salidaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isprecio_ventaNull() {
+                return this.IsNull(this.tableSalidas.precio_ventaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setprecio_ventaNull() {
+                this[this.tableSalidas.precio_ventaColumn] = global::System.Convert.DBNull;
             }
         }
         

@@ -21,20 +21,7 @@ namespace Salidas.GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
-        }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            txtDocumento.Text = "";
-            dtpFecha.Format = DateTimePickerFormat.Custom;
-            txtDui.Text = "";
-            txtNombre.Text = "";
-            txtUsuario.Text = "";
-            dgvDatos.DataSource = null;
-            dgvDatos.Rows.Clear();
-            dtpFecha.Format = DateTimePickerFormat.Custom;
-            dtpFecha.CustomFormat = " ";
         }
 
         private void button2_Click(object sender, EventArgs e)

@@ -12,7 +12,7 @@
   <xs:element name="ReporteSalidas" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="ReporteSalidas" msprop:Generator_UserDSName="ReporteSalidas">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Salidas" msprop:Generator_TableClassName="SalidasDataTable" msprop:Generator_TableVarName="tableSalidas" msprop:Generator_TablePropName="Salidas" msprop:Generator_RowDeletingName="SalidasRowDeleting" msprop:Generator_RowChangingName="SalidasRowChanging" msprop:Generator_RowEvHandlerName="SalidasRowChangeEventHandler" msprop:Generator_RowDeletedName="SalidasRowDeleted" msprop:Generator_UserTableName="Salidas" msprop:Generator_RowChangedName="SalidasRowChanged" msprop:Generator_RowEvArgName="SalidasRowChangeEvent" msprop:Generator_RowClassName="SalidasRow">
+        <xs:element name="Salidas" msprop:Generator_TableClassName="SalidasDataTable" msprop:Generator_TableVarName="tableSalidas" msprop:Generator_RowChangedName="SalidasRowChanged" msprop:Generator_TablePropName="Salidas" msprop:Generator_RowDeletingName="SalidasRowDeleting" msprop:Generator_RowChangingName="SalidasRowChanging" msprop:Generator_RowEvHandlerName="SalidasRowChangeEventHandler" msprop:Generator_RowDeletedName="SalidasRowDeleted" msprop:Generator_RowClassName="SalidasRow" msprop:Generator_UserTableName="Salidas" msprop:Generator_RowEvArgName="SalidasRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="codigo" msprop:Generator_ColumnVarNameInTable="columncodigo" msprop:Generator_ColumnPropNameInRow="codigo" msprop:Generator_ColumnPropNameInTable="codigoColumn" msprop:Generator_UserColumnName="codigo" type="xs:string" minOccurs="0" />
@@ -27,6 +27,7 @@
               <xs:element name="nombres_cliente" msdata:Caption="codigo" msprop:Generator_ColumnVarNameInTable="columnnombres_cliente" msprop:Generator_ColumnPropNameInRow="nombres_cliente" msprop:Generator_ColumnPropNameInTable="nombres_clienteColumn" msprop:Generator_UserColumnName="nombres_cliente" type="xs:string" minOccurs="0" />
               <xs:element name="dui" msprop:Generator_ColumnVarNameInTable="columndui" msprop:Generator_ColumnPropNameInRow="dui" msprop:Generator_ColumnPropNameInTable="duiColumn" msprop:Generator_UserColumnName="dui" type="xs:string" minOccurs="0" />
               <xs:element name="documento_salida" msprop:Generator_ColumnVarNameInTable="columndocumento_salida" msprop:Generator_ColumnPropNameInRow="documento_salida" msprop:Generator_ColumnPropNameInTable="documento_salidaColumn" msprop:Generator_UserColumnName="documento_salida" type="xs:string" minOccurs="0" />
+              <xs:element name="precio_venta" msprop:Generator_ColumnVarNameInTable="columnprecio_venta" msprop:Generator_ColumnPropNameInRow="precio_venta" msprop:Generator_ColumnPropNameInTable="precio_ventaColumn" msprop:Generator_UserColumnName="precio_venta" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
