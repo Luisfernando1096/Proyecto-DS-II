@@ -60,12 +60,12 @@ namespace SCDI.GUI
             this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.entradaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevaEntradaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.buscarEntradaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listarEntradaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inventarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kardexToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bgwConexion = new System.ComponentModel.BackgroundWorker();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.buscarEntradaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listarEntradaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -339,6 +339,22 @@ namespace SCDI.GUI
             this.nuevaEntradaToolStripMenuItem.Text = "Nueva Entrada";
             this.nuevaEntradaToolStripMenuItem.Click += new System.EventHandler(this.nuevaEntradaToolStripMenuItem_Click);
             // 
+            // buscarEntradaToolStripMenuItem
+            // 
+            this.buscarEntradaToolStripMenuItem.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buscarEntradaToolStripMenuItem.Name = "buscarEntradaToolStripMenuItem";
+            this.buscarEntradaToolStripMenuItem.Size = new System.Drawing.Size(201, 28);
+            this.buscarEntradaToolStripMenuItem.Text = "Buscar Entrada";
+            this.buscarEntradaToolStripMenuItem.Click += new System.EventHandler(this.buscarEntradaToolStripMenuItem_Click_1);
+            // 
+            // listarEntradaToolStripMenuItem
+            // 
+            this.listarEntradaToolStripMenuItem.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listarEntradaToolStripMenuItem.Name = "listarEntradaToolStripMenuItem";
+            this.listarEntradaToolStripMenuItem.Size = new System.Drawing.Size(201, 28);
+            this.listarEntradaToolStripMenuItem.Text = "Listar Entrada";
+            this.listarEntradaToolStripMenuItem.Click += new System.EventHandler(this.listarEntradaToolStripMenuItem_Click_1);
+            // 
             // inventarioToolStripMenuItem
             // 
             this.inventarioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -370,22 +386,6 @@ namespace SCDI.GUI
             this.timer1.Interval = 5000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // buscarEntradaToolStripMenuItem
-            // 
-            this.buscarEntradaToolStripMenuItem.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buscarEntradaToolStripMenuItem.Name = "buscarEntradaToolStripMenuItem";
-            this.buscarEntradaToolStripMenuItem.Size = new System.Drawing.Size(201, 28);
-            this.buscarEntradaToolStripMenuItem.Text = "Buscar Entrada";
-            this.buscarEntradaToolStripMenuItem.Click += new System.EventHandler(this.buscarEntradaToolStripMenuItem_Click_1);
-            // 
-            // listarEntradaToolStripMenuItem
-            // 
-            this.listarEntradaToolStripMenuItem.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listarEntradaToolStripMenuItem.Name = "listarEntradaToolStripMenuItem";
-            this.listarEntradaToolStripMenuItem.Size = new System.Drawing.Size(201, 28);
-            this.listarEntradaToolStripMenuItem.Text = "Listar Entrada";
-            this.listarEntradaToolStripMenuItem.Click += new System.EventHandler(this.listarEntradaToolStripMenuItem_Click_1);
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -393,6 +393,7 @@ namespace SCDI.GUI
             this.ClientSize = new System.Drawing.Size(884, 561);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Main";

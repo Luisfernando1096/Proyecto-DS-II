@@ -287,8 +287,6 @@ namespace Reportes.DAT {
             
             private global::System.Data.DataColumn columnsubTotalCompras;
             
-            private global::System.Data.DataColumn columnsubTotalVentas;
-            
             private global::System.Data.DataColumn columncantidad_entradas;
             
             private global::System.Data.DataColumn columnprecio_compra;
@@ -363,14 +361,6 @@ namespace Reportes.DAT {
             public global::System.Data.DataColumn subTotalComprasColumn {
                 get {
                     return this.columnsubTotalCompras;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn subTotalVentasColumn {
-                get {
-                    return this.columnsubTotalVentas;
                 }
             }
             
@@ -459,14 +449,13 @@ namespace Reportes.DAT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public productosRow AddproductosRow(string codigo_producto, string nombre_producto, string descripcion_producto, string subTotalCompras, string subTotalVentas, string cantidad_entradas, string precio_compra, string cantidad_salidas, string precio_venta, string stock_actual, string flujo_actual) {
+            public productosRow AddproductosRow(string codigo_producto, string nombre_producto, string descripcion_producto, string subTotalCompras, string cantidad_entradas, string precio_compra, string cantidad_salidas, string precio_venta, string stock_actual, string flujo_actual) {
                 productosRow rowproductosRow = ((productosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         codigo_producto,
                         nombre_producto,
                         descripcion_producto,
                         subTotalCompras,
-                        subTotalVentas,
                         cantidad_entradas,
                         precio_compra,
                         cantidad_salidas,
@@ -499,7 +488,6 @@ namespace Reportes.DAT {
                 this.columnnombre_producto = base.Columns["nombre_producto"];
                 this.columndescripcion_producto = base.Columns["descripcion_producto"];
                 this.columnsubTotalCompras = base.Columns["subTotalCompras"];
-                this.columnsubTotalVentas = base.Columns["subTotalVentas"];
                 this.columncantidad_entradas = base.Columns["cantidad_entradas"];
                 this.columnprecio_compra = base.Columns["precio_compra"];
                 this.columncantidad_salidas = base.Columns["cantidad_salidas"];
@@ -519,8 +507,6 @@ namespace Reportes.DAT {
                 base.Columns.Add(this.columndescripcion_producto);
                 this.columnsubTotalCompras = new global::System.Data.DataColumn("subTotalCompras", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnsubTotalCompras);
-                this.columnsubTotalVentas = new global::System.Data.DataColumn("subTotalVentas", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnsubTotalVentas);
                 this.columncantidad_entradas = new global::System.Data.DataColumn("cantidad_entradas", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncantidad_entradas);
                 this.columnprecio_compra = new global::System.Data.DataColumn("precio_compra", typeof(string), null, global::System.Data.MappingType.Element);
@@ -746,22 +732,6 @@ namespace Reportes.DAT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string subTotalVentas {
-                get {
-                    try {
-                        return ((string)(this[this.tableproductos.subTotalVentasColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'subTotalVentas\' de la tabla \'productos\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableproductos.subTotalVentasColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string cantidad_entradas {
                 get {
                     try {
@@ -902,18 +872,6 @@ namespace Reportes.DAT {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetsubTotalComprasNull() {
                 this[this.tableproductos.subTotalComprasColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IssubTotalVentasNull() {
-                return this.IsNull(this.tableproductos.subTotalVentasColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetsubTotalVentasNull() {
-                this[this.tableproductos.subTotalVentasColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
