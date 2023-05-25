@@ -80,18 +80,5 @@ namespace General.GUI
             f.ShowDialog();
             CargarDatos();
         }
-
-        private void dgvDatos_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
-        }
-
-        private void btnSeleccionar_Click(object sender, EventArgs e)
-        {
-            direccionEnviar = dgvDatos.CurrentRow.Cells["direccion"].Value.ToString();
-            idEnviar = dgvDatos.CurrentRow.Cells["idDireccion"].Value.ToString();
-            this.DialogResult = DialogResult.OK;
-            this.Close();
-        }
     }
 }

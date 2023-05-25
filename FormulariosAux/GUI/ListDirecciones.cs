@@ -10,18 +10,26 @@ using System.Windows.Forms;
 
 namespace FormulariosAux.GUI
 {
-    public partial class ListClientes : Form
+    public partial class ListDirecciones : Form
     {
         BindingSource datos = new BindingSource();
-        public DataGridViewRow datosCliEnviar;
-
+        public string direccionEnviar { get; set; }
+        public string idEnviar { get; set; }
+        public ListDirecciones()
+        {
+            InitializeComponent();
+        }
         private void CargarDatos()
         {
             try
             {
-                datos.DataSource = DataManager.DBConsultas.Clientes();
+                datos.DataSource = DataManager.DBConsultas.Direcciones();
                 dgvDatos.DataSource = datos;
                 dgvDatos.AutoGenerateColumns = false;//Impide generar automaticamente las columnas de encabezado
+                                                     //Codigo para insertar los datos en el datagrid
+                                                     //Codigo para mostrar cuantas filas se 
+                lblRegistros.Text = datos.List.Count.ToString() + " Registros Encontrados";
+
             }
             catch (Exception)
             {
@@ -29,12 +37,7 @@ namespace FormulariosAux.GUI
                 throw;
             }
         }
-        public ListClientes()
-        {
-            InitializeComponent();
-        }
-
-        private void ListClientes_Load(object sender, EventArgs e)
+        private void ListDirecciones_Load(object sender, EventArgs e)
         {
             CargarDatos();
             lblRegistros.Text = datos.List.Count.ToString() + " Registros Encontrados";
@@ -43,11 +46,32 @@ namespace FormulariosAux.GUI
             dgvDatos.ColumnAdded += dgvDatos_ColumnAdded;
         }
 
-        private void txtBuscarPorNombre_TextChanged(object sender, EventArgs e)
+        private void btnSeleccionar_Click(object sender, EventArgs e)
+        {
+            if (dgvDatos.SelectedRows.Count != 0)
+            {
+                direccionEnviar = dgvDatos.CurrentRow.Cells["direccion"].Value.ToString();
+                idEnviar = dgvDatos.CurrentRow.Cells["idDireccion"].Value.ToString();
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Debe seleccionar una Direccion.", "Selección requerida", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
+
+        private void dgvDatos_ColumnAdded(object sender, DataGridViewColumnEventArgs e)
+        {
+            // Deshabilitar el ordenamiento en la columna recién agregada
+            e.Column.SortMode = DataGridViewColumnSortMode.NotSortable;
+        }
+
+        private void txtBucar_TextChanged(object sender, EventArgs e)
         {
             try
             {
-                if (txtBuscarPorNombre.Text != "")
+                if (txtBucar.Text != "")
                 {
                     dgvDatos.CurrentCell = null;
                     foreach (DataGridViewRow r in dgvDatos.Rows)
@@ -58,7 +82,7 @@ namespace FormulariosAux.GUI
                     foreach (DataGridViewRow r in dgvDatos.Rows)
                     {
 
-                        if (r.Cells["nombres_cliente"].Value.ToString().ToUpper().IndexOf(txtBuscarPorNombre.Text.ToUpper()) == 0)
+                        if (r.Cells["direccion"].Value.ToString().ToUpper().IndexOf(txtBucar.Text.ToUpper()) == 0)
                         {
                             r.Visible = true;
                             filasVisibles++;
@@ -83,26 +107,6 @@ namespace FormulariosAux.GUI
             {
                 throw;
             }
-        }
-
-        private void btnSeleccionar_Click(object sender, EventArgs e)
-        {
-            if (dgvDatos.SelectedRows.Count != 0)
-            {
-                datosCliEnviar = dgvDatos.CurrentRow;
-                this.DialogResult = DialogResult.OK;
-                this.Close();
-            }
-            else
-            {
-                MessageBox.Show("Debe seleccionar un Cliente.", "Selección requerida", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-        }
-
-        private void dgvDatos_ColumnAdded(object sender, DataGridViewColumnEventArgs e)
-        {
-            // Deshabilitar el ordenamiento en la columna recién agregada
-            e.Column.SortMode = DataGridViewColumnSortMode.NotSortable;
         }
     }
 }

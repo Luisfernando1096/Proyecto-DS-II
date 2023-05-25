@@ -48,8 +48,6 @@ namespace General.GUI
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblRegistros = new System.Windows.Forms.ToolStripStatusLabel();
-            this.btnSeleccionar = new System.Windows.Forms.Button();
-            this.lblSeleccionar = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -81,28 +79,32 @@ namespace General.GUI
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvDatos.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvDatos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvDatos.Location = new System.Drawing.Point(0, 32);
+            this.dgvDatos.Location = new System.Drawing.Point(0, 38);
+            this.dgvDatos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvDatos.MultiSelect = false;
             this.dgvDatos.Name = "dgvDatos";
             this.dgvDatos.ReadOnly = true;
             this.dgvDatos.RowHeadersVisible = false;
+            this.dgvDatos.RowHeadersWidth = 51;
             this.dgvDatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDatos.Size = new System.Drawing.Size(470, 251);
+            this.dgvDatos.Size = new System.Drawing.Size(627, 310);
             this.dgvDatos.TabIndex = 5;
-            this.dgvDatos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDatos_CellContentClick);
             // 
             // idDireccion
             // 
             this.idDireccion.DataPropertyName = "idDireccion";
             this.idDireccion.HeaderText = "ID";
+            this.idDireccion.MinimumWidth = 6;
             this.idDireccion.Name = "idDireccion";
             this.idDireccion.ReadOnly = true;
+            this.idDireccion.Width = 125;
             // 
             // direccion
             // 
             this.direccion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.direccion.DataPropertyName = "direccion";
             this.direccion.HeaderText = "Direccion";
+            this.direccion.MinimumWidth = 6;
             this.direccion.Name = "direccion";
             this.direccion.ReadOnly = true;
             // 
@@ -110,23 +112,28 @@ namespace General.GUI
             // 
             this.idMunicipio.DataPropertyName = "idMunicipio";
             this.idMunicipio.HeaderText = "IDMunicipio";
+            this.idMunicipio.MinimumWidth = 6;
             this.idMunicipio.Name = "idMunicipio";
             this.idMunicipio.ReadOnly = true;
             this.idMunicipio.Visible = false;
+            this.idMunicipio.Width = 125;
             // 
             // no_casa
             // 
             this.no_casa.DataPropertyName = "no_casa";
             this.no_casa.HeaderText = "No de casa";
+            this.no_casa.MinimumWidth = 6;
             this.no_casa.Name = "no_casa";
             this.no_casa.ReadOnly = true;
             this.no_casa.Visible = false;
+            this.no_casa.Width = 125;
             // 
             // no_calle
             // 
             this.no_calle.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.no_calle.DataPropertyName = "no_calle";
             this.no_calle.HeaderText = "No de calle";
+            this.no_calle.MinimumWidth = 6;
             this.no_calle.Name = "no_calle";
             this.no_calle.ReadOnly = true;
             this.no_calle.Visible = false;
@@ -146,65 +153,67 @@ namespace General.GUI
             this.toolStripSeparator4});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(470, 32);
+            this.toolStrip1.Size = new System.Drawing.Size(627, 38);
             this.toolStrip1.TabIndex = 4;
             this.toolStrip1.Text = "toolStrip1";
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 32);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 38);
             // 
             // btnEliminar
             // 
             this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
             this.btnEliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(103, 29);
+            this.btnEliminar.Size = new System.Drawing.Size(121, 35);
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 32);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 38);
             // 
             // btnEditar
             // 
             this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
             this.btnEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(86, 29);
+            this.btnEditar.Size = new System.Drawing.Size(99, 35);
             this.btnEditar.Text = "Editar";
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 32);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 38);
             // 
             // btnAgregar
             // 
             this.btnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.Image")));
             this.btnAgregar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(103, 29);
+            this.btnAgregar.Size = new System.Drawing.Size(119, 35);
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click_1);
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 32);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 38);
             // 
             // statusStrip1
             // 
             this.statusStrip1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lblRegistros});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 283);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 348);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(470, 23);
+            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 19, 0);
+            this.statusStrip1.Size = new System.Drawing.Size(627, 29);
             this.statusStrip1.TabIndex = 3;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -213,44 +222,19 @@ namespace General.GUI
             this.lblRegistros.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.lblRegistros.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRegistros.Name = "lblRegistros";
-            this.lblRegistros.Size = new System.Drawing.Size(180, 18);
+            this.lblRegistros.Size = new System.Drawing.Size(227, 23);
             this.lblRegistros.Text = "0 Registros Encontrados";
-            // 
-            // btnSeleccionar
-            // 
-            this.btnSeleccionar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSeleccionar.BackgroundImage")));
-            this.btnSeleccionar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnSeleccionar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSeleccionar.Location = new System.Drawing.Point(432, 1);
-            this.btnSeleccionar.Name = "btnSeleccionar";
-            this.btnSeleccionar.Size = new System.Drawing.Size(29, 29);
-            this.btnSeleccionar.TabIndex = 6;
-            this.btnSeleccionar.UseVisualStyleBackColor = true;
-            this.btnSeleccionar.Visible = false;
-            this.btnSeleccionar.Click += new System.EventHandler(this.btnSeleccionar_Click);
-            // 
-            // lblSeleccionar
-            // 
-            this.lblSeleccionar.AutoSize = true;
-            this.lblSeleccionar.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSeleccionar.Location = new System.Drawing.Point(351, 5);
-            this.lblSeleccionar.Name = "lblSeleccionar";
-            this.lblSeleccionar.Size = new System.Drawing.Size(80, 20);
-            this.lblSeleccionar.TabIndex = 86;
-            this.lblSeleccionar.Text = "Seleccionar";
-            this.lblSeleccionar.Visible = false;
             // 
             // DireccionesGestion
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(470, 306);
-            this.Controls.Add(this.lblSeleccionar);
-            this.Controls.Add(this.btnSeleccionar);
+            this.ClientSize = new System.Drawing.Size(627, 377);
             this.Controls.Add(this.dgvDatos);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.statusStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "DireccionesGestion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestion de Direcciones";
@@ -276,7 +260,6 @@ namespace General.GUI
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel lblRegistros;
         private System.Windows.Forms.ToolStripButton btnAgregar;
-        public System.Windows.Forms.Button btnSeleccionar;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDireccion;
         private System.Windows.Forms.DataGridViewTextBoxColumn direccion;
         private System.Windows.Forms.DataGridViewTextBoxColumn idMunicipio;
@@ -284,6 +267,5 @@ namespace General.GUI
         private System.Windows.Forms.DataGridViewTextBoxColumn no_calle;
         public System.Windows.Forms.ToolStripButton btnEliminar;
         public System.Windows.Forms.ToolStripButton btnEditar;
-        public System.Windows.Forms.Label lblSeleccionar;
     }
 }
