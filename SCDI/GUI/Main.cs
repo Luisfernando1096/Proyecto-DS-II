@@ -130,28 +130,6 @@ namespace SCDI.GUI
             }
         }
 
-        private void gestionDeExistenciasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (FormularioEstaAbierto(typeof(General.GUI.ExistenciasGestion)))
-                {
-                    MessageBox.Show("La ventana de gestión de Existencia ya está abierta.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    General.GUI.ExistenciasGestion f = new General.GUI.ExistenciasGestion();
-                    f.MdiParent = this;//No permite que salgan los formularios del form MDI
-                    f.Show();
-                }
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-        }
-
         private void gestionDeClasificacionesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
@@ -186,27 +164,6 @@ namespace SCDI.GUI
                 else
                 {
                     General.GUI.ClientesGestion f = new General.GUI.ClientesGestion();
-                    f.MdiParent = this;//No permite que salgan los formularios del form MDI
-                    f.Show();
-                }
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
-
-        private void gestionDeDireccionesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (FormularioEstaAbierto(typeof(General.GUI.DireccionesGestion)))
-                {
-                    MessageBox.Show("La ventana de gestión de Direcciones ya está abierta.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    General.GUI.DireccionesGestion f = new General.GUI.DireccionesGestion();
                     f.MdiParent = this;//No permite que salgan los formularios del form MDI
                     f.Show();
                 }
@@ -585,6 +542,27 @@ namespace SCDI.GUI
                 MessageBox.Show("No se pudo encontrar la ruta al ejecutable mysqldump.");
             }
             return mysqldumpPath;
+        }
+
+        private void gestionDeDireccionesToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                if (FormularioEstaAbierto(typeof(General.GUI.DireccionesGestion)))
+                {
+                    MessageBox.Show("La ventana de gestión de Direcciones ya está abierta.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    General.GUI.DireccionesGestion f = new General.GUI.DireccionesGestion();
+                    f.MdiParent = this;//No permite que salgan los formularios del form MDI
+                    f.Show();
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
     }
 }

@@ -210,6 +210,7 @@ namespace Entradas.GUI
                 MessageBox.Show("Debe agregar al menos una entrada", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
+            //Sirve para ver si el documento de entrada ya existe
             DataTable tDoc = DataManager.DBConsultas.ObtenerListaDocumentos();
             bool docIgual = false;
             foreach (DataRow item in tDoc.Rows)
@@ -323,8 +324,6 @@ namespace Entradas.GUI
                             controlDA = true;
                         }
                     }
-
-
                 }
 
             }
@@ -361,7 +360,7 @@ namespace Entradas.GUI
                 MessageBox.Show("Fallo al insertar venta", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
-            //Actualizamos las existencias
+            //Actualizamos los Productos
             bool controlP = false;
             foreach (var productos in lstProductos)
             {

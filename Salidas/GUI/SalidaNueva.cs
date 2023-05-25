@@ -134,7 +134,7 @@ namespace Salidas.GUI
                 }
             }
 
-            dgvDatos.Rows.Add(new object[] {
+            dgvDatos.Rows.Add(new object[] {//datosProducto es un datagrid que traigo con los datos del producto
                 datosProducto.Cells["idProducto"].Value.ToString(),
                 datosProducto.Cells["existencia"].Value.ToString(),
                 datosProducto.Cells["codigo"].Value.ToString(),
@@ -186,7 +186,7 @@ namespace Salidas.GUI
                 MessageBox.Show("Debe agregar al menos una salida", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
-
+            //Crear una salida
             CLS.Salidas salida = new CLS.Salidas();
             DataTable tSalidas = new DataTable();
             tSalidas = DataManager.DBConsultas.ObtenerUltimaSalida();
@@ -238,7 +238,7 @@ namespace Salidas.GUI
             }
             else
             {
-                MessageBox.Show("Fallo");
+                MessageBox.Show("Fallo insertar salida");
                 return;
             }
             lblTexto.Visible = false;
@@ -316,7 +316,7 @@ namespace Salidas.GUI
 
         private void SalidaNueva_Load(object sender, EventArgs e)
         {
-            /*// Verificar si ya existe un formulario abierto
+            // Verificar si ya existe un formulario abierto
             foreach (Form form in this.MdiParent.MdiChildren)
             {
                 if (form != this)
@@ -325,7 +325,7 @@ namespace Salidas.GUI
                     MessageBox.Show("Ya hay un formulario abierto, cierrelo antes de abrir otro", "Error");
                     return;
                 }
-            }*/
+            }
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -338,6 +338,7 @@ namespace Salidas.GUI
                 if (dgvDatos.Rows.Count<1)
                 {
                     btnEliminar.Visible = false;
+                    lblTexto.Visible = false;
                 }
             }
         }
