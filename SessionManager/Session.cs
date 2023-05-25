@@ -75,6 +75,14 @@ namespace SessionManager
             }
             return result;
         }
-        
+        public Boolean CerrarSesion()
+        {
+            idUsuario = "";
+            usuario = "";
+            idRol = "";
+            rol = "";
+            return true;
+        }
+
     }
 }

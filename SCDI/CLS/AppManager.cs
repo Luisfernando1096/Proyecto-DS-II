@@ -24,7 +24,7 @@ namespace SCDI.CLS
             GUI.Login f = new GUI.Login();
             f.ShowDialog();
             Resultado = f.Autorizado;
-
+            
             return Resultado;
         }
         public AppManager()
@@ -34,11 +34,19 @@ namespace SCDI.CLS
                 if (Login())
                 {
                     GUI.Main f = new GUI.Main();
-                    
                     f.ShowDialog();
+                    Continua();
                 }
             }
-
+        }
+        private void Continua()
+        {
+            if (Login())
+            {
+                GUI.Main f = new GUI.Main();
+                f.ShowDialog();
+                Continua();
+            }
         }
     }
 }

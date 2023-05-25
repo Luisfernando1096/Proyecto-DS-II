@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormulariosAux", "Formulari
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inventario", "Inventario\Inventario.csproj", "{754581D6-0E10-4D4F-9D15-831D9ADB3D8F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utilidades", "Utilidades\Utilidades.csproj", "{FEA05B79-5EF2-4344-AA90-77DA774C62C1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{754581D6-0E10-4D4F-9D15-831D9ADB3D8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{754581D6-0E10-4D4F-9D15-831D9ADB3D8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{754581D6-0E10-4D4F-9D15-831D9ADB3D8F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FEA05B79-5EF2-4344-AA90-77DA774C62C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FEA05B79-5EF2-4344-AA90-77DA774C62C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FEA05B79-5EF2-4344-AA90-77DA774C62C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FEA05B79-5EF2-4344-AA90-77DA774C62C1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -7,7 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
 using System.Threading;
+using Microsoft.Win32;
+using System.IO;
 
 namespace SCDI.GUI
 {
@@ -466,19 +469,6 @@ namespace SCDI.GUI
             f.Show();
         }
 
-        private void inventarioToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            Reportes.GUI.VisorInventario f = new Reportes.GUI.VisorInventario();
-            f.ShowDialog();
-        }
-
-        private void existenciasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Reportes.GUI.VisorExistencias f = new Reportes.GUI.VisorExistencias();
-            f.ShowDialog();
-        }
-
-
         private void buscarEntradaToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             try
@@ -500,5 +490,101 @@ namespace SCDI.GUI
             }
         }
 
+        private void cerrarSesionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Esta seguro que desea cerrar sesion?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                this.Close();
+            }
+            
+        }
+
+        private void respaldarBDToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string server = "localhost";
+            string database = "bd_inventario";
+            string backupFilePath = @"C:\Users\fruiz\OneDrive\Escritorio\Respaldos\bd_inventario" + DateTime.Now.Year.ToString().Trim() + "_" + DateTime.Now.Month.ToString().Trim() + "_" + DateTime.Now.Second.ToString().Trim() + ".sql";
+
+            string mysqldumpPath = @"C:\Program Files\MySQL\MySQL Server 5.7\bin\mysqldump.exe";
+            string command = $"\"{mysqldumpPath}\" --defaults-file=\"C:\\MysqlDump\\backup.cnf\" --host={server} {database} > {backupFilePath}";
+
+            
+            ProcessStartInfo psi = new ProcessStartInfo
+            {
+                FileName = "cmd.exe",
+                RedirectStandardInput = true,
+                RedirectStandardOutput = true,
+                UseShellExecute = false,
+                CreateNoWindow = true
+            };
+
+            Process process = Process.Start(psi);
+            process.StandardInput.WriteLine(command);
+            process.StandardInput.Close();
+            process.WaitForExit();
+
+            int exitCode = process.ExitCode; // Obtener el código de salida del proceso
+
+            if (exitCode == 0)
+            {
+                MessageBox.Show("¡Respaldo de base de datos completado!", "Completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("¡Upss! ocurrio un error", "Incompleto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Console.WriteLine("Ocurrió un error durante el respaldo de la base de datos. Código de salida: " + exitCode);
+            }
+
+            
+        }
+
+        private string RutaOut()
+        {
+            string desktopPath = "";
+            desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            return desktopPath;
+
+        }
+
+        private string RutaMysql()
+        {
+            // Buscar la ruta al ejecutable mysqldump en el registro del sistema
+            string mysqldumpPath = "";
+
+            // Intentar encontrar la ruta en la clave de registro predeterminada de MySQL
+            string mysqlRegistryPath = @"SOFTWARE\MySQL AB";
+            using (RegistryKey mysqlKey = Registry.LocalMachine.OpenSubKey(mysqlRegistryPath))
+            {
+                if (mysqlKey != null)
+                {
+                    string[] subKeyNames = mysqlKey.GetSubKeyNames();
+                    if (subKeyNames.Length > 0)
+                    {
+                        string mysqlVersion = subKeyNames[subKeyNames.Length - 1]; // Obtener la última versión instalada
+                        using (RegistryKey versionKey = mysqlKey.OpenSubKey(mysqlVersion))
+                        {
+                            if (versionKey != null)
+                            {
+                                object installLocation = versionKey.GetValue("Location");
+                                if (installLocation != null)
+                                {
+                                    string mysqlBinPath = System.IO.Path.Combine(installLocation.ToString(), "bin");
+                                    mysqldumpPath = System.IO.Path.Combine(mysqlBinPath, "mysqldump.exe");
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            if (!string.IsNullOrEmpty(mysqldumpPath))
+            {
+                Console.WriteLine($"Ruta al ejecutable mysqldump: {mysqldumpPath}");
+            }
+            else
+            {
+                MessageBox.Show("No se pudo encontrar la ruta al ejecutable mysqldump.");
+            }
+            return mysqldumpPath;
+        }
     }
 }

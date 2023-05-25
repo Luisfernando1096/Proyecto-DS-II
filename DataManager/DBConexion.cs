@@ -10,7 +10,7 @@ namespace DataManager
 {
     public class DBConexion
     {
-        String _CadenaConexion = "Server=localhost;Port=3306;Database=bd_inventario;Uid=userInventario;Pwd=Pa55word;";
+        String _CadenaConexion = Utilidades.CLS.ConnectionStringEncryptor.DecryptConnectionString("hGs+/F9OcjXWiAsnWxEEsigOPd8fHQui0GNkO92jjE0FaUhQQpvbVFXSWle0EMTcqd50H2IUIP19/TLgpueFbd6/HRLsGp2XCtNoRWxZSNATak7xuhObUYgNpTUNViVC");
         protected MySqlConnection conexion = new MySqlConnection();
 
         public Boolean Conectar()
