@@ -47,24 +47,7 @@ namespace General.GUI
             lblRegistros.Text = datos.List.Count.ToString() + " Registros Encontrados";
         }
 
-        private void btnSeleccionar_Click(object sender, EventArgs e)
-        {
-            if (dgvDatos.SelectedRows.Count != 0)
-            {
-                empleadoEnviar = dgvDatos.CurrentRow.Cells["Nombres"].Value.ToString();
-                apellidoEnviar = dgvDatos.CurrentRow.Cells["Apellidos"].Value.ToString();
-                idEnviar = dgvDatos.CurrentRow.Cells["ID"].Value.ToString();
-
-                this.DialogResult = DialogResult.OK;
-                this.Close();
-            }
-            else
-            {
-                MessageBox.Show("Por favor, debe selecionar un empleado", "Selección requerida", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-        }
-
-        private void btnBuscarEmpleado_Click(object sender, EventArgs e)
+        /*private void btnBuscarEmpleado_Click(object sender, EventArgs e)
         {
             try
             {
@@ -89,30 +72,7 @@ namespace General.GUI
 
                 MessageBox.Show(mensaje, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        private void txtBucarEmpleado_TextChanged(object sender, EventArgs e)
-        {
-            if (txtBucarEmpleado.Text != "")
-            {
-                dgvDatos.CurrentCell = null;
-                foreach (DataGridViewRow r in dgvDatos.Rows)
-                {
-                    r.Visible = false;
-                }
-                foreach (DataGridViewRow r in dgvDatos.Rows)
-                {
-                    if (r.Cells["Nombres"].Value.ToString().ToUpper().IndexOf(txtBucarEmpleado.Text.ToUpper()) == 0)
-                    {
-                        r.Visible = true;
-                    }
-                }
-            }
-            else
-            {
-                CargarDatos();
-            }
-        }
+        }*/
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
@@ -155,11 +115,6 @@ namespace General.GUI
                 f.ShowDialog();
             }
             CargarDatos();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

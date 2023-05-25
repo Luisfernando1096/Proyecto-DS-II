@@ -10,7 +10,7 @@ namespace DataManager
 {
     public class DBConexion
     {
-        String _CadenaConexion = "Server=localhost;Port=3306;Database=bd_inventario;Uid=userInventario;Pwd=Pa55word;";
+        String _CadenaConexion = "Server=localhost;Port=3306;Database=bd_inventario;Uid=root;Pwd=Fuentes2000;";
         protected MySqlConnection conexion = new MySqlConnection();
 
         public Boolean Conectar()

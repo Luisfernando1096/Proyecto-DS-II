@@ -18,7 +18,7 @@ namespace General.GUI
         }
         private void btnBuscarEmpleado_Click(object sender, EventArgs e)
         {
-            EmpleadosGestion f = new EmpleadosGestion();
+            FormulariosAux.GUI.ListEmpleados f = new FormulariosAux.GUI.ListEmpleados();
             f.btnSeleccionar.Visible = true;
             f.lblSeleccionar.Visible = true;
             var result = f.ShowDialog();
@@ -31,7 +31,7 @@ namespace General.GUI
 
         private void bntBuscarRol_Click(object sender, EventArgs e)
         {
-            RolesGestion f = new RolesGestion();
+            FormulariosAux.GUI.ListRoles f = new FormulariosAux.GUI.ListRoles();
             f.btnSeleccionar.Visible = true;
             var result = f.ShowDialog();
             if (result == DialogResult.OK)

@@ -29,7 +29,6 @@ namespace FormulariosAux.GUI
             }
             catch (Exception)
             {
-
                 throw;
             }
         }
@@ -37,8 +36,12 @@ namespace FormulariosAux.GUI
         private void ListProveedores_Load(object sender, EventArgs e)
         {
             CargarDatos();
+            lblRegistros.Text = datos.List.Count.ToString() + " Registros Encontrados";
+
+            // Suscribirse al evento ColumnAdded
+            dgvDatos.ColumnAdded += dgvDatos_ColumnAdded;
         }
-        private void FiltrarDatos()
+        /*private void FiltrarDatos()
         {
             try
             {
@@ -64,18 +67,69 @@ namespace FormulariosAux.GUI
             {
                 throw;
             }
-        }
+        }*/
 
         private void txtBuscarPorNombre_TextChanged(object sender, EventArgs e)
         {
-            FiltrarDatos();
+            try
+            {
+                if (txtBuscarPorNombre.Text != "")
+                {
+                    dgvDatos.CurrentCell = null;
+                    foreach (DataGridViewRow r in dgvDatos.Rows)
+                    {
+                        r.Visible = false;
+                    }
+                    int filasVisibles = 0;
+                    foreach (DataGridViewRow r in dgvDatos.Rows)
+                    {
+
+                        if (r.Cells["nombre"].Value.ToString().ToUpper().IndexOf(txtBuscarPorNombre.Text.ToUpper()) == 0)
+                        {
+                            r.Visible = true;
+                            filasVisibles++;
+                        }
+                    }
+                    if (filasVisibles > 1)
+                    {
+                        lblRegistros.Text = filasVisibles + " Resultados";
+                    }
+                    else
+                    {
+                        lblRegistros.Text = filasVisibles + " Resultado";
+                    }
+                }
+                else
+                {
+                    CargarDatos();
+                    lblRegistros.Text = datos.List.Count.ToString() + " Registros Encontrados";
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         private void btnSeleccionar_Click(object sender, EventArgs e)
         {
-            datosProvEnviar = dgvDatos.CurrentRow;
-            this.DialogResult = DialogResult.OK;
-            this.Close();
+            if (dgvDatos.SelectedRows.Count != 0)
+            {
+                datosProvEnviar = dgvDatos.CurrentRow;
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Debe seleccionar un Proveedor.", "Selección requerida", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
+
+        private void dgvDatos_ColumnAdded(object sender, DataGridViewColumnEventArgs e)
+        {
+
+            // Deshabilitar el ordenamiento en la columna recién agregada
+            e.Column.SortMode = DataGridViewColumnSortMode.NotSortable;
         }
     }
 }

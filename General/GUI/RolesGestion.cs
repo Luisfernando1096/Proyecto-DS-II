@@ -80,14 +80,5 @@ namespace General.GUI
             }
             CargarDatos();
         }
-
-        private void btnSeleccionar_Click(object sender, EventArgs e)
-        {
-            rolEnviar = dgvDatos.CurrentRow.Cells["rol"].Value.ToString();
-            idEnviar = dgvDatos.CurrentRow.Cells["idRol"].Value.ToString();
-
-            this.DialogResult = DialogResult.OK;
-            this.Close();
-        }
     }
 }
