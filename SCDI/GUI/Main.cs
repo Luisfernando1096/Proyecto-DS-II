@@ -500,5 +500,10 @@ namespace SCDI.GUI
             }
         }
 
+        private void productosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Reportes.GUI.VisorProductos f = new Reportes.GUI.VisorProductos();
+            f.ShowDialog();
+        }
     }
 }

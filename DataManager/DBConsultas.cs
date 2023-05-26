@@ -1049,5 +1049,26 @@ namespace DataManager
             }
         }
 
+        public static DataTable ReporteProductos()
+        {
+            try
+            {
+                DataTable resultado = new DataTable();
+                String sentencia = @"select a.idProducto,a.nombre,a.codigo,a.descripcion,a.precio_venta,a.idCategoria,b.existencia 
+                                   from productos a, existencias b 
+                                   where b.existencia<10 and 
+                                   a.idProducto=b.idExistencia;";
+                DBOperacion operacion = new DBOperacion();
+
+                resultado = operacion.Consultar(sentencia);
+                return resultado;
+            }
+            catch (Exception)
+            {
+                return new DataTable();
+                throw;
+            }
+        }
+
     }
 }

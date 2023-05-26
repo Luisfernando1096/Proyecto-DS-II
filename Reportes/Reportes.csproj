@@ -97,6 +97,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ReporteInventario.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DAT\ReporteProductos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReporteProductos.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DAT\ReporteSalidas.cs">
       <DependentUpon>ReporteSalidas.xsd</DependentUpon>
     </Compile>
@@ -132,6 +137,12 @@
     <Compile Include="GUI\VisorInventario.Designer.cs">
       <DependentUpon>VisorInventario.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\VisorProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\VisorProductos.Designer.cs">
+      <DependentUpon>VisorProductos.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\VisorSalidas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -163,6 +174,12 @@
       <DependentUpon>Inventario.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="REP\Productos.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Productos.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="REP\Salidas.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -186,6 +203,9 @@
     <EmbeddedResource Include="GUI\VisorInventario.resx">
       <DependentUpon>VisorInventario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\VisorProductos.resx">
+      <DependentUpon>VisorProductos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\VisorSalidas.resx">
       <DependentUpon>VisorSalidas.cs</DependentUpon>
     </EmbeddedResource>
@@ -204,6 +224,10 @@
     <EmbeddedResource Include="REP\Inventario.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Inventario.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REP\Productos.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Productos.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="REP\Salidas.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -258,6 +282,17 @@
     </None>
     <None Include="DAT\ReporteInventario.xss">
       <DependentUpon>ReporteInventario.xsd</DependentUpon>
+    </None>
+    <None Include="DAT\ReporteProductos.xsc">
+      <DependentUpon>ReporteProductos.xsd</DependentUpon>
+    </None>
+    <None Include="DAT\ReporteProductos.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ReporteProductos.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DAT\ReporteProductos.xss">
+      <DependentUpon>ReporteProductos.xsd</DependentUpon>
     </None>
     <None Include="DAT\ReporteSalidas.xsc">
       <DependentUpon>ReporteSalidas.xsd</DependentUpon>
