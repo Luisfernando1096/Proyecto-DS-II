@@ -58,6 +58,7 @@ namespace General.GUI
                 producto.txtCodigo.Text = dgvDatos.CurrentRow.Cells["codigo"].Value.ToString();
                 producto.txtNombre.Text = dgvDatos.CurrentRow.Cells["nombre"].Value.ToString();
                 producto.txtDescripcion.Text = dgvDatos.CurrentRow.Cells["descripcion"].Value.ToString();
+                producto.idReferencia = Int32.Parse(dgvDatos.CurrentRow.Cells["idCategoria"].Value.ToString());
                 producto.txtPrecio_venta.Text = dgvDatos.CurrentRow.Cells["precio_venta"].Value.ToString();
                 producto.ShowDialog();
             }

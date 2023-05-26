@@ -12,6 +12,7 @@ namespace General.GUI
 {
     public partial class ProductosEdicion : Form
     {
+        public int idReferencia;
         public ProductosEdicion()
         {
             InitializeComponent();
@@ -47,8 +48,11 @@ namespace General.GUI
 
         private void ProductosEdicion_Load(object sender, EventArgs e)
         {
-            cmbCategorias.SelectedValue = 0;
             CargarCategorias();
+            if (idReferencia > 0)
+            {
+                cmbCategorias.SelectedValue = idReferencia;
+            }
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -73,15 +77,14 @@ namespace General.GUI
                     productos.Nombre = txtNombre.Text;
                     productos.Codigo = txtCodigo.Text;
                     productos.Descripcion = txtDescripcion.Text;
-                    productos.Precio_venta = double.Parse(txtPrecio_venta.Text);
                     productos.Idcategoria = Convert.ToInt32(cmbCategorias.SelectedValue);
 
                     CLS.Existencias existencia = new CLS.Existencias();
                     DataTable tProductos = new DataTable();
-                    tProductos = DataManager.DBConsultas.ObtenerUltimoProducto();
 
                     if (txtIdProducto.TextLength > 0)
                     {
+                        productos.Precio_venta = Double.Parse(txtPrecio_venta.Text.ToString());
                         productos.IdProducto = Int32.Parse(txtIdProducto.Text);
                         if (productos.Actualizar())
                         {
@@ -95,6 +98,7 @@ namespace General.GUI
                     }
                     else
                     {
+                        productos.Precio_venta = 0;
                         if (CompararCodigo(txtCodigo.Text))
                         {
                             MessageBox.Show("El codigo ya está agregado a un producto", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -102,6 +106,7 @@ namespace General.GUI
                         }
                         if (productos.Insertar())
                         {
+                            tProductos = DataManager.DBConsultas.ObtenerUltimoProducto();
                             existencia.Existencia = 0;
                             existencia.IdProducto = Int32.Parse(tProductos.Rows[0][0].ToString());
                             existencia.Insertar();
