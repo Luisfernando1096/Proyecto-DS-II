@@ -60,6 +60,12 @@
     <Compile Include="GUI\BuscarEntradas.Designer.cs">
       <DependentUpon>BuscarEntradas.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\ListaEntradas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ListaEntradas.Designer.cs">
+      <DependentUpon>ListaEntradas.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\NuevaEntrada.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +75,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GUI\BuscarEntradas.resx">
       <DependentUpon>BuscarEntradas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ListaEntradas.resx">
+      <DependentUpon>ListaEntradas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\NuevaEntrada.resx">
       <DependentUpon>NuevaEntrada.cs</DependentUpon>

@@ -65,5 +65,10 @@ namespace SCDI.GUI
                 o.Desconectar();
             }
         }
+
+        private void bntSalir_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
+        }
     }
 }

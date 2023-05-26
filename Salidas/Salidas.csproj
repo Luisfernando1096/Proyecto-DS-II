@@ -55,6 +55,12 @@
     <Compile Include="GUI\BuscarSalida.Designer.cs">
       <DependentUpon>BuscarSalida.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\ListaSalidas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ListaSalidas.Designer.cs">
+      <DependentUpon>ListaSalidas.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\SalidaNueva.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +78,9 @@
   <ItemGroup>
     <EmbeddedResource Include="GUI\BuscarSalida.resx">
       <DependentUpon>BuscarSalida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ListaSalidas.resx">
+      <DependentUpon>ListaSalidas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\SalidaNueva.resx">
       <DependentUpon>SalidaNueva.cs</DependentUpon>

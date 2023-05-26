@@ -564,5 +564,47 @@ namespace SCDI.GUI
                 throw;
             }
         }
+
+        private void listaSalidasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (FormularioEstaAbierto(typeof(Salidas.GUI.ListaSalidas)))
+                {
+                    MessageBox.Show("La ventana ya está abierta.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    Salidas.GUI.ListaSalidas f = new Salidas.GUI.ListaSalidas();
+                    f.MdiParent = this;//No permite que salgan los formularios del form MDI
+                    f.Show();
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        private void listaEntradasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (FormularioEstaAbierto(typeof(Entradas.GUI.ListaEntradas)))
+                {
+                    MessageBox.Show("La ventana ya está abierta.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    Entradas.GUI.ListaEntradas f = new Entradas.GUI.ListaEntradas();
+                    f.MdiParent = this;//No permite que salgan los formularios del form MDI
+                    f.Show();
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }

@@ -28,7 +28,7 @@ namespace General.GUI
                 DataTable dt = categoria.Clone();
 
                 // Agregar la fila de "Seleccione" al nuevo DataTable
-                dt.Rows.Add(0, "Seleccione una categoria");
+                dt.Rows.Add(0, "Selecionar");
 
                 // Fusionar los datos de categoría con el nuevo DataTable
                 dt.Merge(categoria);

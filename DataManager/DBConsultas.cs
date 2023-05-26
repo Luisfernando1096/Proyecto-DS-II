@@ -150,10 +150,11 @@ namespace DataManager
             try
             {
                 DataTable resultado = new DataTable();
-                String sentencia = @"SELECT d.documento_salida, a.codigo, a.nombre, a.descripcion, a.precio_venta, b.categoria, c.cantidad, e.dui, e.nombres_cliente, d.fecha_salida, c.sub_total, d.total, f.usuario
-                                    FROM productos a, categorias b, detalle_salidas c, salidas d, clientes e, usuarios f
-                                    WHERE a.idCategoria=b.idCategoria AND c.idProducto=a.idProducto AND c.idSalida=d.idSalida
-                                    AND d.idCliente=e.idCliente AND f.idUsuario=d.idUsuario;";
+                String sentencia = @"SELECT d.idSalida, d.documento_salida, CONCAT(e.nombres_cliente, ' ', e.apellidos_cliente) AS nombre_cliente, e.dui, d.fecha_salida, 
+                                   (SELECT COUNT(*) FROM detalle_salidas WHERE idSalida = d.idSalida) AS ListaDetalles, 
+                                   d.total, f.usuario
+                                    FROM salidas d, clientes e, usuarios f
+                                    WHERE d.idCliente = e.idCliente AND d.idUsuario = f.idUsuario ORDER BY d.idSalida asc;";
                 DataManager.DBOperacion operacion = new DataManager.DBOperacion();
 
                 resultado = operacion.Consultar(sentencia);
@@ -165,36 +166,17 @@ namespace DataManager
                 throw;
             }
         }
-        public static DataTable SalidaPorDocumento(int DocSalida)
+        public static DataTable SalidaPorClientes()
         {
             try
             {
                 DataTable resultado = new DataTable();
-                String sentencia = @"SELECT d.documento_salida, a.codigo, a.nombre, a.descripcion, a.precio_venta, b.categoria, c.cantidad, e.dui, e.nombres_cliente, d.fecha_salida, c.sub_total, d.total, f.usuario
-                                    FROM productos a, categorias b, detalle_salidas c, salidas d, clientes e, usuarios f
-                                    WHERE a.idCategoria=b.idCategoria AND c.idProducto=a.idProducto AND c.idSalida=d.idSalida
-                                    AND d.idCliente=e.idCliente AND f.idUsuario=d.idUsuario and d.documento_salida like '%" + DocSalida + "%';";
-                DataManager.DBOperacion operacion = new DataManager.DBOperacion();
-
-
-                resultado = operacion.Consultar(sentencia);
-                return resultado;
-            }
-            catch (Exception)
-            {
-                return new DataTable();
-                throw;
-            }
-        }
-        public static DataTable SalidaPorCliente(string Cliente)
-        {
-            try
-            {
-                DataTable resultado = new DataTable();
-                String sentencia = @"SELECT d.documento_salida, a.codigo, a.nombre, a.descripcion, a.precio_venta, b.categoria, c.cantidad, e.dui, e.nombres_cliente, d.fecha_salida, c.sub_total, d.total, f.usuario
-                                    FROM productos a, categorias b, detalle_salidas c, salidas d, clientes e, usuarios f
-                                    WHERE a.idCategoria=b.idCategoria AND c.idProducto=a.idProducto AND c.idSalida=d.idSalida
-                                    AND d.idCliente=e.idCliente AND f.idUsuario=d.idUsuario and e.nombres_cliente like '%" + Cliente + "%';";
+                String sentencia = @"SELECT d.idSalida, d.documento_salida, CONCAT(e.nombres_cliente, ' ', e.apellidos_cliente) AS nombre_cliente, e.dui, d.fecha_salida, 
+                                   (SELECT COUNT(*) FROM detalle_salidas WHERE idSalida = d.idSalida) AS ListaDetalles, 
+                                   d.total, f.usuario
+                                    FROM salidas d, clientes e, usuarios f
+                                    WHERE d.idCliente = e.idCliente AND d.idUsuario = f.idUsuario
+                                    ORDER BY e.nombres_cliente ASC;";
                 DataManager.DBOperacion operacion = new DataManager.DBOperacion();
 
 
@@ -207,15 +189,262 @@ namespace DataManager
                 throw;
             }
         }
-        public static DataTable SalidaPorUsuario(string Usuario)
+        public static DataTable SalidaPorDocumento()
         {
             try
             {
                 DataTable resultado = new DataTable();
-                String sentencia = @"SELECT d.documento_salida, a.codigo, a.nombre, a.descripcion, a.precio_venta, b.categoria, c.cantidad, e.dui, e.nombres_cliente, d.fecha_salida, c.sub_total, d.total, f.usuario
-                                    FROM productos a, categorias b, detalle_salidas c, salidas d, clientes e, usuarios f
-                                    WHERE a.idCategoria=b.idCategoria AND c.idProducto=a.idProducto AND c.idSalida=d.idSalida
-                                    AND d.idCliente=e.idCliente AND f.idUsuario=d.idUsuario and f.usuario like '%" + Usuario + "%';";
+                String sentencia = @"SELECT d.idSalida, d.documento_salida, CONCAT(e.nombres_cliente, ' ', e.apellidos_cliente) AS nombre_cliente, e.dui, d.fecha_salida, 
+                                   (SELECT COUNT(*) FROM detalle_salidas WHERE idSalida = d.idSalida) AS ListaDetalles, 
+                                   d.total, f.usuario
+                                    FROM salidas d, clientes e, usuarios f
+                                    WHERE d.idCliente = e.idCliente AND d.idUsuario = f.idUsuario
+                                    ORDER BY d.documento_salida ASC;";
+                DataManager.DBOperacion operacion = new DataManager.DBOperacion();
+
+
+                resultado = operacion.Consultar(sentencia);
+                return resultado;
+            }
+            catch (Exception)
+            {
+                return new DataTable();
+                throw;
+            }
+        }
+        public static DataTable SalidaPorFecha()
+        {
+            try
+            {
+                DataTable resultado = new DataTable();
+                String sentencia = @"SELECT d.idSalida, d.documento_salida, CONCAT(e.nombres_cliente, ' ', e.apellidos_cliente) AS nombre_cliente, e.dui, d.fecha_salida, 
+                                   (SELECT COUNT(*) FROM detalle_salidas WHERE idSalida = d.idSalida) AS ListaDetalles, 
+                                   d.total, f.usuario
+                                    FROM salidas d, clientes e, usuarios f
+                                    WHERE d.idCliente = e.idCliente AND d.idUsuario = f.idUsuario
+                                    ORDER BY d.fecha_salida ASC;";
+                DataManager.DBOperacion operacion = new DataManager.DBOperacion();
+
+
+                resultado = operacion.Consultar(sentencia);
+                return resultado;
+            }
+            catch (Exception)
+            {
+                return new DataTable();
+                throw;
+            }
+        }
+        public static DataTable SalidaPorTotal()
+        {
+            try
+            {
+                DataTable resultado = new DataTable();
+                String sentencia = @"SELECT d.idSalida, d.documento_salida, CONCAT(e.nombres_cliente, ' ', e.apellidos_cliente) AS nombre_cliente, e.dui, d.fecha_salida, 
+                                   (SELECT COUNT(*) FROM detalle_salidas WHERE idSalida = d.idSalida) AS ListaDetalles, 
+                                   d.total, f.usuario
+                                    FROM salidas d, clientes e, usuarios f
+                                    WHERE d.idCliente = e.idCliente AND d.idUsuario = f.idUsuario
+                                    ORDER BY d.total desc;";
+                DataManager.DBOperacion operacion = new DataManager.DBOperacion();
+
+
+                resultado = operacion.Consultar(sentencia);
+                return resultado;
+            }
+            catch (Exception)
+            {
+                return new DataTable();
+                throw;
+            }
+        }
+        public static DataTable SalidaPorUsuario()
+        {
+            try
+            {
+                DataTable resultado = new DataTable();
+                String sentencia = @"SELECT d.idSalida, d.documento_salida, CONCAT(e.nombres_cliente, ' ', e.apellidos_cliente) AS nombre_cliente, e.dui, d.fecha_salida, 
+                                   (SELECT COUNT(*) FROM detalle_salidas WHERE idSalida = d.idSalida) AS ListaDetalles, 
+                                   d.total, f.usuario
+                                    FROM salidas d, clientes e, usuarios f
+                                    WHERE d.idCliente = e.idCliente AND d.idUsuario = f.idUsuario
+                                    ORDER BY f.usuario asc;";
+                DataManager.DBOperacion operacion = new DataManager.DBOperacion();
+
+
+                resultado = operacion.Consultar(sentencia);
+                return resultado;
+            }
+            catch (Exception)
+            {
+                return new DataTable();
+                throw;
+            }
+        }
+        public static DataTable SalidaPorListaDetalles()
+        {
+            try
+            {
+                DataTable resultado = new DataTable();
+                String sentencia = @"SELECT d.idSalida, d.documento_salida, CONCAT(e.nombres_cliente, ' ', e.apellidos_cliente) AS nombre_cliente, e.dui, d.fecha_salida, 
+                               (SELECT COUNT(*) FROM detalle_salidas WHERE idSalida = d.idSalida) AS ListaDetalles, 
+                               d.total, f.usuario
+                                FROM salidas d, clientes e, usuarios f
+                                WHERE d.idCliente = e.idCliente AND d.idUsuario = f.idUsuario
+                                ORDER BY ListaDetalles desc;";
+                DataManager.DBOperacion operacion = new DataManager.DBOperacion();
+
+
+                resultado = operacion.Consultar(sentencia);
+                return resultado;
+            }
+            catch (Exception)
+            {
+                return new DataTable();
+                throw;
+            }
+        }
+        public static DataTable EntradasLista()
+        {
+            try
+            {
+                DataTable resultado = new DataTable();
+                String sentencia = @"SELECT e.idEntrada, e.documento_entrada, pro.nombre, pro.documento, e.fecha_entrada, 
+                                    (SELECT COUNT(*) FROM detalle_entradas de WHERE idEntrada = e.idEntrada) AS ListaDetalles, e.total, u.usuario
+                                    FROM entradas e, usuarios u, proveedores pro
+                                    WHERE e.idProveedor = pro.idProveedor AND e.idUsuario = u.idUsuario 
+                                    order by e.idEntrada asc;";
+                DataManager.DBOperacion operacion = new DataManager.DBOperacion();
+
+                resultado = operacion.Consultar(sentencia);
+                return resultado;
+            }
+            catch (Exception)
+            {
+                return new DataTable();
+                throw;
+            }
+        }
+        public static DataTable EntradasPorProveedores()
+        {
+            try
+            {
+                DataTable resultado = new DataTable();
+                String sentencia = @"SELECT e.idEntrada, e.documento_entrada, pro.nombre, pro.documento, e.fecha_entrada, 
+                                    (SELECT COUNT(*) FROM detalle_entradas de WHERE idEntrada = e.idEntrada) AS ListaDetalles, e.total, u.usuario
+                                    FROM entradas e, usuarios u, proveedores pro
+                                    WHERE e.idProveedor = pro.idProveedor AND e.idUsuario = u.idUsuario
+                                    order by pro.nombre asc;";
+                DataManager.DBOperacion operacion = new DataManager.DBOperacion();
+
+
+                resultado = operacion.Consultar(sentencia);
+                return resultado;
+            }
+            catch (Exception)
+            {
+                return new DataTable();
+                throw;
+            }
+        }
+        public static DataTable EntradasPorDocumento()
+        {
+            try
+            {
+                DataTable resultado = new DataTable();
+                String sentencia = @"SELECT e.idEntrada, e.documento_entrada, pro.nombre, pro.documento, e.fecha_entrada, 
+                                    (SELECT COUNT(*) FROM detalle_entradas de WHERE idEntrada = e.idEntrada) AS ListaDetalles, e.total, u.usuario
+                                    FROM entradas e, usuarios u, proveedores pro
+                                    WHERE e.idProveedor = pro.idProveedor AND e.idUsuario = u.idUsuario
+                                    order by e.documento_entrada asc;";
+                DataManager.DBOperacion operacion = new DataManager.DBOperacion();
+
+
+                resultado = operacion.Consultar(sentencia);
+                return resultado;
+            }
+            catch (Exception)
+            {
+                return new DataTable();
+                throw;
+            }
+        }
+        public static DataTable EntradasPorFecha()
+        {
+            try
+            {
+                DataTable resultado = new DataTable();
+                String sentencia = @"SELECT e.idEntrada, e.documento_entrada, pro.nombre, pro.documento, e.fecha_entrada, 
+                                    (SELECT COUNT(*) FROM detalle_entradas de WHERE idEntrada = e.idEntrada) AS ListaDetalles, e.total, u.usuario
+                                    FROM entradas e, usuarios u, proveedores pro
+                                    WHERE e.idProveedor = pro.idProveedor AND e.idUsuario = u.idUsuario
+                                    order by e.fecha_entrada asc;";
+                DataManager.DBOperacion operacion = new DataManager.DBOperacion();
+
+
+                resultado = operacion.Consultar(sentencia);
+                return resultado;
+            }
+            catch (Exception)
+            {
+                return new DataTable();
+                throw;
+            }
+        }
+        public static DataTable EntradasPorTotal()
+        {
+            try
+            {
+                DataTable resultado = new DataTable();
+                String sentencia = @"SELECT e.idEntrada, e.documento_entrada, pro.nombre, pro.documento, e.fecha_entrada, 
+                                    (SELECT COUNT(*) FROM detalle_entradas de WHERE idEntrada = e.idEntrada) AS ListaDetalles, e.total, u.usuario
+                                    FROM entradas e, usuarios u, proveedores pro
+                                    WHERE e.idProveedor = pro.idProveedor AND e.idUsuario = u.idUsuario
+                                    order by e.total desc;";
+                DataManager.DBOperacion operacion = new DataManager.DBOperacion();
+
+
+                resultado = operacion.Consultar(sentencia);
+                return resultado;
+            }
+            catch (Exception)
+            {
+                return new DataTable();
+                throw;
+            }
+        }
+        public static DataTable EntradasPorUsuario()
+        {
+            try
+            {
+                DataTable resultado = new DataTable();
+                String sentencia = @"SELECT e.idEntrada, e.documento_entrada, pro.nombre, pro.documento, e.fecha_entrada, 
+                                    (SELECT COUNT(*) FROM detalle_entradas de WHERE idEntrada = e.idEntrada) AS ListaDetalles, e.total, u.usuario
+                                    FROM entradas e, usuarios u, proveedores pro
+                                    WHERE e.idProveedor = pro.idProveedor AND e.idUsuario = u.idUsuario
+                                    order by u.usuario asc;";
+                DataManager.DBOperacion operacion = new DataManager.DBOperacion();
+
+
+                resultado = operacion.Consultar(sentencia);
+                return resultado;
+            }
+            catch (Exception)
+            {
+                return new DataTable();
+                throw;
+            }
+        }
+        public static DataTable EntradasPorListaDetalles()
+        {
+            try
+            {
+                DataTable resultado = new DataTable();
+                String sentencia = @"SELECT e.idEntrada, e.documento_entrada, pro.nombre, pro.documento, e.fecha_entrada, 
+                                    (SELECT COUNT(*) FROM detalle_entradas de WHERE idEntrada = e.idEntrada) AS ListaDetalles, e.total, u.usuario
+                                    FROM entradas e, usuarios u, proveedores pro
+                                    WHERE e.idProveedor = pro.idProveedor AND e.idUsuario = u.idUsuario
+                                    order by ListaDetalles desc;";
                 DataManager.DBOperacion operacion = new DataManager.DBOperacion();
 
 
