@@ -47,6 +47,7 @@ namespace Entradas.GUI
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvDatos = new System.Windows.Forms.DataGridView();
+            this.button2 = new System.Windows.Forms.Button();
             this.idEntrada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.documento_entrada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fecha_entrada = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,8 +63,12 @@ namespace Entradas.GUI
             this.precio_compra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sub_total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.total = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button2 = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.lblRegistro = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.gbCliente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
@@ -73,9 +78,10 @@ namespace Entradas.GUI
             // 
             this.label.AutoSize = true;
             this.label.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label.Location = new System.Drawing.Point(23, 403);
+            this.label.Location = new System.Drawing.Point(253, 496);
+            this.label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label.Name = "label";
-            this.label.Size = new System.Drawing.Size(60, 23);
+            this.label.Size = new System.Drawing.Size(74, 28);
             this.label.TabIndex = 26;
             this.label.Text = "Total:";
             // 
@@ -83,9 +89,10 @@ namespace Entradas.GUI
             // 
             this.lblTotal.AutoSize = true;
             this.lblTotal.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotal.Location = new System.Drawing.Point(82, 403);
+            this.lblTotal.Location = new System.Drawing.Point(331, 496);
+            this.lblTotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(48, 23);
+            this.lblTotal.Size = new System.Drawing.Size(58, 28);
             this.lblTotal.TabIndex = 27;
             this.lblTotal.Text = "0.00";
             // 
@@ -96,9 +103,11 @@ namespace Entradas.GUI
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(13, 34);
+            this.groupBox1.Location = new System.Drawing.Point(17, 42);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(412, 64);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Size = new System.Drawing.Size(549, 79);
             this.groupBox1.TabIndex = 25;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos:";
@@ -109,9 +118,10 @@ namespace Entradas.GUI
             this.dtpFecha.Enabled = false;
             this.dtpFecha.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecha.Location = new System.Drawing.Point(67, 29);
+            this.dtpFecha.Location = new System.Drawing.Point(89, 36);
+            this.dtpFecha.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtpFecha.Name = "dtpFecha";
-            this.dtpFecha.Size = new System.Drawing.Size(110, 26);
+            this.dtpFecha.Size = new System.Drawing.Size(145, 30);
             this.dtpFecha.TabIndex = 18;
             // 
             // txtUsuario
@@ -119,18 +129,20 @@ namespace Entradas.GUI
             this.txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtUsuario.Enabled = false;
             this.txtUsuario.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsuario.Location = new System.Drawing.Point(299, 29);
+            this.txtUsuario.Location = new System.Drawing.Point(399, 36);
+            this.txtUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(102, 26);
+            this.txtUsuario.Size = new System.Drawing.Size(135, 30);
             this.txtUsuario.TabIndex = 9;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(187, 31);
+            this.label3.Location = new System.Drawing.Point(249, 38);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(106, 20);
+            this.label3.Size = new System.Drawing.Size(128, 24);
             this.label3.TabIndex = 8;
             this.label3.Text = "Usuario atendio:";
             // 
@@ -138,9 +150,10 @@ namespace Entradas.GUI
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(11, 31);
+            this.label5.Location = new System.Drawing.Point(15, 38);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(50, 20);
+            this.label5.Size = new System.Drawing.Size(60, 24);
             this.label5.TabIndex = 5;
             this.label5.Text = "Fecha:";
             // 
@@ -148,9 +161,10 @@ namespace Entradas.GUI
             // 
             this.txtDocumento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDocumento.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDocumento.Location = new System.Drawing.Point(221, 3);
+            this.txtDocumento.Location = new System.Drawing.Point(295, 4);
+            this.txtDocumento.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtDocumento.Name = "txtDocumento";
-            this.txtDocumento.Size = new System.Drawing.Size(203, 26);
+            this.txtDocumento.Size = new System.Drawing.Size(270, 30);
             this.txtDocumento.TabIndex = 24;
             this.txtDocumento.TextChanged += new System.EventHandler(this.txtDocumento_TextChanged);
             // 
@@ -161,9 +175,11 @@ namespace Entradas.GUI
             this.gbCliente.Controls.Add(this.txtDocProveedor);
             this.gbCliente.Controls.Add(this.label2);
             this.gbCliente.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbCliente.Location = new System.Drawing.Point(430, 5);
+            this.gbCliente.Location = new System.Drawing.Point(573, 6);
+            this.gbCliente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gbCliente.Name = "gbCliente";
-            this.gbCliente.Size = new System.Drawing.Size(599, 91);
+            this.gbCliente.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbCliente.Size = new System.Drawing.Size(799, 112);
             this.gbCliente.TabIndex = 23;
             this.gbCliente.TabStop = false;
             this.gbCliente.Text = "Datos del Proveedor: ";
@@ -173,18 +189,20 @@ namespace Entradas.GUI
             this.txtNombreProveedor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNombreProveedor.Enabled = false;
             this.txtNombreProveedor.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreProveedor.Location = new System.Drawing.Point(400, 37);
+            this.txtNombreProveedor.Location = new System.Drawing.Point(533, 46);
+            this.txtNombreProveedor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtNombreProveedor.Name = "txtNombreProveedor";
-            this.txtNombreProveedor.Size = new System.Drawing.Size(195, 26);
+            this.txtNombreProveedor.Size = new System.Drawing.Size(259, 30);
             this.txtNombreProveedor.TabIndex = 9;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(252, 38);
+            this.label4.Location = new System.Drawing.Point(336, 47);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(156, 20);
+            this.label4.Size = new System.Drawing.Size(185, 24);
             this.label4.TabIndex = 8;
             this.label4.Text = "Nombre del Proveedor: ";
             // 
@@ -193,18 +211,20 @@ namespace Entradas.GUI
             this.txtDocProveedor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDocProveedor.Enabled = false;
             this.txtDocProveedor.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDocProveedor.Location = new System.Drawing.Point(121, 37);
+            this.txtDocProveedor.Location = new System.Drawing.Point(161, 46);
+            this.txtDocProveedor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtDocProveedor.Name = "txtDocProveedor";
-            this.txtDocProveedor.Size = new System.Drawing.Size(121, 26);
+            this.txtDocProveedor.Size = new System.Drawing.Size(161, 30);
             this.txtDocProveedor.TabIndex = 7;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(11, 38);
+            this.label2.Location = new System.Drawing.Point(15, 47);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(113, 20);
+            this.label2.Size = new System.Drawing.Size(134, 24);
             this.label2.TabIndex = 5;
             this.label2.Text = "Doc. Proveedor: ";
             // 
@@ -212,9 +232,10 @@ namespace Entradas.GUI
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(17, 6);
+            this.label1.Location = new System.Drawing.Point(23, 7);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(206, 20);
+            this.label1.Size = new System.Drawing.Size(249, 24);
             this.label1.TabIndex = 22;
             this.label1.Text = "Digite el numero de documento: ";
             // 
@@ -244,6 +265,7 @@ namespace Entradas.GUI
             this.precio_compra,
             this.cantidad,
             this.sub_total,
+            this.Descripcion,
             this.total});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
@@ -253,15 +275,28 @@ namespace Entradas.GUI
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvDatos.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvDatos.Location = new System.Drawing.Point(13, 105);
+            this.dgvDatos.Location = new System.Drawing.Point(17, 129);
+            this.dgvDatos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvDatos.MultiSelect = false;
             this.dgvDatos.Name = "dgvDatos";
             this.dgvDatos.ReadOnly = true;
             this.dgvDatos.RowHeadersVisible = false;
             this.dgvDatos.RowHeadersWidth = 51;
             this.dgvDatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDatos.Size = new System.Drawing.Size(1009, 278);
+            this.dgvDatos.Size = new System.Drawing.Size(1351, 342);
             this.dgvDatos.TabIndex = 21;
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(1228, 490);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(140, 42);
+            this.button2.TabIndex = 85;
+            this.button2.Text = "Ver Reporte";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // idEntrada
             // 
@@ -407,6 +442,16 @@ namespace Entradas.GUI
             this.sub_total.Name = "sub_total";
             this.sub_total.ReadOnly = true;
             // 
+            // Descripcion
+            // 
+            this.Descripcion.DataPropertyName = "descripcion";
+            this.Descripcion.HeaderText = "descripcion";
+            this.Descripcion.MinimumWidth = 6;
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.ReadOnly = true;
+            this.Descripcion.Visible = false;
+            this.Descripcion.Width = 125;
+            // 
             // total
             // 
             this.total.DataPropertyName = "total";
@@ -417,22 +462,59 @@ namespace Entradas.GUI
             this.total.Visible = false;
             this.total.Width = 125;
             // 
-            // button2
+            // label6
             // 
-            this.button2.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(917, 398);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(105, 34);
-            this.button2.TabIndex = 85;
-            this.button2.Text = "Ver Reporte";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(18, 496);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(162, 28);
+            this.label6.TabIndex = 86;
+            this.label6.Text = "N° Registros: ";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(96, 496);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(58, 28);
+            this.label7.TabIndex = 87;
+            this.label7.Text = "0.00";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(226, 496);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(18, 28);
+            this.label8.TabIndex = 88;
+            this.label8.Text = "|";
+            // 
+            // lblRegistro
+            // 
+            this.lblRegistro.AutoSize = true;
+            this.lblRegistro.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRegistro.Location = new System.Drawing.Point(180, 496);
+            this.lblRegistro.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblRegistro.Name = "lblRegistro";
+            this.lblRegistro.Size = new System.Drawing.Size(25, 28);
+            this.lblRegistro.TabIndex = 89;
+            this.lblRegistro.Text = "0";
             // 
             // BuscarEntradas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1028, 443);
+            this.ClientSize = new System.Drawing.Size(1381, 545);
+            this.Controls.Add(this.lblRegistro);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label);
             this.Controls.Add(this.lblTotal);
@@ -443,7 +525,7 @@ namespace Entradas.GUI
             this.Controls.Add(this.dgvDatos);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "BuscarEntradas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BuscarEntradas";
@@ -475,6 +557,7 @@ namespace Entradas.GUI
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvDatos;
+        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridViewTextBoxColumn idEntrada;
         private System.Windows.Forms.DataGridViewTextBoxColumn documento_entrada;
         private System.Windows.Forms.DataGridViewTextBoxColumn fecha_entrada;
@@ -490,7 +573,11 @@ namespace Entradas.GUI
         private System.Windows.Forms.DataGridViewTextBoxColumn precio_compra;
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn sub_total;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn total;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblRegistro;
     }
 }

@@ -885,7 +885,7 @@ namespace DataManager
                 DataTable resultado = new DataTable();
                 String sentencia = @"SELECT a.idProducto, a.nombre, a.codigo, a.descripcion, a.precio_venta, c.idExistencia, c.existencia, b.idCategoria, b.categoria
                                     FROM productos a, categorias b, existencias c
-                                    WHERE a.idCategoria=b.idCategoria and a.idProducto=c.idExistencia;";
+                                    WHERE a.idCategoria=b.idCategoria and a.idProducto=c.idExistencia order by a.idProducto asc;";
                 DBOperacion operacion = new DBOperacion();
 
                 resultado = operacion.Consultar(sentencia);
