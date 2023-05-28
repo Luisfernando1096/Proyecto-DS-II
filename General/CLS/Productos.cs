@@ -74,10 +74,10 @@ namespace General.CLS
         public Boolean Eliminar()
         {
             Boolean resultado = false;
-            string sentencia;
-            sentencia = @"DELETE FROM productos " +
-                "WHERE idProducto = " + idProducto + ";";
-
+            string sentencia = @"START TRANSACTION;
+                     DELETE FROM existencias WHERE idProducto = " + idProducto + @";
+                     DELETE FROM productos WHERE idProducto = " + idProducto + @";
+                     COMMIT;";
             try
             {
                 DataManager.DBOperacion op = new DataManager.DBOperacion();
