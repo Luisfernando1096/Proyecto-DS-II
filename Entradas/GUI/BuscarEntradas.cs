@@ -77,6 +77,7 @@ namespace Entradas.GUI
                     dtpFecha.Text = dgvDatos.Rows[0].Cells["fecha_entrada"].Value.ToString();
                     txtUsuario.Text = dgvDatos.Rows[0].Cells["usuario"].Value.ToString();
                     lblTotal.Text = dgvDatos.Rows[0].Cells["total"].Value.ToString();
+                    lblRegistro.Text = dgvDatos.RowCount.ToString();
                 }
                 else
                 {
@@ -87,6 +88,7 @@ namespace Entradas.GUI
                     dtpFecha.Text = "";
                     txtUsuario.Text = "";
                     lblTotal.Text = "0.00";
+                    lblRegistro.Text = "0";
                 }
             }
             catch (Exception)

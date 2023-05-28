@@ -140,9 +140,9 @@ namespace Salidas.GUI
                 datosProducto.Cells["codigo"].Value.ToString(),
                 datosProducto.Cells["nombre"].Value.ToString(),
                 datosProducto.Cells["descripcion"].Value.ToString(),
+                txtCantidad.Text,
                 datosProducto.Cells["precio_venta"].Value.ToString(),
                 Double.Parse(txtCantidad.Text) * Double.Parse(datosProducto.Cells["precio_venta"].Value.ToString()),
-                txtCantidad.Text,
                 datosProducto.Cells["idExistencia"].Value.ToString()
             });
             //Calculando el total

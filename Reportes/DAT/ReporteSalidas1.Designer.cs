@@ -281,7 +281,7 @@ namespace Reportes.DAT {
             
             private global::System.Data.DataColumn columncodigo;
             
-            private global::System.Data.DataColumn columnnombre_producto;
+            private global::System.Data.DataColumn columnnombre;
             
             private global::System.Data.DataColumn columndescripcion;
             
@@ -348,9 +348,9 @@ namespace Reportes.DAT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn nombre_productoColumn {
+            public global::System.Data.DataColumn nombreColumn {
                 get {
-                    return this.columnnombre_producto;
+                    return this.columnnombre;
                 }
             }
             
@@ -479,11 +479,11 @@ namespace Reportes.DAT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SalidasRow AddSalidasRow(string codigo, string nombre_producto, string descripcion, string sub_total, string cantidad, string categoria, string total, string fecha_salida, string usuario, string nombres_cliente, string dui, string documento_salida, string precio_venta) {
+            public SalidasRow AddSalidasRow(string codigo, string nombre, string descripcion, string sub_total, string cantidad, string categoria, string total, string fecha_salida, string usuario, string nombres_cliente, string dui, string documento_salida, string precio_venta) {
                 SalidasRow rowSalidasRow = ((SalidasRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         codigo,
-                        nombre_producto,
+                        nombre,
                         descripcion,
                         sub_total,
                         cantidad,
@@ -518,7 +518,7 @@ namespace Reportes.DAT {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
                 this.columncodigo = base.Columns["codigo"];
-                this.columnnombre_producto = base.Columns["nombre_producto"];
+                this.columnnombre = base.Columns["nombre"];
                 this.columndescripcion = base.Columns["descripcion"];
                 this.columnsub_total = base.Columns["sub_total"];
                 this.columncantidad = base.Columns["cantidad"];
@@ -537,8 +537,8 @@ namespace Reportes.DAT {
             private void InitClass() {
                 this.columncodigo = new global::System.Data.DataColumn("codigo", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncodigo);
-                this.columnnombre_producto = new global::System.Data.DataColumn("nombre_producto", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnnombre_producto);
+                this.columnnombre = new global::System.Data.DataColumn("nombre", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnombre);
                 this.columndescripcion = new global::System.Data.DataColumn("descripcion", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndescripcion);
                 this.columnsub_total = new global::System.Data.DataColumn("sub_total", typeof(string), null, global::System.Data.MappingType.Element);
@@ -561,7 +561,7 @@ namespace Reportes.DAT {
                 base.Columns.Add(this.columndocumento_salida);
                 this.columnprecio_venta = new global::System.Data.DataColumn("precio_venta", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnprecio_venta);
-                this.columnnombre_producto.Caption = "codigo";
+                this.columnnombre.Caption = "codigo";
                 this.columndescripcion.Caption = "codigo";
                 this.columnsub_total.Caption = "codigo";
                 this.columncantidad.Caption = "codigo";
@@ -728,17 +728,17 @@ namespace Reportes.DAT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string nombre_producto {
+            public string nombre {
                 get {
                     try {
-                        return ((string)(this[this.tableSalidas.nombre_productoColumn]));
+                        return ((string)(this[this.tableSalidas.nombreColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'nombre_producto\' de la tabla \'Salidas\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'nombre\' de la tabla \'Salidas\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableSalidas.nombre_productoColumn] = value;
+                    this[this.tableSalidas.nombreColumn] = value;
                 }
             }
             
@@ -932,14 +932,14 @@ namespace Reportes.DAT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Isnombre_productoNull() {
-                return this.IsNull(this.tableSalidas.nombre_productoColumn);
+            public bool IsnombreNull() {
+                return this.IsNull(this.tableSalidas.nombreColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Setnombre_productoNull() {
-                this[this.tableSalidas.nombre_productoColumn] = global::System.Convert.DBNull;
+            public void SetnombreNull() {
+                this[this.tableSalidas.nombreColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
