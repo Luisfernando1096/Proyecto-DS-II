@@ -865,7 +865,9 @@ namespace DataManager
             try
             {
                 DataTable resultado = new DataTable();
-                String sentencia = @"select * from clientes;";
+                String sentencia = @"select nombres_cliente, apellidos_cliente, s.cantidad, s.total 
+                                        from clientes c, salidas s
+                                        where c.idCliente=s.idCliente order by s.total desc;";
                 DBOperacion operacion = new DBOperacion();
 
                 resultado = operacion.Consultar(sentencia);
