@@ -462,7 +462,6 @@ namespace SCDI.GUI
         private System.ComponentModel.BackgroundWorker bgwConexion;
         private System.Windows.Forms.ToolStripMenuItem gestionDeRolesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestioDeDepartamentosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem gestionDeProductosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionDeClasificacionesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionDeClientesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionDePermisosToolStripMenuItem;
