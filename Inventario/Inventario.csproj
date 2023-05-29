@@ -45,6 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GUI\InventarioGenerar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\InventarioGenerar.Designer.cs">
+      <DependentUpon>InventarioGenerar.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\KardexGenerar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,9 +70,15 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="GUI\InventarioGenerar.resx">
+      <DependentUpon>InventarioGenerar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\KardexGenerar.resx">
       <DependentUpon>KardexGenerar.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

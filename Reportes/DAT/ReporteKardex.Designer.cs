@@ -24,7 +24,7 @@ namespace Reportes.DAT {
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
     public partial class ReporteExistencias : global::System.Data.DataSet {
         
-        private existenciasDataTable tableexistencias;
+        private kardexDataTable tablekardex;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -54,8 +54,8 @@ namespace Reportes.DAT {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["existencias"] != null)) {
-                    base.Tables.Add(new existenciasDataTable(ds.Tables["existencias"]));
+                if ((ds.Tables["kardex"] != null)) {
+                    base.Tables.Add(new kardexDataTable(ds.Tables["kardex"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace Reportes.DAT {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public existenciasDataTable existencias {
+        public kardexDataTable kardex {
             get {
-                return this.tableexistencias;
+                return this.tablekardex;
             }
         }
         
@@ -152,8 +152,8 @@ namespace Reportes.DAT {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["existencias"] != null)) {
-                    base.Tables.Add(new existenciasDataTable(ds.Tables["existencias"]));
+                if ((ds.Tables["kardex"] != null)) {
+                    base.Tables.Add(new kardexDataTable(ds.Tables["kardex"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace Reportes.DAT {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableexistencias = ((existenciasDataTable)(base.Tables["existencias"]));
+            this.tablekardex = ((kardexDataTable)(base.Tables["kardex"]));
             if ((initTable == true)) {
-                if ((this.tableexistencias != null)) {
-                    this.tableexistencias.InitVars();
+                if ((this.tablekardex != null)) {
+                    this.tablekardex.InitVars();
                 }
             }
         }
@@ -204,13 +204,13 @@ namespace Reportes.DAT {
             this.Namespace = "http://tempuri.org/ReporteExistencias.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableexistencias = new existenciasDataTable();
-            base.Tables.Add(this.tableexistencias);
+            this.tablekardex = new kardexDataTable();
+            base.Tables.Add(this.tablekardex);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializeexistencias() {
+        private bool ShouldSerializekardex() {
             return false;
         }
         
@@ -270,25 +270,41 @@ namespace Reportes.DAT {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void existenciasRowChangeEventHandler(object sender, existenciasRowChangeEvent e);
+        public delegate void kardexRowChangeEventHandler(object sender, kardexRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class existenciasDataTable : global::System.Data.TypedTableBase<existenciasRow> {
+        public partial class kardexDataTable : global::System.Data.TypedTableBase<kardexRow> {
             
-            private global::System.Data.DataColumn columnidExistencia;
+            private global::System.Data.DataColumn columnproducto;
             
-            private global::System.Data.DataColumn columnexistencia;
+            private global::System.Data.DataColumn columntipo_movimiento;
             
-            private global::System.Data.DataColumn columnidProducto;
+            private global::System.Data.DataColumn columncantidadEntrada;
+            
+            private global::System.Data.DataColumn columncostoTotalEntrada;
+            
+            private global::System.Data.DataColumn columnprecioEntrada;
+            
+            private global::System.Data.DataColumn columncantidadSalida;
+            
+            private global::System.Data.DataColumn columnprecioSalida;
+            
+            private global::System.Data.DataColumn columncostoTotalSalida;
+            
+            private global::System.Data.DataColumn columncantidad;
+            
+            private global::System.Data.DataColumn columncostoTotal;
+            
+            private global::System.Data.DataColumn columncostoUnitario;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public existenciasDataTable() {
-                this.TableName = "existencias";
+            public kardexDataTable() {
+                this.TableName = "kardex";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -296,7 +312,7 @@ namespace Reportes.DAT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal existenciasDataTable(global::System.Data.DataTable table) {
+            internal kardexDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -313,32 +329,96 @@ namespace Reportes.DAT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected existenciasDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected kardexDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn idExistenciaColumn {
+            public global::System.Data.DataColumn productoColumn {
                 get {
-                    return this.columnidExistencia;
+                    return this.columnproducto;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn existenciaColumn {
+            public global::System.Data.DataColumn tipo_movimientoColumn {
                 get {
-                    return this.columnexistencia;
+                    return this.columntipo_movimiento;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn idProductoColumn {
+            public global::System.Data.DataColumn cantidadEntradaColumn {
                 get {
-                    return this.columnidProducto;
+                    return this.columncantidadEntrada;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn costoTotalEntradaColumn {
+                get {
+                    return this.columncostoTotalEntrada;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn precioEntradaColumn {
+                get {
+                    return this.columnprecioEntrada;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn cantidadSalidaColumn {
+                get {
+                    return this.columncantidadSalida;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn precioSalidaColumn {
+                get {
+                    return this.columnprecioSalida;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn costoTotalSalidaColumn {
+                get {
+                    return this.columncostoTotalSalida;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn cantidadColumn {
+                get {
+                    return this.columncantidad;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn costoTotalColumn {
+                get {
+                    return this.columncostoTotal;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn costoUnitarioColumn {
+                get {
+                    return this.columncostoUnitario;
                 }
             }
             
@@ -353,47 +433,55 @@ namespace Reportes.DAT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public existenciasRow this[int index] {
+            public kardexRow this[int index] {
                 get {
-                    return ((existenciasRow)(this.Rows[index]));
+                    return ((kardexRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event existenciasRowChangeEventHandler existenciasRowChanging;
+            public event kardexRowChangeEventHandler kardexRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event existenciasRowChangeEventHandler existenciasRowChanged;
+            public event kardexRowChangeEventHandler kardexRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event existenciasRowChangeEventHandler existenciasRowDeleting;
+            public event kardexRowChangeEventHandler kardexRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event existenciasRowChangeEventHandler existenciasRowDeleted;
+            public event kardexRowChangeEventHandler kardexRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void AddexistenciasRow(existenciasRow row) {
+            public void AddkardexRow(kardexRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public existenciasRow AddexistenciasRow(string idExistencia, string existencia, string idProducto) {
-                existenciasRow rowexistenciasRow = ((existenciasRow)(this.NewRow()));
+            public kardexRow AddkardexRow(string producto, string tipo_movimiento, string cantidadEntrada, string costoTotalEntrada, string precioEntrada, string cantidadSalida, string precioSalida, string costoTotalSalida, string cantidad, string costoTotal, string costoUnitario) {
+                kardexRow rowkardexRow = ((kardexRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        idExistencia,
-                        existencia,
-                        idProducto};
-                rowexistenciasRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowexistenciasRow);
-                return rowexistenciasRow;
+                        producto,
+                        tipo_movimiento,
+                        cantidadEntrada,
+                        costoTotalEntrada,
+                        precioEntrada,
+                        cantidadSalida,
+                        precioSalida,
+                        costoTotalSalida,
+                        cantidad,
+                        costoTotal,
+                        costoUnitario};
+                rowkardexRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowkardexRow);
+                return rowkardexRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                existenciasDataTable cln = ((existenciasDataTable)(base.Clone()));
+                kardexDataTable cln = ((kardexDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -401,52 +489,81 @@ namespace Reportes.DAT {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new existenciasDataTable();
+                return new kardexDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
-                this.columnidExistencia = base.Columns["idExistencia"];
-                this.columnexistencia = base.Columns["existencia"];
-                this.columnidProducto = base.Columns["idProducto"];
+                this.columnproducto = base.Columns["producto"];
+                this.columntipo_movimiento = base.Columns["tipo_movimiento"];
+                this.columncantidadEntrada = base.Columns["cantidadEntrada"];
+                this.columncostoTotalEntrada = base.Columns["costoTotalEntrada"];
+                this.columnprecioEntrada = base.Columns["precioEntrada"];
+                this.columncantidadSalida = base.Columns["cantidadSalida"];
+                this.columnprecioSalida = base.Columns["precioSalida"];
+                this.columncostoTotalSalida = base.Columns["costoTotalSalida"];
+                this.columncantidad = base.Columns["cantidad"];
+                this.columncostoTotal = base.Columns["costoTotal"];
+                this.columncostoUnitario = base.Columns["costoUnitario"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columnidExistencia = new global::System.Data.DataColumn("idExistencia", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnidExistencia);
-                this.columnexistencia = new global::System.Data.DataColumn("existencia", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnexistencia);
-                this.columnidProducto = new global::System.Data.DataColumn("idProducto", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnidProducto);
+                this.columnproducto = new global::System.Data.DataColumn("producto", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnproducto);
+                this.columntipo_movimiento = new global::System.Data.DataColumn("tipo_movimiento", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntipo_movimiento);
+                this.columncantidadEntrada = new global::System.Data.DataColumn("cantidadEntrada", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncantidadEntrada);
+                this.columncostoTotalEntrada = new global::System.Data.DataColumn("costoTotalEntrada", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncostoTotalEntrada);
+                this.columnprecioEntrada = new global::System.Data.DataColumn("precioEntrada", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnprecioEntrada);
+                this.columncantidadSalida = new global::System.Data.DataColumn("cantidadSalida", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncantidadSalida);
+                this.columnprecioSalida = new global::System.Data.DataColumn("precioSalida", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnprecioSalida);
+                this.columncostoTotalSalida = new global::System.Data.DataColumn("costoTotalSalida", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncostoTotalSalida);
+                this.columncantidad = new global::System.Data.DataColumn("cantidad", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncantidad);
+                this.columncostoTotal = new global::System.Data.DataColumn("costoTotal", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncostoTotal);
+                this.columncostoUnitario = new global::System.Data.DataColumn("costoUnitario", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncostoUnitario);
+                this.columntipo_movimiento.Caption = "DataColumn2";
+                this.columncantidadEntrada.Caption = "DataColumn2";
+                this.columnprecioEntrada.Caption = "DataColumn1";
+                this.columncantidadSalida.Caption = "DataColumn1";
+                this.columnprecioSalida.Caption = "DataColumn1";
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public existenciasRow NewexistenciasRow() {
-                return ((existenciasRow)(this.NewRow()));
+            public kardexRow NewkardexRow() {
+                return ((kardexRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new existenciasRow(builder);
+                return new kardexRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(existenciasRow);
+                return typeof(kardexRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.existenciasRowChanged != null)) {
-                    this.existenciasRowChanged(this, new existenciasRowChangeEvent(((existenciasRow)(e.Row)), e.Action));
+                if ((this.kardexRowChanged != null)) {
+                    this.kardexRowChanged(this, new kardexRowChangeEvent(((kardexRow)(e.Row)), e.Action));
                 }
             }
             
@@ -454,8 +571,8 @@ namespace Reportes.DAT {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.existenciasRowChanging != null)) {
-                    this.existenciasRowChanging(this, new existenciasRowChangeEvent(((existenciasRow)(e.Row)), e.Action));
+                if ((this.kardexRowChanging != null)) {
+                    this.kardexRowChanging(this, new kardexRowChangeEvent(((kardexRow)(e.Row)), e.Action));
                 }
             }
             
@@ -463,8 +580,8 @@ namespace Reportes.DAT {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.existenciasRowDeleted != null)) {
-                    this.existenciasRowDeleted(this, new existenciasRowChangeEvent(((existenciasRow)(e.Row)), e.Action));
+                if ((this.kardexRowDeleted != null)) {
+                    this.kardexRowDeleted(this, new kardexRowChangeEvent(((kardexRow)(e.Row)), e.Action));
                 }
             }
             
@@ -472,14 +589,14 @@ namespace Reportes.DAT {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.existenciasRowDeleting != null)) {
-                    this.existenciasRowDeleting(this, new existenciasRowChangeEvent(((existenciasRow)(e.Row)), e.Action));
+                if ((this.kardexRowDeleting != null)) {
+                    this.kardexRowDeleting(this, new kardexRowChangeEvent(((kardexRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void RemoveexistenciasRow(existenciasRow row) {
+            public void RemovekardexRow(kardexRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -506,7 +623,7 @@ namespace Reportes.DAT {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "existenciasDataTable";
+                attribute2.FixedValue = "kardexDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -550,99 +667,323 @@ namespace Reportes.DAT {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class existenciasRow : global::System.Data.DataRow {
+        public partial class kardexRow : global::System.Data.DataRow {
             
-            private existenciasDataTable tableexistencias;
+            private kardexDataTable tablekardex;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal existenciasRow(global::System.Data.DataRowBuilder rb) : 
+            internal kardexRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableexistencias = ((existenciasDataTable)(this.Table));
+                this.tablekardex = ((kardexDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string idExistencia {
+            public string producto {
                 get {
                     try {
-                        return ((string)(this[this.tableexistencias.idExistenciaColumn]));
+                        return ((string)(this[this.tablekardex.productoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'idExistencia\' de la tabla \'existencias\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'producto\' de la tabla \'kardex\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableexistencias.idExistenciaColumn] = value;
+                    this[this.tablekardex.productoColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string existencia {
+            public string tipo_movimiento {
                 get {
                     try {
-                        return ((string)(this[this.tableexistencias.existenciaColumn]));
+                        return ((string)(this[this.tablekardex.tipo_movimientoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'existencia\' de la tabla \'existencias\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'tipo_movimiento\' de la tabla \'kardex\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableexistencias.existenciaColumn] = value;
+                    this[this.tablekardex.tipo_movimientoColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string idProducto {
+            public string cantidadEntrada {
                 get {
                     try {
-                        return ((string)(this[this.tableexistencias.idProductoColumn]));
+                        return ((string)(this[this.tablekardex.cantidadEntradaColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'idProducto\' de la tabla \'existencias\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'cantidadEntrada\' de la tabla \'kardex\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableexistencias.idProductoColumn] = value;
+                    this[this.tablekardex.cantidadEntradaColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsidExistenciaNull() {
-                return this.IsNull(this.tableexistencias.idExistenciaColumn);
+            public string costoTotalEntrada {
+                get {
+                    try {
+                        return ((string)(this[this.tablekardex.costoTotalEntradaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'costoTotalEntrada\' de la tabla \'kardex\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablekardex.costoTotalEntradaColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetidExistenciaNull() {
-                this[this.tableexistencias.idExistenciaColumn] = global::System.Convert.DBNull;
+            public string precioEntrada {
+                get {
+                    try {
+                        return ((string)(this[this.tablekardex.precioEntradaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'precioEntrada\' de la tabla \'kardex\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablekardex.precioEntradaColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsexistenciaNull() {
-                return this.IsNull(this.tableexistencias.existenciaColumn);
+            public string cantidadSalida {
+                get {
+                    try {
+                        return ((string)(this[this.tablekardex.cantidadSalidaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'cantidadSalida\' de la tabla \'kardex\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablekardex.cantidadSalidaColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetexistenciaNull() {
-                this[this.tableexistencias.existenciaColumn] = global::System.Convert.DBNull;
+            public string precioSalida {
+                get {
+                    try {
+                        return ((string)(this[this.tablekardex.precioSalidaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'precioSalida\' de la tabla \'kardex\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablekardex.precioSalidaColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsidProductoNull() {
-                return this.IsNull(this.tableexistencias.idProductoColumn);
+            public string costoTotalSalida {
+                get {
+                    try {
+                        return ((string)(this[this.tablekardex.costoTotalSalidaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'costoTotalSalida\' de la tabla \'kardex\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablekardex.costoTotalSalidaColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetidProductoNull() {
-                this[this.tableexistencias.idProductoColumn] = global::System.Convert.DBNull;
+            public string cantidad {
+                get {
+                    try {
+                        return ((string)(this[this.tablekardex.cantidadColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'cantidad\' de la tabla \'kardex\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablekardex.cantidadColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string costoTotal {
+                get {
+                    try {
+                        return ((string)(this[this.tablekardex.costoTotalColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'costoTotal\' de la tabla \'kardex\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablekardex.costoTotalColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string costoUnitario {
+                get {
+                    try {
+                        return ((string)(this[this.tablekardex.costoUnitarioColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'costoUnitario\' de la tabla \'kardex\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablekardex.costoUnitarioColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsproductoNull() {
+                return this.IsNull(this.tablekardex.productoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetproductoNull() {
+                this[this.tablekardex.productoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Istipo_movimientoNull() {
+                return this.IsNull(this.tablekardex.tipo_movimientoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Settipo_movimientoNull() {
+                this[this.tablekardex.tipo_movimientoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IscantidadEntradaNull() {
+                return this.IsNull(this.tablekardex.cantidadEntradaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetcantidadEntradaNull() {
+                this[this.tablekardex.cantidadEntradaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IscostoTotalEntradaNull() {
+                return this.IsNull(this.tablekardex.costoTotalEntradaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetcostoTotalEntradaNull() {
+                this[this.tablekardex.costoTotalEntradaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsprecioEntradaNull() {
+                return this.IsNull(this.tablekardex.precioEntradaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetprecioEntradaNull() {
+                this[this.tablekardex.precioEntradaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IscantidadSalidaNull() {
+                return this.IsNull(this.tablekardex.cantidadSalidaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetcantidadSalidaNull() {
+                this[this.tablekardex.cantidadSalidaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsprecioSalidaNull() {
+                return this.IsNull(this.tablekardex.precioSalidaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetprecioSalidaNull() {
+                this[this.tablekardex.precioSalidaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IscostoTotalSalidaNull() {
+                return this.IsNull(this.tablekardex.costoTotalSalidaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetcostoTotalSalidaNull() {
+                this[this.tablekardex.costoTotalSalidaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IscantidadNull() {
+                return this.IsNull(this.tablekardex.cantidadColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetcantidadNull() {
+                this[this.tablekardex.cantidadColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IscostoTotalNull() {
+                return this.IsNull(this.tablekardex.costoTotalColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetcostoTotalNull() {
+                this[this.tablekardex.costoTotalColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IscostoUnitarioNull() {
+                return this.IsNull(this.tablekardex.costoUnitarioColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetcostoUnitarioNull() {
+                this[this.tablekardex.costoUnitarioColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -650,22 +991,22 @@ namespace Reportes.DAT {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class existenciasRowChangeEvent : global::System.EventArgs {
+        public class kardexRowChangeEvent : global::System.EventArgs {
             
-            private existenciasRow eventRow;
+            private kardexRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public existenciasRowChangeEvent(existenciasRow row, global::System.Data.DataRowAction action) {
+            public kardexRowChangeEvent(kardexRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public existenciasRow Row {
+            public kardexRow Row {
                 get {
                     return this.eventRow;
                 }

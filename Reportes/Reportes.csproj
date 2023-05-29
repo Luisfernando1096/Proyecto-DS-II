@@ -81,13 +81,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ReporteEntrada.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DAT\ReporteExistencias.cs">
-      <DependentUpon>ReporteExistencias.xsd</DependentUpon>
+    <Compile Include="DAT\ReporteKardex.cs">
+      <DependentUpon>ReporteKardex.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DAT\ReporteExistencias.Designer.cs">
+    <Compile Include="DAT\ReporteKardex.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ReporteExistencias.xsd</DependentUpon>
+      <DependentUpon>ReporteKardex.xsd</DependentUpon>
     </Compile>
     <Compile Include="DAT\ReporteInventario.cs">
       <DependentUpon>ReporteInventario.xsd</DependentUpon>
@@ -120,11 +120,11 @@
     <Compile Include="GUI\VisorEntradas.Designer.cs">
       <DependentUpon>VisorEntradas.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\VisorExistencias.cs">
+    <Compile Include="GUI\VisorKardex.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\VisorExistencias.Designer.cs">
-      <DependentUpon>VisorExistencias.cs</DependentUpon>
+    <Compile Include="GUI\VisorKardex.Designer.cs">
+      <DependentUpon>VisorKardex.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\VisorInventario.cs">
       <SubType>Form</SubType>
@@ -143,6 +143,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Clientes.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="REP\Kardex.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Kardex.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="REP\Entradas.cs">
@@ -180,8 +186,8 @@
     <EmbeddedResource Include="GUI\VisorEntradas.resx">
       <DependentUpon>VisorEntradas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\VisorExistencias.resx">
-      <DependentUpon>VisorExistencias.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\VisorKardex.resx">
+      <DependentUpon>VisorKardex.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\VisorInventario.resx">
       <DependentUpon>VisorInventario.cs</DependentUpon>
@@ -192,6 +198,10 @@
     <EmbeddedResource Include="REP\Clientes.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Clientes.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REP\Kardex.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Kardex.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="REP\Entradas.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -237,16 +247,16 @@
     <None Include="DAT\ReporteEntrada.xss">
       <DependentUpon>ReporteEntrada.xsd</DependentUpon>
     </None>
-    <None Include="DAT\ReporteExistencias.xsc">
-      <DependentUpon>ReporteExistencias.xsd</DependentUpon>
+    <None Include="DAT\ReporteKardex.xsc">
+      <DependentUpon>ReporteKardex.xsd</DependentUpon>
     </None>
-    <None Include="DAT\ReporteExistencias.xsd">
+    <None Include="DAT\ReporteKardex.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ReporteExistencias.Designer.cs</LastGenOutput>
+      <LastGenOutput>ReporteKardex.Designer.cs</LastGenOutput>
     </None>
-    <None Include="DAT\ReporteExistencias.xss">
-      <DependentUpon>ReporteExistencias.xsd</DependentUpon>
+    <None Include="DAT\ReporteKardex.xss">
+      <DependentUpon>ReporteKardex.xsd</DependentUpon>
     </None>
     <None Include="DAT\ReporteInventario.xsc">
       <DependentUpon>ReporteInventario.xsd</DependentUpon>

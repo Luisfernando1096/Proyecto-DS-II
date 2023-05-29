@@ -421,7 +421,7 @@ namespace SCDI.GUI
 
         private void kardexToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Inventario.GUI.KardexGenerar f = new Inventario.GUI.KardexGenerar();
+            Inventario.GUI.InventarioGenerar f = new Inventario.GUI.InventarioGenerar();
             f.MdiParent = this;
             f.Show();
         }
@@ -605,6 +605,13 @@ namespace SCDI.GUI
             {
                 throw;
             }
+        }
+
+        private void kardexToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Inventario.GUI.KardexGenerar f = new Inventario.GUI.KardexGenerar();
+            f.MdiParent = this;
+            f.Show();
         }
     }
 }

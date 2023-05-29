@@ -60,15 +60,16 @@ namespace SCDI.GUI
             this.entradaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevaEntradaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.buscarEntradaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listaEntradasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inventarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kardexToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.kardexToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.datosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.respaldarBDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cerrarSesionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bgwConexion = new System.ComponentModel.BackgroundWorker();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.listaEntradasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -82,10 +83,9 @@ namespace SCDI.GUI
             this.lblRol,
             this.lblConexionRed,
             this.lblConexionGreen});
-            this.statusStrip.Location = new System.Drawing.Point(0, 654);
+            this.statusStrip.Location = new System.Drawing.Point(0, 530);
             this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Padding = new System.Windows.Forms.Padding(1, 0, 19, 0);
-            this.statusStrip.Size = new System.Drawing.Size(1528, 36);
+            this.statusStrip.Size = new System.Drawing.Size(1040, 31);
             this.statusStrip.TabIndex = 2;
             this.statusStrip.Text = "StatusStrip";
             // 
@@ -95,7 +95,7 @@ namespace SCDI.GUI
             this.lblUsuario.Font = new System.Drawing.Font("Arial Narrow", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsuario.Image = ((System.Drawing.Image)(resources.GetObject("lblUsuario.Image")));
             this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(98, 30);
+            this.lblUsuario.Size = new System.Drawing.Size(84, 26);
             this.lblUsuario.Text = "Usuario";
             // 
             // lblRol
@@ -103,14 +103,14 @@ namespace SCDI.GUI
             this.lblRol.Font = new System.Drawing.Font("Arial Narrow", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRol.Image = ((System.Drawing.Image)(resources.GetObject("lblRol.Image")));
             this.lblRol.Name = "lblRol";
-            this.lblRol.Size = new System.Drawing.Size(59, 30);
+            this.lblRol.Size = new System.Drawing.Size(52, 26);
             this.lblRol.Text = "Rol";
             // 
             // lblConexionRed
             // 
             this.lblConexionRed.Image = ((System.Drawing.Image)(resources.GetObject("lblConexionRed.Image")));
             this.lblConexionRed.Name = "lblConexionRed";
-            this.lblConexionRed.Size = new System.Drawing.Size(173, 31);
+            this.lblConexionRed.Size = new System.Drawing.Size(146, 26);
             this.lblConexionRed.Text = "Desconectado";
             this.lblConexionRed.Visible = false;
             // 
@@ -118,7 +118,7 @@ namespace SCDI.GUI
             // 
             this.lblConexionGreen.Image = ((System.Drawing.Image)(resources.GetObject("lblConexionGreen.Image")));
             this.lblConexionGreen.Name = "lblConexionGreen";
-            this.lblConexionGreen.Size = new System.Drawing.Size(139, 31);
+            this.lblConexionGreen.Size = new System.Drawing.Size(118, 26);
             this.lblConexionGreen.Text = "Conectado";
             this.lblConexionGreen.Visible = false;
             // 
@@ -137,8 +137,8 @@ namespace SCDI.GUI
             this.cerrarSesionToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1528, 72);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(3, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(1040, 72);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -162,14 +162,14 @@ namespace SCDI.GUI
             this.generalToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("generalToolStripMenuItem.Image")));
             this.generalToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.generalToolStripMenuItem.Name = "generalToolStripMenuItem";
-            this.generalToolStripMenuItem.Size = new System.Drawing.Size(170, 68);
+            this.generalToolStripMenuItem.Size = new System.Drawing.Size(146, 68);
             this.generalToolStripMenuItem.Text = "General";
             // 
             // gestionDeUsuariosToolStripMenuItem
             // 
             this.gestionDeUsuariosToolStripMenuItem.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gestionDeUsuariosToolStripMenuItem.Name = "gestionDeUsuariosToolStripMenuItem";
-            this.gestionDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(353, 34);
+            this.gestionDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(285, 28);
             this.gestionDeUsuariosToolStripMenuItem.Text = "Gestion de Usuarios";
             this.gestionDeUsuariosToolStripMenuItem.Click += new System.EventHandler(this.gestionDeUsuariosToolStripMenuItem_Click);
             // 
@@ -177,7 +177,7 @@ namespace SCDI.GUI
             // 
             this.gestionDeEmpleadosToolStripMenuItem.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gestionDeEmpleadosToolStripMenuItem.Name = "gestionDeEmpleadosToolStripMenuItem";
-            this.gestionDeEmpleadosToolStripMenuItem.Size = new System.Drawing.Size(353, 34);
+            this.gestionDeEmpleadosToolStripMenuItem.Size = new System.Drawing.Size(285, 28);
             this.gestionDeEmpleadosToolStripMenuItem.Text = "Gestion de Empleados";
             this.gestionDeEmpleadosToolStripMenuItem.Click += new System.EventHandler(this.gestionDeEmpleadosToolStripMenuItem_Click);
             // 
@@ -185,7 +185,7 @@ namespace SCDI.GUI
             // 
             this.gestioDeDepartamentosToolStripMenuItem.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gestioDeDepartamentosToolStripMenuItem.Name = "gestioDeDepartamentosToolStripMenuItem";
-            this.gestioDeDepartamentosToolStripMenuItem.Size = new System.Drawing.Size(353, 34);
+            this.gestioDeDepartamentosToolStripMenuItem.Size = new System.Drawing.Size(285, 28);
             this.gestioDeDepartamentosToolStripMenuItem.Text = "Gestion de Departamentos";
             this.gestioDeDepartamentosToolStripMenuItem.Click += new System.EventHandler(this.gestioDeDepartamentosToolStripMenuItem_Click);
             // 
@@ -193,7 +193,7 @@ namespace SCDI.GUI
             // 
             this.gestionDeClasificacionesToolStripMenuItem.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gestionDeClasificacionesToolStripMenuItem.Name = "gestionDeClasificacionesToolStripMenuItem";
-            this.gestionDeClasificacionesToolStripMenuItem.Size = new System.Drawing.Size(353, 34);
+            this.gestionDeClasificacionesToolStripMenuItem.Size = new System.Drawing.Size(285, 28);
             this.gestionDeClasificacionesToolStripMenuItem.Text = "Gestion de Clasificaciones";
             this.gestionDeClasificacionesToolStripMenuItem.Click += new System.EventHandler(this.gestionDeClasificacionesToolStripMenuItem_Click);
             // 
@@ -201,7 +201,7 @@ namespace SCDI.GUI
             // 
             this.gestionDeRolesToolStripMenuItem.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gestionDeRolesToolStripMenuItem.Name = "gestionDeRolesToolStripMenuItem";
-            this.gestionDeRolesToolStripMenuItem.Size = new System.Drawing.Size(353, 34);
+            this.gestionDeRolesToolStripMenuItem.Size = new System.Drawing.Size(285, 28);
             this.gestionDeRolesToolStripMenuItem.Text = "Gestion de Roles";
             this.gestionDeRolesToolStripMenuItem.Click += new System.EventHandler(this.gestionDeRolesToolStripMenuItem_Click);
             // 
@@ -209,7 +209,7 @@ namespace SCDI.GUI
             // 
             this.gestionDeClientesToolStripMenuItem.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gestionDeClientesToolStripMenuItem.Name = "gestionDeClientesToolStripMenuItem";
-            this.gestionDeClientesToolStripMenuItem.Size = new System.Drawing.Size(353, 34);
+            this.gestionDeClientesToolStripMenuItem.Size = new System.Drawing.Size(285, 28);
             this.gestionDeClientesToolStripMenuItem.Text = "Gestion de Clientes";
             this.gestionDeClientesToolStripMenuItem.Click += new System.EventHandler(this.gestionDeClientesToolStripMenuItem_Click);
             // 
@@ -217,7 +217,7 @@ namespace SCDI.GUI
             // 
             this.gestionDePermisosToolStripMenuItem.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gestionDePermisosToolStripMenuItem.Name = "gestionDePermisosToolStripMenuItem";
-            this.gestionDePermisosToolStripMenuItem.Size = new System.Drawing.Size(353, 34);
+            this.gestionDePermisosToolStripMenuItem.Size = new System.Drawing.Size(285, 28);
             this.gestionDePermisosToolStripMenuItem.Text = "Gestion de Permisos";
             this.gestionDePermisosToolStripMenuItem.Click += new System.EventHandler(this.gestionDePermisosToolStripMenuItem_Click);
             // 
@@ -225,7 +225,7 @@ namespace SCDI.GUI
             // 
             this.toolStripMenuItem2.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(353, 34);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(285, 28);
             this.toolStripMenuItem2.Text = "Gestion de Productos";
             this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
@@ -233,7 +233,7 @@ namespace SCDI.GUI
             // 
             this.gestionDeCategoriasToolStripMenuItem.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gestionDeCategoriasToolStripMenuItem.Name = "gestionDeCategoriasToolStripMenuItem";
-            this.gestionDeCategoriasToolStripMenuItem.Size = new System.Drawing.Size(353, 34);
+            this.gestionDeCategoriasToolStripMenuItem.Size = new System.Drawing.Size(285, 28);
             this.gestionDeCategoriasToolStripMenuItem.Text = "Gestion de Categorias";
             this.gestionDeCategoriasToolStripMenuItem.Click += new System.EventHandler(this.gestionDeCategoriasToolStripMenuItem_Click);
             // 
@@ -241,7 +241,7 @@ namespace SCDI.GUI
             // 
             this.gestionDeMunicipiosToolStripMenuItem.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gestionDeMunicipiosToolStripMenuItem.Name = "gestionDeMunicipiosToolStripMenuItem";
-            this.gestionDeMunicipiosToolStripMenuItem.Size = new System.Drawing.Size(353, 34);
+            this.gestionDeMunicipiosToolStripMenuItem.Size = new System.Drawing.Size(285, 28);
             this.gestionDeMunicipiosToolStripMenuItem.Text = "Gestion de municipios";
             this.gestionDeMunicipiosToolStripMenuItem.Click += new System.EventHandler(this.gestionDeMunicipiosToolStripMenuItem_Click);
             // 
@@ -249,7 +249,7 @@ namespace SCDI.GUI
             // 
             this.gestionDeProveedoresToolStripMenuItem.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gestionDeProveedoresToolStripMenuItem.Name = "gestionDeProveedoresToolStripMenuItem";
-            this.gestionDeProveedoresToolStripMenuItem.Size = new System.Drawing.Size(353, 34);
+            this.gestionDeProveedoresToolStripMenuItem.Size = new System.Drawing.Size(285, 28);
             this.gestionDeProveedoresToolStripMenuItem.Text = "Gestion de Proveedores";
             this.gestionDeProveedoresToolStripMenuItem.Click += new System.EventHandler(this.gestionDeProveedoresToolStripMenuItem_Click);
             // 
@@ -257,7 +257,7 @@ namespace SCDI.GUI
             // 
             this.gestionDeDireccionesToolStripMenuItem.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gestionDeDireccionesToolStripMenuItem.Name = "gestionDeDireccionesToolStripMenuItem";
-            this.gestionDeDireccionesToolStripMenuItem.Size = new System.Drawing.Size(353, 34);
+            this.gestionDeDireccionesToolStripMenuItem.Size = new System.Drawing.Size(285, 28);
             this.gestionDeDireccionesToolStripMenuItem.Text = "Gestion de Direcciones";
             this.gestionDeDireccionesToolStripMenuItem.Click += new System.EventHandler(this.gestionDeDireccionesToolStripMenuItem_Click_1);
             // 
@@ -269,14 +269,14 @@ namespace SCDI.GUI
             this.reportesToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("reportesToolStripMenuItem.Image")));
             this.reportesToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
-            this.reportesToolStripMenuItem.Size = new System.Drawing.Size(201, 68);
+            this.reportesToolStripMenuItem.Size = new System.Drawing.Size(175, 68);
             this.reportesToolStripMenuItem.Text = "Reportes";
             // 
             // clientesToolStripMenuItem
             // 
             this.clientesToolStripMenuItem.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(178, 34);
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(144, 28);
             this.clientesToolStripMenuItem.Text = "Clientes";
             this.clientesToolStripMenuItem.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
             // 
@@ -290,14 +290,14 @@ namespace SCDI.GUI
             this.toolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem1.Image")));
             this.toolStripMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(164, 68);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(141, 68);
             this.toolStripMenuItem1.Text = "Salidas";
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(231, 34);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(187, 28);
             this.toolStripMenuItem3.Text = "Nueva Salida";
             this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
             // 
@@ -305,7 +305,7 @@ namespace SCDI.GUI
             // 
             this.toolStripMenuItem4.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(231, 34);
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(187, 28);
             this.toolStripMenuItem4.Text = "Buscar Salida";
             this.toolStripMenuItem4.Click += new System.EventHandler(this.toolStripMenuItem4_Click);
             // 
@@ -313,7 +313,7 @@ namespace SCDI.GUI
             // 
             this.listaSalidasToolStripMenuItem.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
             this.listaSalidasToolStripMenuItem.Name = "listaSalidasToolStripMenuItem";
-            this.listaSalidasToolStripMenuItem.Size = new System.Drawing.Size(231, 34);
+            this.listaSalidasToolStripMenuItem.Size = new System.Drawing.Size(187, 28);
             this.listaSalidasToolStripMenuItem.Text = "Lista Salidas";
             this.listaSalidasToolStripMenuItem.Click += new System.EventHandler(this.listaSalidasToolStripMenuItem_Click);
             // 
@@ -327,14 +327,14 @@ namespace SCDI.GUI
             this.entradaToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("entradaToolStripMenuItem.Image")));
             this.entradaToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.entradaToolStripMenuItem.Name = "entradaToolStripMenuItem";
-            this.entradaToolStripMenuItem.Size = new System.Drawing.Size(185, 68);
+            this.entradaToolStripMenuItem.Size = new System.Drawing.Size(163, 68);
             this.entradaToolStripMenuItem.Text = "Entrada";
             // 
             // nuevaEntradaToolStripMenuItem
             // 
             this.nuevaEntradaToolStripMenuItem.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nuevaEntradaToolStripMenuItem.Name = "nuevaEntradaToolStripMenuItem";
-            this.nuevaEntradaToolStripMenuItem.Size = new System.Drawing.Size(248, 34);
+            this.nuevaEntradaToolStripMenuItem.Size = new System.Drawing.Size(200, 28);
             this.nuevaEntradaToolStripMenuItem.Text = "Nueva Entrada";
             this.nuevaEntradaToolStripMenuItem.Click += new System.EventHandler(this.nuevaEntradaToolStripMenuItem_Click);
             // 
@@ -342,33 +342,50 @@ namespace SCDI.GUI
             // 
             this.buscarEntradaToolStripMenuItem.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buscarEntradaToolStripMenuItem.Name = "buscarEntradaToolStripMenuItem";
-            this.buscarEntradaToolStripMenuItem.Size = new System.Drawing.Size(248, 34);
+            this.buscarEntradaToolStripMenuItem.Size = new System.Drawing.Size(200, 28);
             this.buscarEntradaToolStripMenuItem.Text = "Buscar Entrada";
             this.buscarEntradaToolStripMenuItem.Click += new System.EventHandler(this.buscarEntradaToolStripMenuItem_Click_1);
+            // 
+            // listaEntradasToolStripMenuItem
+            // 
+            this.listaEntradasToolStripMenuItem.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
+            this.listaEntradasToolStripMenuItem.Name = "listaEntradasToolStripMenuItem";
+            this.listaEntradasToolStripMenuItem.Size = new System.Drawing.Size(200, 28);
+            this.listaEntradasToolStripMenuItem.Text = "Lista Entradas";
+            this.listaEntradasToolStripMenuItem.Click += new System.EventHandler(this.listaEntradasToolStripMenuItem_Click);
             // 
             // inventarioToolStripMenuItem
             // 
             this.inventarioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.kardexToolStripMenuItem});
+            this.kardexToolStripMenuItem,
+            this.kardexToolStripMenuItem1});
             this.inventarioToolStripMenuItem.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.inventarioToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("inventarioToolStripMenuItem.Image")));
             this.inventarioToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.inventarioToolStripMenuItem.Name = "inventarioToolStripMenuItem";
-            this.inventarioToolStripMenuItem.Size = new System.Drawing.Size(196, 68);
+            this.inventarioToolStripMenuItem.Size = new System.Drawing.Size(167, 68);
             this.inventarioToolStripMenuItem.Text = "Inventario";
             // 
             // kardexToolStripMenuItem
             // 
             this.kardexToolStripMenuItem.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.kardexToolStripMenuItem.Name = "kardexToolStripMenuItem";
-            this.kardexToolStripMenuItem.Size = new System.Drawing.Size(169, 34);
-            this.kardexToolStripMenuItem.Text = "Kardex";
+            this.kardexToolStripMenuItem.Size = new System.Drawing.Size(180, 28);
+            this.kardexToolStripMenuItem.Text = "Inventario";
             this.kardexToolStripMenuItem.Click += new System.EventHandler(this.kardexToolStripMenuItem_Click);
+            // 
+            // kardexToolStripMenuItem1
+            // 
+            this.kardexToolStripMenuItem1.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kardexToolStripMenuItem1.Name = "kardexToolStripMenuItem1";
+            this.kardexToolStripMenuItem1.Size = new System.Drawing.Size(180, 28);
+            this.kardexToolStripMenuItem1.Text = "Kardex";
+            this.kardexToolStripMenuItem1.Click += new System.EventHandler(this.kardexToolStripMenuItem1_Click);
             // 
             // toolStripMenuItem5
             // 
             this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-            this.toolStripMenuItem5.Size = new System.Drawing.Size(14, 68);
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(12, 68);
             // 
             // datosToolStripMenuItem
             // 
@@ -377,13 +394,13 @@ namespace SCDI.GUI
             this.datosToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("datosToolStripMenuItem.Image")));
             this.datosToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.datosToolStripMenuItem.Name = "datosToolStripMenuItem";
-            this.datosToolStripMenuItem.Size = new System.Drawing.Size(130, 68);
+            this.datosToolStripMenuItem.Size = new System.Drawing.Size(114, 68);
             this.datosToolStripMenuItem.Text = "Datos";
             // 
             // respaldarBDToolStripMenuItem
             // 
             this.respaldarBDToolStripMenuItem.Name = "respaldarBDToolStripMenuItem";
-            this.respaldarBDToolStripMenuItem.Size = new System.Drawing.Size(228, 34);
+            this.respaldarBDToolStripMenuItem.Size = new System.Drawing.Size(183, 28);
             this.respaldarBDToolStripMenuItem.Text = "Respaldar BD";
             this.respaldarBDToolStripMenuItem.Click += new System.EventHandler(this.respaldarBDToolStripMenuItem_Click);
             // 
@@ -392,7 +409,7 @@ namespace SCDI.GUI
             this.cerrarSesionToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("cerrarSesionToolStripMenuItem.Image")));
             this.cerrarSesionToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.cerrarSesionToolStripMenuItem.Name = "cerrarSesionToolStripMenuItem";
-            this.cerrarSesionToolStripMenuItem.Size = new System.Drawing.Size(218, 68);
+            this.cerrarSesionToolStripMenuItem.Size = new System.Drawing.Size(188, 68);
             this.cerrarSesionToolStripMenuItem.Text = "Cerrar sesion";
             this.cerrarSesionToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesionToolStripMenuItem_Click);
             // 
@@ -408,26 +425,17 @@ namespace SCDI.GUI
             this.timer1.Interval = 5000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // listaEntradasToolStripMenuItem
-            // 
-            this.listaEntradasToolStripMenuItem.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
-            this.listaEntradasToolStripMenuItem.Name = "listaEntradasToolStripMenuItem";
-            this.listaEntradasToolStripMenuItem.Size = new System.Drawing.Size(248, 34);
-            this.listaEntradasToolStripMenuItem.Text = "Lista Entradas";
-            this.listaEntradasToolStripMenuItem.Click += new System.EventHandler(this.listaEntradasToolStripMenuItem_Click);
-            // 
             // Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1528, 690);
+            this.ClientSize = new System.Drawing.Size(1040, 561);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu principal";
@@ -482,6 +490,7 @@ namespace SCDI.GUI
         private System.Windows.Forms.ToolStripMenuItem gestionDeDireccionesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listaSalidasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listaEntradasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem kardexToolStripMenuItem1;
     }
 }
 

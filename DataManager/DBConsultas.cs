@@ -33,24 +33,26 @@ namespace DataManager
             
         }
 
-        public static DataTable ReporteExistencias()
+        public static DataTable ReporteKardex(string codigo)
         {
             try
             {
                 DataTable resultado = new DataTable();
-                String sentencia = @"SELECT * FROM existencias";
+                String sentencia = @"call kardex('" + codigo + "');";
                 DBOperacion operacion = new DBOperacion();
 
                 resultado = operacion.Consultar(sentencia);
                 return resultado;
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                Console.WriteLine("Error." + e);
                 return new DataTable();
                 throw;
             }
         }
 
+       
         public static DataTable ReporteInventario(string inicio, string fin)
         {
             try
